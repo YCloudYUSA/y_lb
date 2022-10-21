@@ -1,0 +1,10 @@
+name: Y Layout Builder
+type: module
+description: Integration point for Layout Builder Integration.
+core_version_requirement: ^8 || ^9
+package: Open Y
+dependencies:
+  - drupal:layout_builder
+  - drupal:bootstrap_styles
+  - drupal:bootstrap_layout_builder
+  - drupal:layout_builder_blocks
