@@ -1,0 +1,20 @@
+{
+    "name": "ycloudyusa/ny_lb",
+    "description": "Adds Layout Builder to Web Services project.",
+    "type": "drupal-module",
+    "require": {
+        "drupal/bootstrap_styles": "*",
+        "drupal/bootstrap_layout_builder" : "*",
+        "drupal/layout_builder_blocks" : "*",
+        "php": ">=8.1"
+    },
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^9"
+            }
+        }
+    }
+}
