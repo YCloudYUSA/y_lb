@@ -1,5 +1,5 @@
 {
-    "name": "ycloudyusa/ny_lb",
+    "name": "ycloudyusa/y_lb",
     "description": "Adds Layout Builder to Web Services project.",
     "type": "drupal-module",
     "require": {
