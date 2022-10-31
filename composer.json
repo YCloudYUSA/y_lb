@@ -6,7 +6,7 @@
         "drupal/bootstrap_styles": "*",
         "drupal/bootstrap_layout_builder" : "*",
         "drupal/layout_builder_blocks" : "*",
-        "drupal/lb_accordion/" : "1.0.0",
+        "drupal/lb_accordion" : "^1.0",
         "php": ">=8.1"
     },
     "license": "GPL-2.0+",
