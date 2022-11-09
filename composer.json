@@ -7,6 +7,10 @@
         "drupal/bootstrap_layout_builder" : "*",
         "drupal/layout_builder_blocks" : "*",
         "drupal/lb_accordion" : "^1.0",
+        "drupal/lb_simple_menu" : "^1.0",
+        "drupal/lb_ping_pong" : "^1.0",
+        "drupal/lb_hero" : "^1.0",
+        "drupal/lb_grid_cta" : "^1.0",
         "php": ">=8.1"
     },
     "license": "GPL-2.0+",
