@@ -11,6 +11,8 @@
         "drupal/lb_ping_pong" : "^1.0",
         "drupal/lb_hero" : "^1.0",
         "drupal/lb_grid_cta" : "^1.0",
+        "drupal/ws_lb_tabs" : "^1.0",
+        "drupal/lb_promo" : "^1.0",
         "php": ">=8.1"
     },
     "license": "GPL-2.0+",
