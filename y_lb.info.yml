@@ -1,8 +1,8 @@
 name: Y Layout Builder
 type: module
-description: Integration point for Layout Builder Integration.
+description: Integration point for Layout Builder integration.
 core_version_requirement: ^8 || ^9
-package: Open Y
+package: 'YMCA Website Services'
 dependencies:
   - drupal:layout_builder
   - drupal:bootstrap_styles
