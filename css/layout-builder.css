@@ -1,0 +1,87 @@
+#drupal-off-canvas details > summary {
+  color: #003cc5;
+  background-color: #f0f5fd;
+}
+
+#drupal-off-canvas details > summary:hover {
+  color: #eee;
+  background-color: #222;
+}
+
+#drupal-off-canvas details > summary:after {
+  display: none;
+}
+
+#drupal-off-canvas details > summary::before {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath d='M5.21 1.314L3.79 2.723l5.302 5.353-5.303 5.354 1.422 1.408 6.697-6.762z' fill='%230036B1'/%3e%3c/svg%3e");
+}
+
+#drupal-off-canvas details > summary:hover::before,
+#drupal-off-canvas details > summary:hover:focus::before,
+#drupal-off-canvas details[open] > summary::before,
+#drupal-off-canvas details[open] > summary:hover:focus::before,
+#drupal-off-canvas details[open] > summary:hover::before {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath d='M5.21 1.314L3.79 2.723l5.302 5.353-5.303 5.354 1.422 1.408 6.697-6.762z' fill='%23ffffff'/%3e%3c/svg%3e");
+}
+
+#drupal-off-canvas .bs_tab-pane--appearance details > summary,
+#drupal-off-canvas .bs_tab-pane--settings details > summary {
+  color: #eee;
+  background-color: inherit;
+}
+
+#drupal-off-canvas .bs_tab-pane--appearance details > summary:hover,
+#drupal-off-canvas .bs_tab-pane--settings details > summary:hover {
+  background-color: #222;
+}
+
+#drupal-off-canvas .bs_tab-pane--appearance details > summary::before,
+#drupal-off-canvas .bs_tab-pane--settings details > summary::before {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath d='M5.21 1.314L3.79 2.723l5.302 5.353-5.303 5.354 1.422 1.408 6.697-6.762z' fill='%23ffffff'/%3e%3c/svg%3e");
+}
+
+#drupal-off-canvas .inline-block-list li {
+  border-bottom: 0;
+}
+
+#drupal-off-canvas .form-text:focus,
+#drupal-off-canvas .form-tel:focus,
+#drupal-off-canvas .form-email:focus,
+#drupal-off-canvas .form-url:focus,
+#drupal-off-canvas .form-search:focus,
+#drupal-off-canvas .form-number:focus,
+#drupal-off-canvas .form-color:focus,
+#drupal-off-canvas .form-file:focus,
+#drupal-off-canvas .form-textarea:focus,
+#drupal-off-canvas .form-date:focus,
+#drupal-off-canvas .form-time:focus {
+  background-color: #fff;
+}
+
+#drupal-off-canvas .form-textarea {
+  background-color: #fff;
+  color: #222330;
+}
+
+#drupal-off-canvas .form-select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+#drupal-off-canvas .select-wrapper:before {
+  display: none;
+}
+
+#drupal-off-canvas .blb_tab-content .bs_tab-pane--content details {
+  margin: 0;
+}
+
+#drupal-off-canvas .bs_tab-pane--appearance fieldset,
+#drupal-off-canvas .bs_tab-pane--layout fieldset {
+  display: block;
+}
+
+#drupal-off-canvas .bs_tab-pane--layout .form-type-radio {
+  display: block;
+}

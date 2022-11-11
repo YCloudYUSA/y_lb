@@ -8,3 +8,5 @@ dependencies:
   - drupal:bootstrap_styles
   - drupal:bootstrap_layout_builder
   - drupal:layout_builder_blocks
+  - drupal:layout_builder_restrictions
+  - drupal:lb_claro

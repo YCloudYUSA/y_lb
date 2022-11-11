@@ -1,6 +1,9 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\block_content\BlockContentInterface;
+use Drupal\layout_builder\Form\DefaultsEntityForm;
+use Drupal\layout_builder\Form\OverridesEntityForm;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for form templates.
@@ -31,5 +34,17 @@ function y_lb_theme_suggestions_block_alter(array &$suggestions, array $variable
       $suggestions_rev = array_merge($suggestions_rev, $block_type_suggestions);
       $suggestions = array_reverse($suggestions_rev);
     }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function y_lb_form_alter(&$form, FormStateInterface $form_state) {
+  $form_object = $form_state->getFormObject();
+  if ($form_object instanceof OverridesEntityForm
+    || $form_object instanceof DefaultsEntityForm
+    || $form_object->getFormId() === 'layout_layout_builder_form') {
+    $form['#attached']['library'][] = 'y_lb/layout_builder';
   }
 }
