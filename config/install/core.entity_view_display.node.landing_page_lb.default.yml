@@ -3,9 +3,11 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page_lb.body
+    - field.field.node.landing_page_lb.layout_builder__layout
     - node.type.landing_page_lb
   module:
     - layout_builder
+    - layout_builder_restrictions
     - layout_discovery
     - text
     - user
@@ -45,6 +47,22 @@ third_party_settings:
             weight: 1
             additional: {  }
         third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks:
+        'Inline blocks':
+          - 'inline_block:basic_block'
+          - 'inline_block:branch_amenities'
+          - 'inline_block:code_block'
+          - 'inline_block:date_block'
+          - 'inline_block:featured_highlights_block'
+          - 'inline_block:flexible_content'
+          - 'inline_block:menu_block'
+          - 'inline_block:simple_block'
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
 id: node.landing_page_lb.default
 targetEntityType: node
 bundle: landing_page_lb
@@ -64,3 +82,4 @@ content:
     region: content
 hidden:
   langcode: true
+  layout_builder__layout: true

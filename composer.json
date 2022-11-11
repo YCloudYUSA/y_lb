@@ -6,6 +6,8 @@
         "drupal/bootstrap_styles": "*",
         "drupal/bootstrap_layout_builder" : "*",
         "drupal/layout_builder_blocks" : "*",
+        "drupal/layout_builder_restrictions" : "*",
+        "drupal/lb_claro" : "*",
         "drupal/lb_accordion" : "^1.0",
         "drupal/lb_simple_menu" : "^1.0",
         "drupal/lb_ping_pong" : "^1.0",
