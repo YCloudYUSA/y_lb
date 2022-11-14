@@ -46,5 +46,26 @@ function y_lb_form_alter(&$form, FormStateInterface $form_state) {
     || $form_object instanceof DefaultsEntityForm
     || $form_object->getFormId() === 'layout_layout_builder_form') {
     $form['#attached']['library'][] = 'y_lb/layout_builder';
+    $form['#attached']['library'][] = 'y_lb/main';
+  }
+}
+
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function y_lb_page_attachments_alter(array &$page) {
+  $entity_types = array_keys(\Drupal::entityTypeManager()->getDefinitions());
+  $entity_canonical_routes = [];
+
+  foreach ($entity_types as $entity_type_id) {
+    $entity_canonical_routes[] = 'entity.' . $entity_type_id . '.canonical';
+  }
+
+  $route_match = \Drupal::routeMatch();
+  // Attach the libraries only in entity canonical route.
+  if (in_array($route_match->getRouteName(), $entity_canonical_routes)) {
+    // Attach the Y-LB main styles.
+    $page['#attached']['library'][] = 'y_lb/main';
   }
 }
