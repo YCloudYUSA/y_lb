@@ -3,3 +3,9 @@ layout_builder:
   css:
     theme:
       css/layout-builder.css: { minified: false, weight: 1001 }
+
+main:
+  version: 1.0
+  css:
+    theme:
+      css/colors.css: { minified: false }

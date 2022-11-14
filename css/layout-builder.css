@@ -85,3 +85,18 @@
 #drupal-off-canvas .bs_tab-pane--layout .form-type-radio {
   display: block;
 }
+
+.form-required:after {
+  content: '*' !important;
+  vertical-align: text-top !important;
+  color: var(--ylb-color-red) !important;
+  background: none !important;
+}
+
+.js-off-canvas-dialog-open .modal-backdrop {
+  display: none;
+}
+
+#drupal-off-canvas .bs_tab-pane .alert-modal {
+  position: relative;
+}
