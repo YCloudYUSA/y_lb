@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function y_lb_install($is_syncing) {
+  $path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/optional';
+  $config_importer = \Drupal::service('config_import.importer');
+  $config_importer->setDirectory($path);
+  $config_importer->importConfigs([
+    'bootstrap_styles.settings'
+  ]);
+}
