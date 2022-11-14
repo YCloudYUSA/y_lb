@@ -29,4 +29,4 @@ description: 'Landing Page content type is used to add Landing Pages to your web
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false
