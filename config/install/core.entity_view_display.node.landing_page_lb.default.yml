@@ -50,7 +50,11 @@ third_party_settings:
   layout_builder_restrictions:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
-      allowed_layouts: {  }
+      allowed_layouts:
+        - 'bootstrap_layout_builder:blb_col_1'
+        - 'bootstrap_layout_builder:blb_col_2'
+        - 'bootstrap_layout_builder:blb_col_3'
+        - 'bootstrap_layout_builder:blb_col_4'
       denylisted_blocks:
         'Inline blocks':
           - 'inline_block:basic_block'
