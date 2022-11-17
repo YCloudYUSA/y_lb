@@ -3,30 +3,21 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.landing_page_lb.body
     - field.field.node.landing_page_lb.layout_builder__layout
     - node.type.landing_page_lb
   module:
-    - text
     - user
 id: node.landing_page_lb.teaser
 targetEntityType: node
 bundle: landing_page_lb
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  addthis: true
   langcode: true
   layout_builder__layout: true

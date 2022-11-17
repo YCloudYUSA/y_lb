@@ -1,4 +1,3 @@
-uuid: 87046627-3a4f-49cc-9031-298baa557ca7
 langcode: en
 status: true
 dependencies:
@@ -26,7 +25,7 @@ third_party_settings:
 name: 'Landing Page (Layout Builder)'
 type: landing_page_lb
 description: 'Landing Page content type is used to add Landing Pages to your website using Layout Builder widgets.'
-help: ''
+help: 'This page is managed with Layout Builder. You may want to uncheck "Publish Content" before creating a page, use the "Layout" tab to build the content, then Publish when the page is complete. See our <a href="https://ds-docs.y.org/docs/user-documentation/layout-builder" target="_blank">User Guide</a> for help.'
 new_revision: true
 preview_mode: 1
 display_submitted: false
