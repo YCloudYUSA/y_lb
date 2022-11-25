@@ -49,7 +49,11 @@
   }
   .inline-block-list {
     li {
+      width: 46%;
       border-bottom: 0;
+      a {
+        max-height: 50px;
+      }
     }
   }
 
