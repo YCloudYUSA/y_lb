@@ -70,7 +70,6 @@ function y_lb_page_attachments_alter(array &$page) {
   }
 }
 
-
 /**
  * Implements hook_form_BASE_FORM_ID_alter() for layout_builder_add_block.
  *
