@@ -148,8 +148,10 @@
 
   .media-library-item {
     .media-library-item__preview {
-      width: 50%;
-      height: auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
