@@ -13,6 +13,7 @@
         "drupal/lb_carousel" : "^1.0",
         "drupal/lb_grid_cta" : "^1.0",
         "drupal/lb_hero" : "^1.0",
+        "drupal/lb_modal" : "^1.0",
         "drupal/lb_ping_pong" : "^1.0",
         "drupal/lb_promo" : "^1.0",
         "drupal/lb_simple_menu" : "^1.0",
