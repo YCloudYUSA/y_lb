@@ -17,6 +17,7 @@
         "drupal/lb_ping_pong" : "^1.0",
         "drupal/lb_promo" : "^1.0",
         "drupal/lb_simple_menu" : "^1.0",
+        "drupal/lb_staff_members_blocks": "^1.0",
         "drupal/lb_statistics" : "^1.0",
         "drupal/lb_table" : "^1.0",
         "drupal/lb_webform" : "^1.0",
