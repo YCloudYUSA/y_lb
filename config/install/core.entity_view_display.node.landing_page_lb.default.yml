@@ -240,6 +240,8 @@ third_party_settings:
           - 'inline_block:menu_block'
           - 'inline_block:simple_block'
           - 'inline_block:testimonial_item'
+          - 'inline_block:lb_staff_member_item'
+          - 'inline_block:lb_partner_item'
       allowlisted_blocks: {  }
       restricted_categories: {  }
 id: node.landing_page_lb.default
