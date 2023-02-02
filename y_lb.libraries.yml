@@ -9,3 +9,9 @@ main:
   css:
     theme:
       css/colors.css: { minified: false }
+
+breadcrumbs:
+  version: 1.0
+  css:
+    component:
+      css/breadcrumbs.css: { preprocess: true }
