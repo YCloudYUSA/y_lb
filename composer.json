@@ -21,6 +21,7 @@
         "drupal/lb_staff_members_blocks": "^1.0",
         "drupal/lb_statistics" : "^1.0",
         "drupal/lb_table" : "^1.0",
+        "drupal/lb_testimonial_blocks" : "^1.0",
         "drupal/lb_webform" : "^1.0",
         "drupal/ws_lb_tabs" : "^1.0",
         "php": ">=8.1"
