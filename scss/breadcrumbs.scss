@@ -1,0 +1,62 @@
+@import "_functions";
+@import "_mixins";
+@import "_variables";
+
+:root {
+  --ylb-color-btn-grey: #636466;
+}
+
+.block-lb-breadcrumbs {
+  .breadcrumbs-wrapper {
+    padding: 10px 0;
+    margin: 10px 0;
+
+    @include media-breakpoint-down('lg') {
+      display: block !important;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      flex-direction: row;
+
+      li {
+        background: none;
+        border: none;
+
+        &:first-child {
+          a {
+            background: url("../assets/svg/home.svg") no-repeat center;
+            color: transparent;
+            padding: 0;
+            margin-top: -2px;
+          }
+        }
+
+        span,
+        a {
+          display: flex;
+          font-family: var(--ylb-font-family);
+          font-size: 14px;
+          color: var(--ylb-color-dark-grey);
+          padding: 0 15px;
+          min-height: auto;
+          background: none;
+        }
+
+        a:before,
+        span:before,
+        a:after,
+        span:after {
+          border: none;
+          position: absolute;
+        }
+
+        a:before,
+        span:before {
+          content: url("../assets/svg/chevron-right.svg");
+          left: -5px
+        }
+      }
+    }
+  }
+}
