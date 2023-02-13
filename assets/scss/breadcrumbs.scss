@@ -25,7 +25,7 @@
 
         &:first-child {
           a {
-            background: url("../assets/svg/home.svg") no-repeat center;
+            background: url("../svg/home.svg") no-repeat center;
             color: transparent;
             padding: 0;
             margin-top: -2px;
@@ -53,7 +53,7 @@
 
         a:before,
         span:before {
-          content: url("../assets/svg/chevron-right.svg");
+          content: url("../svg/chevron-right.svg");
           left: -5px
         }
       }
