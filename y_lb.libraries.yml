@@ -5,10 +5,12 @@ layout_builder:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
 
 main:
-  version: 1.1
+  version: 1.2
   css:
     theme:
       assets/css/colors.css: { minified: false }
+      assets/css/typography.css: { minified: true }
+
 
 breadcrumbs:
   version: 1.1
