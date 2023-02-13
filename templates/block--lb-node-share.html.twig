@@ -1,0 +1,8 @@
+<div{{ attributes.addClass('block-lb-node-share') }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+    <strong>Share</strong>
+    {% for key, link in content['#links'] %}
+        <a href="{{ link }}" target="_blank"><i class="bi bi-{{ key }}"></i></a>
+    {% endfor %}
+</div>

@@ -1,0 +1,38 @@
+.block-lb-node-tags {
+  align-self: center;
+  .field-item {
+    display: inline-block;
+    margin-right: 20px;
+    a {
+      display: block;
+      background-color: #ECECEC;
+      border-radius: 5px;
+      padding: 3px 6px 1px;
+      color: #2F2F2F;
+      text-transform: uppercase;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  .field-item:not(:has(a)) {
+    background-color: #ECECEC;
+    border-radius: 5px;
+    padding: 3px 6px 1px;
+    color: #2F2F2F;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.block-lb-node-share {
+  text-align: right;
+  strong {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  a {
+    margin-left: 30px;
+    font-size: 28px;
+    color: #231F20;
+  }
+}

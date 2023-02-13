@@ -6,6 +6,17 @@ use Drupal\layout_builder\Form\DefaultsEntityForm;
 use Drupal\layout_builder\Form\OverridesEntityForm;
 
 /**
+ * Implements hook_theme().
+ */
+function y_lb_theme( $existing, $type, $theme, $path ) {
+  return [
+    'block__lb_node_share' => [
+      'base hook' => 'block'
+    ]
+  ];
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter() for form templates.
  */
 function y_lb_theme_suggestions_block_alter(array &$suggestions, array $variables) {
@@ -90,5 +101,8 @@ function y_lb_preprocess_block(&$variables) {
   if ($variables['plugin_id'] == 'system_breadcrumb_block') {
     $variables['attributes']['class'][] ='block-lb-breadcrumbs';
     $variables['#attached']['library'][] = 'y_lb/breadcrumbs';
+  }
+  if ($variables['plugin_id'] === 'lb_node_share' || $variables['plugin_id'] === 'lb_node_tags') {
+    $variables['#attached']['library'][] = 'y_lb/blocks';
   }
 }
