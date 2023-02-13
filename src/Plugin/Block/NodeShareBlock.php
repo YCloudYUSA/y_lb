@@ -3,6 +3,7 @@
 namespace Drupal\y_lb\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -26,6 +27,13 @@ class NodeShareBlock extends BlockBase implements ContainerFactoryPluginInterfac
   protected $currentRouteMatch;
 
   /**
+   * The module handler.
+   *
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   */
+  protected $moduleHandler;
+
+  /**
    * Cuurent node.
    *
    * @var \Drupal\node\Entity\Node
@@ -47,9 +55,10 @@ class NodeShareBlock extends BlockBase implements ContainerFactoryPluginInterfac
    * @param \Drupal\Core\Routing\RouteProviderInterface $route_provider
    *   The route provider.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $currentRouteMatch) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $currentRouteMatch, ModuleHandlerInterface $module_handler) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->currentRouteMatch = $currentRouteMatch;
+    $this->moduleHandler = $module_handler;
     $this->node = $currentRouteMatch->getParameter('node');
   }
 
@@ -61,7 +70,8 @@ class NodeShareBlock extends BlockBase implements ContainerFactoryPluginInterfac
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('current_route_match')
+      $container->get('current_route_match'),
+      $container->get('module_handler')
     );
   }
 
@@ -74,13 +84,16 @@ class NodeShareBlock extends BlockBase implements ContainerFactoryPluginInterfac
     }
 
     $url = urlencode($this->node->toUrl('canonical', ['absolute' => TRUE])->toString());
+    $links = [
+      'facebook' => 'https://www.facebook.com/sharer.php?u='. $url,
+      'twitter'  => 'https://www.linkedin.com/shareArticle?mini=true&url=' . $url,
+      'linkedin' => 'https://twitter.com/intent/tweet?url=' . $url,
+    ];
+
+    $this->moduleHandler->alter('lb_node_share_block_links', $links);
 
     $build = [
-      '#links' => [
-        'facebook' => 'https://www.facebook.com/sharer.php?u='. $url,
-        'twitter'  => 'https://www.linkedin.com/shareArticle?mini=true&url=' . $url,
-        'linkedin' => 'https://twitter.com/intent/tweet?url=' . $url,
-      ]
+      '#links' => $links
     ];
     return $build;
   }
