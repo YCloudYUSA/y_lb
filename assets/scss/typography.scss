@@ -1,0 +1,180 @@
+@import "_functions";
+@import "_mixins";
+@import "_variables";
+
+.body {
+  line-height: 30px;
+  font-family: Cachet Book, Cachet W01 Book, Cachet, Verdana, sans-serif;
+  color: var(--ylb-color-dark-grey);
+
+  // Headings
+  // -----------------------------------------------------------------------------
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 40px;
+  }
+
+  h1 {
+    font-size: 61px;
+  }
+
+  h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    line-height: 60px;
+  }
+
+  h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    line-height: 32px;
+  }
+
+  h4 {
+    font-size: 24px;
+    margin-bottom: 50px;
+    line-height: 36px;
+  }
+
+  h5 {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    line-height: 32px;
+  }
+
+  // Text
+  // -----------------------------------------------------------------------------
+  p {
+    font-family: Verdana, Arial, sans-serif;
+    color: var(--ylb-color-dark-grey);
+    font-size: 20px;
+    margin-bottom: 34px;
+    line-height: 30px;
+  }
+
+  // Links
+  // -----------------------------------------------------------------------------
+  a {
+    color: #0060AF;
+    font-size: 18px;
+    font-family: Verdana, Arial, sans-serif;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Lists
+  // -----------------------------------------------------------------------------
+  ol,
+  ul,
+  dl {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 20px;
+    color: var(--ylb-color-dark-grey);
+
+    li {
+      margin-bottom: 20px;
+    }
+  }
+
+  // Image
+  // -----------------------------------------------------------------------------
+  img {
+
+  }
+
+  figure {
+
+  }
+
+  figcaption {
+
+  }
+
+  // Other
+  // -----------------------------------------------------------------------------
+  .blockquote {
+    color: var(--ylb-color-dark-grey);
+    padding: 50px 10px 50px 100px;
+    border: 1px solid var(--ylb-color-dark-grey);
+    border-left: none;
+    border-right: none;
+    position: relative;
+    margin: 30px 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: url("../svg/quotes.svg") no-repeat left;
+      height: 29px;
+      width: 19px;
+      left: 25px;
+    }
+    blockquote {
+      font-family: Cachet Book, Cachet W01 Book, Cachet, Verdana, sans-serif;
+      font-size: 24px;
+      margin-bottom: 20px;
+      letter-spacing: 0;
+      line-height: 32px;
+    }
+
+    cite {
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 26px;
+      padding-left: 25px;
+      position: relative;
+
+      &:before {
+        content: '—';
+        position: absolute;
+        top: -5px;
+        left: 0;
+      }
+    }
+  }
+
+  s,
+  del {
+    text-decoration: line-through;
+  }
+  u,
+  ins {
+    text-decoration: underline;
+  }
+
+  mark {
+    color: #FFFFFF;
+    background-color: var(--ylb-color-dark-grey);
+    padding: 3px 5px;
+    border-radius: 4px;
+  }
+
+  b,
+  strong {
+    color: var(--ylb-color-dark-grey);
+    font-weight: bold;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  small {
+    font-size: 10px;
+  }
+  table {
+    margin-bottom: 44px;
+    th {
+      border-bottom: solid 5px var(--ylb-color-dark-grey);
+    }
+    tr {
+      border-bottom: solid 1px var(--ylb-color-light-grey);
+      td {
+        padding: 24px 12px;
+      }
+    }
+  }
+}
