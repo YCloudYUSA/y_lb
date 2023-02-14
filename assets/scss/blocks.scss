@@ -70,7 +70,7 @@
       font-weight: bolder;
       margin-bottom: 10px;
       @include media-breakpoint-up(md) {
-        margin-right: 150px;
+        width: 280px;
       }
     }
     .lb-locations-list {
