@@ -12,6 +12,9 @@ function y_lb_theme( $existing, $type, $theme, $path ) {
   return [
     'block__lb_node_share' => [
       'base hook' => 'block'
+    ],
+    'block__lb_node_locations' => [
+      'base hook' => 'block'
     ]
   ];
 }
@@ -98,11 +101,15 @@ function y_lb_form_layout_builder_add_block_alter(&$form, FormStateInterface $fo
  * Implements hook_preprocess_HOOK() for block templates.
  */
 function y_lb_preprocess_block(&$variables) {
-  if ($variables['plugin_id'] == 'system_breadcrumb_block') {
-    $variables['attributes']['class'][] ='block-lb-breadcrumbs';
-    $variables['#attached']['library'][] = 'y_lb/breadcrumbs';
-  }
-  if ($variables['plugin_id'] === 'lb_node_share' || $variables['plugin_id'] === 'lb_node_tags') {
-    $variables['#attached']['library'][] = 'y_lb/blocks';
+  switch ($variables['plugin_id']) {
+    case 'system_breadcrumb_block':
+      $variables['attributes']['class'][] ='block-lb-breadcrumbs';
+      $variables['#attached']['library'][] = 'y_lb/breadcrumbs';
+      break;
+    case 'lb_node_share':
+    case 'lb_node_tags':
+    case 'lb_node_locations':
+      $variables['#attached']['library'][] = 'y_lb/blocks';
+      break;
   }
 }

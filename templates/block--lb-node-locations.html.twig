@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * LB Node Share implementation to display a block.
+ * LB Node Locations implementation to display a block.
  *
  * Available variables:
  * - plugin_id: The ID of the block implementation.
@@ -28,10 +28,12 @@
  */
 #}
 <div{{ attributes }}>
-    {{ title_prefix }}
-    {{ title_suffix }}
-    <strong>{{ "Share" | t }}</strong>
-    {% for key, link in content['#links'] %}
-        <a href="{{ link }}" target="_blank"><i class="bi bi-{{ key }}"></i></a>
-    {% endfor %}
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <div class="locations">
+      <div class="label"><i class="bi bi-geo-alt-fill"></i> {{ "Locations" | t }}</div>
+      <div class="lb-locations-list">
+          {{ content }}
+      </div>
+  </div>
 </div>
