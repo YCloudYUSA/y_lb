@@ -1,8 +1,17 @@
+@import "_functions";
+@import "_mixins";
+@import "_variables";
+
 .block-lb-node-tags {
   align-self: center;
+  margin-bottom: 30px;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
   .field-item {
     display: inline-block;
     margin-right: 20px;
+    margin-top: 10px;
     a {
       display: block;
       background-color: #ECECEC;
@@ -14,7 +23,8 @@
       line-height: 20px;
     }
   }
-  .field-item:not(:has(a)) {
+  .field-item:not(:has(a)),
+  .field-item:not(:where(a)) {
     background-color: #ECECEC;
     border-radius: 5px;
     padding: 3px 6px 1px;
@@ -25,14 +35,53 @@
   }
 }
 .block-lb-node-share {
-  text-align: right;
+  @include media-breakpoint-up(md) {
+    text-align: right;
+  }
+
   strong {
     font-size: 22px;
     line-height: 32px;
+    text-transform: uppercase;
   }
   a {
     margin-left: 30px;
     font-size: 28px;
     color: #231F20;
+  }
+}
+
+.block-lb-node-locations {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  @include media-breakpoint-up(md) {
+    padding-bottom: 80px;
+  }
+  border-bottom: 1px solid var(--ylb-color-dark-grey);
+  .locations {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-direction: row;
+    }
+    .label {
+      text-transform: uppercase;
+      font-size: 22px;
+      line-height: 32px;
+      font-weight: bolder;
+      margin-bottom: 10px;
+      @include media-breakpoint-up(md) {
+        margin-right: 150px;
+      }
+    }
+    .lb-locations-list {
+      .field-item {
+        margin-bottom: 7px;
+        a {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+
+    }
   }
 }

@@ -18,7 +18,8 @@
     .breadcrumbs {
       display: flex;
       flex-direction: row;
-
+      border-bottom: 1px solid var(--ylb-color-dark-grey);
+      padding-bottom: 8px !important;
       li {
         background: none;
         border: none;
