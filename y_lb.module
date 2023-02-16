@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\block_content\BlockContentInterface;
 use Drupal\layout_builder\Form\DefaultsEntityForm;
@@ -112,4 +113,5 @@ function y_lb_preprocess_block(&$variables) {
       $variables['#attached']['library'][] = 'y_lb/blocks';
       break;
   }
+  $variables['attributes']['class'][] = 'block-' . Html::getClass($variables['plugin_id']);
 }

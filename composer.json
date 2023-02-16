@@ -26,7 +26,9 @@
         "drupal/lb_webform" : "^1.0",
         "drupal/node_revision_delete" : "^2.0@alpha || ^2",
         "drupal/ws_lb_tabs" : "^1.0",
+        "drupal/ws_event" : "^1.0",
         "drupal/y_branch" : "^1.0",
+        "drupal/y_lb_article" : "^1.0",
         "php": ">=8.1"
     },
     "license": "GPL-2.0+",
