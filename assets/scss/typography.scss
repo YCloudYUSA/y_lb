@@ -2,54 +2,71 @@
 @import "_mixins";
 @import "_variables";
 
-.body {
-  line-height: 30px;
-  font-family: Cachet Book, Cachet W01 Book, Cachet, Verdana, sans-serif;
+.lb__content .body.field-item, .layout-builder__layout .body.field-item, .cke_editable_themed {
   color: var(--ylb-color-dark-grey);
+
+  > *:first-child {
+    margin-top: 0 !important;
+  }
+
+  > *:last-child {
+    margin-bottom: 0 !important;
+  }
 
   // Headings
   // -----------------------------------------------------------------------------
   h1, h2, h3, h4, h5, h6 {
-    margin-top: 40px;
-  }
-
-  h1 {
-    font-size: 61px;
+    margin: 40px 0 20px;
+    font-family: var(--ylb-font-family-medium);
   }
 
   h2 {
     font-size: 50px;
-    margin-bottom: 30px;
-    line-height: 60px;
+    line-height: 65px;
+    @include media-breakpoint-down('md') {
+      font-size: 35px;
+      line-height: 40px;
+    }
   }
 
   h3 {
     font-size: 30px;
-    margin-bottom: 30px;
     line-height: 32px;
+    @include media-breakpoint-down('md') {
+      font-size: 26px;
+    }
   }
 
   h4 {
     font-size: 24px;
-    margin-bottom: 50px;
     line-height: 36px;
+    @include media-breakpoint-down('md') {
+      font-size: 30px;
+      line-height: 20px;
+    }
   }
 
   h5 {
     font-size: 22px;
     text-transform: uppercase;
-    margin-bottom: 30px;
     line-height: 32px;
+    @include media-breakpoint-down('md') {
+      font-size: 18px;
+    }
   }
 
   // Text
   // -----------------------------------------------------------------------------
   p {
-    font-family: Verdana, Arial, sans-serif;
-    color: var(--ylb-color-dark-grey);
     font-size: 20px;
-    margin-bottom: 34px;
+    margin-bottom: 20px;
     line-height: 30px;
+
+    @include media-breakpoint-down('md') {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
   }
 
   // Links
@@ -69,69 +86,121 @@
   ol,
   ul,
   dl {
-    font-family: Verdana, Arial, sans-serif;
     font-size: 20px;
+    line-height: 30px;
     color: var(--ylb-color-dark-grey);
 
+    @include media-breakpoint-down('md') {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
     li {
-      margin-bottom: 20px;
+      margin: 10px 0;
     }
   }
 
-  // Image
+  // Blockquote
   // -----------------------------------------------------------------------------
-  img {
-
-  }
-
-  figure {
-
-  }
-
-  figcaption {
-
-  }
-
-  // Other
-  // -----------------------------------------------------------------------------
-  .blockquote {
+  blockquote {
     color: var(--ylb-color-dark-grey);
-    padding: 50px 10px 50px 100px;
-    border: 1px solid var(--ylb-color-dark-grey);
-    border-left: none;
-    border-right: none;
+    padding: 40px 0 35px 100px;
+    border-top: 2px solid #636466;
+    border-bottom: 2px solid #636466;
     position: relative;
-    margin: 30px 0;
+    margin: 40px 0;
+
+
+    @include media-breakpoint-down('md') {
+      padding: 30px 0 30px 70px;
+    }
 
     &:before {
       content: '';
       position: absolute;
-      background: url("../svg/quotes.svg") no-repeat left;
-      height: 29px;
-      width: 19px;
-      left: 25px;
+      background: url("../svg/quotes.svg") center no-repeat;
+      background-size: contain;
+      height: 22px;
+      width: 14px;
+      top: 46px;
+      left: 55px;
+
+      @include media-breakpoint-down('md') {
+        top: 35px;
+        left: 33px;
+      }
     }
-    blockquote {
-      font-family: Cachet Book, Cachet W01 Book, Cachet, Verdana, sans-serif;
+
+    p {
+      font-family: var(--ylb-font-family-book);
       font-size: 24px;
       margin-bottom: 20px;
       letter-spacing: 0;
       line-height: 32px;
     }
 
-    cite {
+    p:last-child {
+      font-family: Verdana, sans-serif;
       font-size: 16px;
-      letter-spacing: 0;
+      margin-bottom: 0;
       line-height: 26px;
-      padding-left: 25px;
       position: relative;
 
       &:before {
         content: '—';
-        position: absolute;
-        top: -5px;
-        left: 0;
       }
+    }
+  }
+
+  // Table
+  // -----------------------------------------------------------------------------
+  table {
+    width: 100%;
+    margin: 40px 0;
+    border: none;
+
+    thead {
+      tr {
+        border: none;
+        border-bottom: 5px solid #636466;
+
+        th {
+          font-family: var(--ylb-font-family-medium);
+          border: none;
+          font-size: 22px;
+          line-height: 32px;
+          padding: 15px;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 2px solid #D8D8D8;
+
+        td {
+          border: none;
+          font-size: 18px;
+          line-height: 28px;
+          padding: 20px 0.5em !important;
+        }
+      }
+    }
+  }
+
+  // Other
+  // -----------------------------------------------------------------------------
+
+  .btn {
+    &.btn-default {
+      margin-top: 20px;
+      color: var(--ylb-color-white);
+      background-color: #636466;
+      font-size: 22px;
+      line-height: 27px;
+      font-family: var(--ylb-font-family-medium);
+      padding: 15px 30px;
+      border-radius: 10px;
     }
   }
 
@@ -139,6 +208,7 @@
   del {
     text-decoration: line-through;
   }
+
   u,
   ins {
     text-decoration: underline;
@@ -164,17 +234,5 @@
 
   small {
     font-size: 10px;
-  }
-  table {
-    margin-bottom: 44px;
-    th {
-      border-bottom: solid 5px var(--ylb-color-dark-grey);
-    }
-    tr {
-      border-bottom: solid 1px var(--ylb-color-light-grey);
-      td {
-        padding: 24px 12px;
-      }
-    }
   }
 }

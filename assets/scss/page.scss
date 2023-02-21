@@ -1,0 +1,49 @@
+@import "_functions";
+@import "_mixins";
+@import "_variables";
+
+
+:root {
+  --ylb-font-family: "Cachet", Verdana, Geneva, sans-serif;
+  --ylb-font-family-medium: "Cachet Medium", Cachet, Verdana, sans-serif;
+  --ylb-font-family-book: "Cachet Book", "Cachet W01 Book", Cachet, Verdana, sans-serif;
+}
+
+.node--lb {
+  padding-top: 75px;
+
+  @include media-breakpoint-down('md') {
+    padding-top: 40px;
+  }
+
+  .page-title {
+    margin-bottom: 40px;
+
+    @include media-breakpoint-down('md') {
+      margin-bottom: 30px;
+    }
+
+    & > h1 {
+      font-size: 65px;
+      line-height: 75px;
+      margin-bottom: 10px;
+      font-family: var(--ylb-font-family-medium);
+
+      @include media-breakpoint-down('md') {
+        font-size: 45px;
+        line-height: 52px;
+      }
+    }
+
+    .subtitle {
+      font-size: 24px;
+      line-height: 36px;
+      font-family: var(--ylb-font-family-medium);
+
+      @include media-breakpoint-down('md') {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+  }
+}

@@ -7,9 +7,13 @@
 }
 
 .block-lb-breadcrumbs {
+  nav {
+    padding-left: 0;
+  }
   .breadcrumbs-wrapper {
-    padding: 10px 0;
-    margin: 10px 0;
+    margin: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--ylb-color-dark-grey);
 
     @include media-breakpoint-down('lg') {
       display: block !important;
@@ -18,28 +22,28 @@
     .breadcrumbs {
       display: flex;
       flex-direction: row;
-      border-bottom: 1px solid var(--ylb-color-dark-grey);
-      padding-bottom: 8px !important;
+
       li {
         background: none;
         border: none;
 
         &:first-child {
           a {
-            background: url("../svg/home.svg") no-repeat center;
+            background: url("../svg/home.svg") no-repeat left;
             color: transparent;
             padding: 0;
             margin-top: -2px;
+            margin-right: -10px;
           }
         }
 
         span,
         a {
           display: flex;
-          font-family: var(--ylb-font-family);
           font-size: 14px;
-          color: var(--ylb-color-dark-grey);
-          padding: 0 15px;
+          line-height: 24px;
+          color: #636466;
+          padding: 0 10px;
           min-height: auto;
           background: none;
         }
@@ -54,7 +58,7 @@
 
         a:before,
         span:before {
-          content: url("../svg/chevron-right.svg");
+          content: ' › ';
           left: -5px
         }
       }

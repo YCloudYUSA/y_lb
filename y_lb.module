@@ -3,6 +3,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\block_content\BlockContentInterface;
+use Drupal\editor\Entity\Editor;
 use Drupal\layout_builder\Form\DefaultsEntityForm;
 use Drupal\layout_builder\Form\OverridesEntityForm;
 
@@ -16,7 +17,12 @@ function y_lb_theme( $existing, $type, $theme, $path ) {
     ],
     'block__lb_node_locations' => [
       'base hook' => 'block'
-    ]
+    ],
+    'blb_section__y_lb' => [
+      'template' => 'blb-section--y-lb',
+      'render element' => 'content',
+      'base hook' => 'layout',
+    ],
   ];
 }
 
@@ -114,4 +120,22 @@ function y_lb_preprocess_block(&$variables) {
       break;
   }
   $variables['attributes']['class'][] = 'block-' . Html::getClass($variables['plugin_id']);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function y_lb_theme_suggestions_layout_alter( array &$suggestions, array $variables ) {
+  $node = $variables['content']['#entity'];
+  $suggestions = [];
+  $suggestions[] = 'blb_section__y_lb';
+  $suggestions[] = 'blb_section__' . $node->bundle();
+  $suggestions[] = 'blb_section__' . $node->bundle() . '__' . strtolower($variables['content']['#settings']['label']);
+}
+
+/**
+ * Implements hook_ckeditor_css_alter().
+ */
+function y_lb_ckeditor_css_alter(array &$css, Editor $editor) {
+  $css[] = \Drupal::service('extension.list.module')->getPath('y_lb') . '/assets/css/typography.css';
 }
