@@ -9,8 +9,8 @@ main:
   css:
     theme:
       assets/css/colors.css: { minified: false }
-      assets/css/typography.css: { minified: true }
-
+      assets/css/typography.css: { minified: false }
+      assets/css/page.css: { minified: false }
 
 breadcrumbs:
   version: 1.1

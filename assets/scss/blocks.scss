@@ -3,47 +3,53 @@
 @import "_variables";
 
 .block-lb-node-tags {
-  align-self: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+
   @include media-breakpoint-up(md) {
     margin-bottom: 0;
   }
-  .field-item {
-    display: inline-block;
-    margin-right: 20px;
+
+  .wrapper-field-tags {
     margin-top: 10px;
-    a {
-      display: block;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 100%;
+    gap: 20px;
+
+    @include media-breakpoint-down('md') {
+      margin-top: 20px;
+      gap: 15px;
+    }
+
+    .field-item {
+      font-family: var(--ylb-font-family-medium);
       background-color: #ECECEC;
       border-radius: 5px;
-      padding: 3px 6px 1px;
+      padding: 2px 6px;
       color: #2F2F2F;
       text-transform: uppercase;
       font-size: 16px;
       line-height: 20px;
+
+      a {
+      }
     }
   }
-  .field-item:not(:has(a)),
-  .field-item:not(:where(a)) {
-    background-color: #ECECEC;
-    border-radius: 5px;
-    padding: 3px 6px 1px;
-    color: #2F2F2F;
-    text-transform: uppercase;
-    font-size: 16px;
-    line-height: 20px;
-  }
 }
+
 .block-lb-node-share {
   @include media-breakpoint-up(md) {
     text-align: right;
   }
 
   strong {
+    font-family: var(--ylb-font-family-medium);
     font-size: 22px;
     line-height: 32px;
     text-transform: uppercase;
   }
+
   a {
     margin-left: 30px;
     font-size: 28px;
@@ -51,37 +57,60 @@
   }
 }
 
-.block-lb-node-locations {
-  padding-top: 30px;
+.block-lb-node-locations, .block-lb-event-contacts {
+  padding-top: 35px;
   padding-bottom: 40px;
+  border-top: 1px solid #636466;
+
   @include media-breakpoint-up(md) {
     padding-bottom: 80px;
   }
-  border-bottom: 1px solid var(--ylb-color-dark-grey);
-  .locations {
+
+  .locations, .contacts {
     @include media-breakpoint-up(md) {
       display: flex;
       flex-direction: row;
     }
+
     .label {
       text-transform: uppercase;
+      font-family: var(--ylb-font-family-medium);
       font-size: 22px;
       line-height: 32px;
-      font-weight: bolder;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+
       @include media-breakpoint-up(md) {
-        width: 280px;
-      }
-    }
-    .lb-locations-list {
-      .field-item {
-        margin-bottom: 7px;
-        a {
-          font-size: 18px;
-          line-height: 28px;
-        }
+        width: 285px;
       }
 
+      .bi {
+        font-size: 20px;
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+.block-lb-node-locations {
+  .lb-locations-list {
+    a {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .field-item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.block-lb-event-contacts {
+  .contacts-info {
+    font-size: 18px;
+    line-height: 28px;
+
+    > div {
+      margin-bottom: 7px;
     }
   }
 }
