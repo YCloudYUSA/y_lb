@@ -19,6 +19,7 @@
   --ylb-color-yellow: #FCAF17;
   --ylb-color-dark-grey: #2F2F2F;
   --ylb-color-light-grey: #D8D8D8;
+  --ylb-color-y-grey: #3F4042;
 }
 
 /*Background colors*/
@@ -125,4 +126,9 @@
 }
 .ylb-text-yellow {
   color: var(--ylb-color-yellow) !important;
+}
+
+/*Border colors*/
+ylb-border-y-grey {
+  color: var(--ylb-color-y-grey) !important;
 }

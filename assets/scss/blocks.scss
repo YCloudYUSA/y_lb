@@ -8,32 +8,32 @@
   @include media-breakpoint-up(md) {
     margin-bottom: 0;
   }
+}
 
-  .wrapper-field-tags {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 100%;
-    gap: 20px;
+.wrapper-field-tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 100%;
+  gap: 20px;
 
-    @include media-breakpoint-down('md') {
-      margin-top: 20px;
-      gap: 15px;
-    }
+  @include media-breakpoint-down('md') {
+    margin-top: 20px;
+    gap: 15px;
+  }
 
-    .field-item {
-      font-family: var(--ylb-font-family-medium);
-      background-color: #ECECEC;
-      border-radius: 5px;
-      padding: 2px 6px;
-      color: #2F2F2F;
-      text-transform: uppercase;
-      font-size: 16px;
-      line-height: 20px;
+  .field-item {
+    font-family: var(--ylb-font-family-medium);
+    background-color: #ECECEC;
+    border-radius: 5px;
+    padding: 2px 6px;
+    color: #2F2F2F;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
 
-      a {
-      }
+    a {
     }
   }
 }
