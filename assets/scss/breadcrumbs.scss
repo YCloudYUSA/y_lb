@@ -39,6 +39,7 @@
 
         span,
         a {
+          font-family: Verdana, sans-serif;
           display: flex;
           font-size: 14px;
           line-height: 24px;
@@ -59,7 +60,9 @@
         a:before,
         span:before {
           content: ' › ';
-          left: -5px
+          left: -5px;
+          top: -1px;
+          font-size: 16px;
         }
       }
     }

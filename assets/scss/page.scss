@@ -10,10 +10,10 @@
 }
 
 .node--lb {
-  padding-top: 75px;
+  margin-top: 75px;
 
   @include media-breakpoint-down('md') {
-    padding-top: 40px;
+    margin-top: 40px;
   }
 
   .page-title {
