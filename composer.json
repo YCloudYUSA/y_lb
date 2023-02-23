@@ -5,6 +5,7 @@
     "require": {
         "drupal/bootstrap_styles": "*",
         "drupal/bootstrap_layout_builder" : "*",
+        "drupal/daterange_compact" : "^2.0",
         "drupal/layout_builder_blocks" : "*",
         "drupal/layout_builder_restrictions" : "^2.16",
         "drupal/lb_branch_social_links_blocks" : "^1.0",
