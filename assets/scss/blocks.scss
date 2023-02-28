@@ -5,7 +5,7 @@
 .block-lb-node-tags {
   margin-bottom: 40px;
 
-  @include media-breakpoint-up(md) {
+  @media (min-width: 1060px) {
     margin-bottom: 0;
   }
 }
@@ -18,9 +18,15 @@
   max-width: 100%;
   gap: 20px;
 
-  @include media-breakpoint-down('md') {
+
+  @media (max-width: 1060px) {
     margin-top: 20px;
     gap: 15px;
+    justify-content: center;
+  }
+
+  @include media-breakpoint-down('sm') {
+    justify-content: start;
   }
 
   .field-item {
@@ -39,7 +45,13 @@
 }
 
 .block-lb-node-share {
+  text-align: left;
+
   @include media-breakpoint-up(md) {
+    text-align: center;
+  }
+
+  @media (min-width: 1060px) {
     text-align: right;
   }
 

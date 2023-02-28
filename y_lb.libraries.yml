@@ -13,13 +13,13 @@ main:
       assets/css/page.css: { minified: false }
 
 breadcrumbs:
-  version: 1.2
+  version: 1.3
   css:
     component:
       assets/css/breadcrumbs.css: { preprocess: true }
 
 blocks:
-  version: 1.3
+  version: 1.4
   css:
     component:
       assets/css/blocks.css: { preprocess: true }
