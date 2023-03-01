@@ -18,6 +18,7 @@
   --ylb-color-white: #FFFFFF;
   --ylb-color-yellow: #FCAF17;
   --ylb-color-dark-grey: #2F2F2F;
+  --ylb-color-semi-light-grey: #636466;
   --ylb-color-light-grey: #D8D8D8;
   --ylb-color-y-grey: #3F4042;
 }
@@ -46,6 +47,9 @@
 }
 .ylb-bg-grey {
   background-color: var(--ylb-color-grey) !important;
+}
+.ylb-bg-semi-light-grey {
+  background-color: var(--ylb-color-semi-light-grey) !important;
 }
 .ylb-bg-light-blue {
   background-color: var(--ylb-color-light-blue) !important;

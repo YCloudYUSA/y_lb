@@ -1,5 +1,5 @@
 layout_builder_theme: dark
-background_colors: "ylb-bg-black|Black\r\nylb-bg-blue|Blue\r\nylb-bg-brown|Brown\r\nylb-bg-dark-blue|Dark blue\r\nylb-bg-dark-green|Dark green\r\nylb-bg-dark-magenta|Dark magenta\r\nylb-bg-green|Green\r\nylb-bg-grey|Grey\r\nylb-bg-light-blue|Light blue\r\nylb-bg-light-green|Light green\r\nylb-bg-orange|Orange\r\nylb-bg-pink|Pink\r\nylb-bg-purple|Purple\r\nylb-bg-red|Red\r\nylb-bg-sky-blue|Sky blue\r\nylb-bg-white|White\r\nylb-bg-yellow|Yellow"
+background_colors: "ylb-bg-black|Black\r\nylb-bg-blue|Blue\r\nylb-bg-brown|Brown\r\nylb-bg-dark-blue|Dark blue\r\nylb-bg-dark-green|Dark green\r\nylb-bg-dark-magenta|Dark magenta\r\nylb-bg-green|Green\r\nylb-bg-grey|Grey\r\nylb-bg-semi-light-grey|Semi light grey\r\nylb-bg-light-blue|Light blue\r\nylb-bg-light-green|Light green\r\nylb-bg-orange|Orange\r\nylb-bg-pink|Pink\r\nylb-bg-purple|Purple\r\nylb-bg-red|Red\r\nylb-bg-sky-blue|Sky blue\r\nylb-bg-white|White\r\nylb-bg-yellow|Yellow"
 background_image:
   bundle: image
   field: field_media_image
