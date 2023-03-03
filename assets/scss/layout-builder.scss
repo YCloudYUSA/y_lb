@@ -127,6 +127,7 @@
   .form-time {
     &:focus {
       background-color: #fff;
+      color: #222330;
     }
   }
 
@@ -183,5 +184,13 @@
 .field-media-image {
   img {
     width: 100%;
+  }
+}
+
+.layout-builder__section {
+  .container-wrapper[class|="ylb-bg" ] {
+    .layout-builder-block {
+      background-color: transparent;
+    }
   }
 }
