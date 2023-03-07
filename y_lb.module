@@ -139,3 +139,10 @@ function y_lb_theme_suggestions_layout_alter( array &$suggestions, array $variab
 function y_lb_ckeditor_css_alter(array &$css, Editor $editor) {
   $css[] = \Drupal::service('extension.list.module')->getPath('y_lb') . '/assets/css/typography.css';
 }
+
+/**
+ * Implements hook_preprocess_blb_container_wrapper().
+ */
+function y_lb_preprocess_blb_container_wrapper(&$variables) {
+  $variables['attributes']['class'][] = 'container-wrapper';
+}
