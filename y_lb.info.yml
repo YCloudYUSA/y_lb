@@ -5,6 +5,7 @@ core_version_requirement: ^8.7.7 || ^9 || ^10
 package: 'YMCA Website Services'
 dependencies:
   - drupal:layout_builder
+  - drupal:node_revision_delete
   - drupal:breakpoint
   - drupal:bootstrap_styles
   - drupal:bootstrap_layout_builder
