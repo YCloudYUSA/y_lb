@@ -133,6 +133,22 @@
 }
 
 /*Border colors*/
-ylb-border-y-grey {
-  color: var(--ylb-color-y-grey) !important;
+.ylb-border-y-grey {
+  border-color: var(--ylb-color-y-grey) !important;
+}
+
+.ylb-border-color-right-y-grey {
+  border-right-color: var(--ylb-color-y-grey) !important;
+}
+
+.ylb-border-color-left-y-grey {
+  border-left-color: var(--ylb-color-y-grey) !important;
+}
+
+.ylb-border-color-top-y-grey {
+  border-top-color: var(--ylb-color-y-grey) !important;
+}
+
+.ylb-border-color-bottom-y-grey {
+  border-bottom-color: var(--ylb-color-y-grey) !important;
 }
