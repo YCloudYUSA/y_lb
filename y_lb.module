@@ -127,9 +127,14 @@ function y_lb_preprocess_block(&$variables) {
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function y_lb_theme_suggestions_layout_alter( array &$suggestions, array $variables ) {
-  $entity = $variables['content']['#entity'] ?? NULL;
+  $original_hook = $variables['theme_hook_original'];
+  if ($original_hook !== 'blb_section' && !str_starts_with($original_hook, 'blb_section__')) {
+    return;
+  }
+  // Remove existing suggestions.
   $suggestions = [];
   $suggestions[] = 'blb_section__y_lb';
+  $entity = $variables['content']['#entity'] ?? NULL;
   if ($entity && $entity instanceof EntityInterface) {
     $suggestions[] = 'blb_section__' . $entity->bundle();
     $label = $variables['content']['#settings']['label'] ?? NULL;
