@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\block_content\BlockContentInterface;
 use Drupal\editor\Entity\Editor;
@@ -126,11 +127,16 @@ function y_lb_preprocess_block(&$variables) {
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function y_lb_theme_suggestions_layout_alter( array &$suggestions, array $variables ) {
-  $node = $variables['content']['#entity'];
+  $entity = $variables['content']['#entity'] ?? NULL;
   $suggestions = [];
   $suggestions[] = 'blb_section__y_lb';
-  $suggestions[] = 'blb_section__' . $node->bundle();
-  $suggestions[] = 'blb_section__' . $node->bundle() . '__' . strtolower($variables['content']['#settings']['label']);
+  if ($entity && $entity instanceof EntityInterface) {
+    $suggestions[] = 'blb_section__' . $entity->bundle();
+    $label = $variables['content']['#settings']['label'] ?? NULL;
+    if ($label) {
+      $suggestions[] = 'blb_section__' . $entity->bundle() . '__' . strtolower($label);
+    }
+  }
 }
 
 /**
