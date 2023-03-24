@@ -17,7 +17,8 @@
   // -----------------------------------------------------------------------------
   h1, h2, h3, h4, h5, h6 {
     margin: 40px 0 20px;
-    font-family: var(--ylb-font-family-medium);
+    font-family: var(--ylb-font-family-cachet);
+    font-weight: 500;
   }
 
   h2 {
@@ -74,7 +75,7 @@
   a {
     color: #0060AF;
     font-size: 18px;
-    font-family: Verdana, Arial, sans-serif;
+    font-family: var(--ylb-font-family-verdana);
 
     &:hover {
       text-decoration: underline;
@@ -132,7 +133,8 @@
     }
 
     p {
-      font-family: var(--ylb-font-family-book);
+      font-family: var(--ylb-font-family-cachet);
+      font-weight: 400;
       font-size: 24px;
       margin-bottom: 20px;
       letter-spacing: 0;
@@ -140,7 +142,7 @@
     }
 
     p:last-child {
-      font-family: Verdana, sans-serif;
+      font-family: var(--ylb-font-family-verdana);
       font-size: 16px;
       margin-bottom: 0;
       line-height: 26px;
@@ -165,7 +167,8 @@
         border-bottom: 5px solid #636466;
 
         th {
-          font-family: var(--ylb-font-family-medium);
+          font-family: var(--ylb-font-family-cachet);
+          font-weight: 500;
           border: none;
           font-size: 22px;
           line-height: 32px;
@@ -198,7 +201,8 @@
       background-color: #636466;
       font-size: 22px;
       line-height: 27px;
-      font-family: var(--ylb-font-family-medium);
+      font-family: var(--ylb-font-family-cachet);
+      font-weight: 500;
       padding: 15px 30px;
       border-radius: 10px;
     }

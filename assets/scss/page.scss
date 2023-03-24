@@ -4,6 +4,8 @@
 
 
 :root {
+  --ylb-font-family-cachet: Cachet, Verdana, Geneva, sans-serif;
+  --ylb-font-family-verdana: Verdana, Geneva, sans-serif;
   --ylb-font-family: "Cachet", Verdana, Geneva, sans-serif;
   --ylb-font-family-medium: "Cachet Medium", Cachet, Verdana, sans-serif;
   --ylb-font-family-book: "Cachet Book", "Cachet W01 Book", Cachet, Verdana, sans-serif;
@@ -31,7 +33,8 @@
       font-size: 65px;
       line-height: 75px;
       margin-bottom: 10px;
-      font-family: var(--ylb-font-family-medium);
+      font-family: var(--ylb-font-family-cachet);
+      font-weight: 500;
 
       @include media-breakpoint-down('md') {
         font-size: 45px;
@@ -42,7 +45,8 @@
     .subtitle {
       font-size: 24px;
       line-height: 36px;
-      font-family: var(--ylb-font-family-medium);
+      font-family: var(--ylb-font-family-cachet);
+      font-weight: 500;
 
       @include media-breakpoint-down('md') {
         font-size: 20px;
