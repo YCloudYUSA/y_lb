@@ -5,11 +5,11 @@ core_version_requirement: ^8.7.7 || ^9 || ^10
 package: 'YMCA Website Services'
 dependencies:
   - drupal:layout_builder
-  - drupal:node_revision_delete
+  - node_revision_delete:node_revision_delete
   - drupal:breakpoint
-  - drupal:bootstrap_styles
-  - drupal:bootstrap_layout_builder
-  - drupal:layout_builder_blocks
-  - drupal:layout_builder_restrictions
-  - drupal:lb_claro
-  - drupal:scheduler
+  - bootstrap_styles:bootstrap_styles
+  - bootstrap_layout_builder:bootstrap_layout_builder
+  - layout_builder_blocks:layout_builder_blocks
+  - layout_builder_restrictions:layout_builder_restrictions
+  - lb_claro:lb_claro
+  - scheduler:scheduler
