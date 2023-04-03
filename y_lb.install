@@ -42,6 +42,7 @@ function y_lb_update_9002(&$sandbox) {
  * Add node_revision_delete configuration.
  */
 function y_lb_update_9003(&$sandbox) {
+  \Drupal::service('module_installer')->install(['node_revision_delete']);
   $path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/install';
   /** @var \Drupal\config_import\ConfigImporterService $config_importer */
   $config_importer = \Drupal::service('config_import.importer');
