@@ -14,7 +14,7 @@ class RouteSubscriber extends RouteSubscriberBase {
   /**
    * {@inheritdoc}
    */
-  public function alterRoutes(RouteCollection $collection) {
+  protected function alterRoutes(RouteCollection $collection) {
     if ($route = $collection->get('layout_builder.choose_block')) {
       $defaults = $route->getDefaults();
       $defaults['_controller'] = '\Drupal\y_lb\Controller\ChooseBlockController::build';
@@ -25,7 +25,7 @@ class RouteSubscriber extends RouteSubscriberBase {
   /**
    * {@inheritdoc}
    */
-  public static function getSubscribedEvents() {
+  public static function getSubscribedEvents(): array {
     $events[RoutingEvents::ALTER] = ['onAlterRoutes', -1025];
     return $events;
   }
