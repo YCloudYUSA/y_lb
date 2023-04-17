@@ -1,0 +1,5 @@
+global:
+  name: Global Color scheme
+  machine_name: global
+  applies_to: *
+  group_library: y_lb/base
