@@ -1,0 +1,12 @@
+colorway:
+  label: Color scheme
+  name: colorway
+  global: true
+  applies_to: []
+  library: null
+border_radius:
+  label: Border radius
+  name: border_radius
+  global: true
+  applies_to: []
+  library: null

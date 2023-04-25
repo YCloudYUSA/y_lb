@@ -1,0 +1,7 @@
+// Border variable.
+$wsBorderRadius20: 20px;
+
+// Set global variable.
+:root {
+  --wsBorderRadius: $wsBorderRadius20;
+}

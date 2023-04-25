@@ -1,0 +1,8 @@
+ws_style:
+  label: WS Style (Style Groups)
+  plugin_manager_service_id: plugin.manager.ws_style
+  plugin_definition_decorator_class: \Drupal\plugin\PluginDefinition\ArrayPluginDefinitionDecorator
+ws_style_option:
+  label: WS Style Option
+  plugin_manager_service_id: plugin.manager.ws_style_option
+  plugin_definition_decorator_class: \Drupal\plugin\PluginDefinition\ArrayPluginDefinitionDecorator
