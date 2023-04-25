@@ -1,8 +1,8 @@
-ws_global_style:
-  label: WS Global Style
-  plugin_manager_service_id: plugin.manager.ws_global_style
+ws_style:
+  label: WS Style (Style Groups)
+  plugin_manager_service_id: plugin.manager.ws_style
   plugin_definition_decorator_class: \Drupal\plugin\PluginDefinition\ArrayPluginDefinitionDecorator
-ws_global_style_group:
-  label: WS Global Style Group
-  plugin_manager_service_id: plugin.manager.ws_global_style_group
+ws_style_option:
+  label: WS Style Option
+  plugin_manager_service_id: plugin.manager.ws_style_option
   plugin_definition_decorator_class: \Drupal\plugin\PluginDefinition\ArrayPluginDefinitionDecorator

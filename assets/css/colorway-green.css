@@ -1,0 +1,7 @@
+:root {
+  --wsPrimaryColor: var(--wsGreenPrimaryColor);
+  --wsSecondaryColor: var(--wsGreenSecondaryColor);
+  --wsTertiaryColor: var(--wsGreenTertiaryColor);
+  --wsPartnerColor: var(--wsGreenPartnerColor); }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbG9yd2F5LWdyZWVuLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLDRDQUE0QztFQUM1QyxnREFBZ0Q7RUFDaEQsOENBQThDO0VBQzlDLDRDQUE0QyxFQUFFIiwiZmlsZSI6ImNvbG9yd2F5LWdyZWVuLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIjpyb290IHtcbiAgLS13c1ByaW1hcnlDb2xvcjogdmFyKC0td3NHcmVlblByaW1hcnlDb2xvcik7XG4gIC0td3NTZWNvbmRhcnlDb2xvcjogdmFyKC0td3NHcmVlblNlY29uZGFyeUNvbG9yKTtcbiAgLS13c1RlcnRpYXJ5Q29sb3I6IHZhcigtLXdzR3JlZW5UZXJ0aWFyeUNvbG9yKTtcbiAgLS13c1BhcnRuZXJDb2xvcjogdmFyKC0td3NHcmVlblBhcnRuZXJDb2xvcik7IH1cbiJdfQ== */

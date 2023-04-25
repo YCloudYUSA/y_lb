@@ -1,0 +1,7 @@
+:root {
+  --wsPrimaryColor: var(--wsBluePrimaryColor);
+  --wsSecondaryColor: var(--wsBlueSecondaryColor);
+  --wsTertiaryColor: var(--wsBlueTertiaryColor);
+  --wsPartnerColor: var(--wsBluePartnerColor); }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbG9yd2F5LWJsdWUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMkNBQTJDO0VBQzNDLCtDQUErQztFQUMvQyw2Q0FBNkM7RUFDN0MsMkNBQTJDLEVBQUUiLCJmaWxlIjoiY29sb3J3YXktYmx1ZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6cm9vdCB7XG4gIC0td3NQcmltYXJ5Q29sb3I6IHZhcigtLXdzQmx1ZVByaW1hcnlDb2xvcik7XG4gIC0td3NTZWNvbmRhcnlDb2xvcjogdmFyKC0td3NCbHVlU2Vjb25kYXJ5Q29sb3IpO1xuICAtLXdzVGVydGlhcnlDb2xvcjogdmFyKC0td3NCbHVlVGVydGlhcnlDb2xvcik7XG4gIC0td3NQYXJ0bmVyQ29sb3I6IHZhcigtLXdzQmx1ZVBhcnRuZXJDb2xvcik7IH1cbiJdfQ== */

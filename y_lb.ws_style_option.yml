@@ -1,0 +1,43 @@
+y_lb.ws_style_option:
+  - label: Blue Scheme
+    name: ws_colorway_blue
+    group: colorway
+    image: null
+    library: y_lb/colorway.blue
+    template: null
+  - label: Green Scheme
+    name: ws_colorway_green
+    group: colorway
+    image: null
+    library: y_lb/colorway.green
+    template: null
+  - label: Purple Scheme
+    name: ws_colorway_purple
+    group: colorway
+    image: null
+    library: y_lb/colorway.purple
+    template: null
+  - label: Red Scheme
+    name: ws_colorway_red
+    group: colorway
+    image: null
+    library: y_lb/colorway.red
+    template: null
+  - label: Border radius - None
+    name: ws_border_radius_none
+    group: border_radius
+    image: null
+    library: y_lb/border_radius.0
+    template: null
+  - label: Border radius - 10px
+    name: ws_border_radius_10
+    group: border_radius
+    image: null
+    library: y_lb/border_radius.10
+    template: null
+  - label: Border radius - 20px
+    name: ws_border_radius_20
+    group: border_radius
+    image: null
+    library: y_lb/border_radius.20
+    template: null

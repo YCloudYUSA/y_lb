@@ -3,10 +3,9 @@ services:
     class: Drupal\y_lb\Routing\RouteSubscriber
     tags:
       - { name: event_subscriber }
-  plugin.manager.ws_global_style:
-    class: Drupal\y_lb\WSGlobalStyleManager
-    arguments: [ '@module_handler', '@cache.discovery', '@theme.manager' ]
-
-  plugin.manager.ws_global_style_group:
-    class: Drupal\y_lb\WSGlobalStyleGroupManager
+  plugin.manager.ws_style:
+    class: Drupal\y_lb\WSStyleManager
+    arguments: [ '@module_handler', '@cache.discovery']
+  plugin.manager.ws_style_option:
+    class: Drupal\y_lb\WSStyleOptionManager
     arguments: [ '@module_handler', '@cache.discovery' ]

@@ -1,0 +1,17 @@
+:root {
+  --wsBorderRedius0: 0;
+  --wsBorderRedius10: 10px;
+  --wsBorderRedius20: 20px;
+}
+
+.ws-border-radius-0 {
+  border-radius: var(--wsBorderRedius0) !important;
+}
+
+.ws-border-radius-10 {
+  border-radius: var(--wsBorderRedius10) !important;
+}
+
+.ws-border-radius-20 {
+  border-radius: var(--wsBorderRedius20) !important;
+}

@@ -1,15 +1,35 @@
 <?php
 
+use Drupal\Core\Field\BaseFieldDefinition;
+
 /**
  * Implements hook_install().
  */
-function y_lb_install($is_syncing) {
+function y_lb_install() {
+  // Import generic bootstrap styles configuration.
   $path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/optional';
   $config_importer = \Drupal::service('config_import.importer');
   $config_importer->setDirectory($path);
   $config_importer->importConfigs([
     'bootstrap_styles.settings'
   ]);
+  // Install Node fields.
+  _y_lb_install_node_additional_fields();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function y_lb_uninstall() {
+  $fields = [
+    'override_styles',
+    'styles',
+  ];
+  $update_manager = \Drupal::entityDefinitionUpdateManager();
+  foreach ($fields as $field) {
+    $definition = $update_manager->getFieldStorageDefinition($field, 'node');
+    $update_manager->uninstallFieldStorageDefinition($definition);
+  }
 }
 
 /**
@@ -50,4 +70,39 @@ function y_lb_update_9003(&$sandbox) {
   $config_importer->importConfigs([
     'node.type.landing_page_lb',
   ]);
+}
+
+/**
+ * Helper function to update Node base field definition with new fields.
+ */
+function _y_lb_install_node_additional_fields() {
+  $update_manager = \Drupal::entityDefinitionUpdateManager();
+
+  $override_styles_storage = BaseFieldDefinition::create('boolean')
+    ->setLabel(t('Override default WS Styles'))
+    ->setDescription(t('Whether or not the node has overridden default WS styles (e.g. Color scheme, etc.).'))
+    ->setRevisionable(TRUE)
+    ->setDefaultValue(FALSE)
+    ->setInitialValue(FALSE)
+    ->setDisplayConfigurable('form', FALSE)
+    ->setDisplayConfigurable('view', FALSE);
+
+  $styles_storage = BaseFieldDefinition::create('string_long')
+    ->setLabel(t('WS Styles'))
+    ->setDescription(t('Node specific WS Styles to be applied.'))
+    ->setRevisionable(TRUE)
+    ->setInitialValue(serialize([]))
+    ->setSetting('case_sensitive', TRUE)
+    ->setDisplayConfigurable('form', FALSE)
+    ->setDisplayConfigurable('view', FALSE);
+
+  $update_manager->installFieldStorageDefinition('override_styles', 'node', 'node', $override_styles_storage);
+  $update_manager->installFieldStorageDefinition('styles', 'node', 'node', $styles_storage);
+}
+
+/**
+ * Install Node additional fields - override_styles and styles.
+ */
+function y_lb_update_9004(&$sandbox) {
+  _y_lb_install_node_additional_fields();
 }
