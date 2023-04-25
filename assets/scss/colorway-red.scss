@@ -1,6 +1,13 @@
+// Color's variables.
+$wsRedPrimaryColor: #A92B31;
+$wsRedSecondaryColor: #ED1C24;
+$wsRedTertiaryColor: #FCAF17;
+$wsRedPartnerColor: #A92B31;
+
+// Set variables globally.
 :root {
-  --wsPrimaryColor: var(--wsRedPrimaryColor);
-  --wsSecondaryColor: var(--wsRedSecondaryColor);
-  --wsTertiaryColor: var(--wsRedTertiaryColor);
-  --wsPartnerColor: var(--wsRedPartnerColor);
+  --wsPrimaryColor: $wsRedPrimaryColor;
+  --wsSecondaryColor: $wsRedSecondaryColor;
+  --wsTertiaryColor: $wsRedTertiaryColor;
+  --wsPartnerColor: $wsRedPartnerColor;
 }

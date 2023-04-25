@@ -60,12 +60,6 @@ colorway.red:
       assets/css/colorway-red.css: { minified: false }
 
 #Border radius styles.
-border_radius:
-  version: 1.0
-  css:
-    theme:
-      assets/css/border-radius.css: { minified: false }
-
 border_radius.none:
   version: 1.0
   css:

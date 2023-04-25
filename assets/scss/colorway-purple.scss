@@ -1,6 +1,13 @@
+// Color's variables.
+$wsPurplePrimaryColor: #5C2E91;
+$wsPurpleSecondaryColor: #92278F;
+$wsPurpleTertiaryColor: #C6168D;
+$wsPurplePartnerColor: #A92B31;
+
+// Set variables globally.
 :root {
-  --wsPrimaryColor: var(--wsPurplePrimaryColor);
-  --wsSecondaryColor: var(--wsPurpleSecondaryColor);
-  --wsTertiaryColor: var(--wsPurpleTertiaryColor);
-  --wsPartnerColor: var(--wsPurplePartnerColor);
+  --wsPrimaryColor: $wsPurplePrimaryColor;
+  --wsSecondaryColor: $wsPurpleSecondaryColor;
+  --wsTertiaryColor: $wsPurpleTertiaryColor;
+  --wsPartnerColor: $wsPurplePartnerColor;
 }

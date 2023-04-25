@@ -1,4 +1,4 @@
 :root {
-  --wsBorderRadius: var(--wsBorderRedius0); }
+  --wsBorderRadius: $wsBorderRadius0; }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJvcmRlci1yYWRpdXMtMC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx3Q0FBd0MsRUFBRSIsImZpbGUiOiJib3JkZXItcmFkaXVzLTAuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOnJvb3Qge1xuICAtLXdzQm9yZGVyUmFkaXVzOiB2YXIoLS13c0JvcmRlclJlZGl1czApOyB9XG4iXX0= */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJvcmRlci1yYWRpdXMtMC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQ0FBa0MsRUFBRSIsImZpbGUiOiJib3JkZXItcmFkaXVzLTAuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOnJvb3Qge1xuICAtLXdzQm9yZGVyUmFkaXVzOiAkd3NCb3JkZXJSYWRpdXMwOyB9XG4iXX0= */

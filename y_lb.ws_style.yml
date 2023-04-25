@@ -3,10 +3,10 @@ colorway:
   name: colorway
   global: true
   applies_to: []
-  library: y_lb/colors
+  library: null
 border_radius:
   label: Border radius
   name: border_radius
   global: true
-  applies_to: [ ]
-  library: y_lb/border_radius
+  applies_to: []
+  library: null
