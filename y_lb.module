@@ -6,6 +6,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\block_content\BlockContentInterface;
+use Drupal\Core\Url;
 use Drupal\editor\Entity\Editor;
 use Drupal\layout_builder\Form\DefaultsEntityForm;
 use Drupal\layout_builder\Form\OverridesEntityForm;
@@ -24,12 +25,43 @@ function y_lb_theme( $existing, $type, $theme, $path ) {
     'block__lb_node_locations' => [
       'base hook' => 'block'
     ],
+    'block__ws_site_logo' => [
+      'base hook' => 'block'
+    ],
     'blb_section__y_lb' => [
       'template' => 'blb-section--y-lb',
       'render element' => 'content',
       'base hook' => 'layout',
     ],
+    'page__node__landing_page_lb' => [
+      'base hook' => 'page',
+    ],
   ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for page templates.
+ */
+function y_lb_theme_suggestions_page_alter(array &$suggestions) {
+  // Add content type suggestions for node types.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  // Skip page without node.
+  if (!$node instanceof NodeInterface) {
+    return;
+  }
+
+  // Skip nodes without LB usage.
+  if (!$node->hasField('layout_builder__layout')) {
+    return;
+  }
+  // Add custom template for the :Landing page with LB.
+  $node_type = $node->getType();
+  if ($node_type !== 'landing_page_lb') {
+    return;
+  }
+  $page__node_pos = array_search('page__node', $suggestions);
+  $page__node__type = 'page__node__' . $node_type;
+  array_splice($suggestions, $page__node_pos + 1, 0, $page__node__type);
 }
 
 /**
