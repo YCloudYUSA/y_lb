@@ -1,7 +1,7 @@
 :root {
-  --wsPrimaryColor: $wsBluePrimaryColor;
-  --wsSecondaryColor: $wsBlueSecondaryColor;
-  --wsTertiaryColor: $wsBlueTertiaryColor;
-  --wsPartnerColor: $wsBluePartnerColor; }
+  --wsPrimaryColor: #0060AF;
+  --wsSecondaryColor: #0089D0;
+  --wsTertiaryColor: #00AEEF;
+  --wsPartnerColor: #5C2E91; }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbG9yd2F5LWJsdWUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UscUNBQXFDO0VBQ3JDLHlDQUF5QztFQUN6Qyx1Q0FBdUM7RUFDdkMscUNBQXFDLEVBQUUiLCJmaWxlIjoiY29sb3J3YXktYmx1ZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6cm9vdCB7XG4gIC0td3NQcmltYXJ5Q29sb3I6ICR3c0JsdWVQcmltYXJ5Q29sb3I7XG4gIC0td3NTZWNvbmRhcnlDb2xvcjogJHdzQmx1ZVNlY29uZGFyeUNvbG9yO1xuICAtLXdzVGVydGlhcnlDb2xvcjogJHdzQmx1ZVRlcnRpYXJ5Q29sb3I7XG4gIC0td3NQYXJ0bmVyQ29sb3I6ICR3c0JsdWVQYXJ0bmVyQ29sb3I7IH1cbiJdfQ== */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbG9yd2F5LWJsdWUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UseUJBQXlCO0VBQ3pCLDJCQUEyQjtFQUMzQiwwQkFBMEI7RUFDMUIseUJBQXlCLEVBQUUiLCJmaWxlIjoiY29sb3J3YXktYmx1ZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6cm9vdCB7XG4gIC0td3NQcmltYXJ5Q29sb3I6ICMwMDYwQUY7XG4gIC0td3NTZWNvbmRhcnlDb2xvcjogIzAwODlEMDtcbiAgLS13c1RlcnRpYXJ5Q29sb3I6ICMwMEFFRUY7XG4gIC0td3NQYXJ0bmVyQ29sb3I6ICM1QzJFOTE7IH1cbiJdfQ== */

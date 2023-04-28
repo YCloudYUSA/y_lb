@@ -50,9 +50,27 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
   /**
    * {@inheritdoc}
    */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    parent::validateForm($form, $form_state);
+
+    if ($form_state->getValue('override_styles')) {
+      $settings = $form_state->getValue('ws_design_settings');
+      foreach ($settings as $group => $option) {
+        if (empty($option)) {
+          $element = $form['ws_design_settings'][$group];
+          $form_state->setError($form['ws_design_settings'][$group], $this->t('Please choose value for %setting style', ['%setting' => $element['#title']]));
+        }
+      }
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function save(array $form, FormStateInterface $form_state) {
+    $styles = $form_state->getValue('override_styles') ? $form_state->getValue('ws_design_settings') : [];
     $this->entity->set('override_styles', $form_state->getValue('override_styles'));
-    $this->entity->set('styles', serialize($form_state->getValue('ws_design_settings')));
+    $this->entity->set('styles', serialize($styles));
 
     return parent::save($form, $form_state);
   }

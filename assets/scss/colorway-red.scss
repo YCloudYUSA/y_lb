@@ -6,8 +6,8 @@ $wsRedPartnerColor: #A92B31;
 
 // Set variables globally.
 :root {
-  --wsPrimaryColor: $wsRedPrimaryColor;
-  --wsSecondaryColor: $wsRedSecondaryColor;
-  --wsTertiaryColor: $wsRedTertiaryColor;
-  --wsPartnerColor: $wsRedPartnerColor;
+  --wsPrimaryColor: #{$wsRedPrimaryColor};
+  --wsSecondaryColor: #{$wsRedSecondaryColor};
+  --wsTertiaryColor: #{$wsRedTertiaryColor};
+  --wsPartnerColor: #{$wsRedPartnerColor};
 }

@@ -18,7 +18,7 @@ class YLBEntityViewDisplay extends DefaultsEntityForm {
     $settings = $this->entity->getThirdPartySettings('y_lb');
     $form['ws_design_settings'] = [
       '#type' => 'ws_style_select',
-      '#default_value' => $settings['styles']
+      '#default_value' => $settings['styles'],
     ];
 
     return parent::buildForm($form, $form_state, $section_storage);

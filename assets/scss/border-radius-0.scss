@@ -3,5 +3,5 @@ $wsBorderRadius0: 0;
 
 // Set global variable.
 :root {
-  --wsBorderRadius: $wsBorderRadius0;
+  --wsBorderRadius: #{$wsBorderRadius0};
 }
