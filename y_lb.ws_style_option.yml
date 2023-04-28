@@ -2,25 +2,25 @@ y_lb.ws_style_option:
   - label: Blue Scheme
     name: ws_colorway_blue
     group: colorway
-    image: null
+    image: /assets/images/colorway_blue.png
     library: y_lb/colorway.blue
     template: null
   - label: Green Scheme
     name: ws_colorway_green
     group: colorway
-    image: null
+    image: /assets/images/colorway_green.png
     library: y_lb/colorway.green
     template: null
   - label: Purple Scheme
     name: ws_colorway_purple
     group: colorway
-    image: null
+    image: /assets/images/colorway_purple.png
     library: y_lb/colorway.purple
     template: null
   - label: Red Scheme
     name: ws_colorway_red
     group: colorway
-    image: null
+    image: /assets/images/colorway_red.png
     library: y_lb/colorway.red
     template: null
   - label: Border radius - None

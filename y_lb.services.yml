@@ -8,4 +8,4 @@ services:
     arguments: [ '@module_handler', '@cache.discovery']
   plugin.manager.ws_style_option:
     class: Drupal\y_lb\WSStyleOptionManager
-    arguments: [ '@module_handler', '@cache.discovery' ]
+    arguments: [ '@module_handler', '@cache.discovery', '@extension.path.resolver', '@file_url_generator' ]

@@ -5,6 +5,7 @@ namespace Drupal\y_lb\Element;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element\FormElement;
 use Drupal\Core\Render\Element\FormElementInterface;
+use Drupal\Core\Render\Markup;
 
 /**
  * Provides a form element for Website Services global style setup.
@@ -53,18 +54,42 @@ class WSThemeSettings extends FormElement implements FormElementInterface {
     // Build controls for styles.
     foreach ($ws_style->getGlobalStyles() as $name => $label) {
       $options = $ws_style_options->getStylesByGroup($name);
-
-      if ($options) {
-        $element[$name] = [
-          '#type' => 'radios',
-          '#title' => $label,
-          '#default_value' => $element['#default_value'][$name],
-          '#options' => $options,
-        ];
+      // Skip if no options are available for the global styles group.
+      if (!$options) {
+        continue;
       }
+      // Get options markup.
+      foreach ($options as $option_key => $option) {
+        $options[$option_key] = static::getOptionLabelMarkup($option);
+      }
+      // Build main radio element.
+      $element[$name] = [
+        '#type' => 'radios',
+        '#title' => $label,
+        '#default_value' => $element['#default_value'][$name],
+        '#options' => $options,
+      ];
     }
 
     return $element;
+  }
+
+  /**
+   * Get Style Option markup for label.
+   *
+   * @param array $option
+   *   Option data
+   *
+   * @return string
+   *   Markup value.
+   */
+  public static function getOptionLabelMarkup(array $option): string {
+    $markup = '';
+    if (!empty($option['image'])) {
+      $markup = Markup::create('<img src="' . $option['image'] . '" alt="' . $option['label'] . '">');
+    }
+
+    return $markup ?: $option['label'];
   }
 
   /**
