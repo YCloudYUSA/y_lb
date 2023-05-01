@@ -1,0 +1,69 @@
+{#
+/**
+ * @file
+ * Template for a WS Footer layout.
+ *
+ * This template provides a five columns display layout.
+ *
+ * Variables:
+ * - $content: An array of content, each item in the array is keyed to one
+ *   content for the layout. This layout supports the following sections:
+ *   - $content['footer_top_left']: Content in first footer's row first column.
+ *   - $content['footer_top_middle']: Content in first footer's row second column.
+ *   - $content['footer_top_right']: Content in first footer's row third column.
+ *   - $content['footer_bottom_left']: Content in second footer's row first column.
+ *   - $content['footer_bottom_right']: Content in second footer's row second column.
+ */
+#}
+
+{%
+  set classes = [
+    'footer',
+    'ws-footer',
+  ]
+%}
+
+{% if content %}
+  <footer{{ attributes.addClass(classes) }}>
+      <div class="footer--top">
+        <div class="container">
+          <div class="row">
+            {% if content.footer_top_left %}
+              <section class="col-12 col-lg-3 footer--top-left-column">
+                {{ content.footer_top_left }}
+              </section>
+            {% endif %}
+
+            {% if content.footer_top_middle %}
+              <section class="col-12 col-lg-6 footer--top-middle-column">
+                {{ content.footer_top_middle }}
+              </section>
+            {% endif %}
+
+            {% if content.footer_top_right %}
+              <section class="col-lg-3 col-12 footer--top-right-column">
+                {{ content.footer_top_right }}
+              </section>
+            {% endif %}
+          </div>
+         </div>
+      </div>
+      <div class="footer--bottom">
+        <div class="container">
+          <div class="row">
+            {% if content.footer_bottom_left %}
+              <section class="col-12 col-lg-9 footer--bottom-left-column">
+                {{ content.footer_bottom_left }}
+              </section>
+            {% endif %}
+
+            {% if content.footer_bottom_right %}
+              <section class="col-12 col-lg-3 footer--bottom-right-column">
+                {{ content.footer_bottom_right }}
+              </section>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+  </footer>
+{% endif %}

@@ -1,0 +1,20 @@
+ws_footer:
+  label: 'WS Footer'
+  category: 'WS Layouts'
+  class: '\Drupal\y_lb\Plugin\Layout\WsFooterLayout'
+  library: y_lb/footer
+  template: templates/ws-footer
+  default_region: footer_first_column
+  regions:
+    footer_top_left:
+      label: Left Column
+    footer_top_middle:
+      label: Middle Column
+    footer_top_right:
+      label: Right Column
+    footer_bottom_left:
+      label: Left Column
+    footer_bottom_right:
+      label: Right Column
+  icon_map:
+    - [ footer_top_left, footer_top_middle, footer_top_right, footer_bottom_left, footer_bottom_right]

@@ -106,3 +106,17 @@ function _y_lb_install_node_additional_fields() {
 function y_lb_update_9004(&$sandbox) {
   _y_lb_install_node_additional_fields();
 }
+
+/**
+ * Add the footer section to the Landing page Layout.
+ */
+function y_lb_update_9005(&$sandbox) {
+  \Drupal::service('module_installer')->install(['node_revision_delete']);
+  $path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/install';
+  /** @var \Drupal\config_import\ConfigImporterService $config_importer */
+  $config_importer = \Drupal::service('config_import.importer');
+  $config_importer->setDirectory($path);
+  $config_importer->importConfigs([
+    'core.entity_view_display.node.landing_page_lb.default',
+  ]);
+}
