@@ -30,6 +30,7 @@ class WSThemeSettings extends FormElement implements FormElementInterface {
       '#value_callback' => [
         [$class, 'valueCallback'],
       ],
+      '#component' => NULL,
     ];
   }
 
@@ -52,7 +53,8 @@ class WSThemeSettings extends FormElement implements FormElementInterface {
     $ws_style_options = \Drupal::service('plugin.manager.ws_style_option');
 
     // Build controls for styles.
-    foreach ($ws_style->getGlobalStyles() as $name => $label) {
+    $ws_styles = !empty($element['#component']) ? $ws_style->getStyleForComponent($element['#component']) : $ws_style->getGlobalStyles();
+    foreach ($ws_styles as $name => $label) {
       $options = $ws_style_options->getStylesByGroup($name);
       // Skip if no options are available for the global styles group.
       if (!$options) {

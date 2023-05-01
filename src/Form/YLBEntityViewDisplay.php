@@ -16,7 +16,15 @@ class YLBEntityViewDisplay extends DefaultsEntityForm {
    */
   public function buildForm(array $form, FormStateInterface $form_state, SectionStorageInterface $section_storage = NULL) {
     $settings = $this->entity->getThirdPartySettings('y_lb');
-    $form['ws_design_settings'] = [
+    $form['ws_settings_container'] = [
+      '#type' => 'details',
+      '#title' => $this->t('WS Styles'),
+      '#open' => FALSE,
+      '#attributes' => [
+        'class' => ['form-actions'],
+      ],
+    ];
+    $form['ws_settings_container']['ws_design_settings'] = [
       '#type' => 'ws_style_select',
       '#default_value' => $settings['styles'],
     ];

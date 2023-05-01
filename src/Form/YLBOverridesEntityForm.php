@@ -24,15 +24,23 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
     $global_settings = $view_display->getThirdPartySettings('y_lb');
     $default_settings = $global_settings['styles'] ?: [];
 
+    $form['ws_settings_container'] = [
+      '#type' => 'details',
+      '#title' => $this->t('WS Styles'),
+      '#open' => TRUE,
+      '#attributes' => [
+        'class' => ['form-actions'],
+      ],
+    ];
 
-    $form['override_styles'] = [
+    $form['ws_settings_container']['override_styles'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Override default WS Styles'),
       '#description' => $this->t('Whether or not the node has overridden default WS styles (e.g. Color scheme, etc.).'),
       '#default_value' => $node->override_styles->value,
     ];
 
-    $form['ws_design_settings'] = [
+    $form['ws_settings_container']['ws_design_settings'] = [
       '#type' => 'ws_style_select',
       '#default_value' => array_merge($default_settings, $settings),
       '#states' => [

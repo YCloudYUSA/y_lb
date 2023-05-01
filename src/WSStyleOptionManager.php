@@ -132,4 +132,21 @@ class WSStyleOptionManager extends DefaultPluginManager implements WSStyleOption
     return $libraries;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getStyleOption(string $group, string $style): array|NULL {
+    foreach ($this->getDefinitions() as $module_options) {
+      $module_options = array_filter($module_options, 'is_int', ARRAY_FILTER_USE_KEY);
+      foreach ($module_options as $style_option) {
+        if ($style_option['group'] == $group
+          && $style_option['name'] == $style) {
+          return $style_option;
+        }
+      }
+    }
+
+    return NULL;
+  }
+
 }
