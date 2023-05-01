@@ -24,15 +24,23 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
     $global_settings = $view_display->getThirdPartySettings('y_lb');
     $default_settings = $global_settings['styles'] ?: [];
 
+    $form['ws_settings_container'] = [
+      '#type' => 'details',
+      '#title' => $this->t('WS Styles'),
+      '#open' => TRUE,
+      '#attributes' => [
+        'class' => ['form-actions'],
+      ],
+    ];
 
-    $form['override_styles'] = [
+    $form['ws_settings_container']['override_styles'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Override default WS Styles'),
       '#description' => $this->t('Whether or not the node has overridden default WS styles (e.g. Color scheme, etc.).'),
       '#default_value' => $node->override_styles->value,
     ];
 
-    $form['ws_design_settings'] = [
+    $form['ws_settings_container']['ws_design_settings'] = [
       '#type' => 'ws_style_select',
       '#default_value' => array_merge($default_settings, $settings),
       '#states' => [
@@ -50,9 +58,27 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
   /**
    * {@inheritdoc}
    */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    parent::validateForm($form, $form_state);
+
+    if ($form_state->getValue('override_styles')) {
+      $settings = $form_state->getValue('ws_design_settings');
+      foreach ($settings as $group => $option) {
+        if (empty($option)) {
+          $element = $form['ws_design_settings'][$group];
+          $form_state->setError($form['ws_design_settings'][$group], $this->t('Please choose value for %setting style', ['%setting' => $element['#title']]));
+        }
+      }
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function save(array $form, FormStateInterface $form_state) {
+    $styles = $form_state->getValue('override_styles') ? $form_state->getValue('ws_design_settings') : [];
     $this->entity->set('override_styles', $form_state->getValue('override_styles'));
-    $this->entity->set('styles', serialize($form_state->getValue('ws_design_settings')));
+    $this->entity->set('styles', serialize($styles));
 
     return parent::save($form, $form_state);
   }

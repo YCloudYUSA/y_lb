@@ -274,7 +274,9 @@ function y_lb_preprocess_page(&$variables) {
 
   // Get libraries from the style's options.
   foreach ($styles as $group => $style) {
-    $libraries = array_merge($libraries, $ws_style_option->getLibraries($group, $style));
+    if (is_string($style)) {
+      $libraries = array_merge($libraries, $ws_style_option->getLibraries($group, $style));
+    }
   }
 
   // Attach WS libraries to the node.

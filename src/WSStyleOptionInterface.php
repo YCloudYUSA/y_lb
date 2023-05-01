@@ -33,4 +33,17 @@ interface WSStyleOptionInterface extends PluginManagerInterface {
    */
   public function getLibraries(string $group, string $style): array;
 
+  /**
+   * Get Style Option settings.
+   *
+   * @param string $group
+   *   Group name.
+   * @param string $style
+   *   Style name.
+   *
+   * @return array|null
+   *   Style option settings or NULL if style hasn't been found.
+   */
+  public function getStyleOption(string $group, string $style): array|NULL;
+
 }
