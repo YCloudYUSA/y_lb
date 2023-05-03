@@ -153,7 +153,7 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
     }
     else {
       $path = $this->moduleList
-          ->getPath('y_lb') . '/assets/svg/logo_' . $type_of_logo . '.svg';
+        ->getPath('y_lb') . '/assets/svg/logo_' . $type_of_logo . '.svg';
       $logo_url = $this->fileUrlGenerator
         ->generateAbsoluteString($path);
       $build['site_logo_is_svg'] = TRUE;

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @file
+ */
+
 use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
@@ -11,7 +15,7 @@ function y_lb_install() {
   $config_importer = \Drupal::service('config_import.importer');
   $config_importer->setDirectory($path);
   $config_importer->importConfigs([
-    'bootstrap_styles.settings'
+    'bootstrap_styles.settings',
   ]);
   // Install Node fields.
   _y_lb_install_node_additional_fields();

@@ -29,6 +29,7 @@ class WSComponentStyleOption extends StylePluginBase {
    * @var \Drupal\y_lb\WSStyleOptionInterface
    */
   protected $wsStyleOptionManager;
+
   /**
    * Constructs a StylePluginBase object.
    *

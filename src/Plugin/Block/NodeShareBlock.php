@@ -85,7 +85,7 @@ class NodeShareBlock extends BlockBase implements ContainerFactoryPluginInterfac
 
     $url = urlencode($this->node->toUrl('canonical', ['absolute' => TRUE])->toString());
     $links = [
-      'facebook' => 'https://www.facebook.com/sharer.php?u='. $url,
+      'facebook' => 'https://www.facebook.com/sharer.php?u=' . $url,
       'twitter'  => 'https://www.linkedin.com/shareArticle?mini=true&url=' . $url,
       'linkedin' => 'https://twitter.com/intent/tweet?url=' . $url,
     ];
@@ -93,7 +93,7 @@ class NodeShareBlock extends BlockBase implements ContainerFactoryPluginInterfac
     $this->moduleHandler->alter('lb_node_share_block_links', $links);
 
     $build = [
-      '#links' => $links
+      '#links' => $links,
     ];
     return $build;
   }

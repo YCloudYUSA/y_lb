@@ -63,6 +63,7 @@ class NodeTagsBlock extends BlockBase implements ContainerFactoryPluginInterface
       $container->get('current_route_match')
     );
   }
+
   /**
    * {@inheritdoc}
    */
@@ -75,7 +76,7 @@ class NodeTagsBlock extends BlockBase implements ContainerFactoryPluginInterface
       'label' => 'hidden',
       'settings' => [
         'link' => FALSE,
-      ]
+      ],
     ]);
     return $build;
   }

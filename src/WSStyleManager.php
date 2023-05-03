@@ -8,7 +8,6 @@ use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Plugin\Discovery\ContainerDerivativeDiscoveryDecorator;
 use Drupal\Core\Plugin\Discovery\YamlDiscovery;
 
-
 /**
  * Manages discovery and instantiation of style plugins (style groups).
  *
@@ -66,7 +65,7 @@ class WSStyleManager extends DefaultPluginManager implements WSStyleInterface {
   /**
    * {@inheritdoc}
    */
-  public function getStyleForComponent(string $component = '' ): array {
+  public function getStyleForComponent(string $component = ''): array {
     $groups = [];
     foreach ($this->getDefinitions() as $group) {
       $applies_to = $group['applies_to'];

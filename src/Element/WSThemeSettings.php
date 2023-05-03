@@ -80,7 +80,7 @@ class WSThemeSettings extends FormElement implements FormElementInterface {
    * Get Style Option markup for label.
    *
    * @param array $option
-   *   Option data
+   *   Option data.
    *
    * @return string
    *   Markup value.
