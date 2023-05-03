@@ -1,12 +1,15 @@
 <?php
 
+/**
+ * @file
+ */
+
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\block_content\BlockContentInterface;
-use Drupal\Core\Url;
 use Drupal\editor\Entity\Editor;
 use Drupal\layout_builder\Form\DefaultsEntityForm;
 use Drupal\layout_builder\Form\OverridesEntityForm;
@@ -17,16 +20,16 @@ use Drupal\y_lb\Form\YLBOverridesEntityForm;
 /**
  * Implements hook_theme().
  */
-function y_lb_theme( $existing, $type, $theme, $path ) {
+function y_lb_theme($existing, $type, $theme, $path) {
   return [
     'block__lb_node_share' => [
-      'base hook' => 'block'
+      'base hook' => 'block',
     ],
     'block__lb_node_locations' => [
-      'base hook' => 'block'
+      'base hook' => 'block',
     ],
     'block__ws_site_logo' => [
-      'base hook' => 'block'
+      'base hook' => 'block',
     ],
     'blb_section__y_lb' => [
       'template' => 'blb-section--y-lb',
@@ -131,10 +134,10 @@ function y_lb_page_attachments_alter(array &$page) {
 /**
  * Implements hook_form_BASE_FORM_ID_alter() for layout_builder_add_block.
  *
- * @TODO: Keep an eye on https://www.drupal.org/project/drupal/issues/3074435
+ * @todo Keep an eye on https://www.drupal.org/project/drupal/issues/3074435
  */
 function y_lb_form_layout_builder_add_block_alter(&$form, FormStateInterface $form_state) {
-  if ( isset($form['settings']['block_form']['#block'])
+  if (isset($form['settings']['block_form']['#block'])
     && strpos($form['settings']['block_form']['#block']->bundle(), 'lb_') === 0
     && isset($form['settings']['label_display'])) {
     // Uncheck the 'Display Title' by default.
@@ -148,9 +151,10 @@ function y_lb_form_layout_builder_add_block_alter(&$form, FormStateInterface $fo
 function y_lb_preprocess_block(&$variables) {
   switch ($variables['plugin_id']) {
     case 'system_breadcrumb_block':
-      $variables['attributes']['class'][] ='block-lb-breadcrumbs';
+      $variables['attributes']['class'][] = 'block-lb-breadcrumbs';
       $variables['#attached']['library'][] = 'y_lb/breadcrumbs';
       break;
+
     case 'lb_node_share':
     case 'lb_node_tags':
     case 'lb_node_locations':
@@ -163,7 +167,7 @@ function y_lb_preprocess_block(&$variables) {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function y_lb_theme_suggestions_layout_alter( array &$suggestions, array $variables ) {
+function y_lb_theme_suggestions_layout_alter(array &$suggestions, array $variables) {
   $original_hook = $variables['theme_hook_original'];
   if ($original_hook !== 'blb_section' && !str_starts_with($original_hook, 'blb_section__')) {
     return;

@@ -91,8 +91,8 @@ class WsFooterLayout extends LayoutDefault implements ContainerFactoryPluginInte
     $configuration = parent::defaultConfiguration();
 
     return $configuration + [
-        'wrapper_classes' => '',
-      ];
+      'wrapper_classes' => '',
+    ];
   }
 
   /**
