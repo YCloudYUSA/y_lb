@@ -66,12 +66,15 @@ class WSComponentStyleOption extends StylePluginBase {
    * {@inheritdoc}
    */
   public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
-
-    $form['ws_style_option'] = [
-      '#type' => 'ws_style_select',
-      '#default_value' => $storage['ws_style_option'],
-      '#component' => $form_state->getFormObject()->getCurrentComponent()->getPluginId(),
-    ];
+    /** @var \Drupal\Core\Form\FormInterface $form_object */
+    $form_object = $form_state->getFormObject();
+    if (method_exists($form_object, 'getCurrentComponent')) {
+      $form['ws_style_option'] = [
+        '#type' => 'ws_style_select',
+        '#default_value' => $storage['ws_style_option'],
+        '#component' => $form_state->getFormObject()->getCurrentComponent()->getPluginId(),
+      ];
+    }
 
     return $form;
   }
