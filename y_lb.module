@@ -97,6 +97,10 @@ function y_lb_theme_suggestions_block_alter(array &$suggestions, array $variable
       $suggestions = array_reverse($suggestions_rev);
     }
   }
+  // Add specific suggestion if custom WS template should be used.
+  if (isset($variables['elements']['ws_template'])) {
+    $suggestions[] = str_replace('-', '_', $variables['elements']['ws_template']);
+  }
 }
 
 /**
