@@ -98,8 +98,8 @@ function y_lb_theme_suggestions_block_alter(array &$suggestions, array $variable
     }
   }
   // Add specific suggestion if custom WS template should be used.
-  if (isset($variables['elements']['ws_template'])) {
-    $suggestions[] = str_replace('-', '_', $variables['elements']['ws_template']);
+  if (isset($variables['elements']['#ws_template'])) {
+    $suggestions[] = str_replace('-', '_', $variables['elements']['#ws_template']);
   }
 }
 
@@ -246,7 +246,7 @@ function y_lb_entity_base_field_info(EntityTypeInterface $entity_type) {
  */
 function y_lb_preprocess_page(&$variables) {
   /** @var \Drupal\node\NodeInterface $node */
-  $node = $variables['node'] ?: NULL;
+  $node = $variables['node'] ?? NULL;
 
   // Skip page without node.
   if (!$node instanceof NodeInterface) {

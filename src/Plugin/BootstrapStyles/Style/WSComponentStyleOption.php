@@ -71,7 +71,7 @@ class WSComponentStyleOption extends StylePluginBase {
     if (method_exists($form_object, 'getCurrentComponent')) {
       $form['ws_style_option'] = [
         '#type' => 'ws_style_select',
-        '#default_value' => $storage['ws_style_option'],
+        '#default_value' => $storage['ws_style_option'] ?? NULL,
         '#component' => $form_state->getFormObject()->getCurrentComponent()->getPluginId(),
       ];
     }
@@ -97,6 +97,10 @@ class WSComponentStyleOption extends StylePluginBase {
     $classes = $libraries = [];
     $ws_styles = $storage['ws_style_option'];
     foreach ($ws_styles as $group => $style) {
+      // Skip processing styles if nothing has been set.
+      if (empty($style)) {
+        continue;
+      }
       $style_option = $this->wsStyleOptionManager->getStyleOption($group, $style);
       // Get libraries for the component.
       if (!empty($style_option['library'])) {
@@ -108,7 +112,7 @@ class WSComponentStyleOption extends StylePluginBase {
       }
       // Define custom template parameter for next template processing.
       if (!empty($style_option['template'])) {
-        $build['ws_template'] = $style_option['template'];
+        $build['#ws_template'] = $style_option['template'];
       }
     }
 
