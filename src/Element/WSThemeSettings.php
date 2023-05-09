@@ -68,7 +68,7 @@ class WSThemeSettings extends FormElement implements FormElementInterface {
       $element[$name] = [
         '#type' => 'radios',
         '#title' => $label,
-        '#default_value' => $element['#default_value'][$name],
+        '#default_value' => $element['#default_value'][$name] ?? NULL,
         '#options' => $options,
       ];
     }
