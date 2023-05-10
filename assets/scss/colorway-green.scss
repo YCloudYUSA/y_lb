@@ -1,13 +1,21 @@
 // Color's variables.
 $wsGreenPrimaryColor: #006B6B;
+$wsGreenPrimaryColorRGB: 0, 107, 107;
 $wsGreenSecondaryColor: #01A490;
+$wsGreenSecondaryColorRGB: 1, 164, 144;
 $wsGreenTertiaryColor: #20BDBE;
+$wsGreenTertiaryColorRGB: 32,189,190;
 $wsGreenPartnerColor: #0060AF;
+$wsGreenPartnerColorRGB: 0, 96, 175;
 
 // Set variables globally.
 :root {
   --wsPrimaryColor: #{$wsGreenPrimaryColor};
+  --wsPrimaryColorRGB: #{$wsGreenPrimaryColorRGB};
   --wsSecondaryColor: #{$wsGreenSecondaryColor};
+  --wsSecondaryColorRGB: #{$wsGreenSecondaryColorRGB};
   --wsTertiaryColor: #{$wsGreenTertiaryColor};
+  --wsTertiaryColorRGB: #{$wsGreenTertiaryColorRGB};
   --wsPartnerColor: #{$wsGreenPartnerColor};
+  --wsPartnerColorRGB: #{$wsGreenPartnerColorRGB};
 }

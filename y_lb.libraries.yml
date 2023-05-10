@@ -42,25 +42,25 @@ footer:
 
 #Colorway styles.
 colorway.blue:
-  version: 1.0
+  version: 1.1
   css:
     theme:
       assets/css/colorway-blue.css: { minified: false }
 
 colorway.green:
-  version: 1.0
+  version: 1.1
   css:
     theme:
       assets/css/colorway-green.css: { minified: false }
 
 colorway.purple:
-  version: 1.0
+  version: 1.1
   css:
     theme:
       assets/css/colorway-purple.css: { minified: false }
 
 colorway.red:
-  version: 1.0
+  version: 1.1
   css:
     theme:
       assets/css/colorway-red.css: { minified: false }
