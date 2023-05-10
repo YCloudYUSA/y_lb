@@ -141,10 +141,6 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
    * {@inheritdoc}
    */
   public function build() {
-    if (!$this->node) {
-      return [];
-    }
-
     $build['site_slogan'] = $this->configFactory->get('system.site')->get('slogan');
     $build['front_page'] = Url::fromRoute('<front>')->toString();
     $type_of_logo = $this->configuration['logo_type'];
@@ -157,7 +153,7 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
       $logo_url = $this->fileUrlGenerator
         ->generateAbsoluteString($path);
       $build['site_logo_is_svg'] = TRUE;
-      $build['site_logo_svg'] = file_get_contents(DRUPAL_ROOT . parse_url($logo_url, PHP_URL_PATH));
+      $build['site_logo_svg'] = file_get_contents($path);
       $build['logo_url'] = $logo_url;
     }
     return $build;
