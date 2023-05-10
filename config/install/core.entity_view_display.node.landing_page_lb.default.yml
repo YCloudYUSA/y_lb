@@ -436,7 +436,7 @@ third_party_settings:
             configuration:
               id: 'system_menu_block:footer-menu-left'
               label: Left
-              label_display: 0
+              label_display: 1
               provider: system
               context_mapping: {  }
             weight: 0
@@ -532,7 +532,7 @@ third_party_settings:
             configuration:
               id: 'system_menu_block:footer-menu-center'
               label: Center
-              label_display: 0
+              label_display: 1
               provider: system
               context_mapping: {  }
               level: 1
@@ -631,7 +631,7 @@ third_party_settings:
             configuration:
               id: 'system_menu_block:footer-menu-right'
               label: Right
-              label_display: 0
+              label_display: 1
               provider: system
               context_mapping: {  }
               level: 1
