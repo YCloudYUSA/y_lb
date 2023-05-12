@@ -63,7 +63,11 @@
     padding: 0 20px;
     position: relative;
 
-    @include media-breakpoint-down(lg) {
+    & > .row {
+      height: 100%;
+    }
+
+    @include media-breakpoint-down(md) {
       max-height: 56px;
     }
 
@@ -73,7 +77,7 @@
 
     &-left-column {
       position: relative;
-      padding: 15px 0;
+      height: 100%;
     }
 
     &-middle-column {
@@ -81,6 +85,10 @@
       justify-content: center;
 
       @include media-breakpoint-down(lg) {
+        position: initial !important;
+      }
+
+      @include media-breakpoint-down(md) {
         display: block;
       }
     }
@@ -89,7 +97,6 @@
 
       nav {
         @include media-breakpoint-down(lg) {
-          margin-top: 25px;
           padding-right: 15px;
           padding-left: 15px;
           margin-right: auto;
@@ -129,7 +136,7 @@
               font-weight: 400;
               line-height: 24px;
 
-              @include media-breakpoint-down(lg) {
+              @include media-breakpoint-down(md) {
                 display: none;
               }
 
@@ -162,10 +169,6 @@
       text-align: center;
       width: 100%;
 
-      @include media-breakpoint-down(lg) {
-        display: inline-block;
-      }
-
       &:active,
       &:focus,
       &:hover {
@@ -176,8 +179,10 @@
   }
 
   .block-ws-site-logo {
-    padding-bottom: 15px;
+    align-items: center;
+    display: flex;
     padding-left: 10px;
+    height: 100%;
 
     svg {
       @include media-breakpoint-down(lg) {
@@ -199,11 +204,17 @@
 
     .search {
       &-icon {
+        z-index: 100;
 
-        @include media-breakpoint-down(lg) {
+        @include media-breakpoint-up(md) {
+          position: initial;
+
+        }
+
+        @include media-breakpoint-down(md) {
+          top: 16px;
+          right: 55px;
           position: absolute;
-          top: -63px;
-          right: 50px;
         }
 
         button {
@@ -225,7 +236,7 @@
       &-bar {
         background-color: var(--ylb-color-white);
         border-radius: 10px;
-        bottom: -170px;
+        bottom: -150px;
         box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
         height: 90px;
         left: 50%;
@@ -235,11 +246,17 @@
         width: 103%;
         z-index: 100;
 
-        @include media-breakpoint-down(lg) {
-          border-radius: unset;
+        @include media-breakpoint-between(md, lg) {
+          bottom: -135px;
+          border-radius: 0;
+          width: 100%;
+        }
+
+        @include media-breakpoint-down(md) {
+          border-radius: 0;
           height: 60px;
-          padding: 12px 40px 12px 12px;
-          top: 6px;
+          padding: 12px 40px 12px 20px;
+          top: 86px;
         }
 
         form {
@@ -352,14 +369,14 @@
     .header--top {
       &-right-column {
         @include media-breakpoint-down(lg) {
-          position: initial;
+          position: initial !important;
         }
 
         .block-openy-gtranslate-block {
           @include media-breakpoint-down(lg) {
-            bottom: 10%;
+            bottom: 30%;
             height: auto;
-            left: 50%;
+            left: 30%;
             position: absolute;
             transform: translate(-50%, -50%);
             visibility: visible;
@@ -378,6 +395,12 @@
 
       .block-ws-search-bar {
         display: none;
+      }
+    }
+
+    .highlighted {
+      @include media-breakpoint-down(lg) {
+        display: inline-block;
       }
     }
   }
