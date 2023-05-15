@@ -40,7 +40,9 @@
           .handle {
             width: 28px;
             height: 29px;
-            background-size: auto;
+          }
+          &:after {
+            display: none;
           }
         }
       }
@@ -63,6 +65,8 @@
     }
   }
   .inline-block-list {
+    margin-top: 1rem !important;
+    gap: 1rem;
     li {
       width: 46%;
       border-bottom: 0;
@@ -193,6 +197,10 @@
       display: flex;
       justify-content: space-between;
     }
+  }
+
+  .bs_nav-tabs {
+    position: relative !important;
   }
 }
 
