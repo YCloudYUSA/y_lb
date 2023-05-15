@@ -1,22 +1,22 @@
 // Color's variables.
 $wsBluePrimaryColor: #0060AF;
-$wsBluePrimaryColorRBG: 0, 96, 175;
+$wsBluePrimaryColorRGB: 0, 96, 175;
 $wsBlueSecondaryColor: #0089D0;
-$wsBlueSecondaryColorRBG: 0, 137, 208;
+$wsBlueSecondaryColorRGB: 0, 137, 208;
 $wsBlueTertiaryColor: #00AEEF;
-$wsBlueTertiaryColorRBG: 0, 174, 239;
+$wsBlueTertiaryColorRGB: 0, 174, 239;
 $wsBluePartnerColor: #5C2E91;
-$wsBluePartnerColorRBG: 92, 46, 145;
+$wsBluePartnerColorRGB: 92, 46, 145;
 
 // Set variables globally.
 :root {
   --wsPrimaryColor: #{$wsBluePrimaryColor};
-  --wsPrimaryColorRBG: #{$wsBluePrimaryColorRBG};
+  --wsPrimaryColorRGB: #{$wsBluePrimaryColorRGB};
   --wsSecondaryColor: #{$wsBlueSecondaryColor};
-  --wsSecondaryColorRBG: #{$wsBlueSecondaryColorRBG};
+  --wsSecondaryColorRGB: #{$wsBlueSecondaryColorRGB};
   --wsTertiaryColor: #{$wsBlueTertiaryColor};
-  --wsTertiaryColorRBG: #{$wsBlueTertiaryColorRBG};
+  --wsTertiaryColorRGB: #{$wsBlueTertiaryColorRGB};
   --wsPartnerColor: #{$wsBluePartnerColor};
-  --wsPartnerColorRBG: #{$wsBluePartnerColorRBG};
+  --wsPartnerColorRGB: #{$wsBluePartnerColorRGB};
 }
 
