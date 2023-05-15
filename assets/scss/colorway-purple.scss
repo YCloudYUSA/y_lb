@@ -1,21 +1,21 @@
 // Color's variables.
 $wsPurplePrimaryColor: #5C2E91;
-$wsPurplePrimaryColorRBG: 92, 46, 145;
+$wsPurplePrimaryColorRGB: 92, 46, 145;
 $wsPurpleSecondaryColor: #92278F;
-$wsPurpleSecondaryColorRBG: 146, 39, 143;
+$wsPurpleSecondaryColorRGB: 146, 39, 143;
 $wsPurpleTertiaryColor: #C6168D;
-$wsPurpleTertiaryColorRBG: 198, 22, 141;
+$wsPurpleTertiaryColorRGB: 198, 22, 141;
 $wsPurplePartnerColor: #A92B31;
-$wsPurplePartnerColorRBG: 169, 43, 49;
+$wsPurplePartnerColorRGB: 169, 43, 49;
 
 // Set variables globally.
 :root {
   --wsPrimaryColor: #{$wsPurplePrimaryColor};
-  --wsPrimaryColorRBG: #{$wsPurplePrimaryColorRBG};
+  --wsPrimaryColorRGB: #{$wsPurplePrimaryColorRGB};
   --wsSecondaryColor: #{$wsPurpleSecondaryColor};
-  --wsSecondaryColorRBG: #{$wsPurpleSecondaryColorRBG};
+  --wsSecondaryColorRGB: #{$wsPurpleSecondaryColorRGB};
   --wsTertiaryColor: #{$wsPurpleTertiaryColor};
-  --wsTertiaryColorRBG: #{$wsPurpleTertiaryColorRBG};
+  --wsTertiaryColorRGB: #{$wsPurpleTertiaryColorRGB};
   --wsPartnerColor: #{$wsPurplePartnerColor};
-  --wsPartnerColorRBG: #{$wsPurplePartnerColorRBG};
+  --wsPartnerColorRGB: #{$wsPurplePartnerColorRGB};
 }
