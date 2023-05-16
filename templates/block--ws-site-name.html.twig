@@ -38,9 +38,12 @@
 <div{{ attributes.removeClass('container').addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
-  {% if content.site_name %}
-    <a href="{{ content.front_page }}" title="{{ content.site_name }}" rel="{{ content.site_name }}">
-      {{ content.site_name }}
-    </a>
-  {% endif %}
+  {% block content %}
+    {{ content|without('front_page', 'site_name') }}
+    {% if content.site_name %}
+      <a href="{{ content.front_page }}" title="{{ content.site_name }}" rel="{{ content.site_name }}">
+        {{ content.site_name }}
+      </a>
+    {% endif %}
+  {% endblock %}
 </div>

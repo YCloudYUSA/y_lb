@@ -36,42 +36,45 @@
 <div{{ attributes.removeClass('container').addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
-  {% if content.display_search %}
-    {# Search icon #}
-    <div class="search-icon">
-      <button type="button" data-toggle="collapse" data-target=".search-bar"
-              aria-controls="search-bar" aria-expanded="false" aria-label="Show search bar">
-        <i class="fa fa-search" aria-hidden="true"></i>
-      </button>
-    </div>
-    <div class="search-bar fade collapse">
-      <div class="search-form-wrapper">
-        <form method="get" action="{{ content.search_results_path }}">
-          <input type="search" name="{{ content.search_key }}" class="search-input" placeholder="">
-          <button class="search-submit" type="submit" aria-label="{{ 'Search'|t }}">
-            <span>{{ 'Search'|t }}</span>
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </form>
+  {% block content %}
+    {{ content|without('search_results_path', 'display_search') }}
+    {% if content.display_search %}
+      {# Search icon #}
+      <div class="search-icon">
+        <button type="button" data-toggle="collapse" data-target=".search-bar"
+                aria-controls="search-bar" aria-expanded="false" aria-label="Show search bar">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
       </div>
-      <button class="search-bar-close" type="button" data-toggle="collapse" data-target=".search-bar"
-              aria-controls="search-bar" aria-expanded="false" aria-label="Hide search bar">
-        <svg width="19px" height="19px" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"
-             xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>Close</title>
-          <g id="UI-KIt" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="Menu-and-Search" transform="translate(-478.000000, -4768.000000)" fill="#2F2F2F" fill-rule="nonzero">
-              <g id="Mobile-Nav-Level-1" transform="translate(150.000000, 4735.000000)">
-                <g id="close_FILL0_wght600_GRAD0_opsz40" transform="translate(328.000000, 33.000000)">
-                  <path
-                      d="M9.5,11.6652254 L2.58435542,18.58087 C2.28146416,18.86029 1.92045354,19 1.50132357,19 C1.08219359,19 0.721462396,18.86029 0.419129974,18.58087 C0.139709991,18.2785376 0,17.9178064 0,17.4986764 C0,17.0795465 0.139709991,16.7185358 0.419129974,16.4156446 L7.33477455,9.5 L0.419129974,2.58435542 C0.139709991,2.28146416 0,1.92045354 0,1.50132357 C0,1.08219359 0.139709991,0.721462396 0.419129974,0.419129974 C0.721462396,0.139709991 1.08219359,0 1.50132357,0 C1.92045354,0 2.28146416,0.139709991 2.58435542,0.419129974 L9.5,7.33477455 L16.4156446,0.419129974 C16.7185358,0.139709991 17.0795465,0 17.4986764,0 C17.9178064,0 18.2785376,0.139709991 18.58087,0.419129974 C18.86029,0.721462396 19,1.08219359 19,1.50132357 C19,1.92045354 18.86029,2.28146416 18.58087,2.58435542 L11.6652254,9.5 L18.58087,16.4156446 C18.86029,16.7185358 19,17.0795465 19,17.4986764 C19,17.9178064 18.86029,18.2785376 18.58087,18.58087 C18.2785376,18.86029 17.9178064,19 17.4986764,19 C17.0795465,19 16.7185358,18.86029 16.4156446,18.58087 L9.5,11.6652254 Z"
-                      id="Path"></path>
+      <div class="search-bar fade collapse">
+        <div class="search-form-wrapper">
+          <form method="get" action="{{ content.search_results_path }}">
+            <input type="search" name="{{ content.search_key }}" class="search-input" placeholder="">
+            <button class="search-submit" type="submit" aria-label="{{ 'Search'|t }}">
+              <span>{{ 'Search'|t }}</span>
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+        <button class="search-bar-close" type="button" data-toggle="collapse" data-target=".search-bar"
+                aria-controls="search-bar" aria-expanded="false" aria-label="Hide search bar">
+          <svg width="19px" height="19px" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>Close</title>
+            <g id="UI-KIt" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Menu-and-Search" transform="translate(-478.000000, -4768.000000)" fill="#2F2F2F" fill-rule="nonzero">
+                <g id="Mobile-Nav-Level-1" transform="translate(150.000000, 4735.000000)">
+                  <g id="close_FILL0_wght600_GRAD0_opsz40" transform="translate(328.000000, 33.000000)">
+                    <path
+                        d="M9.5,11.6652254 L2.58435542,18.58087 C2.28146416,18.86029 1.92045354,19 1.50132357,19 C1.08219359,19 0.721462396,18.86029 0.419129974,18.58087 C0.139709991,18.2785376 0,17.9178064 0,17.4986764 C0,17.0795465 0.139709991,16.7185358 0.419129974,16.4156446 L7.33477455,9.5 L0.419129974,2.58435542 C0.139709991,2.28146416 0,1.92045354 0,1.50132357 C0,1.08219359 0.139709991,0.721462396 0.419129974,0.419129974 C0.721462396,0.139709991 1.08219359,0 1.50132357,0 C1.92045354,0 2.28146416,0.139709991 2.58435542,0.419129974 L9.5,7.33477455 L16.4156446,0.419129974 C16.7185358,0.139709991 17.0795465,0 17.4986764,0 C17.9178064,0 18.2785376,0.139709991 18.58087,0.419129974 C18.86029,0.721462396 19,1.08219359 19,1.50132357 C19,1.92045354 18.86029,2.28146416 18.58087,2.58435542 L11.6652254,9.5 L18.58087,16.4156446 C18.86029,16.7185358 19,17.0795465 19,17.4986764 C19,17.9178064 18.86029,18.2785376 18.58087,18.58087 C18.2785376,18.86029 17.9178064,19 17.4986764,19 C17.0795465,19 16.7185358,18.86029 16.4156446,18.58087 L9.5,11.6652254 Z"
+                        id="Path"></path>
+                  </g>
                 </g>
               </g>
             </g>
-          </g>
-        </svg>
-      </button>
-    </div>
-  {% endif %}
-</div>
+          </svg>
+        </button>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
