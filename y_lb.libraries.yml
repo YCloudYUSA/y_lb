@@ -38,6 +38,20 @@ footer:
     component:
       assets/css/footer.css: { preprocess: true }
 
+header:
+  version: 1.0
+  css:
+    component:
+      assets/css/header.css: { preprocess: true }
+  js:
+    assets/js/header.js: { minified: false }
+
+main_menu:
+  version: 1.0
+  css:
+    component:
+      assets/css/main-menu.css: { preprocess: true }
+
 #WS Styles
 
 #Colorway styles.

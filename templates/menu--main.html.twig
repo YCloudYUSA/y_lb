@@ -1,0 +1,164 @@
+{#
+/**
+ * @file
+ * Template for the WS Main menu.
+ */
+#}
+{{ attach_library('y_lb/main_menu') }}
+
+{% import _self as menus %}
+<div class="ws-main-menu-wrapper">
+  {{ menus.menu_links(items, attributes, 0) }}
+  {% macro menu_links(items, attributes, menu_level) %}
+    {% import _self as menus %}
+    {% set nav_classes = [ 'header-nav__links', 'navbar', 'nav', 'row-level-1'] %}
+    {% set nav_item_classes = [] %}
+    {% set nav_link_classes = [] %}
+    <div class="container">
+      {% if items %}
+        <ul{{ attributes.addClass(nav_classes) }}>
+          {% block items %}
+            {% for item in items %}
+              {% if item.url.options.attributes.class is iterable %}
+                {% set nav_link_classes = nav_link_classes|merge(item.url.options.attributes.class) %}
+              {% elseif item.url.options.attributes.class %}
+                {% set nav_link_classes = nav_link_classes|merge([item.url.options.attributes.class]) %}
+              {% endif %}
+              {% if item.below %}
+                <li class="dropdown nav-level-2 children">
+                  <a href="{{ item.url }}" class="menu-link--level-1" aria-expanded="false" data-toggle="dropdown">
+                    {{ item.title }}&nbsp;
+                    <span class="d-none d-lg-inline-block">
+                    <svg width="9px" height="5px" viewBox="0 0 9 5" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <title>Chevron</title>
+                      <g id="UI-KIt" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="menu-chevron" transform="translate(-588.000000, -579.154639)"
+                           fill="var(--ylb-color-dark-grey)">
+                          <g id="Group-4" transform="translate(0.000000, 528.000000)">
+                            <g id="Group" transform="translate(493.000000, 35.000000)">
+                              <path
+                                  d="M103.765625,16.3629002 C103.617187,16.2240577 103.431641,16.1546392 103.208984,16.1546392 C102.986327,16.1546392 102.796876,16.2240577 102.640625,16.3629002 L99.5,19.4451637 L96.359375,16.3629002 C96.2031242,16.2240577 96.013673,16.1546392 95.7910157,16.1546392 C95.5683582,16.1546392 95.3828132,16.2240577 95.234375,16.3629002 C95.0781242,16.5017414 95,16.6683475 95,16.8627267 C95,17.0571046 95.0781242,17.2237108 95.234375,17.3625532 L98.890625,20.9550556 C98.968751,21.0244764 99.0624995,21.0765411 99.171875,21.1112514 C99.2812505,21.1459618 99.3906245,21.1598457 99.5,21.1529036 C99.6093755,21.1598457 99.7187495,21.1459618 99.828125,21.1112514 C99.9375005,21.0765411 100.031249,21.0244764 100.109375,20.9550556 L103.765625,17.3625532 C103.921876,17.2237108 104,17.0571046 104,16.8627267 C104,16.6683475 103.921876,16.5017414 103.765625,16.3629002 Z"
+                                  id="Page-1-Copy"></path>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </span>
+                  </a>
+                  {{ menus.menu_links_level_2(item.below, attributes, menu_level + 1, item) }}
+                </li>
+              {% else %}
+                <li class="dropdown nav-level-2">
+                  <a href="{{ item.url }}" target="_self" class="menu-link--level-1">
+                    {{ item.title }}&nbsp;
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endblock %}
+        </ul>
+      {% endif %}
+    </div>
+  {% endmacro %}
+
+  {% macro menu_links_level_2(items, attributes, menu_level, parent) %}
+    {% set level2 = [] %}
+    {% if items %}
+      <div class="header-nav__submenu level-2 dropdown-menu">
+        <div class="container">
+          <div class="header-nav__submenu-left">
+            <div class="header-nav__submenu_navigation">
+              <div class="navigation-top">
+                {% set navigationLinkLabel = 'Main menu' %}
+                <span class="fa fa-chevron-left fa-xs" aria-hidden="true"></span>
+                <a href="#" class="back">{{ navigationLinkLabel }}</a>
+              </div>
+              <div class="navigation-bottom">
+                {{ parent.title }}
+              </div>
+            </div>
+            <ul class="header-nav__submenu_links row-level-2">
+              <div class="dropdown-label">{{ parent.title }}</div>
+              {% for item in items %}
+                {% if item.below %}
+                  {% set ia = item.attributes.addClass(['nav-level-3 children dropdown-submenu menu-item-' ~ item.title|clean_class]) %}
+                <li{{ ia }}>
+                  {% set item_title %}
+                    {{ item.title }}
+                  {% endset %}
+                  {{ link(item_title, item.url, { 'data-submenu-target' : 'dropdown-' ~ item.title|clean_class, 'class' : ['menu-link-item']}) }}
+                  {% set level2_item = {'menu_item': item, 'first_level_label': parent.title} %}
+                  {% set level2 = level2|merge([level2_item]) %}
+                {% else %}
+                  {% set ia = item.attributes.addClass(['nav-level-3 dropdown-submenu menu-item-' ~ item.title|clean_class]) %}
+                  <li{{ ia }}>
+                    {{ link(item.title, item.url, {'class' : 'menu-link-item'}) }}
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="header-nav__submenu-right">
+            {% for item in level2 %}
+              {{ menus.menu_links_level_3(item.menu_item.below, attributes, menu_level + 1, item.menu_item, item.first_level_label) }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endmacro %}
+
+  {% macro menu_links_level_3(items, attributes, menu_level, parent, first_level_label) %}
+    {% if items %}
+      {% set toggle_id = 'dropdown-'~ parent.title|clean_class %}
+      <div id="{{ toggle_id }}" class="header-nav__submenu level-3">
+        <div class="container">
+          <div class="header-nav__submenu_navigation">
+            <div class="navigation-top">
+              <span class="fa fa-chevron-left fa-xs" aria-hidden="true"></span>
+              <a href="#" class="back">{{ first_level_label }}</a>
+            </div>
+            <div class="navigation-bottom">
+              {{ parent.title }}
+            </div>
+          </div>
+          <ul class="header-nav__submenu_links row-level-3">
+            {% for item in items %}
+              {% set ia = item.attributes.addClass(['nav-level-4 dropdown-submenu menu-item-' ~ item.title|clean_class]) %}
+              <li{{ ia }}>
+                {% if item.below %}
+                  {% set item_title %}
+                    {{ item.title }}
+                  {% endset %}
+                  {{ link(item_title, item.url, {'class' : 'menu-link-item'}) }}
+                  {{ menus.menu_links_level_4(item.below, item, attributes, menu_level) }}
+                {% else %}
+                  {{ link(item.title, item.url) }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+  {% endmacro %}
+
+  {% macro menu_links_level_4(items, parent, attributes, menu_level) %}
+    {% import _self as menus %}
+    {% if items %}
+      <ul class="row-level-4">
+        {% set ia = parent.attributes %}
+        {% set ia = ia.addClass('nav-level-5') %}
+        {% for item in items %}
+          {% set ia = item.attributes %}
+          {% set ia = ia.addClass('nav-level-5') %}
+          <li{{ ia }}>
+            {{ link(item.title, item.url) }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endmacro %}
+</div>

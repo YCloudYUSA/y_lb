@@ -1,3 +1,24 @@
+ws_header:
+  label: 'WS Header'
+  category: 'WS Layouts'
+  class: '\Drupal\y_lb\Plugin\Layout\WsHeaderLayout'
+  library: y_lb/header
+  template: templates/ws-header
+  default_region: header_top_left
+  regions:
+    header_top_left:
+      label: Left Column
+    header_top_right:
+      label: Right Column
+    header_bottom_left:
+      label: Left Column
+    header_bottom_middle:
+      label: Middle Column
+    header_bottom_right:
+      label: Right Column
+  icon_map:
+    - [ header_top_left, header_top_right, header_bottom_left, header_bottom_middle, header_bottom_right]
+
 ws_footer:
   label: 'WS Footer'
   category: 'WS Layouts'

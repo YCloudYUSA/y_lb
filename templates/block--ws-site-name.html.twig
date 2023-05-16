@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * LB Site logo implementation to display a block.
+ * LB Site Name implementation to display a block.
  *
  * Available variables:
  * - plugin_id: The ID of the block implementation.
@@ -32,20 +32,15 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
-    'ws-logo',
   ]
 %}
 
 <div{{ attributes.removeClass('container').addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
-  {% if content.logo_url %}
-    <a href="{{ content.front_page }}" title="{{ content.site_slogan }}" rel="{{ content.site_slogan }}">
-      {% if content.site_logo_is_svg %}
-        {{ content.site_logo_svg|raw }}
-      {% else %}
-        <img src="{{ content.logo_url }}" alt="{{ content.site_slogan }}" />
-      {% endif %}
+  {% if content.site_name %}
+    <a href="{{ content.front_page }}" title="{{ content.site_name }}" rel="{{ content.site_name }}">
+      {{ content.site_name }}
     </a>
   {% endif %}
 </div>
