@@ -57,6 +57,10 @@ function y_lb_theme($existing, $type, $theme, $path) {
 function y_lb_theme_suggestions_page_alter(array &$suggestions) {
   // Add content type suggestions for node types.
   $node = \Drupal::routeMatch()->getParameter('node');
+  // Skip admin route.
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    return;
+  }
   // Skip page without node.
   if (!$node instanceof NodeInterface) {
     return;
