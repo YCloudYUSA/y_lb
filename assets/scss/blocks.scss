@@ -99,8 +99,12 @@
       }
 
       .bi {
-        font-size: 20px;
+        font-size: 18px;
         padding-right: 5px;
+
+        &:before {
+          color: var(--wsTertiaryColor);
+        }
       }
     }
   }
@@ -109,6 +113,7 @@
 .block-lb-node-locations {
   .lb-locations-list {
     a {
+      color: var(--wsPartnerColor, #0060af);
       font-size: 18px;
       line-height: 28px;
     }
