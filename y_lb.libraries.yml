@@ -1,5 +1,5 @@
 layout_builder:
-  version: 1.4
+  version: 1.5
   css:
     theme:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
@@ -13,7 +13,7 @@ main:
       assets/css/page.css: { minified: false }
 
 breadcrumbs:
-  version: 1.3
+  version: 1.4
   css:
     component:
       assets/css/breadcrumbs.css: { preprocess: true }
