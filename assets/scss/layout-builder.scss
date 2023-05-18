@@ -216,4 +216,33 @@
       background-color: transparent;
     }
   }
+  // Fix header layout for the pages with LB.
+  .header--top-right-column,
+  .header--top-left-column,
+  .header--bottom-left-column,
+  .header--bottom-middle-column,
+  .header--bottom-right-column {
+    display: block;
+  }
+
+  .header {
+    display: block;
+
+    &--top {
+      height: auto;
+
+      &-left-column {
+        .block-ws-site-name {
+          padding: 1.5em;
+        }
+      }
+    }
+
+    &--bottom {
+      height: auto;
+      nav {
+        height: auto;
+      }
+    }
+  }
 }
