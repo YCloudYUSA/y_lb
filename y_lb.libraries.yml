@@ -11,6 +11,7 @@ main:
       assets/css/colors.css: { minified: false }
       assets/css/typography.css: { minified: false }
       assets/css/page.css: { minified: false }
+      assets/css/button.css: { minified: false }
   js:
     assets/js/mobile_tables.js: { }
   dependencies:
