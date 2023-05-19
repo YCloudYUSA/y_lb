@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.menu_cta
+    - field.storage.block_content.field_description
+  module:
+    - text
+id: block_content.menu_cta.field_description
+field_name: field_description
+entity_type: block_content
+bundle: menu_cta
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

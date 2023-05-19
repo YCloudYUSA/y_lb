@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * LB Menu CTA implementation to display a block.
+ *
+ * Available variables:
+ * - image: The image of the block.
+ * - label: The label label of the block.
+ * - description: A smal description of the block.
+ * - link: A link of the block (optional).
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="ws-menu-cta-block">
+  {% block content %}
+    {{ image }}
+    {{ label }}
+    {{ description }}
+    {{ link }}
+  {% endblock %}
+</div>

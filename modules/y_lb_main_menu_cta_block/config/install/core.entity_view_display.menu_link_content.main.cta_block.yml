@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.menu_link_content.cta_block
+    - field.field.menu_link_content.main.field_cta_block
+    - system.menu.main
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: menu_link_content.main.cta_block
+targetEntityType: menu_link_content
+bundle: main
+mode: cta_block
+content: {  }
+hidden:
+  children: true
+  field_cta_block: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.cta_block
+label: 'CTA block'
+targetEntityType: menu_link_content
+cache: true

@@ -117,6 +117,14 @@
             </ul>
           </div>
           <div class="header-nav__submenu-right">
+            {% if parent.content.field_cta_block %}
+              {% include '@y_lb_main_menu_cta_block/menu-cta-block.html.twig' with {
+                label: parent.content.field_cta_block.0.field_title,
+                image: parent.content.field_cta_block.0.field_media,
+                description: parent.content.field_cta_block.0.field_description,
+                link: parent.content.field_cta_block.0.field_menu_cta_link,
+              } %}
+            {% endif %}
             {% for item in level2 %}
               {{ menus.menu_links_level_3(item.menu_item.below, attributes, menu_level + 1, item.menu_item, item.first_level_label) }}
             {% endfor %}
