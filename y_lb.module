@@ -121,6 +121,7 @@ function y_lb_theme_suggestions_block_alter(array &$suggestions, array $variable
  */
 function y_lb_form_alter(&$form, FormStateInterface $form_state) {
   $form_object = $form_state->getFormObject();
+  $form_id = $form_object->getFormId();
   if ($form_object instanceof OverridesEntityForm
     || $form_object instanceof DefaultsEntityForm
     || $form_object->getFormId() === 'layout_layout_builder_form') {

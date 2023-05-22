@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: menu_cta
+label: 'Menu CTA'
+revision: 0
+description: 'A block that provides the ability to attach a block with an image, a title, a description, and a link to a main menu item.'

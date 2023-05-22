@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - openy_focal_point
+name: menu_cta
+label: 'Menu CTA (250x150)'
+effects:
+  f7b903b7-2a0a-4dcd-88c9-7ae3f9a0e08a:
+    uuid: f7b903b7-2a0a-4dcd-88c9-7ae3f9a0e08a
+    id: openy_focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: '250'
+      height: '150'
+      crop_type: focal_point
+  43c6ef79-667f-47d6-a6cf-add897674df3:
+    uuid: 43c6ef79-667f-47d6-a6cf-add897674df3
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

@@ -1,0 +1,8 @@
+# Custom module library for general purposes.
+cta_block:
+  version: 1.0
+  css:
+    theme:
+      assets/css/cta_block.css: { preprocess: true }
+  js:
+    assets/js/cta_block.js: { minified: false }

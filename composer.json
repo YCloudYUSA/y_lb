@@ -28,6 +28,7 @@
         "drupal/lb_table" : "^1.0",
         "drupal/lb_testimonial_blocks" : "^1.0",
         "drupal/lb_webform" : "^1.0",
+        "drupal/menu_item_extras" : "^2.0",
         "drupal/node_revision_delete" : "^2.0@alpha || ^2",
         "drupal/scheduler": "^2.0@RC || ^2.0",
         "drupal/ws_lb_tabs" : "^1.0",

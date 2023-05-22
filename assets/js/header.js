@@ -45,7 +45,9 @@
       const breakpoint = 992;
 
       $('.menu-link--level-1').click(function (e) {
-        $('.openy-google-translate').hide();
+        if ($(window).width() <= breakpoint) {
+          $('.openy-google-translate').hide();
+        }
       });
 
       $('.dropdown-submenu a.menu-link-item').click(function (e) {
