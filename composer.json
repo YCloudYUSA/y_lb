@@ -3,6 +3,7 @@
     "description": "Adds Layout Builder to Web Services project.",
     "type": "drupal-module",
     "require": {
+        "cweagans/composer-patches": "^1.5.0",
         "drupal/bootstrap_styles": "*",
         "drupal/bootstrap_layout_builder" : "*",
         "drupal/entity_clone": "^2.0@alpha || ^2",
@@ -38,10 +39,23 @@
     },
     "license": "GPL-2.0+",
     "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "cweagans/composer-patches": true
+        }
+    },
     "extra": {
         "drush": {
             "services": {
                 "drush.services.yml": "^9"
+            }
+        },
+        "patches": {
+            "drupal/bootstrap_styles": {
+                "Issue #3330458: - [Drupal 10] Change of JS jquery/once to drupal core/once, migrate JS API": "https://www.drupal.org/files/issues/2023-03-07/bootstrap_styles-3330458-8.patch"
+            },
+            "drupal/bootstrap_layout_builder": {
+                "Issue #3335356: - Fix Module does not work in D10": "https://www.drupal.org/files/issues/2023-01-25/issue_3335356_drupal10.patch"
             }
         }
     }

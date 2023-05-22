@@ -75,7 +75,13 @@
       }
     }
   }
-
+  .js-form-type-radio {
+    .blb_breakpoint_cols {
+      & + label {
+        display: flex;
+      }
+    }
+  }
   .form-textarea {
     background-color: #fff;
     color: #222330;
