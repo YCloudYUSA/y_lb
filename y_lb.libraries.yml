@@ -1,5 +1,5 @@
 layout_builder:
-  version: 1.5
+  version: 1.6
   css:
     theme:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
