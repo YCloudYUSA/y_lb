@@ -2,7 +2,10 @@
 @import "_mixins";
 @import "_variables";
 
-.lb__content .body.field-item, .layout-builder__layout .body.field-item, .cke_editable_themed {
+.lb__content .body.field-item,
+.layout-builder__layout .body.field-item,
+.layout-builder__layout .field-body.field-item,
+.cke_editable_themed {
   color: var(--ylb-color-dark-grey);
 
   > *:first-child {
