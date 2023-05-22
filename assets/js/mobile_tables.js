@@ -2,7 +2,7 @@
 
   Drupal.behaviors.mobile_tables = {
     attach: function (context, settings) {
-      once('initControlTable', $('.body.field-item table')).forEach(function (table) {
+      once('initControlTable', $('.body.field-item table:not(.tablesaw)')).forEach(function (table) {
 
         table.outerHTML = '<div class="wrapper-table">' +
           '<div class="control-table">' +

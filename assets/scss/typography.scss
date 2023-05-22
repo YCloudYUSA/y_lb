@@ -2,10 +2,7 @@
 @import "_mixins";
 @import "_variables";
 
-.lb__content .body.field-item,
-.layout-builder__layout .body.field-item,
-.layout-builder__layout .field-body.field-item,
-.cke_editable_themed {
+.lb__content .body.field-item, .layout-builder__layout .body.field-item, .cke_editable_themed {
   color: var(--ylb-color-dark-grey);
 
   > *:first-child {
@@ -122,7 +119,7 @@
     &:before {
       content: '';
       position: absolute;
-      background: #0a6aa1 url("../svg/quotes.svg") center no-repeat;
+      background: var(--wsSecondaryColor) url("../svg/quotes.svg") center no-repeat;
       background-size: auto;
       height: 40px;
       width: 40px;
