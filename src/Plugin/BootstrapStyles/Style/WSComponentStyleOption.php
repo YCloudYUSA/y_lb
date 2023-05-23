@@ -96,23 +96,26 @@ class WSComponentStyleOption extends StylePluginBase {
   public function build(array $build, array $storage, $theme_wrapper = NULL) {
     $classes = $libraries = [];
     $ws_styles = $storage['ws_style_option'];
-    foreach ($ws_styles as $group => $style) {
-      // Skip processing styles if nothing has been set.
-      if (empty($style)) {
-        continue;
-      }
-      $style_option = $this->wsStyleOptionManager->getStyleOption($group, $style);
-      // Get libraries for the component.
-      if (!empty($style_option['library'])) {
-        $libraries[] = $style_option['library'];
-      }
-      // Get classes to be attached for the component.
-      if (!empty($style_option['class'])) {
-        $classes[] = $style_option['class'];
-      }
-      // Define custom template parameter for next template processing.
-      if (!empty($style_option['template'])) {
-        $build['#ws_template'] = $style_option['template'];
+
+    if (is_array($ws_styles)) {
+      foreach ($ws_styles as $group => $style) {
+        // Skip processing styles if nothing has been set.
+        if (empty($style)) {
+          continue;
+        }
+        $style_option = $this->wsStyleOptionManager->getStyleOption($group, $style);
+        // Get libraries for the component.
+        if (!empty($style_option['library'])) {
+          $libraries[] = $style_option['library'];
+        }
+        // Get classes to be attached for the component.
+        if (!empty($style_option['class'])) {
+          $classes[] = $style_option['class'];
+        }
+        // Define custom template parameter for next template processing.
+        if (!empty($style_option['template'])) {
+          $build['#ws_template'] = $style_option['template'];
+        }
       }
     }
 
