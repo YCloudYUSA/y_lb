@@ -34,7 +34,7 @@
     }
 
     .btn {
-      background-color: var(--wsPrimaryColor) !important;
+      background-color: var(--wsPrimaryColor, blue) !important;
       border-radius: 10px;
       color: var(--ylb-color-white);
       font-family: var(--ylb-font-family-cachet);
@@ -46,7 +46,7 @@
       text-transform: unset;
 
       &:hover {
-        background-color: var(--wsPrimaryColor) !important;
+        background-color: var(--wsPrimaryColor, black) !important;
         color: var(--ylb-color-white);
       }
     }

@@ -4,7 +4,7 @@
 
 .footer {
   &.ws-footer {
-    background-color: var(--wsPrimaryColor);
+    background-color: var(--wsPrimaryColor, lightgrey);
     display: block;
     color: var(--ylb-color-white);
   }

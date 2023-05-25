@@ -119,7 +119,7 @@
     &:before {
       content: '';
       position: absolute;
-      background: var(--wsSecondaryColor) url("../svg/quotes.svg") center no-repeat;
+      background: var(--wsSecondaryColor, black) url("../svg/quotes.svg") center no-repeat;
       background-size: auto;
       height: 40px;
       width: 40px;
@@ -191,7 +191,7 @@
 
         span {
           -webkit-mask: url(../svg/chevron_right_color.svg) no-repeat center;
-          background: var(--wsPartnerColor);
+          background: var(--wsPartnerColor, black);
           background-size: auto;
           height: 100%;
           width: 100%;

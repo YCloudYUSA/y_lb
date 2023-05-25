@@ -103,7 +103,7 @@
         padding-right: 5px;
 
         &:before {
-          color: var(--wsTertiaryColor);
+          color: var(--wsTertiaryColor, black);
         }
       }
     }
