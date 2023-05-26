@@ -7,24 +7,24 @@ a {
 
     &.btn-primary {
       &.filled {
-        background-color: var(--wsPartnerColor);
+        background-color: var(--wsPartnerColor, black);
         color: var(--ylb-color-white);
         border: 2px solid transparent;
 
         &:hover {
           background-color: var(--ylb-color-white);
-          color: var(--wsPartnerColor);
-          border-color: var(--wsPartnerColor);
+          color: var(--wsPartnerColor, black);
+          border-color: var(--wsPartnerColor, black);
         }
       }
       &.outline {
         background-color: var(--ylb-color-white);
-        color: var(--wsPartnerColor);
-        border: 2px solid var(--wsPartnerColor);
+        color: var(--wsPartnerColor, black);
+        border: 2px solid var(--wsPartnerColor, black);
 
 
         &:hover {
-          background-color: var(--wsPartnerColor);
+          background-color: var(--wsPartnerColor, black);
           color: var(--ylb-color-white);
           border-color: transparent;
         }
@@ -33,7 +33,7 @@ a {
     &.btn-secondary {
       &.filled {
         background-color: var(--ylb-color-white);
-        color:  var(--wsPartnerColor);
+        color:  var(--wsPartnerColor, black);
         border: 2px solid transparent;
 
         &:hover {
@@ -50,7 +50,7 @@ a {
 
         &:hover {
           background-color: var(--ylb-color-white);
-          color:  var(--wsPartnerColor);
+          color:  var(--wsPartnerColor, black);
           border-color: transparent;
         }
       }

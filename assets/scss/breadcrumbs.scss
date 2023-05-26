@@ -35,7 +35,7 @@
         &:first-child {
           a {
             font-size: 0;
-            background: var(--wsPartnerColor);
+            background: var(--wsPartnerColor, black);
             mask: url("../svg/home.svg") no-repeat left;
           }
         }

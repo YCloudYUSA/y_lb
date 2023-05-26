@@ -5,7 +5,7 @@ layout_builder:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
 
 main:
-  version: 1.11
+  version: 1.12
   css:
     theme:
       assets/css/colors.css: { minified: false }
@@ -19,13 +19,13 @@ main:
       - core/jquery
 
 breadcrumbs:
-  version: 1.4
+  version: 1.5
   css:
     component:
       assets/css/breadcrumbs.css: { preprocess: true }
 
 blocks:
-  version: 1.5
+  version: 1.6
   css:
     component:
       assets/css/blocks.css: { preprocess: true }
@@ -39,13 +39,13 @@ bs_icons:
       //cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css: { external: true }
 
 footer:
-  version: 1.0
+  version: 1.1
   css:
     component:
       assets/css/footer.css: { preprocess: true }
 
 header:
-  version: 1.1
+  version: 1.2
   css:
     component:
       assets/css/header.css: { preprocess: true }
@@ -53,7 +53,7 @@ header:
     assets/js/header.js: { minified: false }
 
 main_menu:
-  version: 1.1
+  version: 1.2
   css:
     component:
       assets/css/main-menu.css: { preprocess: true }
