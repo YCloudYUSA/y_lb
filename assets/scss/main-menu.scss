@@ -51,6 +51,10 @@
       list-style: none;
       white-space: nowrap;
 
+      @include media-breakpoint-up(lg) {
+        width: max-content;
+      }
+
       &.nav-level-2 {
         box-shadow: unset;
         background-color: transparent;
@@ -60,14 +64,14 @@
         &:active,
         &:focus,
         &:hover {
-          color: var(--wsPrimaryColor, blue);
-          border-color: var(--wsPrimaryColor, blue);
+          color: var(--wsPartnerColor, blue);
+          border-color: var(--wsSecondaryColor, blue);
         }
 
         li {
           a {
+
             @include media-breakpoint-up(lg) {
-              min-width: 280px;
               white-space: initial;
             }
           }
@@ -82,10 +86,6 @@
         &.show {
           display: flex;
 
-          .dropdown-menu {
-            min-width: 250px;
-          }
-
           a {
             box-shadow: unset;
             background-color: transparent;
@@ -95,7 +95,7 @@
             &:hover {
               box-shadow: unset;
               background-color: transparent;
-              border-color: var(--wsPrimaryColor, blue);
+              border-color: var(--wsPartnerColor, blue);
             }
           }
 
@@ -131,7 +131,7 @@
         &:active,
         &:focus,
         &:hover {
-          color: var(--wsPrimaryColor, blue);
+          color: var(--wsPartnerColor, blue);
           text-decoration: none;
         }
       }
@@ -141,10 +141,10 @@
       &:hover {
 
         & > a {
-          color: var(--wsPrimaryColor, blue);
+          color: var(--wsPartnerColor, blue);
 
           #menu-chevron {
-            fill: var(--wsPrimaryColor, black);
+            fill: var(--wsPartnerColor, black);
           }
         }
       }
@@ -187,17 +187,10 @@
 
         @include media-breakpoint-up(lg) {
           a {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 22px;
             padding: 10px;
-
-            &:after {
-              background-image: url('../svg/menu-arrow-right.svg');
-              background-repeat: no-repeat;
-              content: '';
-              display: inline-block;
-              height: 17px;
-              width: 24px;
-              margin-left: 5px;
-            }
           }
 
           .active & {
@@ -205,8 +198,27 @@
           }
         }
 
+        &.children {
+          @include media-breakpoint-up(lg) {
+            a {
+              &:after {
+                background-image: url('../svg/menu-arrow-right.svg');
+                background-repeat: no-repeat;
+                content: '';
+                display: inline-block;
+                height: 17px;
+                width: 24px;
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+
+      &.nav-level-4 {
         a {
-          font-weight: 400 !important;
+          font-size: 18px;
+          line-height: 22px;
         }
       }
 
@@ -229,7 +241,7 @@
     .dropdown-label {
       padding: 20px 0 20px 20px;
       color: var(--ylb-color-semi-light-grey);
-      font-size: 16px;
+      font-size: 18px;
 
       @include media-breakpoint-down(lg) {
         display: none;
@@ -257,8 +269,16 @@
     li {
       padding: 10px;
 
+      @include media-breakpoint-up(lg) {
+        width: auto !important;
+      }
+
       a {
         color: var(--ylb-color-white) !important;
+
+        @include media-breakpoint-up(lg) {
+          white-space: unset !important;
+        }
 
         &:after {
           display: none;
@@ -291,7 +311,7 @@
           padding: 20px 0;
           border-bottom: solid 1px var(--ylb-color-light-grey);
 
-          &:after {
+          &.children:after {
             content: '';
             width: 24px;
             height: 17px;
@@ -395,13 +415,13 @@
                   display: block;
                   height: auto;
                   overflow: auto;
-                  padding: 0 5px;
+                  padding: 0 25px;
                   position: relative;
                   top: 0;
                   width: 100%;
 
                   li {
-                    padding: 20px;
+                    padding: 20px 0;
                     border-bottom: solid 1px var(--ylb-color-light-grey);
 
                     &:after {
