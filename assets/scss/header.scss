@@ -368,7 +368,8 @@
     flex-direction: column;
     justify-content: flex-start;
     display: flex;
-    overflow: inherit;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     .header--top {
       &-right-column {
