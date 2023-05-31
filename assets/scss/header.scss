@@ -11,7 +11,7 @@
       padding: 6px;
 
       a {
-        color: var(--ylb-color-black);
+        color: var(--ylb-color-black, black);
         font-family: var(--ylb-font-family-cachet);
         font-size: 16px;
         font-weight: 500;
@@ -21,7 +21,7 @@
         &:active,
         &:focus,
         &:hover {
-          color: var(--ylb-color-black);
+          color: var(--ylb-color-black, black);
           text-decoration: none;
         }
       }
@@ -130,7 +130,7 @@
             }
 
             a {
-              color: var(--ylb-color-dark-grey-1);
+              color: var(--ylb-color-dark-grey-1, darkgray);
               font-family: (--ylb-font-family-cachet);
               font-size: 20px;
               font-weight: 400;
@@ -160,7 +160,7 @@
     a.highlighted {
       background-color: var(--wsPrimaryColor, gray);
       border-radius: 10px;
-      color: var(--ylb-color-white);
+      color: var(--ylb-color-white, white);
       font-family: (--ylb-font-family-cachet);
       font-size: 20px;
       letter-spacing: 0;
@@ -172,7 +172,7 @@
       &:active,
       &:focus,
       &:hover {
-        color: var(--ylb-color-white);
+        color: var(--ylb-color-white, white);
         text-decoration: none;
       }
     }
@@ -226,7 +226,7 @@
           background: none;
 
           i {
-            color: var(--ylb-color-dark-grey-1);
+            color: var(--ylb-color-dark-grey-1, darkgray);
 
             &:active,
             &:focus,
@@ -238,7 +238,7 @@
       }
 
       &-bar {
-        background-color: var(--ylb-color-white);
+        background-color: var(--ylb-color-white, white);
         border-radius: 10px;
         bottom: -150px;
         box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
@@ -270,7 +270,7 @@
 
           .search {
             &-input {
-              border: 2px solid var(--ylb-color-light-grey-3);
+              border: 2px solid var(--ylb-color-light-grey-3, lightgray);
               border-radius: 10px;
               height: 50px;
 
@@ -288,7 +288,7 @@
               background-color: var(--wsPrimaryColor, black);
               border-radius: 0 10px 10px 0;
               border: none;
-              color: var(--ylb-color-white);
+              color: var(--ylb-color-white, white);
               display: flex;
               font-family: var(--ylb-font-family-cachet);
               font-size: 20px;
@@ -328,7 +328,7 @@
           }
 
           i {
-            color: var(--ylb-color-dark-grey-2);
+            color: var(--ylb-color-dark-grey-2, darkgray);
             font-size: 20px;
             position: relative;
             top: 5px
@@ -360,7 +360,7 @@
   }
 
   &.open {
-    background-color: var(--ylb-color-white);
+    background-color: var(--ylb-color-white, white);
     height: 100vh;
     position: relative;
     top: 0;

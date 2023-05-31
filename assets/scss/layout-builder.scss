@@ -2,7 +2,7 @@
   &:after {
     content: '*' !important;
     vertical-align: text-top !important;
-    color: var(--ylb-color-red) !important;
+    color: var(--ylb-color-red, red) !important;
     background: none !important;
   }
 }

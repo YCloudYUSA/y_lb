@@ -3,7 +3,7 @@
 @import "_variables";
 
 .lb__content .body.field-item, .layout-builder__layout .body.field-item, .layout-builder__layout .field-body.field-item, .cke_editable_themed {
-  color: var(--ylb-color-dark-grey-1);
+  color: var(--ylb-color-dark-grey-1, darkgray);
 
   > *:first-child {
     margin-top: 0 !important;
@@ -89,7 +89,7 @@
   dl {
     font-size: 20px;
     line-height: 30px;
-    color: var(--ylb-color-dark-grey-1);
+    color: var(--ylb-color-dark-grey-1, darkgray);
 
     @include media-breakpoint-down('md') {
       font-size: 18px;
@@ -104,7 +104,7 @@
   // Blockquote
   // -----------------------------------------------------------------------------
   blockquote {
-    color: var(--ylb-color-dark-grey-1);
+    color: var(--ylb-color-dark-grey-1, darkgray);
     padding: 40px 0 35px 100px;
     border-top: 2px solid var(--wsTertiaryColor, #636466);
     border-bottom: 2px solid var(--wsTertiaryColor, #636466);
@@ -253,7 +253,7 @@
   .btn {
     &.btn-default {
       margin-top: 20px;
-      color: var(--ylb-color-white);
+      color: var(--ylb-color-white, white);
       background-color: var(--wsPartnerColor, #636466);
       font-size: 22px;
       line-height: 28px;
@@ -277,14 +277,14 @@
 
   mark {
     color: #FFFFFF;
-    background-color: var(--ylb-color-dark-grey-1);
+    background-color: var(--ylb-color-dark-grey-1, darkgray);
     padding: 3px 5px;
     border-radius: 4px;
   }
 
   b,
   strong {
-    color: var(--ylb-color-dark-grey-1);
+    color: var(--ylb-color-dark-grey-1, darkgray);
     font-weight: bold;
   }
 

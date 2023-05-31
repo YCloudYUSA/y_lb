@@ -21,7 +21,7 @@
 
     .field-description,
     .field-title {
-      color: var(--ylb-color-black);
+      color: var(--ylb-color-black, black);
       font-family: var(--ylb-font-family-verdana);
       font-size: 18px;
       font-weight: 700;
@@ -36,7 +36,7 @@
     .btn {
       background-color: var(--wsPrimaryColor, blue) !important;
       border-radius: 10px;
-      color: var(--ylb-color-white);
+      color: var(--ylb-color-white, white);
       font-family: var(--ylb-font-family-cachet);
       font-size: 20px;
       font-weight: 400;
@@ -47,7 +47,7 @@
 
       &:hover {
         background-color: var(--wsPrimaryColor, black) !important;
-        color: var(--ylb-color-white);
+        color: var(--ylb-color-white, white);
       }
     }
   }

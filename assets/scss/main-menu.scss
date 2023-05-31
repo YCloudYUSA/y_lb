@@ -115,7 +115,7 @@
       }
 
       a {
-        color: var(--ylb-color-dark-grey-1);
+        color: var(--ylb-color-dark-grey-1, darkgray);
         font-family: (--ylb-font-family-cachet);
         font-size: 20px;
         font-weight: 400;
@@ -174,7 +174,7 @@
 
   .level-2 {
     @include media-breakpoint-up(lg) {
-      background-color: var(--ylb-color-white);
+      background-color: var(--ylb-color-white, white);
       border-radius: 10px;
       box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
       padding: 20px 0;
@@ -223,7 +223,7 @@
       }
 
       a {
-        color: var(--ylb-color-black);
+        color: var(--ylb-color-black, black);
 
         &:hover {
           color: var(--wsPartnerColor, blue);
@@ -240,7 +240,7 @@
 
     .dropdown-label {
       padding: 20px 0 20px 20px;
-      color: var(--ylb-color-grey-1);
+      color: var(--ylb-color-grey-1, gray);
       font-size: 18px;
 
       @include media-breakpoint-down(lg) {
@@ -274,7 +274,7 @@
       }
 
       a {
-        color: var(--ylb-color-white) !important;
+        color: var(--ylb-color-white, white) !important;
 
         @include media-breakpoint-up(lg) {
           white-space: unset !important;
@@ -289,7 +289,7 @@
       &:focus,
       &:hover {
         @include media-breakpoint-up(lg) {
-          background-color: var(--ylb-color-white);
+          background-color: var(--ylb-color-white, white);
           border-radius: 10px;
 
           a {
@@ -309,7 +309,7 @@
       li {
         &.nav-level-2 {
           padding: 20px 0;
-          border-bottom: solid 1px var(--ylb-color-light-grey-3);
+          border-bottom: solid 1px var(--ylb-color-light-grey-3, lightgray);
 
           &.children:after {
             content: '';
@@ -322,7 +322,7 @@
 
           a {
             border-bottom: none;
-            color: var(--ylb-color-dark-grey-2);
+            color: var(--ylb-color-dark-grey-2, darkgray);
             font-family: var(--ylb-font-family-verdana);
             font-size: 20px;
             font-weight: 600;
@@ -336,7 +336,7 @@
             }
 
             &.open {
-              background-color: var(--ylb-color-white);
+              background-color: var(--ylb-color-white, white);
               border: none;
               box-shadow: none;
               display: block;
@@ -359,17 +359,17 @@
                   font-family: var(--ylb-font-family-verdana);
                   line-height: 24px;
                   font-size: 20px;
-                  color: var(--ylb-color-black);
+                  color: var(--ylb-color-black, black);
 
                   &-top {
-                    border-bottom: solid 1px var(--ylb-color-grey-2);
+                    border-bottom: solid 1px var(--ylb-color-grey-2, gray);
                     padding: 20px;
                     width: 100%;
                     font-weight: 400;
                   }
 
                   &-bottom {
-                    color: var(--ylb-color-black);
+                    color: var(--ylb-color-black, black);
                     font-weight: 700;
                     padding: 20px 0 30px 20px;
                     width: 100%;
@@ -390,14 +390,14 @@
                   font-family: var(--ylb-font-family-cachet);
                   font-size: 1.8rem;
                   border: none;
-                  color: var(--ylb-color-black);
+                  color: var(--ylb-color-black, black);
                   width: 100%;
                   text-align: center;
 
                   &:hover,
                   &:active,
                   &:focus {
-                    background-color: var(--ylb-color-black);
+                    background-color: var(--ylb-color-black, black);
                   }
                 }
               }
@@ -422,7 +422,7 @@
 
                   li {
                     padding: 20px 0;
-                    border-bottom: solid 1px var(--ylb-color-light-grey-3);
+                    border-bottom: solid 1px var(--ylb-color-light-grey-3, lightgray);
 
                     &:after {
                       content: '';
@@ -434,7 +434,7 @@
                     }
 
                     a {
-                      color: var(--ylb-color-white);
+                      color: var(--ylb-color-white, white);
                       word-break: break-word;
                       white-space: initial;
                     }

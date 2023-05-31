@@ -6,7 +6,7 @@
   &.ws-footer {
     background-color: var(--wsPrimaryColor, lightgrey);
     display: block;
-    color: var(--ylb-color-white);
+    color: var(--ylb-color-white, white);
   }
 
   h2 {
@@ -69,12 +69,12 @@
             margin-bottom: 20px;
 
             a {
-              color: var(--ylb-color-white);
+              color: var(--ylb-color-white, white);
 
               &:hover,
               &:active,
               &:focus {
-                color: var(--ylb-color-white);
+                color: var(--ylb-color-white, white);
                 text-decoration: underline;
               }
             }
@@ -96,12 +96,12 @@
           }
 
           a {
-            color: var(--ylb-color-white);
+            color: var(--ylb-color-white, white);
 
             &:hover,
             &:active,
             &:focus {
-              color: var(--ylb-color-white);
+              color: var(--ylb-color-white, white);
             }
 
             i {
@@ -158,14 +158,14 @@
 
           a {
             font-size: 14px;
-            color: var(--ylb-color-white);
+            color: var(--ylb-color-white, white);
             font-family: var(--ylb-font-family-verdana);
             padding: 0 5px;
 
             &:hover,
             &:active,
             &:focus {
-              color: var(--ylb-color-white);
+              color: var(--ylb-color-white, white);
             }
           }
         }
