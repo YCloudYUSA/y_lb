@@ -1,21 +1,16 @@
-// Color's variables.
-$wsPurplePrimaryColor: #5C2E91;
-$wsPurplePrimaryColorRGB: 92, 46, 145;
-$wsPurpleSecondaryColor: #92278F;
-$wsPurpleSecondaryColorRGB: 146, 39, 143;
-$wsPurpleTertiaryColor: #C6168D;
-$wsPurpleTertiaryColorRGB: 198, 22, 141;
-$wsPurplePartnerColor: #A92B31;
-$wsPurplePartnerColorRGB: 169, 43, 49;
-
 // Set variables globally.
 :root {
-  --wsPrimaryColor: #{$wsPurplePrimaryColor};
-  --wsPrimaryColorRGB: #{$wsPurplePrimaryColorRGB};
-  --wsSecondaryColor: #{$wsPurpleSecondaryColor};
-  --wsSecondaryColorRGB: #{$wsPurpleSecondaryColorRGB};
-  --wsTertiaryColor: #{$wsPurpleTertiaryColor};
-  --wsTertiaryColorRGB: #{$wsPurpleTertiaryColorRGB};
-  --wsPartnerColor: #{$wsPurplePartnerColor};
-  --wsPartnerColorRGB: #{$wsPurplePartnerColorRGB};
+  --wsPrimaryColor: var(--ylb-color-purple-dark);
+  --wsPrimaryColorRGB: var(--ylb-color-rgb-purple-dark);
+  --wsSecondaryColor: var(--ylb-color-purple);
+  --wsSecondaryColorRGB: var(--ylb-color-rgb-purple);
+  --wsTertiaryColor: var(--ylb-color-purple-light);
+  --wsTertiaryColorRGB: var(--ylb-color-rgb-purple-light);
+  --wsPartnerColor: var(--ylb-color-red-dark);
+  --wsPartnerColorRGB: var(--ylb-color-rgb-red-dark);
+  --wsLogoChevronDark: var(--ylb-color-purple-dark);
+  --wsLogoChevronMid: var(--ylb-color-purple);
+  --wsLogoChevronLight: var(--ylb-color-purple-light);
+  --wsLogoTriangleDark: var(--ylb-color-red-dark);
+  --wsLogoTriangleLight: var(--ylb-color-red);
 }

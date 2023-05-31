@@ -3,13 +3,13 @@
     <title>18A612A8-B407-4667-98E0-6C45814FB6EB</title>
     <defs>
         <radialGradient cx="-28.52994%" cy="-30.8278357%" fx="-28.52994%" fy="-30.8278357%" r="165.500033%" gradientTransform="translate(-0.285299,-0.308278),scale(0.879995,1.000000),translate(0.285299,0.308278)" id="radialGradient1">
-            <stop stop-color="var(--wsPartnerColor, black)" offset="0%"></stop>
-            <stop stop-color="var(--wsPartnerColor, black)" offset="100%"></stop>
+            <stop stop-color="var(--wsLogoTriangleLight, black)" offset="0%"></stop>
+            <stop stop-color="var(--wsLogoTriangleDark, black)" offset="100%"></stop>
         </radialGradient>
         <radialGradient cx="-15.3531647%" cy="18.7130756%" fx="-15.3531647%" fy="18.7130756%" r="193.28266%" gradientTransform="translate(-0.153532,0.187131),scale(1.000000,0.597426),translate(0.153532,-0.187131)" id="radialGradient2">
-            <stop stop-color="var(--wsTertiaryColor, black)" offset="0%"></stop>
-            <stop stop-color="var(--wsSecondaryColor, black)" offset="44%"></stop>
-            <stop stop-color="var(--wsPrimaryColor, black)" offset="100%"></stop>
+            <stop stop-color="var(--wsLogoChevronLight, black)" offset="0%"></stop>
+            <stop stop-color="var(--wsLogoChevronMid, black)" offset="44%"></stop>
+            <stop stop-color="var(--wsLogoChevronDark, black)" offset="100%"></stop>
         </radialGradient>
     </defs>
     <g id="UI-KIt" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

@@ -5,7 +5,7 @@ layout_builder:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
 
 main:
-  version: 1.12
+  version: 1.13
   css:
     theme:
       assets/css/colors.css: { minified: false }
@@ -19,7 +19,7 @@ main:
       - core/jquery
 
 breadcrumbs:
-  version: 1.5
+  version: 1.6
   css:
     component:
       assets/css/breadcrumbs.css: { preprocess: true }
@@ -45,7 +45,7 @@ footer:
       assets/css/footer.css: { preprocess: true }
 
 header:
-  version: 1.3
+  version: 1.4
   css:
     component:
       assets/css/header.css: { preprocess: true }
@@ -53,7 +53,7 @@ header:
     assets/js/header.js: { minified: false }
 
 main_menu:
-  version: 1.3
+  version: 1.4
   css:
     component:
       assets/css/main-menu.css: { preprocess: true }
@@ -62,25 +62,25 @@ main_menu:
 
 #Colorway styles.
 colorway.blue:
-  version: 1.2
+  version: 1.3
   css:
     theme:
       assets/css/colorway-blue.css: { minified: false }
 
 colorway.green:
-  version: 1.1
+  version: 1.3
   css:
     theme:
       assets/css/colorway-green.css: { minified: false }
 
 colorway.purple:
-  version: 1.2
+  version: 1.3
   css:
     theme:
       assets/css/colorway-purple.css: { minified: false }
 
 colorway.red:
-  version: 1.2
+  version: 1.3
   css:
     theme:
       assets/css/colorway-red.css: { minified: false }

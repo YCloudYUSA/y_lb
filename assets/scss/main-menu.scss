@@ -115,7 +115,7 @@
       }
 
       a {
-        color: var(--ylb-color-dark-grey);
+        color: var(--ylb-color-dark-grey-1);
         font-family: (--ylb-font-family-cachet);
         font-size: 20px;
         font-weight: 400;
@@ -240,7 +240,7 @@
 
     .dropdown-label {
       padding: 20px 0 20px 20px;
-      color: var(--ylb-color-semi-light-grey);
+      color: var(--ylb-color-grey-1);
       font-size: 18px;
 
       @include media-breakpoint-down(lg) {
@@ -309,7 +309,7 @@
       li {
         &.nav-level-2 {
           padding: 20px 0;
-          border-bottom: solid 1px var(--ylb-color-light-grey);
+          border-bottom: solid 1px var(--ylb-color-light-grey-3);
 
           &.children:after {
             content: '';
@@ -322,7 +322,7 @@
 
           a {
             border-bottom: none;
-            color: var(--ylb-color-y-grey2);
+            color: var(--ylb-color-dark-grey-2);
             font-family: var(--ylb-font-family-verdana);
             font-size: 20px;
             font-weight: 600;
@@ -362,7 +362,7 @@
                   color: var(--ylb-color-black);
 
                   &-top {
-                    border-bottom: solid 1px var(--ylb-color-grey);
+                    border-bottom: solid 1px var(--ylb-color-grey-2);
                     padding: 20px;
                     width: 100%;
                     font-weight: 400;
@@ -422,7 +422,7 @@
 
                   li {
                     padding: 20px 0;
-                    border-bottom: solid 1px var(--ylb-color-light-grey);
+                    border-bottom: solid 1px var(--ylb-color-light-grey-3);
 
                     &:after {
                       content: '';

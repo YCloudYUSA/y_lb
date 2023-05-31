@@ -130,7 +130,7 @@
             }
 
             a {
-              color: var(--ylb-color-dark-grey);
+              color: var(--ylb-color-dark-grey-1);
               font-family: (--ylb-font-family-cachet);
               font-size: 20px;
               font-weight: 400;
@@ -226,7 +226,7 @@
           background: none;
 
           i {
-            color: var(--ylb-color-dark-grey);
+            color: var(--ylb-color-dark-grey-1);
 
             &:active,
             &:focus,
@@ -270,7 +270,7 @@
 
           .search {
             &-input {
-              border: 2px solid var(--ylb-color-light-grey);
+              border: 2px solid var(--ylb-color-light-grey-3);
               border-radius: 10px;
               height: 50px;
 
@@ -328,7 +328,7 @@
           }
 
           i {
-            color: var(--ylb-color-y-grey2);
+            color: var(--ylb-color-dark-grey-2);
             font-size: 20px;
             position: relative;
             top: 5px

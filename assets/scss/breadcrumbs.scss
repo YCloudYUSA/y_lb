@@ -13,7 +13,7 @@
   .breadcrumbs-wrapper {
     margin: 0;
     padding: 8px 0;
-    border-bottom: 1px solid var(--ylb-color-dark-grey);
+    border-bottom: 1px solid var(--ylb-color-dark-grey-1);
 
     @include media-breakpoint-down('lg') {
       display: block !important;
@@ -26,7 +26,7 @@
       li {
         background: none;
         border: none;
-        color: var(--ylb-color-semi-light-grey);
+        color: var(--ylb-color-grey-1);
 
         &:after {
           content: '>';
@@ -52,14 +52,14 @@
           display: flex;
           font-size: 14px;
           line-height: 24px;
-          color: var(--wsPartnerColor, var(--ylb-color-semi-light-grey));
+          color: var(--wsPartnerColor, var(--ylb-color-grey-1));
           padding: 0 10px;
           min-height: auto;
           background: none;
         }
 
         span {
-          color: var(--ylb-color-semi-light-grey);
+          color: var(--ylb-color-grey-1);
         }
 
         a:hover {
