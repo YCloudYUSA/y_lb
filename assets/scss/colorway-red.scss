@@ -1,21 +1,16 @@
-// Color's variables.
-$wsRedPrimaryColor: #A92B31;
-$wsRedPrimaryColorRGB: 169, 43, 49;
-$wsRedSecondaryColor: #ED1C24;
-$wsRedSecondaryColorRGB: 237, 28, 36;
-$wsRedTertiaryColor: #FCAF17;
-$wsRedTertiaryColorRGB: 252, 175, 23;
-$wsRedPartnerColor: #A92B31;
-$wsRedPartnerColorRGB: 169, 43, 49;
-
 // Set variables globally.
 :root {
-  --wsPrimaryColor: #{$wsRedPrimaryColor};
-  --wsPrimaryColorRGB: #{$wsRedPrimaryColorRGB};
-  --wsSecondaryColor: #{$wsRedSecondaryColor};
-  --wsSecondaryColorRGB: #{$wsRedSecondaryColorRGB};
-  --wsTertiaryColor: #{$wsRedTertiaryColor};
-  --wsTertiaryColorRGB: #{$wsRedTertiaryColorRGB};
-  --wsPartnerColor: #{$wsRedPartnerColor};
-  --wsPartnerColorRGB: #{$wsRedPartnerColorRGB};
+  --wsPrimaryColor: var(--ylb-color-red-dark);
+  --wsPrimaryColorRGB: var(--ylb-color-rgb-red-dark);
+  --wsSecondaryColor: var(--ylb-color-red);
+  --wsSecondaryColorRGB: var(--ylb-color-rgb-red);
+  --wsTertiaryColor: var(--ylb-color-orange-light);
+  --wsTertiaryColorRGB: var(--ylb-color-rgb-orange-light);
+  --wsPartnerColor: var(--ylb-color-red-dark);
+  --wsPartnerColorRGB: var(--ylb-color-rgb-red-dark);
+  --wsLogoChevronDark: var(--ylb-color-red-dark);
+  --wsLogoChevronMid: var(--ylb-color-red);
+  --wsLogoChevronLight: var(--ylb-color-red-light);
+  --wsLogoTriangleDark: var(--ylb-color-orange);
+  --wsLogoTriangleLight: var(--ylb-color-orange-light);
 }

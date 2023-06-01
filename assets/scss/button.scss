@@ -8,48 +8,48 @@ a {
     &.btn-primary {
       &.filled {
         background-color: var(--wsPartnerColor, black);
-        color: var(--ylb-color-white);
+        color: var(--ylb-color-white, white);
         border: 2px solid transparent;
 
         &:hover {
-          background-color: var(--ylb-color-white);
+          background-color: var(--ylb-color-white, white);
           color: var(--wsPartnerColor, black);
           border-color: var(--wsPartnerColor, black);
         }
       }
       &.outline {
-        background-color: var(--ylb-color-white);
+        background-color: var(--ylb-color-white, white);
         color: var(--wsPartnerColor, black);
         border: 2px solid var(--wsPartnerColor, black);
 
 
         &:hover {
           background-color: var(--wsPartnerColor, black);
-          color: var(--ylb-color-white);
+          color: var(--ylb-color-white, white);
           border-color: transparent;
         }
       }
     }
     &.btn-secondary {
       &.filled {
-        background-color: var(--ylb-color-white);
+        background-color: var(--ylb-color-white, white);
         color:  var(--wsPartnerColor, black);
         border: 2px solid transparent;
 
         &:hover {
           background-color: transparent;
-          color: var(--ylb-color-white);
-          border-color: var(--ylb-color-white);
+          color: var(--ylb-color-white, white);
+          border-color: var(--ylb-color-white, white);
         }
       }
       &.outline {
         background-color: transparent;
-        color: var(--ylb-color-white);
-        border: 2px solid var(--ylb-color-white);
+        color: var(--ylb-color-white, white);
+        border: 2px solid var(--ylb-color-white, white);
 
 
         &:hover {
-          background-color: var(--ylb-color-white);
+          background-color: var(--ylb-color-white, white);
           color:  var(--wsPartnerColor, black);
           border-color: transparent;
         }

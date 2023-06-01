@@ -1,12 +1,12 @@
 layout_builder_theme: dark
-background_colors: "ylb-bg-black|Black\r\nylb-bg-blue|Blue\r\nylb-bg-brown|Brown\r\nylb-bg-dark-blue|Dark blue\r\nylb-bg-dark-green|Dark green\r\nylb-bg-dark-magenta|Dark magenta\r\nylb-bg-green|Green\r\nylb-bg-grey|Grey\r\nylb-bg-semi-light-grey|Semi light grey\r\nylb-bg-light-blue|Light blue\r\nylb-bg-light-green|Light green\r\nylb-bg-orange|Orange\r\nylb-bg-pink|Pink\r\nylb-bg-purple|Purple\r\nylb-bg-red|Red\r\nylb-bg-sky-blue|Sky blue\r\nylb-bg-white|White\r\nylb-bg-yellow|Yellow"
+background_colors: "ylb-bg-black|Black\r\nylb-bg-blue|Blue\r\nylb-bg-dark-blue|Dark blue\r\nylb-bg-dark-green|Dark green\r\nylb-bg-dark-magenta|Dark magenta\r\nylb-bg-green|Green\r\nylb-bg-grey|Grey\r\nylb-bg-semi-light-grey|Semi light grey\r\nylb-bg-light-blue|Light blue\r\nylb-bg-light-green|Light green\r\nylb-bg-orange|Orange\r\nylb-bg-pink|Pink\r\nylb-bg-purple|Purple\r\nylb-bg-red|Red\r\nylb-bg-white|White\r\nylb-bg-yellow|Yellow"
 background_image:
   bundle: image
   field: field_media_image
 background_local_video:
   bundle: video
   field: field_media_video_file
-text_colors: "ylb-text-black|Black\r\nylb-text-blue|Blue\r\nylb-text-brown|Brown\r\nylb-text-dark-blue|Dark blue\r\nylb-text-dark-green|Dark green\r\nylb-text-dark-magenta|Dark magenta\r\nylb-text-green|Green\r\nylb-text-grey|Grey\r\nylb-text-light-blue|Light blue\r\nylb-text-light-green|Light green\r\nylb-text-orange|Orange\r\nylb-text-pink|Pink\r\nylb-text-purple|Purple\r\nylb-text-red|Red\r\nylb-text-sky-blue|Sky blue\r\nylb-text-white|White\r\nylb-text-yellow|Yellow"
+text_colors: "ylb-text-black|Black\r\nylb-text-blue|Blue\r\nylb-text-dark-blue|Dark blue\r\nylb-text-dark-green|Dark green\r\nylb-text-dark-magenta|Dark magenta\r\nylb-text-green|Green\r\nylb-text-grey|Grey\r\nylb-text-light-blue|Light blue\r\nylb-text-light-green|Light green\r\nylb-text-orange|Orange\r\nylb-text-pink|Pink\r\nylb-text-purple|Purple\r\nylb-text-red|Red\r\nylb-text-white|White\r\nylb-text-yellow|Yellow"
 text_alignment: "bs-text-left|Left\r\nbs-text-center|Center\r\nbs-text-right|Right\r\nbs-text-justify|Justify"
 padding: "bs-p-1|Padding 1\r\nbs-p-2|Padding 2\r\nbs-p-3|Padding 3\r\nbs-p-4|Padding 4\r\nbs-p-5|Padding 5"
 padding_left: "bs-pl-1|Padding Left 1\r\nbs-pl-2|Padding Left 2\r\nbs-pl-3|Padding Left 3\r\nbs-pl-4|Padding Left 4\r\nbs-pl-5|Padding Left 5"
