@@ -23,14 +23,16 @@
 
       const firstLevelItem = $('.header-nav__links .dropdown', context);
       const firstLevelItemLink = $(firstLevelItem, context).children('a');
-      $(firstLevelItemLink, context).click(function (e) {
-        const menuCtaBlock = $(this).parent().find('.ws-menu-cta-block');
-        const secondLevelItemLink = $(this).parent().find('.level-3');
-        if (menuCtaBlock !== 'undefined') {
-          menuCtaBlock.show();
-          secondLevelItemLink.removeClass('open');
-        }
-      });
+      if ($(window).width() >= breakpoint) {
+        $(firstLevelItemLink, context).click(function (e) {
+          const menuCtaBlock = $(this).parent().find('.ws-menu-cta-block');
+          const secondLevelItemLink = $(this).parent().find('.level-3');
+          if (menuCtaBlock !== 'undefined') {
+            menuCtaBlock.show();
+            secondLevelItemLink.removeClass('open');
+          }
+        });
+      }
     }
   };
 })(jQuery, Drupal);
