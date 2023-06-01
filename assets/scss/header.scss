@@ -131,7 +131,7 @@
 
             a {
               color: var(--ylb-color-dark-grey-1, darkgray);
-              font-family: (--ylb-font-family-cachet);
+              font-family: var(--ylb-font-family-cachet);
               font-size: 20px;
               font-weight: 400;
               line-height: 24px;
@@ -161,7 +161,7 @@
       background-color: var(--wsPrimaryColor, gray);
       border-radius: 10px;
       color: var(--ylb-color-white, white);
-      font-family: (--ylb-font-family-cachet);
+      font-family: var(--ylb-font-family-cachet);
       font-size: 20px;
       letter-spacing: 0;
       line-height: 25px;
@@ -368,7 +368,8 @@
     flex-direction: column;
     justify-content: flex-start;
     display: flex;
-    overflow: inherit;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     .header--top {
       &-right-column {

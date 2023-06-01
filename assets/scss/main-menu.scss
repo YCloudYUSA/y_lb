@@ -17,6 +17,7 @@
     flex-wrap: wrap;
     gap: 20px;
     height: 100%;
+    max-height: 95px;
     justify-content: center;
     margin-bottom: 0;
 
@@ -116,7 +117,7 @@
 
       a {
         color: var(--ylb-color-dark-grey-1, darkgray);
-        font-family: (--ylb-font-family-cachet);
+        font-family: var(--ylb-font-family-cachet);
         font-size: 20px;
         font-weight: 400;
         height: auto;
