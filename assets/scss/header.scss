@@ -348,6 +348,9 @@
     @include media-breakpoint-up(lg) {
       display: none;
     }
+    //@media (min-width: 1060px) {
+    //  display: block;
+    //}
 
     .header-navbar-toggler {
       background-color: transparent;

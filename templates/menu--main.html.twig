@@ -104,7 +104,7 @@
                   {% set item_title %}
                     {{ item.title }}
                   {% endset %}
-                  {{ link(item_title, item.url, { 'data-submenu-target' : 'dropdown-' ~ item.title|clean_class, 'class' : ['menu-link-item']}) }}
+                  {{ link(item_title, item.url, { 'data-submenu-target' : 'dropdown-' ~ item.title|clean_class, 'class' : ['menu-link-item', 'children']}) }}
                   {% set level2_item = {'menu_item': item, 'first_level_label': parent.title} %}
                   {% set level2 = level2|merge([level2_item]) %}
                 {% else %}
