@@ -1,11 +1,11 @@
 layout_builder:
-  version: 1.7
+  version: 1.8
   css:
     theme:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
 
 main:
-  version: 1.13
+  version: 1.14
   css:
     theme:
       assets/css/colors.css: { minified: false }
@@ -58,7 +58,7 @@ main_menu:
     component:
       assets/css/main-menu.css: { preprocess: true }
 
-#WS Styles
+#Y Styles
 
 #Colorway styles.
 colorway.blue:

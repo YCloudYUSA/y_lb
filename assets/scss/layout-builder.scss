@@ -252,3 +252,36 @@
     }
   }
 }
+
+#edit-ws-settings-container {
+  div[id^="edit-ws-design-settings-"] {
+    display: flex;
+    flex-wrap: wrap;
+
+    label {
+      padding-left: 10px;
+    }
+
+    .form-item {
+      padding: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(216, 217, 224, 0.8);
+
+      &:has(input:checked) {
+        background-color: whitesmoke;
+      }
+
+      &:has(input[value="ws_border_radius_10"]) {
+        border-radius: 10px;
+      }
+
+      &:has(input[value="ws_border_radius_20"]) {
+        border-radius: 20px;
+      }
+    }
+  }
+  #edit-ws-design-settings-colorway label img {
+    width: 150px;
+  }
+
+}

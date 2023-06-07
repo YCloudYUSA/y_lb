@@ -7,7 +7,7 @@ use Drupal\layout_builder\Form\OverridesEntityForm;
 use Drupal\layout_builder\SectionStorageInterface;
 
 /**
- * Provides a custom form containing the Layout Builder UI for overrides with WS Styles plugin management.
+ * Provides a custom form containing the Layout Builder UI for overrides with Y Styles plugin management.
  */
 class YLBOverridesEntityForm extends OverridesEntityForm {
 
@@ -26,7 +26,7 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
 
     $form['ws_settings_container'] = [
       '#type' => 'details',
-      '#title' => $this->t('WS Styles'),
+      '#title' => $this->t('Y Styles'),
       '#open' => TRUE,
       '#attributes' => [
         'class' => ['form-actions'],
@@ -35,8 +35,8 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
 
     $form['ws_settings_container']['override_styles'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Override default WS Styles'),
-      '#description' => $this->t('Whether or not the node has overridden default WS styles (e.g. Color scheme, etc.).'),
+      '#title' => $this->t('Override default Y Styles'),
+      '#description' => $this->t('Whether or not the node should override the default Y styles (e.g. Color scheme, etc.).'),
       '#default_value' => $node->override_styles->value,
     ];
 

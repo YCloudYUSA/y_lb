@@ -236,16 +236,16 @@ function y_lb_entity_base_field_info(EntityTypeInterface $entity_type) {
 
   if ($entity_type->id() === 'node') {
     $fields['override_styles'] = BaseFieldDefinition::create('boolean')
-      ->setLabel(t('Override default WS Styles'))
-      ->setDescription(t('Whether or not the node has overridden default WS styles (e.g. Color scheme, etc.).'))
+      ->setLabel(t('Override default Y Styles'))
+      ->setDescription(t('Whether or not the node should override the default Y styles (e.g. Color scheme, etc.).'))
       ->setRevisionable(TRUE)
       ->setDefaultValue(FALSE)
       ->setDisplayConfigurable('form', FALSE)
       ->setDisplayConfigurable('view', FALSE);
 
     $fields['styles'] = BaseFieldDefinition::create('string_long')
-      ->setLabel(t('WS Styles'))
-      ->setDescription(t('Node specific WS Styles to be applied.'))
+      ->setLabel(t('Y Styles'))
+      ->setDescription(t('Node specific Y Styles to be applied.'))
       ->setRevisionable(TRUE)
       ->setSetting('case_sensitive', TRUE)
       ->setDisplayConfigurable('form', FALSE)
@@ -276,12 +276,12 @@ function y_lb_preprocess_page(&$variables) {
   $ws_style = \Drupal::service('plugin.manager.ws_style');
   /** @var \Drupal\y_lb\WSStyleOptionManager $ws_style_options */
   $ws_style_option = \Drupal::service('plugin.manager.ws_style_option');
-  // Check individual node for overridden WS styles.
+  // Check individual node for overridden Y Styles.
   if ($node->override_styles->value) {
     $styles = unserialize($node->styles->value);
   }
   else {
-    // Get WS styles from node view display settings.
+    // Get Y Styles from node view display settings.
     $view_display = \Drupal::entityTypeManager()
       ->getStorage('entity_view_display')
       ->load('node.' . $node->bundle() . '.default');

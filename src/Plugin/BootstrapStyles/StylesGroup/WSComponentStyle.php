@@ -12,8 +12,8 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * @StylesGroup(
  *   id = "ws_style",
- *   title = @Translation("WS Style"),
- *   weight = 6,
+ *   title = @Translation("Y Style"),
+ *   weight = 0,
  *   icon = "y_lb/assets/svg/y.svg"
  * )
  */
@@ -25,7 +25,7 @@ class WSComponentStyle extends StylesGroupPluginBase {
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $form['ws_style'] = [
       '#type' => 'details',
-      '#title' => $this->t('WS Style'),
+      '#title' => $this->t('Y Style'),
       '#open' => FALSE,
     ];
 
