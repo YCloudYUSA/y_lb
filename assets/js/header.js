@@ -7,7 +7,7 @@
    */
   Drupal.behaviors.mobile_menu_toggle = {
     attach: function (context) {
-      const breakpoint = 1736;
+      const breakpoint = 1739;
       const $header = $('.header', context);
       const body = $('body', context);
       const btn = $(this, context);
@@ -45,7 +45,7 @@
    */
   Drupal.behaviors.header_dropdown_menu = {
     attach: function (context) {
-      const breakpoint = 1736;
+      const breakpoint = 1739;
 
       $('.menu-link--level-1').click(function (e) {
         if ($(window).width() <= breakpoint) {

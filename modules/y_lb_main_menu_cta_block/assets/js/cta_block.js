@@ -7,7 +7,7 @@
    */
   Drupal.behaviors.cta_block_in_dropdown_menu = {
     attach: function (context) {
-      const breakpoint = 1736;
+      const breakpoint = 1739;
 
       $('.dropdown-submenu a.menu-link-item').click(function (e) {
         if ($(this).parent().hasClass('children')) {
