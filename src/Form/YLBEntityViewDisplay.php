@@ -7,7 +7,7 @@ use Drupal\layout_builder\Form\DefaultsEntityForm;
 use Drupal\layout_builder\SectionStorageInterface;
 
 /**
- * Provides a custom form containing the Layout Builder UI for defaults with WS Styles plugin management.
+ * Provides a custom form containing the Layout Builder UI for defaults with Y Styles plugin management.
  */
 class YLBEntityViewDisplay extends DefaultsEntityForm {
 
@@ -18,7 +18,7 @@ class YLBEntityViewDisplay extends DefaultsEntityForm {
     $settings = $this->entity->getThirdPartySettings('y_lb');
     $form['ws_settings_container'] = [
       '#type' => 'details',
-      '#title' => $this->t('WS Styles'),
+      '#title' => $this->t('Y Styles'),
       '#open' => FALSE,
       '#attributes' => [
         'class' => ['form-actions'],

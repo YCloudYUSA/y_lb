@@ -83,8 +83,8 @@ function _y_lb_install_node_additional_fields() {
   $update_manager = \Drupal::entityDefinitionUpdateManager();
 
   $override_styles_storage = BaseFieldDefinition::create('boolean')
-    ->setLabel(t('Override default WS Styles'))
-    ->setDescription(t('Whether or not the node has overridden default WS styles (e.g. Color scheme, etc.).'))
+    ->setLabel(t('Override default y Styles'))
+    ->setDescription(t('Whether or not the node should override the default Y styles (e.g. Color scheme, etc.).'))
     ->setRevisionable(TRUE)
     ->setDefaultValue(FALSE)
     ->setInitialValue(FALSE)
@@ -92,8 +92,8 @@ function _y_lb_install_node_additional_fields() {
     ->setDisplayConfigurable('view', FALSE);
 
   $styles_storage = BaseFieldDefinition::create('string_long')
-    ->setLabel(t('WS Styles'))
-    ->setDescription(t('Node specific WS Styles to be applied.'))
+    ->setLabel(t('Y Styles'))
+    ->setDescription(t('Node specific Y Styles to be applied.'))
     ->setRevisionable(TRUE)
     ->setInitialValue(serialize([]))
     ->setSetting('case_sensitive', TRUE)
@@ -134,6 +134,20 @@ function y_lb_update_9006(&$sandbox) {
   $config_importer = \Drupal::service('config_import.importer');
   $config_importer->setDirectory($path);
   $config_importer->importConfigs([
+    'bootstrap_styles.settings',
+  ]);
+}
+
+/**
+ *  Add pathauto aliases.
+ */
+function y_lb_update_9007(&$sandbox) {
+  $path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/install';
+  /** @var \Drupal\config_import\ConfigImporterService $config_importer */
+  $config_importer = \Drupal::service('config_import.importer');
+  $config_importer->setDirectory($path);
+  $config_importer->importConfigs([
+    'pathauto.pattern.landing_page_lb',
     'bootstrap_styles.settings',
   ]);
 }

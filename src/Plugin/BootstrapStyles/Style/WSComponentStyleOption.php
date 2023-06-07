@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @Style(
  *   id = "ws_style_option",
- *   title = @Translation("WS Style Option"),
+ *   title = @Translation("Y Style Option"),
  *   group_id = "ws_style",
  *   weight = 1
  * )
@@ -24,7 +24,7 @@ class WSComponentStyleOption extends StylePluginBase {
 
 
   /**
-   * WS Style Option manager.
+   * Y Style Option manager.
    *
    * @var \Drupal\y_lb\WSStyleOptionInterface
    */
@@ -42,7 +42,7 @@ class WSComponentStyleOption extends StylePluginBase {
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The configuration factory.
    * @param \Drupal\y_lb\WSStyleOptionInterface
-   *   The WS Style Option manager.
+   *   The Y Style Option manager.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $config_factory, WSStyleOptionInterface $ws_style_option_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $config_factory);
