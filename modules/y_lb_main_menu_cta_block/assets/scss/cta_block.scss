@@ -7,7 +7,8 @@
   .ws-menu-cta-block {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 320px;
+    width: 100%;
     padding: 20px;
     white-space: normal;
 
@@ -34,21 +35,8 @@
     }
 
     .btn {
-      background-color: var(--wsPrimaryColor, blue) !important;
-      border-radius: 10px;
-      color: var(--ylb-color-white, white);
-      font-family: var(--ylb-font-family-cachet);
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 25px;
-      margin: 10px 0;
-      padding: 6px;
       text-transform: unset;
-
-      &:hover {
-        background-color: var(--wsPrimaryColor, black) !important;
-        color: var(--ylb-color-white, white);
-      }
+      font-weight: 500;
     }
   }
 }
