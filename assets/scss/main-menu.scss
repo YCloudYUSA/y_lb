@@ -1,12 +1,13 @@
 @import "_functions";
 @import "_mixins";
 @import "_variables";
+@import "ws-breakpoints";
 
 .ws-main-menu-wrapper {
   height: 100%;
 
   .container:first-child {
-    @include media-breakpoint-up(lg) {
+    @include media-ws-breakpoint-up() {
       height: 100%;
     }
   }
@@ -17,18 +18,19 @@
     flex-wrap: wrap;
     gap: 20px;
     height: 100%;
-    max-height: 95px;
+
     justify-content: center;
     margin-bottom: 0;
 
-    @include media-breakpoint-up(lg) {
+    @include media-ws-breakpoint-up() {
       padding: 0;
       display: flex;
+      max-height: 95px;
     }
 
     .header-nav__submenu {
       &_navigation {
-        @include media-breakpoint-up(lg) {
+        @include media-ws-breakpoint-up() {
           display: none;
         }
       }
@@ -52,7 +54,7 @@
       list-style: none;
       white-space: nowrap;
 
-      @include media-breakpoint-up(lg) {
+      @include media-ws-breakpoint-up() {
         width: max-content;
       }
 
@@ -72,7 +74,7 @@
         li {
           a {
 
-            @include media-breakpoint-up(lg) {
+            @include media-ws-breakpoint-up() {
               white-space: initial;
             }
           }
@@ -87,7 +89,7 @@
         &.show {
           display: flex;
 
-          a {
+          a:not(.btn) {
             box-shadow: unset;
             background-color: transparent;
 
@@ -124,16 +126,32 @@
         line-height: 24px;
 
         &.menu-link--level-1 {
-          @include media-breakpoint-up(lg) {
+          @include media-ws-breakpoint-up() {
             padding: 20px 0;
           }
         }
+
+        svg {
+          display: none;
+          @include media-ws-breakpoint-up() {
+            display: inline-block;
+          }
+
+          #menu-chevron {
+            fill: var(--ylb-color-dark-grey-1, darkgray);
+          }
+        }
+
 
         &:active,
         &:focus,
         &:hover {
           color: var(--wsPartnerColor, blue);
           text-decoration: none;
+
+          #menu-chevron {
+            fill: var(--wsPartnerColor, black);
+          }
         }
       }
 
@@ -143,17 +161,13 @@
 
         & > a {
           color: var(--wsPartnerColor, blue);
-
-          #menu-chevron {
-            fill: var(--wsPartnerColor, black);
-          }
         }
       }
     }
   }
 
   .dropdown-menu {
-    @include media-breakpoint-up(lg) {
+    @include media-ws-breakpoint-up() {
       left: 50% !important;
       right: auto !important;
       transform: translate(-50%, 0) !important;
@@ -174,7 +188,7 @@
   }
 
   .level-2 {
-    @include media-breakpoint-up(lg) {
+    @include media-ws-breakpoint-up() {
       background-color: var(--ylb-color-white, white);
       border-radius: 10px;
       box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
@@ -186,7 +200,7 @@
 
       &.nav-level-3 {
 
-        @include media-breakpoint-up(lg) {
+        @include media-ws-breakpoint-up() {
           a {
             font-size: 18px;
             font-weight: bold;
@@ -200,7 +214,7 @@
         }
 
         &.children {
-          @include media-breakpoint-up(lg) {
+          @include media-ws-breakpoint-up() {
             a {
               &:after {
                 background-image: url('../svg/menu-arrow-right.svg');
@@ -244,7 +258,7 @@
       color: var(--ylb-color-grey-1, gray);
       font-size: 18px;
 
-      @include media-breakpoint-down(lg) {
+      @include media-ws-breakpoint-down() {
         display: none;
       }
     }
@@ -258,7 +272,7 @@
     display: none;
 
     &.open {
-      @include media-breakpoint-up(lg) {
+      @include media-ws-breakpoint-up() {
         display: flex !important;
       }
     }
@@ -270,14 +284,14 @@
     li {
       padding: 10px;
 
-      @include media-breakpoint-up(lg) {
+      @include media-ws-breakpoint-up() {
         width: auto !important;
       }
 
       a {
         color: var(--ylb-color-white, white) !important;
 
-        @include media-breakpoint-up(lg) {
+        @include media-ws-breakpoint-up() {
           white-space: unset !important;
         }
 
@@ -289,7 +303,7 @@
       &:active,
       &:focus,
       &:hover {
-        @include media-breakpoint-up(lg) {
+        @include media-ws-breakpoint-up() {
           background-color: var(--ylb-color-white, white);
           border-radius: 10px;
 
@@ -425,13 +439,15 @@
                     padding: 20px 0;
                     border-bottom: solid 1px var(--ylb-color-light-grey-3, lightgray);
 
-                    &:after {
-                      content: '';
-                      width: 24px;
-                      height: 17px;
-                      background-image: url('../svg/menu-arrow-right-white.svg');
-                      background-repeat: no-repeat;
-                      margin-left: 5px;
+                    &.children {
+                      &:after {
+                        content: '';
+                        width: 24px;
+                        height: 17px;
+                        background-image: url('../svg/menu-arrow-right-white.svg');
+                        background-repeat: no-repeat;
+                        margin-left: 5px;
+                      }
                     }
 
                     a {

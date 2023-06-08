@@ -1,0 +1,24 @@
+// A breakpoint to display burger menu variable.
+$wsMobileMenuBreakpoint: '1739px';
+
+@mixin media-ws-breakpoint-up() {
+  $min: $wsMobileMenuBreakpoint;
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-ws-breakpoint-down() {
+  $max: $wsMobileMenuBreakpoint;
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

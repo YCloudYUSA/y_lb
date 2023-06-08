@@ -7,11 +7,12 @@
    */
   Drupal.behaviors.mobile_menu_toggle = {
     attach: function (context) {
-      const breakpoint = 992;
+      const breakpoint = 1739;
       const $header = $('.header', context);
       const body = $('body', context);
       const btn = $(this, context);
       const submenu = $('.header-nav__submenu', context);
+      const userMenu = $('.block-system-menu-blockaccount', context);
       const headerNavToggle = $('.header-navbar-toggler', context);
       headerNavToggle.unbind('click');
       headerNavToggle.click(function () {
@@ -20,8 +21,10 @@
           btn.attr('aria-expanded', false);
           body.css('overflow', 'auto');
           submenu.removeClass('open');
+          userMenu.removeClass('container');
         } else {
           $header.addClass('open');
+          userMenu.addClass('container');
           btn.attr('aria-expanded', true);
           body.css('overflow', 'hidden');
         }
@@ -42,7 +45,7 @@
    */
   Drupal.behaviors.header_dropdown_menu = {
     attach: function (context) {
-      const breakpoint = 992;
+      const breakpoint = 1739;
 
       $('.menu-link--level-1').click(function (e) {
         if ($(window).width() <= breakpoint) {

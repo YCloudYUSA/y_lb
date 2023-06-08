@@ -19,6 +19,12 @@
     {{ image }}
     {{ label }}
     {{ description }}
-    {{ link }}
+    {% if link_url %}
+      <div class="cta-link">
+        <a href="{{ link_url }}" class="btn btn-primary filled">
+          {{ link_title  }}
+        </a>
+      </div>
+    {% endif %}
   {% endblock %}
 </div>

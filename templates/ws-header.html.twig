@@ -26,13 +26,13 @@
     <div class="header--top">
       <div class="row">
         {% if content.header_top_left %}
-          <section class="col-12 col-lg-6 header--top-left-column">
+          <section class="col-6 header--top-left-column">
             {{ content.header_top_left }}
           </section>
         {% endif %}
 
         {% if content.header_top_right %}
-          <section class="col-12 col-lg-6 header--top-right-column">
+          <section class="col-6 header--top-right-column">
             {{ content.header_top_right }}
           </section>
         {% endif %}
@@ -41,19 +41,19 @@
     <div class="header--bottom">
       <div class="row">
         {% if content.header_bottom_left %}
-          <section class="col-12 col-md-12 col-lg-2 header--bottom-left-column">
+          <section class="header--bottom-left-column">
             {{ content.header_bottom_left }}
           </section>
         {% endif %}
 
         {% if content.header_bottom_middle %}
-          <section class="col-12 col-md-12 col-lg-7 header--bottom-middle-column">
+          <section class="header--bottom-middle-column">
             {{ content.header_bottom_middle }}
           </section>
         {% endif %}
 
         {% if content.header_bottom_right %}
-          <section class="col-12 col-md-12 col-lg-3 header--bottom-right-column">
+          <section class="header--bottom-right-column">
             {{ content.header_bottom_right }}
           </section>
         {% endif %}
