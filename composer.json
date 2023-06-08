@@ -36,6 +36,7 @@
         "drupal/ws_event" : "^1.0",
         "drupal/y_branch" : "^1.0",
         "drupal/y_lb_article" : "^1.0",
+        "drupal/pathauto" : "^1.11",
         "php": ">=8.1"
     },
     "license": "GPL-2.0+",
