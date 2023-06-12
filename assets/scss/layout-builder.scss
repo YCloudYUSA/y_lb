@@ -1,3 +1,5 @@
+@import "ws-breakpoints";
+
 .form-required {
   &:after {
     content: '*' !important;
@@ -19,13 +21,16 @@
     > summary {
       color: #003cc5;
       background-color: #f0f5fd;
+
       &:hover {
         color: #eee;
         background-color: #222;
       }
+
       &:after {
         display: none;
       }
+
       &:before {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath d='M5.21 1.314L3.79 2.723l5.302 5.353-5.303 5.354 1.422 1.408 6.697-6.762z' fill='%230036B1'/%3e%3c/svg%3e");
       }
@@ -43,6 +48,7 @@
             width: 28px;
             height: 29px;
           }
+
           &:after {
             display: none;
           }
@@ -57,26 +63,32 @@
       > summary {
         color: #eee;
         background-color: inherit;
+
         &:hover {
           background-color: #222;
         }
+
         &:before {
           background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath d='M5.21 1.314L3.79 2.723l5.302 5.353-5.303 5.354 1.422 1.408 6.697-6.762z' fill='%23ffffff'/%3e%3c/svg%3e");
         }
       }
     }
   }
+
   .inline-block-list {
     margin-top: 1rem !important;
     gap: 1rem;
+
     li {
       width: 46%;
       border-bottom: 0;
+
       a {
         max-height: 50px;
       }
     }
   }
+
   .js-form-type-radio {
     .blb_breakpoint_cols {
       & + label {
@@ -84,10 +96,12 @@
       }
     }
   }
+
   .form-textarea {
     background-color: #fff;
     color: #222330;
   }
+
   .form-select {
     appearance: none !important;
   }
@@ -110,11 +124,13 @@
       display: block;
     }
   }
+
   .bs_tab-pane--layout {
     .form-type-radio {
       display: block;
     }
   }
+
   .bs_tab-pane {
     .alert-modal {
       position: relative;
@@ -129,6 +145,7 @@
     padding: 10px 24px;
     border-radius: 8px;
     margin-top: 1em;
+
     &:hover {
       text-decoration: none;
     }
@@ -183,6 +200,7 @@
       }
     }
   }
+
   .paragraphs-actions {
     display: flex;
 
@@ -190,6 +208,7 @@
       .paragraphs-dropdown-toggle {
         display: none;
       }
+
       .paragraphs-dropdown-actions {
         display: flex;
         position: relative;
@@ -197,12 +216,14 @@
         border: none;
         box-shadow: none;
         margin-left: 1em;
+
         input {
           margin-left: 1em;
         }
       }
     }
   }
+
   .entities-list.entity-type--media {
     .item-container.rendered-entity {
       display: flex;
@@ -227,6 +248,7 @@
       background-color: transparent;
     }
   }
+
   // Fix header layout for the pages with LB.
   .header--top-right-column,
   .header--top-left-column,
@@ -251,42 +273,79 @@
 
     &--bottom {
       height: auto;
+
       nav {
         height: auto;
       }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      &-left-column {
+        width: 20%;
+      }
+
+      &-middle-column {
+        width: 60%;
+
+        .ws-main-menu-wrapper {
+          ul.row-level-1 {
+            max-height: none;
+
+            @include media-ws-breakpoint-down() {
+              display: flex;
+            }
+
+            li {
+              a {
+                padding: 5px 0;
+              }
+            }
+          }
+        }
+      }
+
+      &-right-column {
+        width: 20%;
+      }
     }
+  }
+
+  .layout-builder-block {
+    background-color: transparent;
   }
 }
 
-#edit-ws-settings-container {
-  div[id^="edit-ws-design-settings-"] {
-    display: flex;
-    flex-wrap: wrap;
+  #edit-ws-settings-container {
+    div[id^="edit-ws-design-settings-"] {
+      display: flex;
+      flex-wrap: wrap;
 
-    label {
-      padding-left: 10px;
+      label {
+        padding-left: 10px;
+      }
+
+      .form-item {
+        padding: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(216, 217, 224, 0.8);
+
+        &:has(input:checked) {
+          background-color: whitesmoke;
+        }
+
+        &:has(input[value="ws_border_radius_10"]) {
+          border-radius: 10px;
+        }
+
+        &:has(input[value="ws_border_radius_20"]) {
+          border-radius: 20px;
+        }
+      }
     }
 
-    .form-item {
-      padding: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(216, 217, 224, 0.8);
-
-      &:has(input:checked) {
-        background-color: whitesmoke;
-      }
-
-      &:has(input[value="ws_border_radius_10"]) {
-        border-radius: 10px;
-      }
-
-      &:has(input[value="ws_border_radius_20"]) {
-        border-radius: 20px;
-      }
-    }
-  }
   #edit-ws-design-settings-colorway label img {
     width: 150px;
   }
-
 }

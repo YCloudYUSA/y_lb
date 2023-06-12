@@ -64,6 +64,7 @@
         position: relative;
         border-bottom: solid 3px transparent;
 
+        &.show,
         &:active,
         &:focus,
         &:hover {
@@ -126,6 +127,7 @@
         line-height: 24px;
 
         &.menu-link--level-1 {
+
           @include media-ws-breakpoint-up() {
             padding: 20px 0;
           }
@@ -203,7 +205,7 @@
         @include media-ws-breakpoint-up() {
           a {
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 700;
             line-height: 22px;
             padding: 10px;
           }
@@ -340,9 +342,13 @@
             color: var(--ylb-color-dark-grey-2, darkgray);
             font-family: var(--ylb-font-family-verdana);
             font-size: 20px;
-            font-weight: 600;
+            font-weight: 400;
             line-height: 24px;
             width: 100%;
+
+            &.menu-link--level-1 {
+              font-weight: 700;
+            }
           }
 
           .header-nav__submenu {
