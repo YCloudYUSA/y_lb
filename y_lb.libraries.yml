@@ -1,11 +1,11 @@
 layout_builder:
-  version: 1.8
+  version: 1.9
   css:
     theme:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
 
 main:
-  version: 1.14
+  version: 1.15
   css:
     theme:
       assets/css/colors.css: { minified: false }

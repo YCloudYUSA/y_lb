@@ -36,6 +36,8 @@
   table {
     .draggable {
       .ief-tabledrag-handle, .field-multiple-drag {
+        display: table-cell;
+
         a {
           .handle {
             width: 28px;
@@ -116,6 +118,7 @@
   .bs_tab-pane {
     .alert-modal {
       position: relative;
+      border: 1px solid red;
     }
   }
 
@@ -181,6 +184,8 @@
     }
   }
   .paragraphs-actions {
+    display: flex;
+
     .paragraphs-dropdown {
       .paragraphs-dropdown-toggle {
         display: none;

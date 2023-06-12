@@ -2,7 +2,7 @@
 
   Drupal.behaviors.mobile_tables = {
     attach: function (context, settings) {
-      once('initControlTable', $('.body.field-item table:not(.tablesaw)')).forEach(function (table) {
+      once('initControlTable', $('.body.field-item table:not(.tablesaw), .field-body table:not(.tablesaw)')).forEach(function (table) {
 
         table.outerHTML = '<div class="wrapper-table">' +
           '<div class="control-table">' +
@@ -14,7 +14,7 @@
           '</div>';
       });
 
-      once('controlTable', $('.body.field-item .wrapper-table')).forEach(function (wrapperTable) {
+      once('controlTable', $('.body.field-item .wrapper-table, .field-body .wrapper-table')).forEach(function (wrapperTable) {
         const prevButton = wrapperTable.querySelector('.prevButton');
         const nextButton = wrapperTable.querySelector('.nextButton');
         const tableContent = wrapperTable.querySelector('.table-content');
