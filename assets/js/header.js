@@ -8,7 +8,7 @@
   Drupal.behaviors.mobile_menu_toggle = {
     attach: function (context) {
       const breakpoint = 1739;
-      const $header = $('.header', context);
+      const header = $('.header', context);
       const body = $('body', context);
       const btn = $(this, context);
       const submenu = $('.header-nav__submenu', context);
@@ -16,14 +16,14 @@
       const headerNavToggle = $('.header-navbar-toggler', context);
       headerNavToggle.unbind('click');
       headerNavToggle.click(function () {
-        if ($header.hasClass('open')) {
-          $header.removeClass('open');
+        if (header.hasClass('open')) {
+          header.removeClass('open');
           btn.attr('aria-expanded', false);
           body.css('overflow', 'auto');
           submenu.removeClass('open');
           userMenu.removeClass('container');
         } else {
-          $header.addClass('open');
+          header.addClass('open');
           userMenu.addClass('container');
           btn.attr('aria-expanded', true);
           body.css('overflow', 'hidden');
@@ -32,9 +32,17 @@
 
       $(window).resize(function () {
         if ($(window).width() >= breakpoint) {
-          $header.removeClass('open');
+          header.removeClass('open');
           btn.attr('aria-expanded', false);
           body.css('overflow', 'auto');
+        }
+      });
+      // A fix for a small mobile screen.
+      header.scroll(() => {
+        if (header.scrollTop() > 0) {
+          header.addClass('scrolled');
+        } else {
+          header.removeClass('scrolled');
         }
       });
     }
@@ -46,12 +54,6 @@
   Drupal.behaviors.header_dropdown_menu = {
     attach: function (context) {
       const breakpoint = 1739;
-
-      $('.menu-link--level-1').click(function (e) {
-        if ($(window).width() <= breakpoint) {
-          $('.openy-google-translate').hide();
-        }
-      });
 
       $('.dropdown-submenu a.menu-link-item').click(function (e) {
         if ($(this).parent().hasClass('children')) {
@@ -112,14 +114,13 @@
         if (back_2_level.hasClass('show')) {
           back_2_level.removeClass('show');
         }
-        $('.openy-google-translate').show();
       });
 
       $(window).resize(function () {
         if ($(window).width() >= breakpoint) {
-          const $headerSubMenu = $('.header-nav__submenu');
-          $headerSubMenu.removeClass('open');
-          $headerSubMenu.removeClass('show');
+          const headerSubMenu = $('.header-nav__submenu');
+          headerSubMenu.removeClass('open');
+          headerSubMenu.removeClass('show');
           $('.dropdown').removeClass('show');
         }
       });

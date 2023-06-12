@@ -3,7 +3,7 @@
 @import "_variables";
 @import "ws-breakpoints";
 
-.header {
+.header:not(.layout-builder__layout) {
   &.ws-header {
     display: block;
     color: var(--wsPrimaryColor, black);
@@ -29,7 +29,7 @@
     }
   }
 
-  &--top {
+  .header--top {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
     padding: 15px 20px;
 
@@ -62,7 +62,7 @@
     }
   }
 
-  &--bottom {
+  .header--bottom {
     height: 95px;
     padding: 0 20px;
     position: relative;
@@ -475,7 +475,13 @@
     }
   }
 
-  .layout-builder-block {
-    background-color: transparent;
+  // A fix for small mobile screen.
+  &.scrolled {
+    .level-3,
+    .dropdown-menu {
+      height: 100% !important;
+      top: 0 !important;
+      margin-top: 0 !important;
+    }
   }
 }
