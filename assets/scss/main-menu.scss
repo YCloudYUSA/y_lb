@@ -70,6 +70,12 @@
         &:hover {
           color: var(--wsPartnerColor, blue);
           border-color: var(--wsSecondaryColor, blue);
+
+          @include media-ws-breakpoint-up() {
+            .menu-link--level-1 {
+              color: var(--wsPartnerColor, blue);
+            }
+          }
         }
 
         li {
@@ -268,7 +274,7 @@
 
   .level-3 {
     background-color: var(--wsPrimaryColor, blue);
-    padding: 20px 0;
+    padding: 10px 0;
     border-radius: 10px;
     width: 100%;
     display: none;

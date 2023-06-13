@@ -53,7 +53,7 @@ header:
     assets/js/header.js: { minified: false }
 
 main_menu:
-  version: 1.6
+  version: 1.7
   css:
     component:
       assets/css/main-menu.css: { preprocess: true }
