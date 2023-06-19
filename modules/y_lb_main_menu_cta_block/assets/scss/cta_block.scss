@@ -1,7 +1,6 @@
 @import "_functions";
 @import "_mixins";
 @import "_variables";
-@import "../../../../assets/scss/ws-breakpoints";
 
 .ws-main-menu-wrapper {
 
@@ -12,10 +11,6 @@
     width: 100%;
     padding: 20px;
     white-space: normal;
-
-    @media (max-width: $wsMobileMenuBreakpoint) {
-      display: none;
-    }
 
     .field-media-image {
       margin-bottom: 25px;
@@ -39,5 +34,11 @@
       text-transform: unset;
       font-weight: 500;
     }
+  }
+}
+
+.mobile {
+  .ws-menu-cta-block {
+    display: none;
   }
 }

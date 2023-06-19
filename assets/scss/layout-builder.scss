@@ -1,4 +1,3 @@
-@import "ws-breakpoints";
 
 .form-required {
   &:after {
@@ -292,10 +291,6 @@
         .ws-main-menu-wrapper {
           ul.row-level-1 {
             max-height: none;
-
-            @include media-ws-breakpoint-down() {
-              display: flex;
-            }
 
             li {
               a {

@@ -1,5 +1,5 @@
 layout_builder:
-  version: 1.9
+  version: 2.0
   css:
     theme:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
@@ -45,7 +45,7 @@ footer:
       assets/css/footer.css: { preprocess: true }
 
 header:
-  version: 1.6
+  version: 1.7
   css:
     component:
       assets/css/header.css: { preprocess: true }
@@ -53,7 +53,7 @@ header:
     assets/js/header.js: { minified: false }
 
 main_menu:
-  version: 1.7
+  version: 1.8
   css:
     component:
       assets/css/main-menu.css: { preprocess: true }

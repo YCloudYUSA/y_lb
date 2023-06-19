@@ -7,7 +7,7 @@
    */
   Drupal.behaviors.cta_block_in_dropdown_menu = {
     attach: function (context) {
-      const breakpoint = 1739;
+      const header = $('.ws-header', context);
 
       $('.dropdown-submenu a.menu-link-item').click(function (e) {
         if ($(this).parent().hasClass('children')) {
@@ -23,16 +23,22 @@
 
       const firstLevelItem = $('.header-nav__links .dropdown', context);
       const firstLevelItemLink = $(firstLevelItem, context).children('a');
-      if ($(window).width() >= breakpoint) {
-        $(firstLevelItemLink, context).click(function (e) {
-          const menuCtaBlock = $(this).parent().find('.ws-menu-cta-block');
-          const secondLevelItemLink = $(this).parent().find('.level-3');
-          if (menuCtaBlock !== 'undefined') {
-            menuCtaBlock.show();
-            secondLevelItemLink.removeClass('open');
-          }
-        });
-      }
+
+      $(firstLevelItemLink, context).click(function (e) {
+        const menuCtaBlock = $(this).parent().find('.ws-menu-cta-block');
+        const secondLevelItemLink = $(this).parent().find('.level-3');
+        if (menuCtaBlock !== 'undefined' && header.hasClass('desktop')) {
+          menuCtaBlock.show();
+          secondLevelItemLink.removeClass('open');
+        }
+      });
+
+      // Hide the menu CTA block after resizing.
+      $(window).resize(function () {
+        if ($('.ws-header', context).hasClass('mobile')) {
+          $('.ws-menu-cta-block').hide();
+        }
+      });
     }
   };
 })(jQuery, Drupal);
