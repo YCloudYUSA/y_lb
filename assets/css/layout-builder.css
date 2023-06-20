@@ -191,9 +191,6 @@ details .form-required .summary:after {
       width: 60%; }
       .layout-builder__section .header--bottom-middle-column .ws-main-menu-wrapper ul.row-level-1 {
         max-height: none; }
-        @media (max-width: 1739px) {
-          .layout-builder__section .header--bottom-middle-column .ws-main-menu-wrapper ul.row-level-1 {
-            display: flex; } }
         .layout-builder__section .header--bottom-middle-column .ws-main-menu-wrapper ul.row-level-1 li a {
           padding: 5px 0; }
     .layout-builder__section .header--bottom-right-column {
