@@ -88,7 +88,7 @@ class WSThemeSettings extends FormElement implements FormElementInterface {
   public static function getOptionLabelMarkup(array $option): string {
     $markup = '';
     if (!empty($option['image'])) {
-      $markup = Markup::create('<img src="' . $option['image'] . '" alt="' . $option['label'] . '">');
+      $markup = Markup::create('<img src="' . $option['image'] . '" alt="' . $option['label'] . '" title="' . $option['label'] . '">');
     }
 
     return $markup ?: $option['label'];

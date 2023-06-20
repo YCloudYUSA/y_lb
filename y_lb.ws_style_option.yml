@@ -20,24 +20,24 @@ y_lb.ws_style_option:
   - label: Red Scheme
     name: ws_colorway_red
     group: colorway
-    image: /assets/images/colorway_red.png
+    image: /assets/images/overlay.png
     library: y_lb/colorway.red
     template: null
   - label: Border radius - None
     name: ws_border_radius_none
     group: border_radius
-    image: null
+    image: /assets/images/border_radius_0.png
     library: y_lb/border_radius.0
     template: null
   - label: Border radius - 10px
     name: ws_border_radius_10
     group: border_radius
-    image: null
+    image: /assets/images/border_radius_10.png
     library: y_lb/border_radius.10
     template: null
   - label: Border radius - 20px
     name: ws_border_radius_20
     group: border_radius
-    image: null
+    image: /assets/images/border_radius_20.png
     library: y_lb/border_radius.20
     template: null
