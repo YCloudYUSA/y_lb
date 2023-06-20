@@ -1,7 +1,10 @@
 @import "ws-breakpoints";
 
 .form-required {
-  &:after {
+  &:after,
+  details & .summary:after {
+    margin-right: 0.15em !important;
+    margin-left: 0.15em !important;
     content: '*' !important;
     vertical-align: text-top !important;
     color: var(--ylb-color-red, red) !important;
