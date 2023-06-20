@@ -330,6 +330,10 @@
                       }
                     }
 
+                    &:last-child {
+                      border: none;
+                    }
+
                     a {
                       color: var(--ylb-color-white, white);
                       word-break: break-word;
