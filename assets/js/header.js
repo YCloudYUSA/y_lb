@@ -140,9 +140,9 @@
         const back_1_level = $(this, context).parent().parent().parent().parent().parent();
         if (back_1_level.hasClass('open')) {
           back_1_level.removeClass('open');
-          $('a.highlighted').show();
           $('.header--bottom').css('position', 'absolute');
           header.css('overflow-y', 'auto');
+          $('a.highlighted').show();
         }
         if (back_1_level.hasClass('show')) {
           back_1_level.removeClass('show');

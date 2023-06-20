@@ -28,8 +28,8 @@
         const menuCtaBlock = $(this).parent().find('.ws-menu-cta-block');
         const secondLevelItemLink = $(this).parent().find('.level-3');
         if (menuCtaBlock !== 'undefined' && header.hasClass('desktop')) {
-          menuCtaBlock.show();
           secondLevelItemLink.removeClass('open');
+          menuCtaBlock.show();
         }
       });
 
