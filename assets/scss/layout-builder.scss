@@ -234,6 +234,43 @@
   .bs_nav-tabs {
     position: relative !important;
   }
+
+  details[data-drupal-selector="edit-appearance-ws-style"] {
+    .form-item {
+      .form-radios {
+        display: flex;
+        flex-direction: row;
+        column-gap: 10px;
+        flex-wrap: wrap;
+
+        label {
+          img {
+            border: 2px solid transparent;
+            border-radius: 15px;
+          }
+        }
+        &:has(input:checked) {
+          label {
+            opacity: 0.3;
+          }
+
+          .form-type-radio:has(input:checked) {
+            label {
+              opacity: 1;
+
+              img {
+                border-color: #41A5FF;
+              }
+            }
+          }
+        }
+
+        input {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 .field-media-image {
@@ -317,35 +354,51 @@
   }
 }
 
-  #edit-ws-settings-container {
-    div[id^="edit-ws-design-settings-"] {
-      display: flex;
-      flex-wrap: wrap;
+#edit-ws-settings-container {
+  div[id^="edit-ws-design-settings-"] {
+    display: flex;
+    flex-wrap: wrap;
 
-      label {
-        padding-left: 10px;
+    label {
+      padding-left: 10px;
+    }
+
+    .form-item {
+      padding: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(216, 217, 224, 0.8);
+      border-radius: 15px;
+      cursor: pointer;
+
+      &:has(input:checked) {
+        background-color: whitesmoke;
       }
 
-      .form-item {
-        padding: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(216, 217, 224, 0.8);
+      &:has(input[value="ws_border_radius_none"]) {
+        border-radius: 0;
+      }
 
-        &:has(input:checked) {
-          background-color: whitesmoke;
-        }
+      &:has(input[value="ws_border_radius_10"]) {
+        border-radius: 10px;
+      }
 
-        &:has(input[value="ws_border_radius_10"]) {
-          border-radius: 10px;
-        }
+      &:has(input[value="ws_border_radius_20"]) {
+        border-radius: 20px;
+      }
 
-        &:has(input[value="ws_border_radius_20"]) {
-          border-radius: 20px;
-        }
+      .input-wrapper {
+        display: none;
+      }
+
+      label {
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
       }
     }
 
-  #edit-ws-design-settings-colorway label img {
-    width: 150px;
+    #edit-ws-design-settings-colorway label img {
+      width: 114px;
+    }
   }
 }
