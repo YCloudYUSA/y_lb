@@ -11,6 +11,12 @@
   --ylb-font-family-book: "Cachet Book", "Cachet W01 Book", Cachet, Verdana, sans-serif;
 }
 
+.page-with-lb {
+  main {
+    margin-top: 0 !important;
+  }
+}
+
 .node--lb {
 
   @include media-breakpoint-down('md') {
