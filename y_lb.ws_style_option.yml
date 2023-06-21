@@ -20,7 +20,7 @@ y_lb.ws_style_option:
   - label: Red Scheme
     name: ws_colorway_red
     group: colorway
-    image: /assets/images/overlay.png
+    image: /assets/images/colorway_red.png
     library: y_lb/colorway.red
     template: null
   - label: Border radius - None
