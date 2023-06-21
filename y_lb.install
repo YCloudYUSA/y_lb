@@ -151,3 +151,10 @@ function y_lb_update_9007(&$sandbox) {
     'bootstrap_styles.settings',
   ]);
 }
+
+/**
+ * Add layout_builder_operation_link to add Layout to Content Admin dropdown.
+ */
+function y_lb_update_9008(&$sandbox) {
+  \Drupal::service('module_installer')->install(['layout_builder_operation_link']);
+}
