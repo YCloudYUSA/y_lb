@@ -132,5 +132,9 @@
     > div {
       margin-bottom: 7px;
     }
+
+    a {
+      color: var(--wsPartnerColor, #0060af);
+    }
   }
 }
