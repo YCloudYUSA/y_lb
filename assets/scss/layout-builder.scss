@@ -11,6 +11,25 @@
   }
 }
 
+// Clean up Layout edit page in Carnation.
+.openy_carnation {
+  form.node-layout-builder-form {
+    > .form-actions {
+      text-align: unset;
+
+      div.input-wrapper {
+        display: inline;
+      }
+    }
+  }
+
+  #edit-ws-settings-container summary {
+    color: var(--color-text, black);
+    font-weight: 700;
+    padding-top: 1em;
+  }
+}
+
 .js-off-canvas-dialog-open {
   .modal-backdrop {
     display: none;
@@ -369,7 +388,7 @@
       cursor: pointer;
 
       &:has(input:checked) {
-        background-color: whitesmoke;
+        background-color: var(--ylb-color-light-grey-2, #e7e7e7);
       }
 
       &:has(input[value="ws_border_radius_none"]) {

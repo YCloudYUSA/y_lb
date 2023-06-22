@@ -151,3 +151,17 @@ function y_lb_update_9007(&$sandbox) {
     'bootstrap_styles.settings',
   ]);
 }
+
+/**
+ * Add layout_builder_operation_link to add Layout to Content Admin dropdown.
+ */
+function y_lb_update_9008(&$sandbox) {
+  \Drupal::service('module_installer')->install(['layout_builder_operation_link']);
+}
+
+/**
+ * Add layout_builder_save_and_edit to add "Save and edit layout" button.
+ */
+function y_lb_update_9009(&$sandbox) {
+  \Drupal::service('module_installer')->install(['layout_builder_save_and_edit']);
+}
