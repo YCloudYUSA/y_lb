@@ -21,14 +21,16 @@
           body.css('overflow', 'auto');
           submenu.removeClass('open');
           userMenu.removeClass('container');
-          $('.header--bottom').css('position', 'absolute');
-          header.css('overflow', 'auto');
+          $('.header--bottom').css('position', 'relative');
+          header.css('overflow-y', 'revert');
           $('a.highlighted').show();
         } else {
           header.addClass('open');
           userMenu.addClass('container');
           btn.attr('aria-expanded', true);
           body.css('overflow', 'hidden');
+          $('.header--bottom').css('position', 'absolute');
+          header.css('overflow-y', 'auto');
         }
       });
 
@@ -141,7 +143,9 @@
         if (back_1_level.hasClass('open')) {
           back_1_level.removeClass('open');
           $('.header--bottom').css('position', 'absolute');
-          header.css('overflow-y', 'auto');
+          if (header.hasClass('open')) {
+            header.css('overflow-y', 'auto');
+          }
           $('a.highlighted').show();
         }
         if (back_1_level.hasClass('show')) {

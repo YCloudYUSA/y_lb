@@ -57,10 +57,6 @@
     position: relative;
     box-shadow: inset 0 6px 6px -6px rgba(0, 0, 0, 0.15);
 
-    & > .row {
-      height: 100%;
-    }
-
     nav {
       height: 100%;
       visibility: hidden;
@@ -100,6 +96,7 @@
 
       nav {
         display: flex;
+        height: 95px;
 
         & > ul {
           display: flex;
@@ -166,7 +163,7 @@
     align-items: center;
     display: flex;
     padding-left: 10px;
-    height: 100%;
+    height: 95px;
     visibility: hidden;
 
     @include media-breakpoint-down(md) {
@@ -391,9 +388,8 @@
     }
 
     .header--bottom {
-      //height: 56px;
       width: 100%;
-      z-index: 10;
+      z-index: 11;
       background-color: var(--ylb-color-white, white);
 
       &-middle-column {
@@ -416,8 +412,9 @@
         .block-ws-search-bar {
           .search {
             &-icon {
-              top: 32px;
-              right: 55px;
+              top: 22px;
+              right: 45px;
+              padding: 10px;
               position: absolute;
             }
 
@@ -425,9 +422,8 @@
               border-radius: 0;
               height: 60px;
               padding: 12px 40px 12px 20px;
-              top: 102px;
+              top: 110px;
               width: 100%;
-              bottom: -135px;
 
               form {
                 .search {
@@ -508,3 +504,9 @@
     }
   }
 }
+
+#openy_alerts_app_header {
+  position: relative;
+  z-index: 10;
+}
+
