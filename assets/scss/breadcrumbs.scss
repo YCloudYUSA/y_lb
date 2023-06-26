@@ -27,6 +27,8 @@
         background: none;
         border: none;
         color: var(--ylb-color-grey-1, gray);
+        display: flex;
+        align-items: flex-start;
 
         &:after {
           content: '›';

@@ -65,8 +65,8 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
       $settings = $form_state->getValue('ws_design_settings');
       foreach ($settings as $group => $option) {
         if (empty($option)) {
-          $element = $form['ws_design_settings'][$group];
-          $form_state->setError($form['ws_design_settings'][$group], $this->t('Please choose value for %setting style', ['%setting' => $element['#title']]));
+          $element = $form['ws_settings_container']['ws_design_settings'][$group];
+          $form_state->setError($element, $this->t('Please choose value for %setting style', ['%setting' => $element['#title']]));
         }
       }
     }
