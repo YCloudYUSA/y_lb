@@ -26,7 +26,7 @@ interface WSStyleInterface extends PluginManagerInterface {
    * @return array
    *   List of styles that can be applied to the component.
    */
-  public function getStyleForComponent(string $component = ''): array;
+  public function getStyleForComponent(string $component): array;
 
   /**
    * Get list of libraries.

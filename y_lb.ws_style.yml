@@ -10,3 +10,15 @@ border_radius:
   global: true
   applies_to: []
   library: null
+border_style_global:
+  label: Border Style (Global)
+  name: border_style_global
+  global: true
+  applies_to: []
+  library: y_lb/borders
+border_style_component:
+  label: Border Style (Component level)
+  name: border_style_component
+  global: false
+  applies_to: []
+  library: y_lb/borders
