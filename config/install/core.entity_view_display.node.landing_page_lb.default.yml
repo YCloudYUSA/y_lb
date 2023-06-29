@@ -1552,6 +1552,7 @@ third_party_settings:
     styles:
       colorway: ws_colorway_blue
       border_radius: ws_border_radius_none
+      border_style_global: ws_border_style_global_drop_shadow
 id: node.landing_page_lb.default
 targetEntityType: node
 bundle: landing_page_lb
