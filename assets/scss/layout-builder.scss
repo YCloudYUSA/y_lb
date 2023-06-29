@@ -292,6 +292,35 @@
       }
     }
   }
+
+  table {
+    td:not(.draggable) {
+      display: table-cell;
+    }
+  }
+
+  fieldset {
+    table {
+      margin: 0;
+    }
+  }
+
+  .btn-primary {
+    width: auto;
+    border-radius: var(--button-border-radius-size);
+    font-weight: 700;
+    line-height: 1rem;
+    padding: calc(var(--space-m) - 1px) calc(var(--space-l) - 1px);
+    color: #383A40;
+    background: #26A5FF;
+    text-wrap: nowrap;
+    margin: 0.5rem;
+    font-size: .85rem;
+
+    &:hover {
+      background: #008ef2;
+    }
+  }
 }
 
 .field-media-image {
@@ -416,6 +445,20 @@
 
     #edit-ws-design-settings-colorway label img {
       width: 114px;
+    }
+  }
+}
+.ui-dialog {
+  table {
+    width: 100%;
+
+    .draggable {
+      a {
+        .handle {
+          width: 28px;
+          height: 29px;
+        }
+      }
     }
   }
 }
