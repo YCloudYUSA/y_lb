@@ -32,12 +32,12 @@
     {{ title_suffix }}
     <strong>{{ "Share" | t }}</strong>
     {% for key, link in content['#links'] %}
-      {% apply spaceless %}
-        <a href="{{ link }}" target="_blank">
-          {% set link_label = 'Share to @service'|t({'@service':key|title}) %}
-          <i aria-hidden="true" class="bi bi-{{ key }}" title="{{ link_label }}"></i>
-          <span class="sr-only">{{ link_label }}</span>
+      {% set link_label = 'Share to @service'|t({'@service':key|title}) %}
+      {{
+        "<a href='#{link}' target='_blank'>
+          <i aria-hidden='true' class='bi bi-#{key}' title='#{link_label}'></i>
+          <span class='sr-only'>#{link_label}</span>
         </a>
-      {% endapply %}
+        "|spaceless }}
     {% endfor %}
 </div>
