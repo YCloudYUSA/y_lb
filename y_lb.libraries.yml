@@ -103,3 +103,29 @@ border_radius.20:
   css:
     theme:
       assets/css/border-radius-20.css: { minified: false }
+
+#Border styles.
+borders:
+  version: 1.0
+  css:
+    theme:
+      assets/css/borders.css: { minified: false }
+
+border_style.none:
+  version: 1.0
+  css:
+    theme:
+      assets/css/border-style-none.css: { minified: false }
+
+border_style.solid:
+  version: 1.0
+  css:
+    theme:
+      assets/css/border-style-solid.css: { minified: false }
+
+border_style.drop_shadow:
+  version: 1.0
+  css:
+    theme:
+      assets/css/border-style-drop-shadow.css: { minified: false }
+

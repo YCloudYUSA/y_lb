@@ -41,3 +41,36 @@ y_lb.ws_style_option:
     image: /assets/images/border_radius_20.png
     library: y_lb/border_radius.20
     template: null
+  - label: Border style - no border
+    name: ws_border_style_global_none
+    group: border_style_global
+    image: null
+    library: y_lb/border_style.none
+    template: null
+  - label: Border style - 1px border
+    name: ws_border_style_global_solid
+    group: border_style_global
+    image: null
+    library: y_lb/border_style.solid
+    template: null
+  - label: Border style - drop shadow
+    name: ws_border_style_global_drop_shadow
+    group: border_style_global
+    image: null
+    library: y_lb/border_style.drop_shadow
+    template: null
+  - label: Border style - no border
+    name: ws_border_style_component_none
+    group: border_style_component
+    image: null
+    class: ws-border-style--none
+  - label: Border style - 1px border
+    name: ws_border_style_component_solid
+    group: border_style_component
+    image: null
+    class: ws-border-style--solid
+  - label: Border style - drop shadow
+    name: ws_border_style_component_drop_shadow
+    group: border_style_component
+    image: null
+    class: ws-border-style--drop-shadow
