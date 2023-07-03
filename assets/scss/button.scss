@@ -1,6 +1,6 @@
 a {
   &.btn {
-    border-radius: 10px;
+    border-radius: var(--wsBorderRadius, unset);
     padding: 7px 18px 9px;
     font-size: 24px;
     line-height: 30px;
