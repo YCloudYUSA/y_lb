@@ -3,7 +3,7 @@
     "description": "Adds Layout Builder to Web Services project.",
     "type": "drupal-module",
     "require": {
-        "cweagans/composer-patches": "^1.5.0",
+        "cweagans/composer-patches": "*",
         "drupal/bootstrap_styles": "*",
         "drupal/bootstrap_layout_builder" : "*",
         "drupal/entity_clone": "^2.0@alpha || ^2",
