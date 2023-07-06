@@ -26,51 +26,51 @@ y_lb.ws_style_option:
   - label: Border radius - None
     name: ws_border_radius_none
     group: border_radius
-    image: /assets/images/border_radius_0.png
+    image: /assets/images/border_radius_0.svg
     library: y_lb/border_radius.0
     template: null
   - label: Border radius - 10px
     name: ws_border_radius_10
     group: border_radius
-    image: /assets/images/border_radius_10.png
+    image: /assets/images/border_radius_10.svg
     library: y_lb/border_radius.10
     template: null
   - label: Border radius - 20px
     name: ws_border_radius_20
     group: border_radius
-    image: /assets/images/border_radius_20.png
+    image: /assets/images/border_radius_20.svg
     library: y_lb/border_radius.20
     template: null
   - label: Border style - no border
     name: ws_border_style_global_none
     group: border_style_global
-    image: null
+    image: /assets/images/border_style_none.svg
     library: y_lb/border_style.none
     template: null
   - label: Border style - 1px border
     name: ws_border_style_global_solid
     group: border_style_global
-    image: null
+    image: /assets/images/border_style_line.svg
     library: y_lb/border_style.solid
     template: null
   - label: Border style - drop shadow
     name: ws_border_style_global_drop_shadow
     group: border_style_global
-    image: null
+    image: /assets/images/border_style_shadow.svg
     library: y_lb/border_style.drop_shadow
     template: null
   - label: Border style - no border
     name: ws_border_style_component_none
     group: border_style_component
-    image: null
+    image: /assets/images/border_style_none.svg
     class: ws-border-style--none
   - label: Border style - 1px border
     name: ws_border_style_component_solid
     group: border_style_component
-    image: null
+    image: /assets/images/border_style_line.svg
     class: ws-border-style--solid
   - label: Border style - drop shadow
     name: ws_border_style_component_drop_shadow
     group: border_style_component
-    image: null
+    image: /assets/images/border_style_shadow.svg
     class: ws-border-style--drop-shadow
