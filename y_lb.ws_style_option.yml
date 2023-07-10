@@ -74,3 +74,23 @@ y_lb.ws_style_option:
     group: border_style_component
     image: /assets/images/border_style_shadow.svg
     class: ws-border-style--drop-shadow
+  - label: Left alignment
+    name: ws_text_alignment_global_left
+    group: text_alignment_global
+    image: /assets/images/alignment_left.svg
+    library: y_lb/text_alignment.left
+  - label: Center alignment
+    name: ws_text_alignment_global_center
+    group: text_alignment_global
+    image: /assets/images/alignment_center.svg
+    library: y_lb/text_alignment.center
+  - label: Left alignment
+    name: ws_text_alignment_component_left
+    group: text_alignment_component
+    image: /assets/images/alignment_left.svg
+    class: ws-text-alignment--left
+  - label: Center alignment
+    name: ws_text_alignment_component_center
+    group: text_alignment_component
+    image: /assets/images/alignment_center.svg
+    class: ws-text-alignment--center

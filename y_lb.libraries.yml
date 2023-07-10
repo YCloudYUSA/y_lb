@@ -129,3 +129,15 @@ border_style.drop_shadow:
     theme:
       assets/css/border-style-drop-shadow.css: { minified: false }
 
+text_alignment.left:
+  version: 1.0
+  css:
+    theme:
+      assets/css/text-alignment-left.css: { minified: false }
+
+text_alignment.center:
+  version: 1.0
+  css:
+    theme:
+      assets/css/text-alignment-center.css: { minified: false }
+

@@ -22,3 +22,13 @@ border_style_component:
   global: false
   applies_to: []
   library: y_lb/borders
+text_alignment_global:
+  label: Text / Button alignment (Global)
+  name: text_alignment_global
+  global: true
+  applies_to: []
+text_alignment_component:
+  label: Text / Button alignment (Component level)
+  name: text_alignment_component
+  global: false
+  applies_to: []
