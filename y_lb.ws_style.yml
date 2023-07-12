@@ -32,3 +32,13 @@ text_alignment_component:
   name: text_alignment_component
   global: false
   applies_to: []
+button_position_global:
+  label: Button position (Global)
+  name: button_position_global
+  global: true
+  applies_to: []
+button_position_component:
+  label: Button position (Component level)
+  name: button_position_component
+  global: false
+  applies_to: []
