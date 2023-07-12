@@ -141,3 +141,16 @@ text_alignment.center:
     theme:
       assets/css/text-alignment-center.css: { minified: false }
 
+
+button_position.inside:
+  version: 1.0
+  css:
+    theme:
+      assets/css/button-position-inside.css: { minified: false }
+
+button_position.overlapping:
+  version: 1.0
+  css:
+    theme:
+      assets/css/button-position-overlapping.css: { minified: false }
+

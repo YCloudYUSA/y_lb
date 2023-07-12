@@ -94,3 +94,23 @@ y_lb.ws_style_option:
     group: text_alignment_component
     image: /assets/images/alignment_center.svg
     class: ws-text-alignment--center
+  - label: Inside container
+    name: ws_button_position_global_inside
+    group: button_position_global
+    image: /assets/images/button_position_inside.svg
+    library: y_lb/button_position.inside
+  - label: Overlapping container
+    name: ws_button_position_global_overlapping
+    group: button_position_global
+    image: /assets/images/button_position_overlapping.svg
+    library: y_lb/button_position.overlapping
+  - label: Inside container
+    name: ws_button_position_component_inside
+    group: button_position_component
+    image: /assets/images/button_position_inside.svg
+    class: ws-button-position--inside
+  - label: Overlapping container
+    name: ws_button_position_component_overlapping
+    group: button_position_component
+    image: /assets/images/button_position_overlapping.svg
+    class: ws-button-position--overlapping
