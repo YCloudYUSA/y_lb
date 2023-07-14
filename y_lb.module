@@ -276,7 +276,8 @@ function y_lb_preprocess_page(&$variables) {
     return;
   }
 
-  $libraries = $classes = [];
+  $libraries = [];
+  $classes = [];
   /** @var \Drupal\y_lb\WSStyleManager $ws_styles */
   $ws_style = \Drupal::service('plugin.manager.ws_style');
   /** @var \Drupal\y_lb\WSStyleOptionManager $ws_style_options */
