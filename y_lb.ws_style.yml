@@ -42,3 +42,13 @@ button_position_component:
   name: button_position_component
   global: false
   applies_to: []
+button_fill_global:
+  label: Button fill (Global)
+  name: button_fill_global
+  global: true
+  applies_to: []
+button_fill_component:
+  label: Button fill (Component level)
+  name: button_fill_component
+  global: false
+  applies_to: []

@@ -276,7 +276,7 @@ function y_lb_preprocess_page(&$variables) {
     return;
   }
 
-  $libraries = [];
+  $libraries = $classes = [];
   /** @var \Drupal\y_lb\WSStyleManager $ws_styles */
   $ws_style = \Drupal::service('plugin.manager.ws_style');
   /** @var \Drupal\y_lb\WSStyleOptionManager $ws_style_options */
@@ -303,12 +303,17 @@ function y_lb_preprocess_page(&$variables) {
   foreach ($styles as $group => $style) {
     if (is_string($style)) {
       $libraries = array_merge($libraries, $ws_style_option->getLibraries($group, $style));
+      $classes = array_merge($classes, $ws_style_option->getClasses($group, $style));
     }
   }
 
   // Attach WS libraries to the node.
   foreach ($libraries as $library) {
     $variables['#attached']['library'][] = $library;
+  }
+
+  if ($classes) {
+    $variables['page_classes'] = $classes;
   }
 }
 

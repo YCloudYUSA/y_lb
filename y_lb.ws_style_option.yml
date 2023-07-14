@@ -114,3 +114,23 @@ y_lb.ws_style_option:
     group: button_position_component
     image: /assets/images/button_position_overlapping.svg
     class: ws-button-position--overlapping
+  - label: Filled button, outlined on hover
+    name: ws_button_fill_global_filled
+    group: button_fill_global
+    image: /assets/images/button_filled.svg
+    class: ws-button-fill--filled--global
+  - label: Outlined button, filled on hover
+    name: ws_button_fill_global_outlined
+    group: button_fill_global
+    image: /assets/images/button_outlined.svg
+    class: ws-button-fill--outlined--global
+  - label: Filled button, outlined on hover
+    name: ws_button_fill_component_filled
+    group: button_fill_component
+    image: /assets/images/button_filled.svg
+    class: ws-button-fill--filled--component
+  - label: Outlined button, filled on hover
+    name: ws_button_fill_component_outlined
+    group: button_fill_component
+    image: /assets/images/button_outlined.svg
+    class: ws-button-fill--outlined--component

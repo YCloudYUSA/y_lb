@@ -148,4 +148,19 @@ class WSStyleOptionManager extends DefaultPluginManager implements WSStyleOption
     return NULL;
   }
 
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getClasses(string $group, string $style): array {
+    $classes = [];
+    $style_option = $this->getStyleOption($group, $style);
+
+    if ($style_option && !empty($style_option['class'])) {
+      $classes[] =  $style_option['class'];
+    }
+
+    return $classes;
+  }
+
 }
