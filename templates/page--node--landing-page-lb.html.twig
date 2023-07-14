@@ -45,7 +45,8 @@
  * @ingroup themeable
  */
 #}
-<div class="layout-container {{ camp_class }}">
+{% set page_attributes = create_attribute() %}
+<div {{ page_attributes.addClass(page_classes, camp_class, ['layout-container']) }}>
   {# mobile menu #}
 
   {# mobile sidebar #}

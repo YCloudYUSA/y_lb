@@ -46,4 +46,17 @@ interface WSStyleOptionInterface extends PluginManagerInterface {
    */
   public function getStyleOption(string $group, string $style): array|NULL;
 
+  /**
+   * Get Classes settings.
+   *
+   * @param string $group
+   *   Group name.
+   * @param string $style
+   *   Style name.
+   *
+   * @return array
+   *   Array of the classes to be attached to the render.
+   */
+  public function getClasses(string $group, string $style): array;
+
 }

@@ -6,7 +6,9 @@ a {
     line-height: 30px;
 
     &.btn-primary {
-      &.filled {
+      &.filled,
+      .layout-container.ws-button-fill--filled--global &,
+      .layout-container .block-layout-builder.ws-button-fill--filled--component & {
         background-color: var(--wsPartnerColor, black);
         color: var(--ylb-color-white, white);
         border: 2px solid transparent;
@@ -17,7 +19,10 @@ a {
           border-color: var(--wsPartnerColor, black);
         }
       }
-      &.outline {
+
+      &.outline,
+      .layout-container.ws-button-fill--outlined--global &,
+      .layout-container .block-layout-builder.ws-button-fill--outlined--component & {
         background-color: var(--ylb-color-white, white);
         color: var(--wsPartnerColor, black);
         border: 2px solid var(--wsPartnerColor, black);
@@ -30,10 +35,13 @@ a {
         }
       }
     }
+
     &.btn-secondary {
-      &.filled {
+      &.filled,
+      .layout-container.ws-button-fill--filled--global &,
+      .layout-container .block-layout-builder.ws-button-fill--filled--component & {
         background-color: var(--ylb-color-white, white);
-        color:  var(--wsPartnerColor, black);
+        color: var(--wsPartnerColor, black);
         border: 2px solid transparent;
 
         &:hover {
@@ -42,7 +50,10 @@ a {
           border-color: var(--ylb-color-white, white);
         }
       }
-      &.outline {
+
+      &.outline,
+      .layout-container.ws-button-fill--outlined--global &,
+      .layout-container .block-layout-builder.ws-button-fill--outlined--component & {
         background-color: transparent;
         color: var(--ylb-color-white, white);
         border: 2px solid var(--ylb-color-white, white);
@@ -50,7 +61,7 @@ a {
 
         &:hover {
           background-color: var(--ylb-color-white, white);
-          color:  var(--wsPartnerColor, black);
+          color: var(--wsPartnerColor, black);
           border-color: transparent;
         }
       }
