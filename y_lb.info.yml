@@ -16,4 +16,7 @@ dependencies:
   - drupal:lb_claro
   - drupal:scheduler
   - drupal:pathauto
+  - drupal:field_group
+  - drupal:metatag
+  - drupal:openy_focal_point
 

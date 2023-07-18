@@ -2,10 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.landing_page_lb.field_meta_description
+    - field.field.node.landing_page_lb.field_meta_image
+    - field.field.node.landing_page_lb.field_meta_tags
     - field.field.node.landing_page_lb.layout_builder__layout
     - node.type.landing_page_lb
     - system.menu.account
     - system.menu.footer
+    - system.menu.footer-menu-center
+    - system.menu.footer-menu-left
+    - system.menu.footer-menu-right
     - system.menu.main
   content:
     - 'block_content:basic_block:cb76bc7c-a957-4b69-96fb-e565ee85f38a'
@@ -15,6 +21,8 @@ dependencies:
     - bootstrap_layout_builder
     - layout_builder
     - layout_builder_restrictions
+    - metatag
+    - openy_gtranslate
     - system
     - user
     - y_lb
@@ -644,8 +652,6 @@ third_party_settings:
                   background_size: cover
               text_color:
                 class: null
-              text_alignment:
-                class: null
               padding:
                 class: _none
               padding_left:
@@ -709,6 +715,8 @@ third_party_settings:
                   class: _none
               scroll_effects:
                 class: null
+              text_alignment:
+                class: null
           container_wrapper_bg_color_class: ''
           container_wrapper_bg_media: null
           container: w-100
@@ -727,7 +735,6 @@ third_party_settings:
         layout_id: 'bootstrap_layout_builder:blb_col_1'
         layout_settings:
           label: Body
-          context_mapping: {  }
           container_wrapper_classes: ''
           container_wrapper_attributes: null
           container_wrapper:
@@ -748,8 +755,6 @@ third_party_settings:
                   background_size: cover
               text_color:
                 class: null
-              text_alignment:
-                class: null
               padding:
                 class: _none
               padding_left:
@@ -813,6 +818,8 @@ third_party_settings:
                   class: _none
               scroll_effects:
                 class: null
+              text_alignment:
+                class: null
           container_wrapper_bg_color_class: ''
           container_wrapper_bg_media: null
           container: container
@@ -825,6 +832,7 @@ third_party_settings:
           breakpoints: {  }
           layout_regions_classes: {  }
           remove_gutters: '0'
+          context_mapping: {  }
         components: {  }
         third_party_settings: {  }
       -
@@ -840,7 +848,7 @@ third_party_settings:
             configuration:
               id: 'block_content:cb76bc7c-a957-4b69-96fb-e565ee85f38a'
               label: 'Footer Copyright Block'
-              label_display: 0
+              label_display: '0'
               provider: block_content
               status: true
               info: ''
@@ -1036,7 +1044,7 @@ third_party_settings:
             configuration:
               id: 'system_menu_block:footer-menu-left'
               label: Left
-              label_display: 1
+              label_display: '1'
               provider: system
               context_mapping: {  }
             weight: 0
@@ -1132,7 +1140,7 @@ third_party_settings:
             configuration:
               id: 'system_menu_block:footer-menu-center'
               label: Center
-              label_display: 1
+              label_display: '1'
               provider: system
               context_mapping: {  }
               level: 1
@@ -1231,7 +1239,7 @@ third_party_settings:
             configuration:
               id: 'system_menu_block:footer-menu-right'
               label: Right
-              label_display: 1
+              label_display: '1'
               provider: system
               context_mapping: {  }
               level: 1
@@ -1429,7 +1437,7 @@ third_party_settings:
             configuration:
               id: 'system_menu_block:footer'
               label: Footer
-              label_display: 0
+              label_display: '0'
               provider: system
               context_mapping: {  }
               level: 1
@@ -1560,6 +1568,10 @@ mode: default
 content: {  }
 hidden:
   addthis: true
+  field_meta_description: true
+  field_meta_image: true
+  field_meta_tags: true
   langcode: true
   layout_builder__layout: true
   links: true
+  search_api_excerpt: true

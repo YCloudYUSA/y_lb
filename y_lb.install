@@ -178,3 +178,31 @@ function y_lb_update_9010(&$sandbox) {
     'core.entity_view_display.node.landing_page_lb.default',
   ]);
 }
+
+/**
+ * Add metadata helper fields and enable meta tags
+ */
+function y_lb_update_9011(&$sandbox) {
+  $configs = [
+    'core.entity_form_display.node.landing_page_lb.default',
+    'core.entity_view_display.node.landing_page_lb.default',
+    'field.field.node.landing_page_lb.field_meta_description',
+    'field.field.node.landing_page_lb.field_meta_image',
+    'field.field.node.landing_page_lb.field_meta_tags',
+    'field.storage.node.field_meta_description',
+    'field.storage.node.field_meta_image',
+  ];
+
+  // Only import the metatag config if it's not already configured.
+  $active_config = \Drupal::configFactory()->getEditable('metatag.metatag_defaults.node__landing_page_lb');
+  $settings = $active_config->get('tags');
+  if (!isset($settings)) {
+    $configs[] = 'metatag.metatag_defaults.node__landing_page_lb';
+  }
+
+  $path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/install';
+  /** @var \Drupal\config_import\ConfigImporterService $config_importer */
+  $config_importer = \Drupal::service('config_import.importer');
+  $config_importer->setDirectory($path);
+  $config_importer->importConfigs($configs);
+}
