@@ -19,4 +19,5 @@ dependencies:
   - drupal:field_group
   - drupal:metatag
   - openy_focal_point
+  - drupal:openy_gtranslate
 
