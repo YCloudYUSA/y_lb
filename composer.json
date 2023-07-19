@@ -61,9 +61,6 @@
             },
             "drupal/bootstrap_layout_builder": {
                 "Issue #3335356: - Fix Module does not work in D10": "https://www.drupal.org/files/issues/2023-01-25/issue_3335356_drupal10.patch"
-            },
-            "drupal/layout_builder_save_and_edit": {
-                "Issue #3246699: - Add \"Save and Edit Layout\" button to entity edit pages": "https://www.drupal.org/files/issues/2023-06-21/3246699-save-and-edit-layout.patch"
             }
         }
     }
