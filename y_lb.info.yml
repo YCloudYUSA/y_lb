@@ -15,5 +15,12 @@ dependencies:
   - drupal:layout_builder_restrictions
   - drupal:lb_claro
   - drupal:scheduler
+  - drupal:system
+  - drupal:user
+  - drupal:path
   - drupal:pathauto
+  - drupal:field_group
+  - drupal:metatag
+  - openy_focal_point
+  - drupal:openy_gtranslate
 
