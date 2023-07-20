@@ -365,10 +365,14 @@ function y_lb_theme_suggestions_node_alter(array &$suggestions, array $variables
 }
 
 /**
+ * Remove show preview to fix section duplication.
+ *
  * Implements hook_form_FORM_ID_alter().
  */
 function y_lb_form_layout_builder_configure_section_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  foreach ($form['layout_settings']['ui']['tab_content']['layout']['breakpoints'] as &$breakpoint) {
-    unset($breakpoint['#ajax']);
+  if (isset($form['layout_settings']['ui']['tab_content']['layout']['breakpoints'])) {
+    foreach ($form['layout_settings']['ui']['tab_content']['layout']['breakpoints'] as &$breakpoint) {
+      unset($breakpoint['#ajax']);
+    }
   }
 }
