@@ -39,6 +39,7 @@
         "drupal/ws_code_block" : "^1.0",
         "drupal/ws_event" : "^1.0 || ^1.1",
         "drupal/y_branch" : "^1.0",
+        "drupal/y_camp" : "^1.0",
         "drupal/y_facility" : "^1.0",
         "drupal/y_lb_article" : "^1.0 || ^1.1",
         "drupal/pathauto" : "^1.11",
