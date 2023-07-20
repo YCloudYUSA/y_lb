@@ -121,6 +121,13 @@ function y_lb_update_9005(&$sandbox) {
   $config_importer = \Drupal::service('config_import.importer');
   $config_importer->setDirectory($path);
   $config_importer->importConfigs([
+    'field.storage.node.field_meta_description',
+    'field.storage.node.field_meta_image',
+    'field.storage.node.field_meta_tags',
+    'field.field.node.landing_page_lb.field_meta_description',
+    'field.field.node.landing_page_lb.field_meta_image',
+    'field.field.node.landing_page_lb.field_meta_tags',
+    'core.entity_form_display.node.landing_page_lb.default',
     'core.entity_view_display.node.landing_page_lb.default',
   ]);
 }
@@ -175,6 +182,13 @@ function y_lb_update_9010(&$sandbox) {
   $config_importer = \Drupal::service('config_import.importer');
   $config_importer->setDirectory($path);
   $config_importer->importConfigs([
+    'field.storage.node.field_meta_description',
+    'field.storage.node.field_meta_image',
+    'field.storage.node.field_meta_tags',
+    'field.field.node.landing_page_lb.field_meta_description',
+    'field.field.node.landing_page_lb.field_meta_image',
+    'field.field.node.landing_page_lb.field_meta_tags',
+    'core.entity_form_display.node.landing_page_lb.default',
     'core.entity_view_display.node.landing_page_lb.default',
   ]);
 }
@@ -184,13 +198,14 @@ function y_lb_update_9010(&$sandbox) {
  */
 function y_lb_update_9011(&$sandbox) {
   $configs = [
-    'core.entity_form_display.node.landing_page_lb.default',
-    'core.entity_view_display.node.landing_page_lb.default',
+    'field.storage.node.field_meta_description',
+    'field.storage.node.field_meta_image',
+    'field.storage.node.field_meta_tags',
     'field.field.node.landing_page_lb.field_meta_description',
     'field.field.node.landing_page_lb.field_meta_image',
     'field.field.node.landing_page_lb.field_meta_tags',
-    'field.storage.node.field_meta_description',
-    'field.storage.node.field_meta_image',
+    'core.entity_form_display.node.landing_page_lb.default',
+    'core.entity_view_display.node.landing_page_lb.default',
   ];
 
   // Only import the metatag config if it's not already configured.
