@@ -449,6 +449,19 @@
   }
 }
 .ui-dialog {
+
+  .select-wrapper {
+    &:before {
+      top: 15px;
+    }
+  }
+  .form-select {
+    background-image: none;
+
+    &:hover {
+      background-image: none;
+    }
+  }
   table {
     width: 100%;
 
@@ -459,6 +472,24 @@
           height: 29px;
         }
       }
+    }
+  }
+
+  .ui-dialog-titlebar-close {
+    &:after, &:before {
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 50%;
+      width: 50%;
+      height: 0;
+      content: "";
+      border-top: solid 2px currentColor;
+    }
+    &:before {
+      transform: translate(-50%, 50%) rotate(-45deg);
+    }
+    &:after {
+      transform: translate(-50%, 50%) rotate(45deg);
     }
   }
 }
