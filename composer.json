@@ -4,7 +4,7 @@
     "type": "drupal-module",
     "require": {
         "cweagans/composer-patches": "*",
-        "drupal/bootstrap_styles": "*",
+        "drupal/bootstrap_styles": ">= 1.1.1",
         "drupal/bootstrap_layout_builder" : "*",
         "drupal/entity_clone": "^2.0@alpha || ^2",
         "drupal/layout_builder_blocks" : "*",
@@ -60,10 +60,6 @@
             }
         },
         "patches": {
-            "drupal/bootstrap_styles": {
-                "Issue #3330458: - [Drupal 10] Change of JS jquery/once to drupal core/once, migrate JS API": "https://www.drupal.org/files/issues/2023-03-07/bootstrap_styles-3330458-8.patch",
-                "3315218 - Fix not loading bootstrap_styles/aos.local": "https://www.drupal.org/files/issues/2023-01-25/3315218-17--1-0-x.patch"
-            },
             "drupal/bootstrap_layout_builder": {
                 "Issue #3335356: - Fix Module does not work in D10": "https://www.drupal.org/files/issues/2023-01-25/issue_3335356_drupal10.patch"
             }
