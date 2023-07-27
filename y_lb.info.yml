@@ -22,5 +22,7 @@ dependencies:
   - drupal:field_group
   - drupal:metatag
   - openy_focal_point
+  - openy_media_image
+  - openy_menu_footer
   - drupal:openy_gtranslate
 
