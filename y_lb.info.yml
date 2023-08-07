@@ -3,6 +3,7 @@ type: module
 description: Integration point for Layout Builder integration.
 core_version_requirement: ^8.7.7 || ^9 || ^10
 package: 'YMCA Website Services'
+version: 2.3.3
 dependencies:
   - drupal:layout_builder
   - drupal:node_revision_delete
