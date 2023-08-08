@@ -14,6 +14,15 @@
 .page-with-lb {
   main {
     margin-top: 0 !important;
+
+    .field-media-image {
+      .media {
+        width: auto;
+        img {
+          width: auto;
+        }
+      }
+    }
   }
 }
 
