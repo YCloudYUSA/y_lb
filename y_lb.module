@@ -48,6 +48,14 @@ function y_lb_theme($existing, $type, $theme, $path) {
     'page__node__landing_page_lb' => [
       'base hook' => 'page',
     ],
+    'page__node__layout__discard_changes' => [
+      'base hook' => 'page',
+      'template' => 'page--node--layout--discard-revert',
+    ],
+    'page__node__layout__revert' => [
+      'base hook' => 'page',
+      'template' => 'page--node--layout--discard-revert',
+    ],
     'menu__main' => [
       'base hook' => 'menu__main',
     ],
