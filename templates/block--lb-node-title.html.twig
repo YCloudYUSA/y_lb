@@ -40,11 +40,11 @@
   {{ title_suffix }}
 
   {% block content %}
-    {{ content|without('title', 'subtitle') }}
+    {{ content }}
     <div class="page-title col-12 text-align-center">
-      <h1>{{ content.title }}</h1>
-      {% if content.subtitle %}
-        <div class="subtitle">{{ content.subtitle }}</div>
+      <h1>{{ content['#title'] }}</h1>
+      {% if content['#subtitle'] %}
+        <div class="subtitle">{{ content['#subtitle'] }}</div>
       {% endif %}
     </div>
   {% endblock %}

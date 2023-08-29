@@ -63,8 +63,8 @@ class SiteNameBlock extends BlockBase implements ContainerFactoryPluginInterface
    */
   public function build() {
 
-    $build['site_name'] = $this->configFactory->get('system.site')->get('name');
-    $build['front_page'] = Url::fromRoute('<front>')->toString();
+    $build['#site_name'] = $this->configFactory->get('system.site')->get('name');
+    $build['#front_page'] = Url::fromRoute('<front>')->toString();
 
     return $build;
   }
