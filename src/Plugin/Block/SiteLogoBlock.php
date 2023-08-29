@@ -141,8 +141,8 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
    * {@inheritdoc}
    */
   public function build() {
-    $build['site_slogan'] = $this->configFactory->get('system.site')->get('slogan');
-    $build['front_page'] = Url::fromRoute('<front>')->toString();
+    $build['#site_slogan'] = $this->configFactory->get('system.site')->get('slogan');
+    $build['#front_page'] = Url::fromRoute('<front>')->toString();
     $type_of_logo = $this->configuration['logo_type'];
     if ($type_of_logo === 'theme') {
       $this->ylbPreprocessPageLogo($build);
@@ -152,9 +152,9 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
         ->getPath('y_lb') . '/assets/svg/logo_' . $type_of_logo . '.svg';
       $logo_url = $this->fileUrlGenerator
         ->generateAbsoluteString($path);
-      $build['site_logo_is_svg'] = TRUE;
-      $build['site_logo_svg'] = file_get_contents($path);
-      $build['logo_url'] = $logo_url;
+      $build['#site_logo_is_svg'] = TRUE;
+      $build['#site_logo_svg'] = file_get_contents($path);
+      $build['#logo_url'] = $logo_url;
     }
     return $build;
   }
@@ -166,17 +166,17 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
    */
   private function ylbPreprocessPageLogo(&$build) {
 
-    $build['logo_url'] = theme_get_setting('logo.path') ?
+    $build['#logo_url'] = theme_get_setting('logo.path') ?
       $this->fileUrlGenerator->generateAbsoluteString(theme_get_setting('logo.path'))
       : '';
-    $build['transparent_logo_url'] = $build['mobile_logo_url'] = $build['logo_url'];
+    $build['#transparent_logo_url'] = $build['mobile_logo_url'] = $build['#logo_url'];
 
-    if ($build['logo_url']) {
+    if ($build['#logo_url']) {
       $this->ylbPreprocessSvgLogo($build);
     }
     if ($this->node) {
       if ($this->node->getType() === 'program') {
-        $build['logo_url'] = $this->ylbGetThemeColoredLogo();
+        $build['#logo_url'] = $this->ylbGetThemeColoredLogo();
       }
 
       if (\Drupal::hasService('openy_loc_camp.camp_service')) {
@@ -190,8 +190,8 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
    */
   private function ylbPreprocessSvgLogo(&$build) {
     // If logo is a SVG lets load it content, so we can inline it.
-    if ($build['site_logo_is_svg'] = strlen($build['logo_url']) - strpos($build['logo_url'], '.svg') === 4) {
-      $build['site_logo_svg'] = file_get_contents(DRUPAL_ROOT . parse_url($build['logo_url'], PHP_URL_PATH));
+    if ($build['#site_logo_is_svg'] = strlen($build['#logo_url']) - strpos($build['#logo_url'], '.svg') === 4) {
+      $build['#site_logo_svg'] = file_get_contents(DRUPAL_ROOT . parse_url($build['#logo_url'], PHP_URL_PATH));
     }
   }
 
@@ -201,9 +201,9 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
   private function ylbPreprocessLogoForCampsNode(&$build) {
     if (\Drupal::service('openy_loc_camp.camp_service')->nodeHasOrIsCamp($this->node)) {
       if ($camp_logo_uri = $this->getFileUriByFid(theme_get_setting('openy_carnation_camp_section_logo'))) {
-        $build['logo_url'] = $this->fileUrlGenerator->generateAbsoluteString($camp_logo_uri);
+        $build['#logo_url'] = $this->fileUrlGenerator->generateAbsoluteString($camp_logo_uri);
       }
-      $build['camp_favicon'] = $this->fileUrlGenerator->generateAbsoluteString($this->getFileUriByFid(theme_get_setting('openy_carnation_camp_favicon')));
+      $build['#camp_favicon'] = $this->fileUrlGenerator->generateAbsoluteString($this->getFileUriByFid(theme_get_setting('openy_carnation_camp_favicon')));
     }
   }
 
