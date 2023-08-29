@@ -11,7 +11,7 @@ field_name: field_menu_cta_link
 entity_type: block_content
 bundle: menu_cta
 label: 'Menu CTA Link'
-description: ''
+description: 'Note: <em>CTA block will be displayed only for the <b>1st level</b> of the menu links, all other levels will ignore CTA block displaying</em>'
 required: false
 translatable: false
 default_value: {  }
