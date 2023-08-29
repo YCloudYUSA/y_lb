@@ -68,6 +68,10 @@
     margin-left: 30px;
     font-size: 28px;
     color: #231F20;
+
+    &:hover {
+      color: var(--wsPrimaryColor, gray);
+    }
   }
 }
 

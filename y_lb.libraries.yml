@@ -25,7 +25,7 @@ breadcrumbs:
       assets/css/breadcrumbs.css: { preprocess: true }
 
 blocks:
-  version: 1.7
+  version: 1.8
   css:
     component:
       assets/css/blocks.css: { preprocess: true }
