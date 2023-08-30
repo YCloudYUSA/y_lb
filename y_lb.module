@@ -170,7 +170,7 @@ function y_lb_page_attachments_alter(array &$page) {
       return;
     }
 
-    // Do noy apply the styles if our custom LB switch is off.
+    // Do not apply the styles if our custom LB switch is off.
     if ($entity->hasField('field_use_layout_builder')
       && !$entity->field_use_layout_builder->value) {
       return;
