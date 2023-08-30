@@ -307,6 +307,12 @@ function y_lb_preprocess_page(&$variables) {
     return;
   }
 
+  // Skip nodes with optional layout builder usage with deactivated usage.
+  if ($node->hasField('field_use_layout_builder')
+    && !$node->field_use_layout_builder->value) {
+    return;
+  }
+
   $libraries = [];
   $classes = [];
   /** @var \Drupal\y_lb\WSStyleManager $ws_styles */
