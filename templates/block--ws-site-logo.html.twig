@@ -40,13 +40,13 @@
   {{ title_suffix }}
 
   {% block content %}
-    {{ content|without('front_page', 'site_slogan', 'site_logo_is_svg', 'site_logo_svg') }}
-    {% if content.logo_url %}
-      <a href="{{ content.front_page }}" title="{{ content.site_slogan }}" rel="{{ content.site_slogan }}">
-        {% if content.site_logo_is_svg %}
-          {{ content.site_logo_svg|raw }}
+    {{ content }}
+    {% if content['#logo_url'] %}
+      <a href="{{ content['#front_page'] }}" title="{{ content['#site_slogan'] }}" rel="{{ content['#site_slogan'] }}">
+        {% if content['#site_logo_is_svg'] %}
+          {{ content['#site_logo_svg']|raw }}
         {% else %}
-          <img src="{{ content.logo_url }}" alt="{{ content.site_slogan }}" />
+          <img src="{{ content['#logo_url'] }}" alt="{{ content['#site_slogan'] }}" />
         {% endif %}
       </a>
     {% endif %}

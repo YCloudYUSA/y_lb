@@ -63,10 +63,10 @@ class SearchBarBlock extends BlockBase implements ContainerFactoryPluginInterfac
    */
   public function build() {
 
-    $build['display_search'] = theme_get_setting('display_search_form');
-    $build['search_key'] = theme_get_setting('search_query_key');
+    $build['#display_search'] = theme_get_setting('display_search_form');
+    $build['#search_key'] = theme_get_setting('search_query_key');
     $search_alias = 'internal:/' . theme_get_setting('search_page_alias');
-    $build['search_results_path'] = Url::fromUri($search_alias)->toString();
+    $build['#search_results_path'] = Url::fromUri($search_alias)->toString();
 
     return $build;
   }

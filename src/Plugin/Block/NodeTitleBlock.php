@@ -67,8 +67,8 @@ class NodeTitleBlock extends BlockBase implements ContainerFactoryPluginInterfac
     if (!$node instanceof NodeInterface) {
       return [];
     }
-    $build['title'] = $node->getTitle();
-    $build['subtitle'] = $node->hasField('field_subtitle') ? $node->field_subtitle->value : '';
+    $build['#title'] = $node->getTitle();
+    $build['#subtitle'] = $node->hasField('field_subtitle') ? $node->field_subtitle->value : '';
 
     return $build;
   }
