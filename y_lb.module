@@ -169,6 +169,13 @@ function y_lb_page_attachments_alter(array &$page) {
     if (!$entity) {
       return;
     }
+
+    // Do noy apply the styles if our custom LB switch is off.
+    if ($entity->hasField('field_use_layout_builder')
+      && !$entity->field_use_layout_builder->value) {
+      return;
+    }
+
     $bundle = $entity->bundle();
 
     /** @var \Drupal\Core\Entity\EntityDisplayRepositoryInterface $entity_display_repository */
@@ -179,7 +186,7 @@ function y_lb_page_attachments_alter(array &$page) {
     // enabled.
     if (
       !$view_display instanceof LayoutBuilderEntityViewDisplay
-      || $view_display->isLayoutBuilderEnabled()
+      || !$view_display->isLayoutBuilderEnabled()
     ) {
       return;
     }
