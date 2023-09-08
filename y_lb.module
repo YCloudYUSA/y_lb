@@ -325,11 +325,16 @@ function y_lb_preprocess_page(&$variables) {
   }
   else {
     // Get Y Styles from node view display settings.
-    $view_display = \Drupal::entityTypeManager()
-      ->getStorage('entity_view_display')
-      ->load('node.' . $node->bundle() . '.default');
-    $settings = $view_display->getThirdPartySettings('y_lb');
-    $styles = $settings['styles'] ?? [];
+    foreach (['full', 'default'] as $display) {
+      $view_display = \Drupal::entityTypeManager()
+        ->getStorage('entity_view_display')
+        ->load('node.' . $node->bundle() . '.' . $display);
+      $settings = $view_display->getThirdPartySettings('y_lb');
+      $styles = $settings['styles'] ?? [];
+      if ($styles) {
+        break;
+      }
+    }
   }
 
   // Get libraries from the style's groups.
