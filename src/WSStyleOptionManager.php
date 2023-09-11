@@ -122,7 +122,8 @@ class WSStyleOptionManager extends DefaultPluginManager implements WSStyleOption
       $module_options = array_filter($module_options, 'is_int', ARRAY_FILTER_USE_KEY);
       foreach ($module_options as $style_option) {
         if ($style_option['group'] == $group
-          && $style_option['name'] == $style) {
+          && $style_option['name'] == $style
+          && isset($style_option['library'])) {
           $libraries[] = $style_option['library'];
         }
       }
