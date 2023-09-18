@@ -16,13 +16,13 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
    */
   public function buildForm(array $form, FormStateInterface $form_state, SectionStorageInterface $section_storage = NULL) {
     $node = $this->entity;
-    $settings = unserialize($node->styles->value) ?: [];
+    $settings = $node->styles->value ? unserialize($node->styles->value) : [];
 
     $view_display = $this->entityTypeManager
       ->getStorage('entity_view_display')
       ->load('node.' . $node->bundle() . '.default');
     $global_settings = $view_display->getThirdPartySettings('y_lb');
-    $default_settings = $global_settings['styles'] ?: [];
+    $default_settings = $global_settings['styles'] ?? [];
 
     $form['ws_settings_container'] = [
       '#type' => 'details',
