@@ -7,15 +7,15 @@ ws_header:
   default_region: header_top_left
   regions:
     header_top_left:
-      label: Left Column
+      label: Utility Nav left
     header_top_right:
-      label: Right Column
+      label: Utility Nav right
     header_bottom_left:
-      label: Left Column
+      label: Main Nav logo
     header_bottom_middle:
-      label: Middle Column
+      label: Main Nav menu
     header_bottom_right:
-      label: Right Column
+      label: Second Nav menu
   icon_map:
     - [ header_top_left, header_top_right, header_bottom_left, header_bottom_middle, header_bottom_right]
 
@@ -28,14 +28,14 @@ ws_footer:
   default_region: footer_first_column
   regions:
     footer_top_left:
-      label: Left Column
+      label: Footer top left
     footer_top_middle:
-      label: Middle Column
+      label: Footer top middle
     footer_top_right:
-      label: Right Column
+      label: Footer top right
     footer_bottom_left:
-      label: Left Column
+      label: Footer bottom left
     footer_bottom_right:
-      label: Right Column
+      label: Footer bottom right
   icon_map:
     - [ footer_top_left, footer_top_middle, footer_top_right, footer_bottom_left, footer_bottom_right]
