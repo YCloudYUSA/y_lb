@@ -35,6 +35,7 @@
         "drupal/node_revision_delete" : "^2.0@alpha || ^2",
         "drupal/openy_gtranslate" : "^1.0",
         "drupal/scheduler": "^2.0@RC || ^2.0",
+        "drupal/ws_colorway_canada" : "^1.0",
         "drupal/ws_lb_tabs" : "^1.0",
         "drupal/ws_code_block" : "^1.0",
         "drupal/ws_event" : "^1.0 || ^1.1",
