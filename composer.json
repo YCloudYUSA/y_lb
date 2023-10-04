@@ -4,8 +4,8 @@
     "type": "drupal-module",
     "require": {
         "cweagans/composer-patches": "*",
-        "drupal/bootstrap_styles": ">= 1.1.1",
-        "drupal/bootstrap_layout_builder" : "*",
+        "drupal/bootstrap_styles": ">=1.1.3",
+        "drupal/bootstrap_layout_builder" : ">=2.1.2",
         "drupal/entity_clone": "^2.0@alpha || ^2",
         "drupal/layout_builder_blocks" : "*",
         "drupal/layout_builder_operation_link": "^2.1",
@@ -62,12 +62,6 @@
             }
         },
         "patches": {
-            "drupal/bootstrap_layout_builder": {
-                "Issue #3335356: - Fix Module does not work in D10": "https://www.drupal.org/files/issues/2023-01-25/issue_3335356_drupal10.patch"
-            },
-            "drupal/bootstrap_styles": {
-                "Issue #3322977: - Fix PHP 8.0/8.1 RFC: Deprecate passing null to non-nullable arguments": "https://git.drupalcode.org/project/bootstrap_styles/-/merge_requests/49.diff"
-            },
             "drupal/lb_claro": {
                 "Issue #3383836: Exclude revert and discard": "https://git.drupalcode.org/project/lb_claro/-/merge_requests/6.diff"
             }
