@@ -221,3 +221,17 @@ function y_lb_update_9011(&$sandbox) {
   $config_importer->setDirectory($path);
   $config_importer->importConfigs($configs);
 }
+
+/**
+ * Add sub-blocks to denylisted_blocks for the layout builder.
+ */
+function y_lb_update_9012(&$sandbox) {
+  $config_path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/install/';
+  $config_importer = \Drupal::service('openy_upgrade_tool.param_updater');
+  $config = 'core.entity_view_display.node.landing_page_lb.default';
+  $config_importer->update(
+    $config_path . $config . '.yml',
+    $config,
+    'third_party_settings.layout_builder_restrictions.entity_view_mode_restriction.denylisted_blocks'
+  );
+}

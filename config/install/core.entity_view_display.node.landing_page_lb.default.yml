@@ -1554,6 +1554,14 @@ third_party_settings:
           - 'inline_block:testimonial_item'
           - 'inline_block:lb_staff_member_item'
           - 'inline_block:lb_partner_item'
+          - 'inline_block:accordion_item'
+          - 'inline_block:card_item'
+          - 'inline_block:carousel_item'
+          - 'inline_block:donate_item'
+          - 'inline_block:grid_item'
+          - 'inline_block:icon_grid_item'
+          - 'inline_block:statistics_item'
+          - 'inline_block:tab_item'
       allowlisted_blocks: {  }
       restricted_categories: {  }
   y_lb:
