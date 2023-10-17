@@ -93,8 +93,6 @@
         if ($(this).parent().hasClass('children')) {
           e.stopPropagation();
           e.preventDefault();
-          // When a second-level item is clicked, remove tab control from its siblings.
-          $(this).parent().parent().find('a').attr('tabIndex', '-1');
         }
         const subMenuTarget = $(this).attr('data-submenu-target');
         const subMenu = $('#' + subMenuTarget);
@@ -112,16 +110,8 @@
           $(this).parent().parent().parent().toggleClass('open');
         }
         subMenu.addClass('open');
-        // Moving into the 3rd level, only the sub-sub-items should be tab-able.
-        subMenu.find('li').attr('tabIndex', "0");
-        subMenu.find('li > a').attr('tabIndex', '-1');
-        // When we enter the 3rd level, focus on the first item in the list.
-        subMenu.find('li').first().focus();
-      });
-
-      // When we enter the 3rd level, reset the 2nd level tabIndex.
-      $('.dropdown-submenu a.menu-link-item').on('blur', function (e) {
-        $(this).parent().parent().find('a').removeAttr('tabIndex');
+        // When we enter the 3rd level, move focus to it. Tabindex is required to be focusable by js.
+        subMenu.attr('tabIndex', '-1').focus();
       });
 
       const firstLevelItem = $('.header-nav__links .dropdown', context);
@@ -147,7 +137,6 @@
         const secondLevelDropdownLink = $(this).parent().find('li.active');
         secondLevelDropdownLink.each(function () {
           $(this).removeClass('active');
-          $(this).attr('tabIndex', '-1');
         });
       });
 
