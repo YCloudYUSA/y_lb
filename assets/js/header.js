@@ -97,14 +97,17 @@
         const subMenuTarget = $(this).attr('data-submenu-target');
         const subMenu = $('#' + subMenuTarget);
 
+        // Manage states of 3rd level popups.
         const secondLevelDropdownLink = $('.header-nav__submenu.level-3');
         secondLevelDropdownLink.each(function () {
           $(this).removeClass('open');
-          if ($(this).attr('data-submenu-target') !== subMenuTarget) {
+          if ($(this).attr('id') !== subMenuTarget) {
             $(this).removeClass('active');
           }
         });
-        $(this).parent().addClass('active');
+        
+        // Set active 2nd level item and remove the state from siblings.
+        $(this).parent().addClass('active').siblings().removeClass('active');
         if (header.hasClass('mobile')) {
           $(this).parent().parent().toggleClass('open');
           $(this).parent().parent().parent().toggleClass('open');

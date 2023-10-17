@@ -118,7 +118,8 @@
 
       &:active,
       &:focus,
-      &:hover {
+      &:hover,
+      &.active {
 
         & > a {
           color: var(--wsPartnerColor, blue);
@@ -437,7 +438,7 @@
           padding: 10px;
         }
 
-        .active & {
+        &.active {
           color: var(--wsPartnerColor, blue);
         }
 
