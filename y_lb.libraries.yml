@@ -19,7 +19,7 @@ main:
       - core/jquery
 
 breadcrumbs:
-  version: 1.8
+  version: 1.9
   css:
     component:
       assets/css/breadcrumbs.css: { preprocess: true }
