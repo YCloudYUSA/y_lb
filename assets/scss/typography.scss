@@ -74,7 +74,6 @@
   // -----------------------------------------------------------------------------
   a {
     color: #0060AF;
-    font-size: 18px;
     font-family: var(--ylb-font-family-verdana);
 
     &:hover {
@@ -295,5 +294,18 @@
 
   small {
     font-size: 10px;
+  }
+}
+
+// Ensure links in white text areas are legible.
+.text-white {
+  a {
+    color: #fff;
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--ylb-color-light-grey-2, lightgray);
+      text-decoration: underline;
+    }
   }
 }
