@@ -36,6 +36,7 @@
 
         &:first-child {
           a {
+            color: var(--ylb-color-white, white);
             font-size: 0;
             background: var(--wsPartnerColor, black);
             mask: url("../svg/home.svg") no-repeat left;
