@@ -39,7 +39,7 @@ bs_icons:
       //cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css: { external: true }
 
 footer:
-  version: 1.2
+  version: 1.3
   css:
     component:
       assets/css/footer.css: { preprocess: true }
