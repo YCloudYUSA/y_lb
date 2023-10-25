@@ -306,7 +306,8 @@
     margin-right: auto;
     margin-left: auto;
     width: 100%;
-    display: flex; }
+    display: flex;
+    margin-bottom: 80px; }
     .header:not(.layout-builder__layout).mobile.open .header--bottom-right-column nav ul {
       justify-content: center;
       flex: 0 0 100%;
