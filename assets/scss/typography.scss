@@ -307,5 +307,9 @@
       color: var(--ylb-color-light-grey-2, lightgray);
       text-decoration: underline;
     }
+
+    &.btn {
+      text-decoration: inherit;
+    }
   }
 }

@@ -14,6 +14,11 @@
 
     .field-media-image {
       margin-bottom: 25px;
+
+      img {
+        border-radius: 10px;
+        min-width: 230px;
+      }
     }
 
     .field-description,
