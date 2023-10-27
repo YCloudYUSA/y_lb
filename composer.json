@@ -16,7 +16,7 @@
         "drupal/lb_accordion" : "^2.0",
         "drupal/lb_cards" : "^2.0",
         "drupal/lb_carousel" : "^2.0",
-        "drupal/lb_grid_cta" : "^2.0",
+        "drupal/lb_grid_cta" : "^3.0",
         "drupal/lb_hero" : "^1.0 || ^1.1",
         "drupal/lb_modal" : "^1.0 || ^1.1",
         "drupal/lb_partners_blocks" : "^1.0",
