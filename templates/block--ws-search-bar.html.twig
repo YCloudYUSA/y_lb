@@ -49,7 +49,7 @@
       <div class="search-bar fade collapse">
         <div class="search-form-wrapper">
           <form method="get" action="{{ content['#search_results_path'] }}">
-            <input type="search" name="{{ content['#search_key'] }}" class="search-input" placeholder="">
+            <input type="search" name="{{ content['#search_key'] }}" class="search-input" placeholder="" aria-label="Search">
             <button class="search-submit" type="submit" aria-label="{{ 'Search'|t }}">
               <span>{{ 'Search'|t }}</span>
               <i class="fa fa-search" aria-hidden="true"></i>
