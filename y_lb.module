@@ -7,6 +7,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\block_content\BlockContentInterface;
@@ -163,10 +164,9 @@ function y_lb_page_attachments_alter(array &$page) {
     $current_route_exploded = explode('.', $current_route);
     $route_entity_type_id = $current_route_exploded[1];
 
-    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
     $entity = $route_match->getParameter($route_entity_type_id);
-    // Do not apply the y_lb/main since we can't find the entity.
-    if (!$entity) {
+    // Do not apply the y_lb/main since we can't find an appropriate entity.
+    if (!$entity instanceof FieldableEntityInterface) {
       return;
     }
 
