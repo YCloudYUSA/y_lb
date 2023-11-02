@@ -1562,6 +1562,7 @@ third_party_settings:
           - 'inline_block:icon_grid_item'
           - 'inline_block:statistics_item'
           - 'inline_block:tab_item'
+          - 'inline_block:menu_cta'
       allowlisted_blocks: {  }
       restricted_categories: {  }
   y_lb:
