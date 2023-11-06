@@ -5,7 +5,7 @@ layout_builder:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
 
 main:
-  version: 1.22
+  version: 1.23
   css:
     theme:
       assets/css/colors.css: { minified: false }
