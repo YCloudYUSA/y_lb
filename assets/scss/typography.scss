@@ -72,10 +72,9 @@
   // Links
   // -----------------------------------------------------------------------------
   a {
-    font-family: var(--ylb-font-family-verdana);
-
     &:not(.btn) {
       color: #0060AF;
+      font-family: var(--ylb-font-family-verdana);
     }
 
     &:hover {
