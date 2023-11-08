@@ -43,6 +43,8 @@
         "drupal/y_camp" : "^1.0",
         "drupal/y_facility" : "^1.0",
         "drupal/y_lb_article" : "^1.0 || ^1.1",
+        "drupal/y_program" : "^1.0",
+        "drupal/y_program_subcategory" : "^1.0",
         "drupal/pathauto" : "^1.11",
         "open-y-subprojects/openy_features": "*",
         "open-y-subprojects/openy_focal_point" : "^1.1",
