@@ -42,6 +42,8 @@
         "drupal/y_branch" : "^1.0",
         "drupal/y_camp" : "^1.1",
         "drupal/y_facility" : "^1.0",
+        "drupal/y_program" : "^1.0",
+        "drupal/y_program_subcategory" : "^1.0",
         "drupal/y_lb_article" : "^1.2",
         "drupal/pathauto" : "^1.11",
         "open-y-subprojects/openy_features": "*",

@@ -315,7 +315,6 @@
       .header:not(.layout-builder__layout).mobile.open .header--bottom-right-column nav ul li {
         width: 100%; }
       .header:not(.layout-builder__layout).mobile.open .header--bottom-right-column nav ul .highlighted {
-        color: var(--ylb-color-white);
         display: inline-block;
         font-size: 24px;
         line-height: 30px;
