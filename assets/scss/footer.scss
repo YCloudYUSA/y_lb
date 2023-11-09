@@ -7,15 +7,17 @@
     background-color: var(--wsPrimaryColor, lightgrey);
     display: block;
     color: var(--ylb-color-white, white);
+
+    h2 {
+      color: inherit;
+      font-size: 16px;
+      font-family: var(--ylb-font-family-verdana);
+      font-weight: 700;
+      line-height: 35px;
+      margin-bottom: 20px;
+    }
   }
 
-  h2 {
-    font-size: 16px;
-    font-family: var(--ylb-font-family-verdana);
-    font-weight: 700;
-    line-height: 35px;
-    margin-bottom: 20px;
-  }
 
   &--top {
     padding: 30px 15px;

@@ -127,7 +127,7 @@
               &:active,
               &:focus,
               &:hover {
-                color: var(--wsPrimaryColor, blue);
+                color: var(--wsPartnerColor, blue);
                 text-decoration: none;
               }
             }
@@ -480,6 +480,7 @@
             margin-left: auto;
             width: 100%;
             display: flex;
+            margin-bottom: 80px;
 
             ul {
               justify-content: center;
