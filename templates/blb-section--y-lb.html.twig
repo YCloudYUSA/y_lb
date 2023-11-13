@@ -23,7 +23,7 @@
     {% for i in 1..12 %}
       {% set region = "blb_region_col_" ~ i %}
       {% if content[region] %}
-        <div {{ region_attributes[region].addClass('px-md-0') }}>
+        <div {{ region_attributes[region] }}>
           {{ content[region] }}
         </div>
       {% endif %}
