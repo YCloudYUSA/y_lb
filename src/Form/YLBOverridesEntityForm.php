@@ -16,7 +16,13 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
    */
   public function buildForm(array $form, FormStateInterface $form_state, SectionStorageInterface $section_storage = NULL) {
     $node = $this->entity;
-    $settings = $node->styles->value ? unserialize($node->styles->value) : [];
+
+    /** @var \Drupal\Core\Field\FieldItemList $styles */
+    $styles = $node->styles;
+    $settings = [];
+    if (!$styles->isEmpty()) {
+      $settings = unserialize($styles->value);
+    }
 
     $view_display = $this->entityTypeManager
       ->getStorage('entity_view_display')
