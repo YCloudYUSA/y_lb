@@ -7,6 +7,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\block_content\BlockContentInterface;
@@ -14,6 +15,7 @@ use Drupal\editor\Entity\Editor;
 use Drupal\layout_builder\Entity\LayoutBuilderEntityViewDisplay;
 use Drupal\layout_builder\Form\DefaultsEntityForm;
 use Drupal\layout_builder\Form\OverridesEntityForm;
+use Drupal\layout_builder\Plugin\SectionStorage\OverridesSectionStorage;
 use Drupal\node\NodeInterface;
 use Drupal\y_lb\Form\YLBEntityViewDisplay;
 use Drupal\y_lb\Form\YLBOverridesEntityForm;
@@ -79,7 +81,7 @@ function y_lb_theme_suggestions_page_alter(array &$suggestions) {
   }
 
   // Skip nodes without LB usage.
-  if (!$node->hasField('layout_builder__layout')) {
+  if (!$node->hasField(OverridesSectionStorage::FIELD_NAME)) {
     return;
   }
   // Skip nodes with optional layout builder usage with deactivated usage.
@@ -163,15 +165,14 @@ function y_lb_page_attachments_alter(array &$page) {
     $current_route_exploded = explode('.', $current_route);
     $route_entity_type_id = $current_route_exploded[1];
 
-    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
     $entity = $route_match->getParameter($route_entity_type_id);
-    // Do not apply the y_lb/main since we can't find the entity.
-    if (!$entity) {
+    // Do not apply the y_lb/main since we can't find an appropriate entity.
+    if (!$entity instanceof FieldableEntityInterface) {
       return;
     }
 
     // Skip entities without LB usage.
-    if (!$entity->hasField('layout_builder__layout')) {
+    if (!$entity->hasField(OverridesSectionStorage::FIELD_NAME)) {
       return;
     }
 
