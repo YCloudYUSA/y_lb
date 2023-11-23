@@ -249,3 +249,17 @@ function y_lb_update_9013(&$sandbox) {
     'third_party_settings.layout_builder_restrictions.entity_view_mode_restriction.denylisted_blocks'
   );
 }
+
+/**
+ * Add content type to the Default sitemap in the Simple XML Sitemap module configs
+ */
+function y_lb_update_9014(&$sandbox) {
+  $path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/install';
+  /** @var \Drupal\config_import\ConfigImporterService $config_importer */
+  $config_importer = \Drupal::service('config_import.importer');
+  $config_importer->setDirectory($path);
+  $config_importer->importConfigs([
+    'simple_sitemap.bundle_settings.default.node.landing_page_lb'
+  ]);
+}
+
