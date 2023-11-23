@@ -26,4 +26,5 @@ dependencies:
   - openy_media_image
   - openy_menu_footer
   - drupal:openy_gtranslate
+  - drupal:simple_sitemap
 
