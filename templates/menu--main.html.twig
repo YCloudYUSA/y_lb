@@ -90,11 +90,17 @@
                 <a href="#" class="back">{{ navigationLinkLabel }}</a>
               </div>
               <div class="navigation-bottom">
-                {{ parent.title }}
+                <a href="{{ parent.url }}" class="main-menu-link--level-1">
+                  {{ parent.title }}
+                </a>
               </div>
             </div>
             <ul class="header-nav__submenu_links row-level-2">
-              <div class="dropdown-label">{{ parent.title }}</div>
+              <div class="dropdown-label">
+                <a href="{{ parent.url }}" class="main-menu-link--level-1">
+                  {{ parent.title }}
+                </a>
+              </div>
               {% for item in items %}
                 {% if item.below %}
                   {% set ia = item.attributes.addClass(['nav-level-3 children dropdown-submenu menu-item-' ~ item.title|clean_class]) %}
@@ -144,7 +150,9 @@
               <a href="#" class="back">{{ first_level_label }}</a>
             </div>
             <div class="navigation-bottom">
-              {{ parent.title }}
+              <a href="{{ parent.url }}" class="main-menu-link--level-1">
+                {{ parent.title }}
+              </a>
             </div>
           </div>
           <ul class="header-nav__submenu_links row-level-3">

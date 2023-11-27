@@ -1,3 +1,4 @@
+@import "mixins/_screen-reader";
 
 .form-required {
   &:after,
@@ -28,6 +29,11 @@
     font-weight: 700;
     padding-top: 1em;
   }
+
+  // Align alerts with Layout Builder containers.
+  [data-drupal-messages] {
+    margin: 1.5rem 2rem;
+  }
 }
 
 .js-off-canvas-dialog-open {
@@ -36,8 +42,45 @@
   }
 }
 
+// Ensure these apply to D9 or D10. See https://www.drupal.org/node/3305664
+#drupal-off-canvas:not(.drupal-off-canvas-reset),
+#drupal-off-canvas-wrapper {
+  // Hide the "Block description" text and make it look more like a heading.
+  .form-item-settings-admin-label {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    font-size: 1.15em;
+    font-weight: bold;
 
-#drupal-off-canvas {
+    label {
+      @include sr-only();
+    }
+  }
+
+  // Clean up fieldsets with some styles from D10.1 which we might be able to remove later.
+  .fieldset,
+  fieldset {
+    margin: calc(2 * var(--off-canvas-vertical-spacing-unit)) 0;
+    padding: var(--off-canvas-vertical-spacing-unit);
+    border: solid var(--drupal-off-canvas-fieldset-border-width) var(--drupal-off-canvas-fieldset-border-color);
+    background-color: var(--drupal-off-canvas-fieldset-background-color);
+
+    legend + .fieldset-wrapper {
+      margin-top: 1em;
+    }
+
+    .form-item {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  legend,
+  .fieldset-legend {
+    display: contents;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+
   details {
     > summary {
       color: #003cc5;

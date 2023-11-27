@@ -90,7 +90,12 @@
       const header = $('.ws-header', context);
 
       $('.dropdown-submenu a.menu-link-item').click(function (e) {
-        if ($(this).parent().hasClass('children')) {
+        // If the item is already open, then go to the link.
+        if ($(this).parent().hasClass('active')) {
+          window.location.href = this.href;
+        }
+        // If the item is not open and it is a parent, then open it.
+        else if ($(this).parent().hasClass('children')) {
           e.stopPropagation();
           e.preventDefault();
         }
@@ -105,7 +110,7 @@
             $(this).removeClass('active');
           }
         });
-        
+
         // Set active 2nd level item and remove the state from siblings.
         $(this).parent().addClass('active').siblings().removeClass('active');
         if (header.hasClass('mobile')) {
