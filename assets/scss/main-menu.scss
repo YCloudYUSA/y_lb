@@ -20,9 +20,21 @@
       &_links {
         padding: 0;
       }
+
+      .row-level-2 {
+        a {
+          font-weight: 700;
+        }
+      }
     }
 
     & > li {
+      // Only first-level links are Cachet, others are Verdana.
+      a.menu-link--level-1 {
+        font-family: var(--ylb-font-family-cachet);
+        font-size: 20px;
+      }
+
       a {
         margin: auto 0;
         height: auto;
@@ -89,8 +101,7 @@
 
       a {
         color: var(--ylb-color-dark-grey-1, darkgray);
-        font-family: var(--ylb-font-family-cachet);
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 400;
         height: auto;
         line-height: 24px;
@@ -163,8 +174,18 @@
 
     .dropdown-label {
       padding: 20px 0 20px 20px;
+      position: relative;
       color: var(--ylb-color-grey-1, gray);
       font-size: 18px;
+
+      &:after {
+        border-bottom: 3px solid var(--wsSecondaryColor);
+        bottom: 0;
+        content: "";
+        left: 20px;
+        position: absolute;
+        width: 24px;
+      }
     }
   }
 
@@ -200,14 +221,14 @@
 
       li {
         &.nav-level-2 {
-          padding: 20px 0;
+          padding: 24px 0;
           border-bottom: solid 1px var(--ylb-color-light-grey-3, lightgray);
 
           &.children:after {
             content: '';
-            width: 24px;
-            height: 17px;
-            background-image: url('../svg/menu-arrow-right.svg');
+            width: 27px;
+            height: 16px;
+            background-image: url('../svg/menu-arrow-right-thin.svg');
             background-repeat: no-repeat;
             margin-left: 5px;
           }
@@ -258,22 +279,38 @@
                   color: var(--ylb-color-black, black);
 
                   &-top {
-                    border-bottom: solid 1px var(--ylb-color-grey-2, gray);
                     padding: 20px;
+                    margin-top: 16px;
+                    position: relative;
                     width: 100%;
-                    font-weight: 400;
+
+                    // Move bottom rule to :after to extend outside of the container
+                    &:after {
+                      border-bottom: solid 1px var(--ylb-color-light-grey-2, lightgray);
+                      bottom: 0;
+                      content: "";
+                      left: 0;
+                      position: absolute;
+                      width: 100vw;
+                    }
                   }
 
                   &-bottom {
-                    color: var(--ylb-color-black, black);
-                    font-weight: 700;
-                    padding: 20px 0 30px 20px;
+                    background-color: var(--wsPrimaryColor, blue);
+                    border-radius: 10px 10px 0 0;
+                    margin-top: 16px;
+                    padding: 24px;
                     width: 100%;
+
+                    a {
+                      color: var(--ylb-color-white, white);
+                      font-weight: 700;
+                    }
                   }
                 }
 
                 .back {
-                  font-weight: 400 !important;
+                  font-weight: 400;
 
                   &:hover,
                   &:active,
@@ -306,7 +343,7 @@
 
                 &__submenu_links {
                   background-color: var(--wsPrimaryColor, blue);
-                  border-radius: 10px;
+                  border-radius: 0 0 10px 10px;
                   border: none;
                   display: block;
                   height: auto;
@@ -318,12 +355,16 @@
 
                   li {
                     padding: 20px 0;
-                    border-bottom: solid 1px var(--ylb-color-light-grey-3, lightgray);
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.30);
+
+                    &:first-of-type {
+                      border-top: 1px solid rgba(255, 255, 255, 0.30);
+                    }
 
                     &.children {
                       &:after {
                         content: '';
-                        width: 24px;
+                        width: 26px;
                         height: 17px;
                         background-image: url('../svg/menu-arrow-right-white.svg');
                         background-repeat: no-repeat;
@@ -433,7 +474,6 @@
       &.nav-level-3 {
         a {
           font-size: 18px;
-          font-weight: 700;
           line-height: 22px;
           padding: 10px;
         }
@@ -445,16 +485,27 @@
         &.children {
           a {
             &:after {
-              background-image: url('../svg/menu-arrow-right.svg');
-              background-repeat: no-repeat;
+              background-color: var(--ylb-color-dark-grey-2, #231F20);
+              mask: url('../svg/menu-arrow-right.svg') no-repeat left bottom;
               content: '';
               display: inline-block;
               height: 17px;
               width: 24px;
               margin-left: 5px;
             }
+
+            &:hover:after {
+              background-color: var(--wsPartnerColor, blue);
+            }
           }
         }
+
+        &.active {
+          a:after {
+            background-color: var(--wsPartnerColor, blue);
+          }
+        }
+
       }
     }
   }
