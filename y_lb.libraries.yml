@@ -1,5 +1,5 @@
 layout_builder:
-  version: 1.14
+  version: 1.15
   css:
     theme:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
@@ -17,6 +17,12 @@ main:
   dependencies:
       - core/drupal
       - core/jquery
+
+override:
+  version: 1.0
+  css:
+    theme:
+      assets/css/override.css: { minified: false }
 
 breadcrumbs:
   version: 1.9
