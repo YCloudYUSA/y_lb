@@ -60,9 +60,13 @@ class WSThemeSettings extends FormElement implements FormElementInterface {
       if (!$options) {
         continue;
       }
+      $defaultValue = false;
       // Get options markup.
       foreach ($options as $option_key => $option) {
         $options[$option_key] = static::getOptionLabelMarkup($option);
+        if(!$defaultValue && !empty($option['default'])) {
+          $defaultValue = $option_key;
+        }
       }
       // Build main radio element.
       $element[$name] = [
@@ -71,6 +75,11 @@ class WSThemeSettings extends FormElement implements FormElementInterface {
         '#default_value' => $element['#default_value'][$name] ?? NULL,
         '#options' => $options,
       ];
+
+      //set default value
+      if(!$element[$name]['#default_value'] && $defaultValue) {
+        $element[$name]['#default_value'] = $defaultValue;
+      }
     }
 
     return $element;
