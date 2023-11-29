@@ -63,6 +63,7 @@
     padding: var(--off-canvas-vertical-spacing-unit);
     border: solid var(--drupal-off-canvas-fieldset-border-width) var(--drupal-off-canvas-fieldset-border-color);
     background-color: var(--drupal-off-canvas-fieldset-background-color);
+    min-width: unset;
 
     legend + .fieldset-wrapper {
       margin-top: 1em;
@@ -72,6 +73,10 @@
       padding-left: 15px;
       padding-right: 15px;
     }
+  }
+
+  #bs_nav-tabs:not([data-drupal-ck-style-fence] *) {
+    width: 100%;
   }
 
   legend,
