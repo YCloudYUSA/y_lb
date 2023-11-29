@@ -18,6 +18,12 @@ main:
       - core/drupal
       - core/jquery
 
+override:
+  version: 1.0
+  css:
+    theme:
+      assets/css/override.css: { minified: false }
+
 breadcrumbs:
   version: 1.9
   css:

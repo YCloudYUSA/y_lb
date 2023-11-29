@@ -393,6 +393,7 @@ function y_lb_preprocess_html(array &$variables) {
 
     $variables['body_classes'][] = 'page-with-lb';
   }
+  $variables['#attached']['library'][] = 'y_lb/override';
 }
 
 /**
