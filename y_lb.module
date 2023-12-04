@@ -427,3 +427,17 @@ function y_lb_form_layout_builder_configure_section_alter(&$form, \Drupal\Core\F
     }
   }
 }
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function y_lb_module_implements_alter(&$implementations, $hook) {
+  if ($hook !== 'form_alter') {
+    return;
+  }
+
+  // Move the inline_entity_form alter form to the end.
+  $group = $implementations['inline_entity_form'];
+  unset($implementations['inline_entity_form']);
+  $implementations['inline_entity_form'] = $group;
+}
