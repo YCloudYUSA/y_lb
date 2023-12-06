@@ -369,8 +369,10 @@ function y_lb_preprocess_page(&$variables) {
  */
 function y_lb_preprocess_html(array &$variables) {
   //  Override .placeholder styles from bootstrap 5
-  if (in_array('ckeditor_bootstrap_buttons/bootstrap-5-js', $variables['#attached']['library'])) {
-    $variables['#attached']['library'][] = 'y_lb/override';
+  if (isset($variables['#attached']) && is_array($variables['#attached']['library'])) {
+    if (in_array('ckeditor_bootstrap_buttons/bootstrap-5-js', $variables['#attached']['library'])) {
+      $variables['#attached']['library'][] = 'y_lb/override';
+    }
   }
 
   // Preprocess the node to find if it is related to Layout Builder.
