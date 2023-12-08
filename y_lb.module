@@ -369,7 +369,7 @@ function y_lb_preprocess_page(&$variables) {
  */
 function y_lb_preprocess_html(array &$variables) {
   //  Override .placeholder styles from bootstrap 5
-  if (isset($variables['#attached']) && is_array($variables['#attached']['library'])) {
+  if (isset($variables['#attached']['library']) && is_array($variables['#attached']['library'])) {
     if (in_array('ckeditor_bootstrap_buttons/bootstrap-5-js', $variables['#attached']['library'])) {
       $variables['#attached']['library'][] = 'y_lb/override';
     }
