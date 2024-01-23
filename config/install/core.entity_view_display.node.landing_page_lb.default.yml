@@ -13,11 +13,7 @@ dependencies:
     - system.menu.footer-menu-left
     - system.menu.footer-menu-right
     - system.menu.main
-  content:
-    - 'block_content:basic_block:cb76bc7c-a957-4b69-96fb-e565ee85f38a'
-    - 'block_content:basic_block:e350fe26-bc73-4c69-af18-a51a052dbcd3'
   module:
-    - block_content
     - bootstrap_layout_builder
     - layout_builder
     - layout_builder_restrictions
@@ -846,14 +842,11 @@ third_party_settings:
             uuid: b9c25d26-cbbe-46ad-9fb9-6596169ce0d1
             region: footer_bottom_left
             configuration:
-              id: 'block_content:cb76bc7c-a957-4b69-96fb-e565ee85f38a'
-              label: 'Footer Copyright Block'
+              id: ws_copyright
+              label: 'Copyright Block'
               label_display: '0'
-              provider: block_content
-              status: true
-              info: ''
-              view_mode: full
-              context_mapping: {  }
+              provider: y_lb
+              context_mapping: { }
             weight: 0
             additional:
               bootstrap_styles:
@@ -1336,14 +1329,11 @@ third_party_settings:
             uuid: 5d689808-2b2b-4f96-99a6-46b4730ea24a
             region: footer_top_right
             configuration:
-              id: 'block_content:e350fe26-bc73-4c69-af18-a51a052dbcd3'
+              id: ws_social
               label: 'Stay Connected'
               label_display: visible
-              provider: block_content
-              status: true
-              info: ''
-              view_mode: full
-              context_mapping: {  }
+              provider: y_lb
+              context_mapping: { }
             weight: 0
             additional:
               bootstrap_styles:
