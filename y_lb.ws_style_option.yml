@@ -1,135 +1,135 @@
 y_lb.ws_style_option:
-  - label: Blue Scheme
+  - label: YUSA Blue / Purple
     name: ws_colorway_blue
     group: colorway
     image: /assets/images/colorway_blue.png
     library: y_lb/colorway.blue
     template: null
-  - label: Green Scheme
+  - label: YUSA Green / Blue
     name: ws_colorway_green
     group: colorway
     image: /assets/images/colorway_green.png
     library: y_lb/colorway.green
     template: null
-  - label: Purple Scheme
+  - label: YUSA Purple / Red
     name: ws_colorway_purple
     group: colorway
     image: /assets/images/colorway_purple.png
     library: y_lb/colorway.purple
     template: null
-  - label: Red Scheme
+  - label: YUSA Red / Orange
     name: ws_colorway_red
     group: colorway
     image: /assets/images/colorway_red.png
     library: y_lb/colorway.red
     template: null
-  - label: Border radius - None
+  - label: 0 pixels
     name: ws_border_radius_none
     group: border_radius
     image: /assets/images/border_radius_0.svg
     library: y_lb/border_radius.0
     template: null
-  - label: Border radius - 10px
+  - label: 10 pixels
     name: ws_border_radius_10
     group: border_radius
     image: /assets/images/border_radius_10.svg
     library: y_lb/border_radius.10
     template: null
-  - label: Border radius - 20px
+  - label: 20 pixels
     name: ws_border_radius_20
     group: border_radius
     image: /assets/images/border_radius_20.svg
     library: y_lb/border_radius.20
     template: null
-  - label: Border style - no border
+  - label: No border
     name: ws_border_style_global_none
     group: border_style_global
     image: /assets/images/border_style_none.svg
     library: y_lb/border_style.none
     template: null
-  - label: Border style - 1px border
+  - label: 1 pixel border
     name: ws_border_style_global_solid
     group: border_style_global
     image: /assets/images/border_style_line.svg
     library: y_lb/border_style.solid
     template: null
-  - label: Border style - drop shadow
+  - label: Drop shadow
     name: ws_border_style_global_drop_shadow
     group: border_style_global
     image: /assets/images/border_style_shadow.svg
     library: y_lb/border_style.drop_shadow
     template: null
-  - label: Border style - no border
+  - label: No border
     name: ws_border_style_component_none
     group: border_style_component
     image: /assets/images/border_style_none.svg
     class: ws-border-style--none
-  - label: Border style - 1px border
+  - label: 1 pixel border
     name: ws_border_style_component_solid
     group: border_style_component
     image: /assets/images/border_style_line.svg
     class: ws-border-style--solid
-  - label: Border style - drop shadow
+  - label: Drop shadow
     name: ws_border_style_component_drop_shadow
     group: border_style_component
     image: /assets/images/border_style_shadow.svg
     class: ws-border-style--drop-shadow
-  - label: Left alignment
+  - label: Left
     name: ws_text_alignment_global_left
     group: text_alignment_global
     image: /assets/images/alignment_left.svg
     library: y_lb/text_alignment.left
-  - label: Center alignment
+  - label: Center
     name: ws_text_alignment_global_center
     group: text_alignment_global
     image: /assets/images/alignment_center.svg
     library: y_lb/text_alignment.center
-  - label: Left alignment
+  - label: Left
     name: ws_text_alignment_component_left
     group: text_alignment_component
     image: /assets/images/alignment_left.svg
     class: ws-text-alignment--left
-  - label: Center alignment
+  - label: Center
     name: ws_text_alignment_component_center
     group: text_alignment_component
     image: /assets/images/alignment_center.svg
     class: ws-text-alignment--center
-  - label: Inside container
+  - label: In card
     name: ws_button_position_global_inside
     group: button_position_global
     image: /assets/images/button_position_inside.svg
     library: y_lb/button_position.inside
-  - label: Overlapping container
+  - label: Overlapping card
     name: ws_button_position_global_overlapping
     group: button_position_global
     image: /assets/images/button_position_overlapping.svg
     library: y_lb/button_position.overlapping
-  - label: Inside container
+  - label: In card
     name: ws_button_position_component_inside
     group: button_position_component
     image: /assets/images/button_position_inside.svg
     class: ws-button-position--inside
-  - label: Overlapping container
+  - label: Overlapping card
     name: ws_button_position_component_overlapping
     group: button_position_component
     image: /assets/images/button_position_overlapping.svg
     class: ws-button-position--overlapping
-  - label: Filled button, outlined on hover
+  - label: Filled / Color
     name: ws_button_fill_global_filled
     group: button_fill_global
     image: /assets/images/button_filled.svg
     class: ws-button-fill--filled--global
-  - label: Outlined button, filled on hover
+  - label: Empty / White
     name: ws_button_fill_global_outlined
     group: button_fill_global
     image: /assets/images/button_outlined.svg
     class: ws-button-fill--outlined--global
-  - label: Filled button, outlined on hover
+  - label: Filled / Color
     name: ws_button_fill_component_filled
     group: button_fill_component
     image: /assets/images/button_filled.svg
     class: ws-button-fill--filled--component
-  - label: Outlined button, filled on hover
+  - label: Empty / White
     name: ws_button_fill_component_outlined
     group: button_fill_component
     image: /assets/images/button_outlined.svg

@@ -310,6 +310,13 @@
 
   details[data-drupal-selector="edit-appearance-ws-style"] {
     .form-item {
+
+      &[data-drupal-selector="edit-appearance-ws-style-ws-style-option-lb-cards"],
+      &[data-drupal-selector="edit-appearance-ws-style-ws-style-option-hero-banner"] {
+        .form-radios label {
+          flex-direction: column;
+        }
+      }
       .form-radios {
         display: flex;
         flex-direction: row;
@@ -317,6 +324,10 @@
         flex-wrap: wrap;
 
         label {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
           img {
             border: 2px solid transparent;
             border-radius: 15px;
@@ -495,8 +506,14 @@
       }
     }
 
-    #edit-ws-design-settings-colorway label img {
-      width: 114px;
+    &#edit-ws-design-settings-colorway label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 114px;
+      }
     }
   }
 }
