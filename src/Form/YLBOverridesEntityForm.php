@@ -28,7 +28,7 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
       $view_display = $this->entityTypeManager
         ->getStorage('entity_view_display')
         ->load('node.' . $node->bundle() . '.full');
-      $global_settings = $view_display->getThirdPartySettings('y_lb');
+      $global_settings = $view_display?->getThirdPartySettings('y_lb');
     }
     
     $default_settings = $global_settings['styles'] ?? [];
