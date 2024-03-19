@@ -109,6 +109,12 @@
 
   .ief-entity-table {
     width: 100%;
+
+    .ief-form {
+      .ck-editor {
+        width: 99%;
+      }
+    }
   }
 
   table {

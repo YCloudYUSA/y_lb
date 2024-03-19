@@ -5,6 +5,7 @@
  */
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\ContentEntityFormInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
@@ -142,6 +143,9 @@ function y_lb_form_alter(&$form, FormStateInterface $form_state) {
     || $form_object instanceof DefaultsEntityForm
     || $form_object->getFormId() === 'layout_layout_builder_form') {
     $form['#attached']['library'][] = 'y_lb/layout_builder';
+    $form['#attached']['library'][] = 'y_lb/main';
+  }
+  if ($form_object instanceof ContentEntityFormInterface) {
     $form['#attached']['library'][] = 'y_lb/main';
   }
 }
