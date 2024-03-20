@@ -66,5 +66,68 @@ a {
         }
       }
     }
+
+    &.btn-primary.revert {
+      &.filled,
+      .layout-container.ws-button-fill--filled--global &,
+      .layout-container .block-layout-builder.ws-button-fill--filled--component & {
+        background-color: var(--ylb-color-white, white);
+        color: var(--wsPartnerColor, black);
+        border: 2px solid var(--wsPartnerColor, black);
+
+
+        &:hover {
+          background-color: var(--wsPartnerColor, black);
+          color: var(--ylb-color-white, white);
+          border-color: transparent;
+        }
+      }
+
+      &.outline,
+      .layout-container.ws-button-fill--outlined--global &,
+      .layout-container .block-layout-builder.ws-button-fill--outlined--component & {
+        background-color: var(--wsPartnerColor, black);
+        color: var(--ylb-color-white, white);
+        border: 2px solid transparent;
+
+        &:hover {
+          background-color: var(--ylb-color-white, white);
+          color: var(--wsPartnerColor, black);
+          border-color: var(--wsPartnerColor, black);
+        }
+      }
+    }
+
+    &.btn-secondary.revert {
+      &.filled,
+      .layout-container.ws-button-fill--filled--global &,
+      .layout-container .block-layout-builder.ws-button-fill--filled--component & {
+
+        background-color: transparent;
+        color: var(--ylb-color-white, white);
+        border: 2px solid var(--ylb-color-white, white);
+
+
+        &:hover {
+          background-color: var(--ylb-color-white, white);
+          color: var(--wsPartnerColor, black);
+          border-color: transparent;
+        }
+      }
+
+      &.outline,
+      .layout-container.ws-button-fill--outlined--global &,
+      .layout-container .block-layout-builder.ws-button-fill--outlined--component & {
+        background-color: var(--ylb-color-white, white);
+        color: var(--wsPartnerColor, black);
+        border: 2px solid transparent;
+
+        &:hover {
+          background-color: transparent;
+          color: var(--ylb-color-white, white);
+          border-color: var(--ylb-color-white, white);
+        }
+      }
+    }
   }
 }
