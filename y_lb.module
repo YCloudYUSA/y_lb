@@ -219,6 +219,11 @@ function y_lb_preprocess_block(&$variables) {
     case 'lb_node_locations':
       $variables['#attached']['library'][] = 'y_lb/blocks';
       break;
+
+    case 'views_block:search_content-search_content':
+      $variables['#attached']['library'][] = 'y_lb/search';
+      break;
+
   }
   $variables['attributes']['class'][] = 'block-' . Html::getClass($variables['plugin_id']);
 }

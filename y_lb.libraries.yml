@@ -38,6 +38,12 @@ blocks:
   dependencies:
     - y_lb/bs_icons
 
+search:
+  version: 1.11
+  css:
+    component:
+      assets/css/search.css: { preprocess: true }
+
 bs_icons:
   version: 1.10.3
   css:

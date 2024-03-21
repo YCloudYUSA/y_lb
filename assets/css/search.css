@@ -1,0 +1,14 @@
+.search .global-search-results .views-exposed-form .form-actions input {
+  background-color: var(--wsSecondaryColor); }
+
+.search .global-search-results .item-list .views-field-title a {
+  color: var(--wsSecondaryColor); }
+
+.search .global-search-results nav.pager a {
+  color: var(--wsSecondaryColor); }
+
+.search .global-search-results nav.pager .pager__item--next a,
+.search .global-search-results nav.pager .pager__item--previous a {
+  color: var(--wsLogoChevronMid); }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlYXJjaC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx5Q0FBeUMsRUFBRTs7QUFFN0M7RUFDRSw4QkFBOEIsRUFBRTs7QUFFbEM7RUFDRSw4QkFBOEIsRUFBRTs7QUFFbEM7O0VBRUUsOEJBQThCLEVBQUUiLCJmaWxlIjoic2VhcmNoLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zZWFyY2ggLmdsb2JhbC1zZWFyY2gtcmVzdWx0cyAudmlld3MtZXhwb3NlZC1mb3JtIC5mb3JtLWFjdGlvbnMgaW5wdXQge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS13c1NlY29uZGFyeUNvbG9yKTsgfVxuXG4uc2VhcmNoIC5nbG9iYWwtc2VhcmNoLXJlc3VsdHMgLml0ZW0tbGlzdCAudmlld3MtZmllbGQtdGl0bGUgYSB7XG4gIGNvbG9yOiB2YXIoLS13c1NlY29uZGFyeUNvbG9yKTsgfVxuXG4uc2VhcmNoIC5nbG9iYWwtc2VhcmNoLXJlc3VsdHMgbmF2LnBhZ2VyIGEge1xuICBjb2xvcjogdmFyKC0td3NTZWNvbmRhcnlDb2xvcik7IH1cblxuLnNlYXJjaCAuZ2xvYmFsLXNlYXJjaC1yZXN1bHRzIG5hdi5wYWdlciAucGFnZXJfX2l0ZW0tLW5leHQgYSxcbi5zZWFyY2ggLmdsb2JhbC1zZWFyY2gtcmVzdWx0cyBuYXYucGFnZXIgLnBhZ2VyX19pdGVtLS1wcmV2aW91cyBhIHtcbiAgY29sb3I6IHZhcigtLXdzTG9nb0NoZXZyb25NaWQpOyB9XG4iXX0= */

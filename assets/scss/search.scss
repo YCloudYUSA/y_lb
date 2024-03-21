@@ -1,0 +1,25 @@
+.search {
+  .global-search-results {
+    .views-exposed-form {
+      .form-actions input {
+        background-color: var(--wsSecondaryColor);
+      }
+    }
+    .item-list {
+      .views-field-title {
+        a {
+          color: var(--wsSecondaryColor);
+        }
+      }
+    }
+    nav.pager {
+      a {
+        color: var(--wsSecondaryColor);
+      }
+      .pager__item--next a,
+      .pager__item--previous a {
+        color: var(--wsLogoChevronMid);
+      }
+    }
+  }
+}
