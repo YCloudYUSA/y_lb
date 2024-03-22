@@ -224,6 +224,14 @@ function y_lb_preprocess_block(&$variables) {
       $variables['#attached']['library'][] = 'y_lb/search';
       break;
 
+    case 'inline_block:lb_donate':
+      $variables['#attached']['library'][] = 'y_lb/donate-block';
+      break;
+
+    case 'inline_block:lb_carousel':
+      $variables['#attached']['library'][] = 'y_lb/carousel-block';
+      break;
+
   }
   $variables['attributes']['class'][] = 'block-' . Html::getClass($variables['plugin_id']);
 }
