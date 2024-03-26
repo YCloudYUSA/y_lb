@@ -89,7 +89,7 @@
     attach: function (context) {
       const header = $('.ws-header', context);
 
-      $('.dropdown-submenu a.menu-link-item').click(function (e) {
+      $('.dropdown-submenu .menu-link-item').click(function (e) {
         // If the item is already open, then go to the link.
         if ($(this).parent().hasClass('active')) {
           window.location.href = this.href;

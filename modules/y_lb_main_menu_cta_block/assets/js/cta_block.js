@@ -9,7 +9,7 @@
     attach: function (context) {
       const header = $('.ws-header', context);
 
-      $('.dropdown-submenu a.menu-link-item').click(function (e) {
+      $('.dropdown-submenu .menu-link-item').click(function (e) {
         if ($(this).parent().hasClass('children')) {
           e.stopPropagation();
           e.preventDefault();
