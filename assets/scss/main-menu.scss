@@ -265,6 +265,8 @@
               text-align: left;
               top: 120px;
               z-index: 1;
+              word-break: break-word;
+              white-space: initial;
 
               .header-nav__submenu_navigation {
                 display: flex;
