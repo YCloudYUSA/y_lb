@@ -44,6 +44,18 @@ search:
     component:
       assets/css/search.css: { preprocess: true }
 
+carousel-block:
+  version: 1.0
+  css:
+    component:
+      assets/css/carousel.css: { preprocess: true }
+
+donate-block:
+  version: 1.0
+  css:
+    component:
+      assets/css/donate.css: { preprocess: true }
+
 bs_icons:
   version: 1.10.3
   css:
