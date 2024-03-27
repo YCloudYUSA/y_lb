@@ -1,6 +1,6 @@
 # Custom module library for general purposes.
 cta_block:
-  version: 1.3
+  version: 1.4
   css:
     theme:
       assets/css/cta_block.css: { preprocess: true }

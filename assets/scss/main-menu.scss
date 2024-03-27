@@ -22,6 +22,7 @@
       }
 
       .row-level-2 {
+        .menu-link-item,
         a {
           font-weight: 700;
         }
@@ -30,11 +31,13 @@
 
     & > li {
       // Only first-level links are Cachet, others are Verdana.
+      .menu-link-item.menu-link--level-1,
       a.menu-link--level-1 {
         font-family: var(--ylb-font-family-cachet);
         font-size: 20px;
       }
 
+      .menu-link-item,
       a {
         margin: auto 0;
         height: auto;
@@ -71,6 +74,7 @@
         &.show {
           display: flex;
 
+          .menu-link-item:not(.btn),
           a:not(.btn) {
             box-shadow: unset;
             background-color: transparent;
@@ -99,6 +103,7 @@
         }
       }
 
+      .menu-link-item,
       a {
         color: var(--ylb-color-dark-grey-1, darkgray);
         font-size: 18px;
@@ -132,6 +137,7 @@
       &:hover,
       &.active {
 
+        & > .menu-link-item,
         & > a {
           color: var(--wsPartnerColor, blue);
         }
@@ -140,6 +146,7 @@
   }
 
   .dropdown-menu {
+    & > li > .menu-link-item,
     & > li > a {
       white-space: nowrap;
     }
@@ -150,12 +157,14 @@
       padding: 10px;
 
       &.nav-level-4 {
+        .menu-link-item,
         a {
           font-size: 18px;
           line-height: 22px;
         }
       }
 
+      .menu-link-item,
       a {
         color: var(--ylb-color-black, black);
 
@@ -203,6 +212,7 @@
     li {
       padding: 10px;
 
+      .menu-link-item,
       a {
         color: var(--ylb-color-white, white) !important;
 
@@ -233,6 +243,7 @@
             margin-left: 5px;
           }
 
+          .menu-link-item,
           a {
             border-bottom: none;
             color: var(--ylb-color-dark-grey-2, darkgray);
@@ -304,6 +315,7 @@
                     padding: 24px;
                     width: 100%;
 
+                    .menu-link-item,
                     a {
                       color: var(--ylb-color-white, white);
                       font-weight: 700;
@@ -378,6 +390,7 @@
                       border: none;
                     }
 
+                    .menu-link-item,
                     a {
                       color: var(--ylb-color-white, white);
                       word-break: break-word;
@@ -430,6 +443,7 @@
         }
 
         li {
+          .menu-link-item,
           a {
             white-space: initial;
 
@@ -440,6 +454,7 @@
         }
 
         &.children {
+          .menu-link-item,
           a {
             svg {
               display: inline-block;
@@ -474,6 +489,7 @@
     li {
 
       &.nav-level-3 {
+        .menu-link-item,
         a {
           font-size: 18px;
           line-height: 22px;
@@ -485,6 +501,7 @@
         }
 
         &.children {
+          .menu-link-item,
           a {
             &:after {
               background-color: var(--ylb-color-dark-grey-2, #231F20);
@@ -521,6 +538,7 @@
     li {
       width: auto !important;
 
+      .menu-link-item,
       a {
         white-space: unset !important;
 
@@ -532,6 +550,7 @@
         background-color: var(--ylb-color-white, white);
         border-radius: 10px;
 
+        .menu-link-item,
         a {
           color: var(--wsPartnerColor, blue) !important;
         }
