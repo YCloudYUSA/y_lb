@@ -84,9 +84,15 @@
             </div>
             <ul class="header-nav__submenu_links row-level-2">
               <div class="dropdown-label">
-                <a href="{{ parent.url }}" class="main-menu-link--level-1">
-                  {{ parent.title }}
-                </a>
+                {% if parent.url|render|trim %}
+                  <a href="{{ parent.url }}" target="_self" class="main-menu-link--level-1">
+                    {{ parent.title }}
+                  </a>
+                {% else %}
+                  <span class="main-menu-link--level-1">
+                      {{ parent.title }}
+                    </span>
+                {% endif %}
               </div>
               {% for item in items %}
                 {% if item.below %}
