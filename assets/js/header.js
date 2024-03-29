@@ -91,11 +91,12 @@
 
       $('.dropdown-submenu .menu-link-item').click(function (e) {
         // If the item is already open, then go to the link.
-        if ($(this).parent().hasClass('active')) {
+        let parentLink = $(this).parent();
+        if (this.href !== undefined && parentLink.hasClass('active') ) {
           window.location.href = this.href;
         }
         // If the item is not open and it is a parent, then open it.
-        else if ($(this).parent().hasClass('children')) {
+        else if (parentLink.hasClass('children')) {
           e.stopPropagation();
           e.preventDefault();
         }

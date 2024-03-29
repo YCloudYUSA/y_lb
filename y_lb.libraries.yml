@@ -57,7 +57,7 @@ footer:
       assets/css/footer.css: { preprocess: true }
 
 header:
-  version: 1.13
+  version: 1.14
   css:
     component:
       assets/css/header.css: { preprocess: true }
