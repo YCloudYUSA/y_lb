@@ -428,6 +428,14 @@
       }
     }
   }
+  // In case very long menu items
+  ul  {
+    a,
+    .menu-link--level-1,
+    .menu-link-item {
+      white-space: normal;
+    }
+  }
 }
 
 .desktop .ws-main-menu-wrapper {
