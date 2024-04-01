@@ -68,6 +68,9 @@
         "patches": {
             "drupal/lb_claro": {
                 "Issue #3383836: Exclude revert and discard": "https://git.drupalcode.org/project/lb_claro/-/merge_requests/6.diff"
+            },
+            "drupal/core": {
+                "https://dgo.re/3049332 LB Call to a member function getEntityTypeId() on null": "https://git.drupalcode.org/project/drupal/-/merge_requests/7008.diff"
             }
         }
     }
