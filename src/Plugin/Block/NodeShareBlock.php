@@ -84,6 +84,7 @@ class NodeShareBlock extends BlockBase implements ContainerFactoryPluginInterfac
     }
 
     $url = urlencode($this->node->toUrl('canonical', ['absolute' => TRUE])->toString());
+    // When adding share options here, also add them to assets/scss/bs-icons.
     $links = [
       'facebook' => 'https://www.facebook.com/sharer.php?u=' . $url,
       'twitter-x' => 'https://twitter.com/intent/tweet?url=' . $url,
