@@ -98,12 +98,9 @@
       }
 
       .bi {
-        font-size: 18px;
+        height: 1.125rem;
         padding-right: 5px;
-
-        &:before {
-          color: var(--wsTertiaryColor, black);
-        }
+        fill: var(--ylb-color-dark-grey-2, #231F20);
       }
     }
   }
