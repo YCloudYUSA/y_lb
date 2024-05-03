@@ -187,6 +187,11 @@ function y_lb_page_attachments_alter(array &$page) {
     }
 
     $page['#attached']['library'][] = 'y_lb/main';
+
+    // Remove MatchHeight library for LB pages.
+    if (($key = array_search('openy_carnation/matchheight', $page['#attached']['library'])) !== FALSE) {
+      unset($page['#attached']['library'][$key]);
+    }
   }
 }
 
