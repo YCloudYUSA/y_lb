@@ -70,6 +70,7 @@
                 "Issue #3383836: Exclude revert and discard": "https://git.drupalcode.org/project/lb_claro/-/merge_requests/6.diff"
             },
             "drupal/core": {
+                "Issue #2922677: Uncaught TypeError: Cannot read property 'replace' of undefined": "https://www.drupal.org/files/issues/2023-02-15/2922677-33.patch",
                 "https://dgo.re/3049332 LB Call to a member function getEntityTypeId() on null": "https://www.drupal.org/files/issues/2024-03-11/drupal-core--2024-01-09--3049332-87.patch"
             }
         }

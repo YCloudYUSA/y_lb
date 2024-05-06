@@ -42,6 +42,12 @@
   }
 }
 
+figure.drupal-media.ck-widget {
+  figcaption {
+    display: block !important;
+  }
+}
+
 // Ensure these apply to D9 or D10. See https://www.drupal.org/node/3305664
 #drupal-off-canvas:not(.drupal-off-canvas-reset),
 #drupal-off-canvas-wrapper {
