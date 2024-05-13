@@ -572,3 +572,12 @@
 .ck-source-editing-area {
   color: #222330;
 }
+// Fix for a link that is added by the lb_copy_section module.
+#layout-builder {
+  .layout-builder__link {
+    &.layout-builder__link--copy-section {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.9rem;
+    }
+  }
+}
