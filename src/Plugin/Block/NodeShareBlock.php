@@ -84,7 +84,12 @@ class NodeShareBlock extends BlockBase implements ContainerFactoryPluginInterfac
     }
 
     $url = urlencode($this->node->toUrl('canonical', ['absolute' => TRUE])->toString());
-    // When adding share options here, also add them to assets/scss/bs-icons.
+    /**
+     * When adding share options:
+     * 1. Find the icon on https://icons.getbootstrap.com/
+     * 2. Download the SVG and place in `assets/svg`.
+     * 3. Ensure the filename matches the key in the array below.
+     */
     $links = [
       'facebook' => 'https://www.facebook.com/sharer.php?u=' . $url,
       'twitter-x' => 'https://twitter.com/intent/tweet?url=' . $url,
