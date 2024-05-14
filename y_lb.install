@@ -263,3 +263,16 @@ function y_lb_update_9014(&$sandbox) {
   ]);
 }
 
+/**
+ * Enable Scheduler.
+ */
+function y_lb_update_9015(&$sandbox) {
+  $path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/install';
+  /** @var \Drupal\config_import\ConfigImporterService $config_importer */
+  $config_importer = \Drupal::service('config_import.importer');
+  $config_importer->setDirectory($path);
+  $config_importer->importConfigs([
+    'core.entity_form_display.node.landing_page_lb.default',
+    'node.type.landing_page_lb'
+  ]);
+}
