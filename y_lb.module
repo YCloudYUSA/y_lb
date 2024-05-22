@@ -52,6 +52,9 @@ function y_lb_theme($existing, $type, $theme, $path) {
     'page__node__landing_page_lb' => [
       'base hook' => 'page',
     ],
+    'page__node__preview__landing_page_lb' => [
+      'base hook' => 'page',
+    ],
     'page__node__layout__discard_changes' => [
       'base hook' => 'page',
       'template' => 'page--node--layout--discard-revert',
@@ -70,11 +73,19 @@ function y_lb_theme($existing, $type, $theme, $path) {
  * Implements hook_theme_suggestions_HOOK_alter() for page templates.
  */
 function y_lb_theme_suggestions_page_alter(array &$suggestions) {
-  // Add content type suggestions for node types.
-  $node = \Drupal::routeMatch()->getParameter('node');
   // Skip admin route.
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     return;
+  }
+
+  $route_match = Drupal::routeMatch();
+  $node = $route_match->getParameter('node');
+  $node_preview = !$node instanceof NodeInterface
+    ? $route_match->getParameter('node_preview')
+    : NULL;
+  // Add content type suggestions for preview node types.
+  if ($node_preview instanceof NodeInterface) {
+    $suggestions[] = 'page__node__preview__' . $node_preview->bundle();
   }
   // Skip page without node.
   if (!$node instanceof NodeInterface) {
@@ -160,6 +171,8 @@ function y_lb_page_attachments_alter(array &$page) {
   foreach ($entity_types as $entity_type_id) {
     $entity_canonical_routes[] = 'entity.' . $entity_type_id . '.canonical';
   }
+  // Attach main library for node preview.
+  $entity_canonical_routes[] = 'entity.node.preview';
 
   $route_match = \Drupal::routeMatch();
   $current_route = $route_match->getRouteName();
@@ -167,7 +180,9 @@ function y_lb_page_attachments_alter(array &$page) {
   // Layout Builder is enabled for the view mode.
   if (in_array($current_route, $entity_canonical_routes)) {
     $current_route_exploded = explode('.', $current_route);
-    $route_entity_type_id = $current_route_exploded[1];
+    $route_entity_type_id = $current_route_exploded[2] === 'preview'
+      ? 'node_preview'
+      : $current_route_exploded[1];
 
     $entity = $route_match->getParameter($route_entity_type_id);
     // Do not apply the y_lb/main since we can't find an appropriate entity.
@@ -361,6 +376,10 @@ function y_lb_preprocess_page(&$variables) {
       $libraries = array_merge($libraries, $ws_style_option->getLibraries($group, $style));
       $classes = array_merge($classes, $ws_style_option->getClasses($group, $style));
     }
+  }
+
+  if ($node->in_preview) {
+    $classes[] = 'node-preview';
   }
 
   // Attach WS libraries to the node.
