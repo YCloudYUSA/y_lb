@@ -476,6 +476,12 @@ figure.drupal-media.ck-widget {
 }
 
 #edit-ws-settings-container {
+  &.form-actions {
+    .form-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+  }
   div[id^="edit-ws-design-settings-"] {
     display: flex;
     flex-wrap: wrap;
@@ -577,4 +583,35 @@ figure.drupal-media.ck-widget {
 
 .ck-source-editing-area {
   color: #222330;
+}
+
+.ui-dialog-content {
+  .media-library-wrapper {
+    .js-media-library-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+
+      li {
+        a.active {
+          color: var(--ylb-color-blue-dark);
+        }
+      }
+
+    }
+
+    .media-library-content {
+      .view-filters {
+        .exposed-form-flex-wrapper {
+          .input-wrapper {
+            .form-submit.button {
+              margin-bottom: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
