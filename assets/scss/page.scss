@@ -87,3 +87,14 @@
     }
   }
 }
+
+.page-node-type-landing-page-lb {
+  .layout-container.node-preview {
+    margin-top: 150px;
+  }
+
+  .node-preview-container {
+    background-color: var(--ylb-color-white, white);
+    z-index: 100;
+  }
+}
