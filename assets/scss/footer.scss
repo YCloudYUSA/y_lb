@@ -36,6 +36,10 @@
       img {
         max-width: 200px;
       }
+
+      .ws-logo:hover {
+        opacity: 50%;
+      }
     }
 
     &-middle-column {
@@ -91,10 +95,15 @@
         justify-content: flex-start;
 
         li {
-          margin-left: 28px;
+          margin-left: 24px;
 
           &:first-child {
             margin-left: 0;
+          }
+
+          // Need to do this to override bootstrap style.
+          &:not(:last-child) {
+            margin-right: 0;
           }
 
           a {
@@ -104,6 +113,7 @@
             &:active,
             &:focus {
               color: var(--ylb-color-white, white);
+              opacity: 50%;
             }
 
             i {
