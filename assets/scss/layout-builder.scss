@@ -396,6 +396,19 @@ figure.drupal-media.ck-widget {
       background: #008ef2;
     }
   }
+  .field--type-entity-reference {
+    .field-multiple-table {
+      .draggable {
+        .form-item, .input-wrapper {
+          margin: 0;
+
+          input {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
   .paragraphs-tabs-wrapper {
     & > .form-item {
       .field-multiple-table {
