@@ -16,6 +16,17 @@
       line-height: 35px;
       margin-bottom: 20px;
     }
+
+    a {
+      color: var(--ylb-color-white, white);
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: var(--ylb-color-white, white);
+        text-decoration: underline;
+      }
+    }
   }
 
 
@@ -73,17 +84,6 @@
             font-family: var(--ylb-font-family-verdana);
             line-height: 20px;
             margin-bottom: 20px;
-
-            a {
-              color: var(--ylb-color-white, white);
-
-              &:hover,
-              &:active,
-              &:focus {
-                color: var(--ylb-color-white, white);
-                text-decoration: underline;
-              }
-            }
           }
         }
       }
