@@ -602,6 +602,13 @@ figure.drupal-media.ck-widget {
   }
 }
 
+.entity-browser-modal.ui-dialog .ui-dialog-titlebar-close {
+  &:before,
+  &:after {
+    border-color: var(--jui-dialog-title-color);
+  }
+}
+
 .ck-source-editing-area {
   color: #222330;
 }
