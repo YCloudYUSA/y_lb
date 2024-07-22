@@ -73,6 +73,12 @@
                 "Issue #2922677: Uncaught TypeError: Cannot read property 'replace' of undefined": "https://www.drupal.org/files/issues/2023-02-15/2922677-33.patch",
                 "https://dgo.re/3049332 LB Call to a member function getEntityTypeId() on null": "https://www.drupal.org/files/issues/2024-03-11/drupal-core--2024-01-09--3049332-87.patch",
                 "https://dgo.to/3344041 Allow textarea widgets to be used for text (formatted) fields (and check maxlength)": "https://www.drupal.org/files/issues/2023-02-23/3344041-text-formatted-field-use-textarea-widget.patch"
+            },
+            "drupal/inline_entity_form": {
+                "https://dgo.to/3002175 Custom blocks created in inline forms should not be reusable": "https://www.drupal.org/files/issues/2024-04-18/3002175-2.x-47.patch"
+            },
+            "drupal/entity_clone": {
+                "https://dgo.to/3050027 Inline Blocks on Layout Builder Fail to Clone Correctly": "https://www.drupal.org/files/issues/2023-08-14/3050027-62.patch"
             }
         }
     }
