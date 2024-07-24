@@ -1,0 +1,32 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Website Services Main Menu CTA block module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function y_lb_main_menu_cta_block_install(): void {
+  \Drupal::messenger()->addStatus(t('Module Website Services Main Menu CTA block has been installed.'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function y_lb_main_menu_cta_block_uninstall(): void {
+  \Drupal::messenger()->addStatus(t('Module Website Services Main Menu CTA block has been uninstalled.'));
+}
+
+/**
+ * Allow CTA Block field to reference existing blocks.
+ */
+function y_lb_main_menu_cta_block_update_10001(): void
+{
+  $config = \Drupal::service('extension.list.module')->getPath('y_lb_main_menu_cta_block') . '/config/optional/core.entity_form_display.menu_link_content.main.default.yml';
+  $config_importer = \Drupal::service('openy_upgrade_tool.param_updater');
+  $config_importer->update($config, 'core.entity_form_display.menu_link_content.main.default', 'content.field_cta_block.settings.allow_existing');
+}
