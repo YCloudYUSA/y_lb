@@ -4,7 +4,6 @@
  * @file
  */
 
-use Drupal\Core\Config\Config;
 use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
