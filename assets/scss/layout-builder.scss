@@ -557,6 +557,9 @@ figure.drupal-media.ck-widget {
   }
 }
 .ui-dialog {
+  &.entity-browser-modal {
+    top: 8% !important;
+  }
 
   .select-wrapper {
     &:before {
