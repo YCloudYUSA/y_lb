@@ -8,20 +8,6 @@ declare(strict_types=1);
  */
 
 /**
- * Implements hook_install().
- */
-function y_lb_main_menu_cta_block_install(): void {
-  \Drupal::messenger()->addStatus(t('Module Website Services Main Menu CTA block has been installed.'));
-}
-
-/**
- * Implements hook_uninstall().
- */
-function y_lb_main_menu_cta_block_uninstall(): void {
-  \Drupal::messenger()->addStatus(t('Module Website Services Main Menu CTA block has been uninstalled.'));
-}
-
-/**
  * Allow CTA Block field to reference existing blocks.
  */
 function y_lb_main_menu_cta_block_update_10001(): void
