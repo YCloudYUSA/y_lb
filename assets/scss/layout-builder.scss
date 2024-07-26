@@ -600,6 +600,10 @@ figure.drupal-media.ck-widget {
       transform: translate(-50%, 50%) rotate(45deg);
     }
   }
+  // To highlight a link inside the CKeditor area.
+  &-off-canvas .ck.ck-content a {
+    color: var(--ylb-color-blue-dark, #0060af);
+  }
 }
 
 .entity-browser-modal.ui-dialog .ui-dialog-titlebar-close {
