@@ -600,6 +600,17 @@ figure.drupal-media.ck-widget {
       transform: translate(-50%, 50%) rotate(45deg);
     }
   }
+  // To highlight a link inside the CKeditor area.
+  &-off-canvas .ck.ck-content a {
+    color: var(--ylb-color-blue-dark, #0060af);
+  }
+}
+
+.entity-browser-modal.ui-dialog .ui-dialog-titlebar-close {
+  &:before,
+  &:after {
+    border-color: var(--jui-dialog-title-color, #FFF);
+  }
 }
 
 .ck-source-editing-area {
@@ -613,14 +624,27 @@ figure.drupal-media.ck-widget {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      padding: 10px;
+      min-width: 150px;
+      margin: 0;
+      padding: 0;
+      background-color: var(--ylb-color-light-grey-1);
 
       li {
-        a.active {
-          color: var(--ylb-color-blue-dark);
+        padding: 12px;
+
+        &:has(.active) {
+          background-color: var(--ylb-color-white);
+        }
+
+        a {
+          color: var(--ylb-color-black);
+          padding: 6px 12px;
+
+          &.active {
+            color: var(--ylb-color-blue-dark);
+          }
         }
       }
-
     }
 
     .media-library-content {

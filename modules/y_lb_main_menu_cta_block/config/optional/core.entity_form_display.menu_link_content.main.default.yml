@@ -24,7 +24,7 @@ content:
       label_singular: ''
       label_plural: ''
       allow_new: true
-      allow_existing: false
+      allow_existing: true
       match_operator: CONTAINS
       allow_duplicate: false
       collapsible: false
