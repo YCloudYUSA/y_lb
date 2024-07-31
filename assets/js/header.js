@@ -64,7 +64,11 @@
         const logo =  230;
         var main_menu = document.querySelector('.ws-main-menu-wrapper');
         var right_menu = document.querySelector('.header--bottom-right-column');
-        var max_available_width = $(window).width() - logo - right_menu.offsetWidth;
+        var max_available_width = $(window).width() - logo;
+        // In case the right menu was removed.
+        if (right_menu) {
+          max_available_width -= right_menu.offsetWidth;
+        }
 
         if (max_available_width < main_menu.offsetWidth) {
           if (header.hasClass('desktop')) {
