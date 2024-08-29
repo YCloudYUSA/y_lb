@@ -109,6 +109,7 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
   public function defaultConfiguration() {
     return [
       'logo_type' => 'white',
+      'hide_logo_tagline' => FALSE,
     ];
   }
 
@@ -127,6 +128,26 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
       '#default_value' => $this->configuration['logo_type'],
     ];
 
+    $form['hide_logo_tagline'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Hide tagline in WS logo'),
+      '#default_value' => $this->configuration['hide_logo_tagline'],
+    ];
+
+    $form['example_container'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => ['py-0', 'px-3'],
+      ],
+      '#states' => [
+        'visible' => [
+          ':input[name="settings[hide_logo_tagline]"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
+
+    $form['example_container']['hide_logo_tagline_example'] = $this->getExampleMarkup();
+
     return $form;
   }
 
@@ -135,6 +156,7 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['logo_type'] = $form_state->getValue('logo_type');
+    $this->configuration['hide_logo_tagline'] = $form_state->getValue('hide_logo_tagline');
   }
 
   /**
@@ -155,6 +177,8 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
       $build['#site_logo_is_svg'] = TRUE;
       $build['#site_logo_svg'] = file_get_contents($path);
       $build['#logo_url'] = $logo_url;
+      $build['#hide_logo_tagline'] = $this->configuration['hide_logo_tagline'];
+      $build['#attached']['library'][] = 'y_lb/site_logo';
     }
     return $build;
   }
@@ -241,6 +265,25 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
     }
 
     return '';
+  }
+
+  /**
+   * Prepare a markup for display an example of a logo without tagline.
+   */
+  private function getExampleMarkup() {
+    $path = $this->moduleList
+        ->getPath('y_lb') . '/assets/images/logo_w_o_tagline_example.png';
+
+    return [
+      '#type' => 'inline_template',
+      '#template' => '<p>{{ description }}</p><img src="{{ logo_url }}" alt="{{ logo_alt }}"/>',
+      '#context' => [
+        'description' => $this->t('Displays the logo without tagline.'),
+        'logo_url' => $this->fileUrlGenerator
+          ->generateAbsoluteString($path),
+        'logo_alt' => $this->t('Logo without tagline'),
+      ],
+    ];
   }
 
 }

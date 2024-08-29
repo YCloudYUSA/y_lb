@@ -57,7 +57,7 @@ footer:
       assets/css/footer.css: { preprocess: true }
 
 header:
-  version: 1.15
+  version: 1.16
   css:
     component:
       assets/css/header.css: { preprocess: true }
@@ -70,6 +70,11 @@ main_menu:
     component:
       assets/css/main-menu.css: { preprocess: true }
 
+site_logo:
+  version: 0.1
+  css:
+    theme:
+      assets/css/ws-site-logo.css: { minified: true }
 #Y Styles
 
 #Colorway styles.
