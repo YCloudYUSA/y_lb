@@ -3,6 +3,11 @@ layout_builder:
   css:
     theme:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
+  js:
+    assets/js/media_modal.js: { minified: false }
+  dependencies:
+    - core/drupal
+    - core/jquery
 
 main:
   version: 1.33
@@ -65,7 +70,7 @@ header:
     assets/js/header.js: { minified: false }
 
 main_menu:
-  version: 1.13
+  version: 1.14
   css:
     component:
       assets/css/main-menu.css: { preprocess: true }
