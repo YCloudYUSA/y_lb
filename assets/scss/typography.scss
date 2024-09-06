@@ -72,6 +72,15 @@
 
   }
 
+  span {
+    &.highlighted {
+      background-color: var(--wsPrimaryColor, #0572c7);
+      color: var(--ylb-color-white, #fff);
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  }
+
   // Links
   // -----------------------------------------------------------------------------
   a {

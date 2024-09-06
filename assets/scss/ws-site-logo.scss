@@ -1,0 +1,37 @@
+@import "_functions";
+@import "_mixins";
+@import "_variables";
+
+.block-ws-site-logo {
+  .header & {
+    align-items: center;
+    display: flex;
+    padding-left: 10px;
+    height: 95px;
+    visibility: hidden;
+
+    @include media-breakpoint-down(md) {
+      svg {
+        max-height: 35px;
+        position: relative;
+        left: -45px;
+
+        #logo-areas-of-impact {
+          display: none;
+        }
+      }
+    }
+
+    img {
+      max-width: 200px;
+    }
+  }
+
+  &.hide-tagline {
+    svg {
+      #logo-areas-of-impact {
+        display: none;
+      }
+    }
+  }
+}
