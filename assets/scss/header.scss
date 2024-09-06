@@ -36,32 +36,37 @@
       flex-direction: row-reverse;
 
       nav {
+        display: flex;
+        margin: -10px 0.75rem -10px 0;
+        padding-right: 0.75rem;
+        border-right: 1px solid var(--y-color-light-grey-3, #CCC);
+
         @include media-breakpoint-down(md) {
           display: none;
         }
 
-        &:last-child {
-          padding-right: 1.5rem;
-        }
 
         ul {
           display: flex;
           align-items: center;
           gap: 1.5rem;
+          margin-bottom: 0;
         }
 
         li {
           list-style: none;
         }
+      }
 
-        a {
-          color: var(--wsPrimaryColor, black);
+      a {
+        color: var(--wsPartnerColor, black);
+        font-size: .875rem;
+        text-decoration: underline;
 
-          &:active,
-          &:hover,
-          &:focus {
-            text-decoration: underline;
-          }
+        &:active,
+        &:hover,
+        &:focus {
+          text-decoration: none;
         }
       }
 
@@ -85,7 +90,7 @@
     height: 95px;
     padding: 0 20px;
     position: relative;
-    box-shadow: inset 0 6px 6px -6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 35px -8px #00000029;
 
     nav {
       height: 100%;
@@ -117,38 +122,33 @@
     .mobile-header--top-right-column {
       display: flex;
       justify-content: right;
+      align-self: center;
       flex: 0 0 100%;
-      height: 100%;
       max-width: 100%;
       padding-left: 15px;
       padding-right: 15px;
       position: relative;
-      width: 100%;
 
       nav {
         display: flex;
-        height: 95px;
 
         & > ul {
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
-          gap: 15px;
-          height: 100%;
+          align-items: center;
+          gap: 1rem;
           margin-bottom: 0;
+          padding-left: 0;
 
           li {
-            align-items: center;
             display: flex;
             list-style: none;
             width: auto;
 
             a:not(.highlighted) {
-              color: var(--ylb-color-dark-grey-1, darkgray);
-              font-family: var(--ylb-font-family-cachet);
-              font-size: 20px;
-              font-weight: 400;
-              line-height: 24px;
+              color: var(--wsPartnerColor, black);
+              text-decoration: underline;
 
               &.nav-link {
                 box-sizing: unset;
@@ -158,7 +158,6 @@
               &:active,
               &:focus,
               &:hover {
-                color: var(--wsPartnerColor, blue);
                 text-decoration: none;
               }
             }
@@ -172,8 +171,8 @@
       border-radius: 10px;
       border: 2px solid var(--wsPartnerColor, #4F4F4F);
       color: var(--ylb-color-white, white);
-      font-family: var(--ylb-font-family-cachet);
-      font-size: 20px;
+      font-family:  var(--ylb-font-family-cachet, Cachet), Verdana, sans-serif;
+      font-size: 18px;
       letter-spacing: 0;
       line-height: 25px;
       padding: 10px 14px;
@@ -186,6 +185,18 @@
         text-decoration: none;
         color: var(--wsPartnerColor, #4F4F4F);
         background-color: var(--ylb-color-white);
+      }
+    }
+
+    a.highlighted.outline {
+      background-color: var(--ylb-color-white, white);
+      color: var(--wsPartnerColor, black);
+
+      &:active,
+      &:focus,
+      &:hover {
+        color: var(--ylb-color-white, white);
+        background-color: var(--wsPartnerColor, #4F4F4F);
       }
     }
   }
@@ -360,7 +371,7 @@
               list-style: none;
               width: auto;
 
-              a:not(.highlighted) {
+              &:has(a:not(.highlighted)) {
                 display: none;
               }
             }
@@ -406,6 +417,8 @@
 
   &.mobile {
     .header--top {
+      background-color: var(--ylb-color-light-grey-1, #F2F2F2);
+
       &-left-column {
         position: initial;
       }
@@ -521,23 +534,26 @@
             padding-left: 15px;
             margin-right: auto;
             margin-left: auto;
-            width: 100%;
             display: flex;
 
             ul {
-              justify-content: center;
+              justify-content: left;
               flex: 0 0 100%;
-              padding: 0;
+              padding: 0 0 1.5rem;
 
               li {
                 width: 100%;
+
+                &:has(.inline) {
+                  width: auto;
+                }
               }
 
               .highlighted {
                 display: inline-block;
-                font-size: 24px;
-                line-height: 30px;
-                padding: 12px 24px;
+                font-size: 1.125rem;
+                line-height: 1.75rem;
+                padding: 6px 16px 8px 16px;
               }
             }
           }
@@ -549,6 +565,10 @@
 
           .block-openy-gtranslate-block {
             display: none;
+          }
+
+          nav > ul {
+            flex-direction: column;
           }
         }
       }
