@@ -131,6 +131,7 @@
 
       nav {
         display: flex;
+        height: 95px;
 
         & > ul {
           display: flex;
@@ -147,8 +148,11 @@
             width: auto;
 
             a:not(.highlighted) {
-              color: var(--wsPartnerColor, black);
-              text-decoration: underline;
+              color: var(--ylb-color-dark-grey-1, darkgray);
+              font-family: var(--ylb-font-family-cachet);
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 24px;
 
               &.nav-link {
                 box-sizing: unset;
@@ -158,7 +162,8 @@
               &:active,
               &:focus,
               &:hover {
-                text-decoration: none;
+                color: var(--wsPartnerColor, blue);
+                text-decoration: underline;
               }
             }
           }
@@ -386,7 +391,8 @@
       }
     }
 
-    .menu-toggle {
+    .menu-toggle,
+    .mobile-header--top-right-column {
       display: none;
     }
   }
