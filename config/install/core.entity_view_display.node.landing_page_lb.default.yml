@@ -13,6 +13,7 @@ dependencies:
     - system.menu.footer-menu-left
     - system.menu.footer-menu-right
     - system.menu.main
+    - system.menu.utility
   module:
     - bootstrap_layout_builder
     - layout_builder
@@ -623,6 +624,20 @@ third_party_settings:
                   scroll_effects:
                     class: null
                   ws_style_option: false
+          918c5312-e6fc-4042-aef1-4c35b39c0d98:
+            uuid: 918c5312-e6fc-4042-aef1-4c35b39c0d98
+            region: header_top_right
+            configuration:
+              id: 'system_menu_block:utility'
+              label: 'Utility Menu'
+              label_display: '0'
+              provider: system
+              context_mapping: {  }
+              level: 1
+              depth: 1
+              expand_all_items: false
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: 'bootstrap_layout_builder:blb_col_1'
@@ -846,7 +861,7 @@ third_party_settings:
               label: 'Copyright Block'
               label_display: '0'
               provider: y_lb
-              context_mapping: { }
+              context_mapping: {  }
             weight: 0
             additional:
               bootstrap_styles:
@@ -1333,7 +1348,7 @@ third_party_settings:
               label: 'Stay Connected'
               label_display: visible
               provider: y_lb
-              context_mapping: { }
+              context_mapping: {  }
             weight: 0
             additional:
               bootstrap_styles:
@@ -1560,13 +1575,16 @@ third_party_settings:
       colorway: ws_colorway_blue
       border_radius: ws_border_radius_none
       border_style_global: ws_border_style_global_drop_shadow
+      text_alignment_global: ws_text_alignment_global_left
+      button_position_global: ws_button_position_global_inside
+      button_fill_global: ws_button_fill_global_filled
 id: node.landing_page_lb.default
 targetEntityType: node
 bundle: landing_page_lb
 mode: default
 content: {  }
 hidden:
-  addthis: true
+  addtoany: true
   field_meta_description: true
   field_meta_image: true
   field_meta_tags: true
