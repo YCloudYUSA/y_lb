@@ -276,3 +276,18 @@ function y_lb_update_9015(&$sandbox) {
     'node.type.landing_page_lb'
   ]);
 }
+
+/**
+ * Add Utility Menu.
+ */
+function y_lb_update_9016() {
+  \Drupal::service('module_installer')->install(['openy_menu_utility']);
+
+  $path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/install';
+  /** @var \Drupal\config_import\ConfigImporterService $config_importer */
+  $config_importer = \Drupal::service('config_import.importer');
+  $config_importer->setDirectory($path);
+  $config_importer->importConfigs([
+    'core.entity_view_display.node.landing_page_lb.default'
+  ]);
+}
