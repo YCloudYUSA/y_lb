@@ -281,6 +281,10 @@ function y_lb_update_9015(&$sandbox) {
  * Add Utility Menu.
  */
 function y_lb_update_9016() {
+  $moduleHandler = \Drupal::service('module_handler');
+  if (!$moduleHandler->moduleExists('openy_menu_utility')) {
+    \Drupal::service('module_installer')->install(['openy_menu_utility']);
+  }
   \Drupal::service('module_installer')->install(['openy_menu_utility']);
 
   $path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/install';
