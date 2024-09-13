@@ -3,6 +3,11 @@ layout_builder:
   css:
     theme:
       assets/css/layout-builder.css: { minified: false, weight: 1001 }
+  js:
+    assets/js/media_modal.js: { minified: false }
+  dependencies:
+    - core/drupal
+    - core/jquery
 
 main:
   version: 1.33
