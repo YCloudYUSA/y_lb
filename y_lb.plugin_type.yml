@@ -6,3 +6,7 @@ ws_style_option:
   label: Y Style Option
   plugin_manager_service_id: plugin.manager.ws_style_option
   plugin_definition_decorator_class: \Drupal\plugin\PluginDefinition\ArrayPluginDefinitionDecorator
+ws_lb_override:
+  label: Y LB Style Override
+  plugin_manager_service_id: plugin.manager.ws_lb_override
+  plugin_definition_decorator_class: \Drupal\plugin\PluginDefinition\ArrayPluginDefinitionDecorator

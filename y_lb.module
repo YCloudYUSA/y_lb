@@ -5,6 +5,7 @@
  */
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Entity\ContentEntityFormInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
@@ -474,4 +475,34 @@ function y_lb_module_implements_alter(&$implementations, $hook) {
   $group = $implementations['inline_entity_form'];
   unset($implementations['inline_entity_form']);
   $implementations['inline_entity_form'] = $group;
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function y_lb_block_view_alter(array &$build, BlockPluginInterface $block): void {
+  $ws_lb_override = \Drupal::service('plugin.manager.ws_lb_override');
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $node = $node ?? NULL;
+
+  if ($node && !$ws_lb_override->isApplicableForColorway($node)) {
+    return;
+  }
+
+  $block_plugin_id = $block->getPluginId();
+  // Plugin ID can have value: inline_block:lb_tabs or ws_site_logo.
+  if (str_contains($block_plugin_id, ':')) {
+    [, $block_id,] = explode(':', $block_plugin_id);
+  }
+  else {
+    $block_id = $block_plugin_id;
+  }
+
+  if (!$ws_lb_override->isApplicableForComponent($block_id)) {
+    return;
+  }
+
+  if ($libraries = $ws_lb_override->getLibraries($block_id)) {
+    $build['#attached']['library'] = $libraries;
+  }
 }
