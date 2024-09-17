@@ -56,13 +56,15 @@
         background-color: transparent;
         position: relative;
         border-bottom: solid 3px transparent;
+        // Set a top border also so that text stays centered.
+        border-top: solid 3px transparent;
 
         &.show,
         &:active,
         &:focus,
         &:hover {
           color: var(--wsPartnerColor, blue);
-          border-color: var(--wsSecondaryColor, blue);
+          border-bottom-color: var(--wsSecondaryColor, blue);
         }
 
         &.menu-item-home {
@@ -244,6 +246,7 @@
 
     ul.row-level-1 {
       display: block;
+      padding-bottom: 1.5rem;
 
       li {
         &.nav-level-2 {

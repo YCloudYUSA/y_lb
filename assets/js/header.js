@@ -24,6 +24,9 @@
           $('.header--bottom').css('position', 'relative');
           header.css('overflow-y', 'revert');
           $('a.highlighted').show();
+          // Google Translate can only exist in one place, so we have to move it.
+          // See https://stackoverflow.com/questions/21759756/multiple-instances-of-google-translate#comment77539211_43314365
+          $('.header--top-right-column .openy-google-translate').replaceWith($('.mobile-header--top-right-column .openy-google-translate'));
         } else {
           header.addClass('open');
           userMenu.addClass('container');
@@ -31,6 +34,7 @@
           body.css('overflow', 'hidden');
           $('.header--bottom').css('position', 'absolute');
           header.css('overflow-y', 'auto');
+          $('.mobile-header--top-right-column .openy-google-translate').replaceWith($('.header--top-right-column .openy-google-translate'));
         }
       });
 

@@ -25,6 +25,7 @@ dependencies:
   - openy_focal_point
   - openy_media_image
   - openy_menu_footer
+  - openy_menu_utility
   - drupal:openy_gtranslate
   - drupal:simple_sitemap
 

@@ -58,6 +58,14 @@
             {{ content.header_bottom_right }}
           </section>
         {% endif %}
+
+        {% if content.header_top_right %}
+          <section class="mobile-header--top-right-column">
+            <div class="header-top-right-wrapper container">
+              {{ content.header_top_right }}
+            </div>
+          </section>
+        {% endif %}
       </div>
       {# mobile menu toggler #}
       <div class="menu-toggle">
