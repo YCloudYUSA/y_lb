@@ -99,17 +99,8 @@ class WSOverrideLayoutBuilder extends DefaultPluginManager implements WSOverride
       if (!empty($definition['active_colorways'])) {
         $selected_colorway = $this->getSelectedColorway($entity);
         $active_colorways = $definition['active_colorways'];
-        foreach ($active_colorways as $active_colorway) {
-          if (str_contains($active_colorway, '*')) {
-            $active_colorway = substr($active_colorway, 0, -1);
-            if (str_contains($selected_colorway, $active_colorway)) {
-              return TRUE;
-            }
-          }
-          else if ($selected_colorway === $active_colorway) {
-            return TRUE;
-          }
-        }
+        // Check for wildcards.
+        return $this->inFilterList($selected_colorway, $active_colorways);
       }
     }
     return FALSE;
@@ -162,6 +153,32 @@ class WSOverrideLayoutBuilder extends DefaultPluginManager implements WSOverride
     }
     $settings = $view_display->getThirdPartySettings('y_lb');
     return $settings['styles'] ?? [];
+  }
+
+  /**
+   * Check whether the needle is in the haystack.
+   *
+   * @param string $name
+   *   The needle which is checked.
+   * @param string[] $list
+   *   The haystack, a list of identifiers to determine whether $name is in it.
+   *
+   * @return bool
+   *   True if the name is considered to be in the list.
+   */
+  private function inFilterList($name, array $list) {
+    // Remove the original '*' to allow it to catch all.
+    $list = array_map(function ($line) {
+      return str_replace('\*', '', preg_quote($line, '/'));
+    }, $list);
+
+    foreach ($list as $line) {
+      if (str_contains($name, $line)) {
+        return TRUE;
+      }
+    }
+
+    return FALSE;
   }
 
 }
