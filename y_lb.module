@@ -5,6 +5,7 @@
  */
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Entity\ContentEntityFormInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
@@ -246,6 +247,10 @@ function y_lb_preprocess_block(&$variables) {
 
   }
   $variables['attributes']['class'][] = 'block-' . Html::getClass($variables['plugin_id']);
+  // Override library via override plugin.
+  if ($libraries = _y_lb_get_override_component_library($variables['plugin_id'])) {
+    $variables['#attached']['library'] = $libraries;
+  }
 }
 
 /**
@@ -474,4 +479,36 @@ function y_lb_module_implements_alter(&$implementations, $hook) {
   $group = $implementations['inline_entity_form'];
   unset($implementations['inline_entity_form']);
   $implementations['inline_entity_form'] = $group;
+}
+
+/**
+ * Checks available override plugins by block plugin ID.
+ *
+ * @param $block_plugin_id
+ *   A block plugin ID.
+ *
+ * @return array
+ *   An array of the libraries to be attached to the render.
+ */
+function _y_lb_get_override_component_library($block_plugin_id) {
+  $ws_lb_override = \Drupal::service('plugin.manager.ws_lb_override');
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $node = $node ?? NULL;
+  if ($node && !$ws_lb_override->isApplicableForColorway($node)) {
+    return [];
+  }
+
+  // Plugin ID can have value: inline_block:lb_tabs or ws_site_logo.
+  if (str_contains($block_plugin_id, ':')) {
+    [, $block_id,] = explode(':', $block_plugin_id);
+  }
+  else {
+    $block_id = $block_plugin_id;
+  }
+
+  if (!$ws_lb_override->isApplicableForComponent($block_id)) {
+    return [];
+  }
+
+  return $ws_lb_override->getLibraries($block_id);
 }
