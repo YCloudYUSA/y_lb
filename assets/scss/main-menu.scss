@@ -97,7 +97,7 @@
             &-right {
               display: flex;
 
-              .header-nav__submenu {
+              .header-nav__submenu:not(.open) {
                 display: none;
               }
             }
@@ -106,7 +106,7 @@
       }
 
       .menu-link-item,
-      a {
+      & > a {
         color: var(--ylb-color-dark-grey-1, darkgray);
         font-size: 18px;
         font-weight: 400;
@@ -158,14 +158,6 @@
     li {
       padding: 10px;
 
-      &.nav-level-4 {
-        .menu-link-item,
-        a {
-          font-size: 18px;
-          line-height: 22px;
-        }
-      }
-
       .menu-link-item,
       a {
         color: var(--ylb-color-black, black);
@@ -180,6 +172,16 @@
         display: flex;
         flex-direction: column;
         min-width: 300px;
+      }
+
+      &.nav-level-4 {
+        .menu-link-item,
+        & > a {
+          font-size: 18px;
+          font-weight: 400;
+          color: var(--ylb-color-white, white);
+          line-height: 22px;
+        }
       }
     }
 
@@ -231,8 +233,8 @@
       padding: 10px;
 
       .menu-link-item,
-      a {
-        color: var(--ylb-color-white, white) !important;
+      & > a {
+        color: var(--ylb-color-white, white);
 
         &:after {
           display: none;
@@ -423,12 +425,6 @@
         }
       }
     }
-
-    .nav-level-4 {
-      a {
-        font-weight: 400 !important;
-      }
-    }
   }
   // In case very long menu items
   ul  {
@@ -551,7 +547,6 @@
             background-color: var(--wsPartnerColor, blue);
           }
         }
-
       }
     }
   }
@@ -559,18 +554,17 @@
   .level-3 {
 
     &.open {
-      display: flex !important;
+      display: flex;
+
+      li {
+        .menu-link-item,
+        & > a {
+          white-space: unset;
+        }
+      }
     }
 
     li {
-      width: auto !important;
-
-      .menu-link-item,
-      a {
-        white-space: unset !important;
-
-      }
-
       &:active,
       &:focus,
       &:hover {
@@ -579,7 +573,7 @@
 
         .menu-link-item,
         a {
-          color: var(--wsPartnerColor, blue) !important;
+          color: var(--wsPartnerColor, blue);
         }
       }
     }
