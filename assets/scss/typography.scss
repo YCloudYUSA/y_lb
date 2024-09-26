@@ -229,31 +229,34 @@
     margin: 40px 0;
     border: none;
 
-    thead {
-      tr {
-        border: none;
-        border-bottom: 1px solid #2F2F2F;
+    &:not(.table) {
 
-        th {
-          font-family: var(--ylb-font-family-cachet);
-          font-weight: 500;
+      thead {
+        tr {
           border: none;
-          font-size: 22px;
-          line-height: 32px;
-          padding: 15px;
+          border-bottom: 1px solid #2F2F2F;
+
+          th {
+            font-family: var(--ylb-font-family-cachet);
+            font-weight: 500;
+            border: none;
+            font-size: 22px;
+            line-height: 32px;
+            padding: 15px;
+          }
         }
       }
-    }
 
-    tbody {
-      tr {
-        border-bottom: 1px solid #CCCCCC;
+      tbody {
+        tr {
+          border-bottom: 1px solid #CCCCCC;
 
-        td {
-          border: none;
-          font-size: 18px;
-          line-height: 28px;
-          padding: 20px 0.5em !important;
+          td {
+            border: none;
+            font-size: 18px;
+            line-height: 28px;
+            padding: 20px 0.5em !important;
+          }
         }
       }
     }
