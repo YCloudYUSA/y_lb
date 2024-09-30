@@ -234,7 +234,7 @@
       thead {
         tr {
           border: none;
-          border-bottom: 1px solid #2F2F2F;
+          border-bottom: 1px solid var(--ylb-color-dark-grey-1, darkgray);
 
           th {
             font-family: var(--ylb-font-family-cachet);
@@ -249,7 +249,7 @@
 
       tbody {
         tr {
-          border-bottom: 1px solid #CCCCCC;
+          border-bottom: 1px solid var(--ylb-color-light-grey-3, lightgray);
 
           td {
             border: none;
