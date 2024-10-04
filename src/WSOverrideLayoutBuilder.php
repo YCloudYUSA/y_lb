@@ -112,7 +112,9 @@ class WSOverrideLayoutBuilder extends DefaultPluginManager implements WSOverride
   public function isApplicableForComponent(string $component_id): bool {
     foreach ($this->getDefinitions() as $definition) {
       if (!empty($definition['block_type'])) {
-        return $definition['block_type'] === $component_id;
+        if ($definition['block_type'] === $component_id) {
+          return TRUE;
+        }
       }
     }
 
