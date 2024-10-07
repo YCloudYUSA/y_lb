@@ -112,7 +112,9 @@ class WSOverrideLayoutBuilder extends DefaultPluginManager implements WSOverride
   public function isApplicableForComponent(string $component_id): bool {
     foreach ($this->getDefinitions() as $definition) {
       if (!empty($definition['block_type'])) {
-        return $definition['block_type'] === $component_id;
+        if ($definition['block_type'] === $component_id) {
+          return TRUE;
+        }
       }
     }
 
@@ -147,11 +149,11 @@ class WSOverrideLayoutBuilder extends DefaultPluginManager implements WSOverride
   private function getDefaultWsStyle(string $node_type): array {
     $view_display = $this->entityTypeManager
       ->getStorage('entity_view_display')
-      ->load('node.' . $node_type . '.full');
+      ->loadMultiple(['node.' . $node_type . '.full', 'node.' . $node_type . '.default']);
     if (!$view_display) {
       return [];
     }
-    $settings = $view_display->getThirdPartySettings('y_lb');
+    $settings = reset($view_display)->getThirdPartySettings('y_lb');
     return $settings['styles'] ?? [];
   }
 
