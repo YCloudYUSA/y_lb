@@ -47,9 +47,9 @@ class SocialBlock extends BlockBase implements ContainerFactoryPluginInterface {
       'label' => 'Stay Connected',
       'label_display' => TRUE,
       'content' => ' <ul class="list-inline">
-          <li><a title="Go to YMCA Facebook" href="#"><i class="fab fa-facebook"></i></a></li>
-          <li><a title="Go to YMCA Twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a title="Go to YMCA Youtube channel" href="#"><i class="fab fa-youtube"></i></a></li>
+          <li><a title="Go to YMCA Facebook" href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+          <li><a title="Go to YMCA Twitter" href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+          <li><a title="Go to YMCA Youtube channel" href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
         </ul>',
     ];
   }
