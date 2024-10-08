@@ -295,3 +295,10 @@ function y_lb_update_9016() {
     'core.entity_view_display.node.landing_page_lb.default'
   ]);
 }
+
+/**
+ * Add the Partners Tire block to denylisted_blocks.
+ */
+function y_lb_update_9017() {
+  y_lb_update_9016();
+}

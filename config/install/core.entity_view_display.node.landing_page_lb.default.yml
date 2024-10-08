@@ -1559,6 +1559,7 @@ third_party_settings:
           - 'inline_block:testimonial_item'
           - 'inline_block:lb_staff_member_item'
           - 'inline_block:lb_partner_item'
+          - 'inline_block:partners_tier'
           - 'inline_block:accordion_item'
           - 'inline_block:card_item'
           - 'inline_block:carousel_item'
