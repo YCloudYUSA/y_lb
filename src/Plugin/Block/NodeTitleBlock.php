@@ -87,8 +87,7 @@ class NodeTitleBlock extends BlockBase implements ContainerFactoryPluginInterfac
     $build['#subtitle'] = $node->hasField('field_subtitle') ? $node->field_subtitle->value : '';
     $author = $node->getOwner();
     $build['#author'] = $author->getDisplayName();
-    $date = $node?->changed?->value ?: time();
-    $build['#changed'] =  $this->dateFormatter->format($date, 'custom', 'F j, Y');
+    $build['#changed'] =  $this->dateFormatter->format($node->getChangedTime(), 'custom', 'F j, Y');
 
     return $build;
   }
