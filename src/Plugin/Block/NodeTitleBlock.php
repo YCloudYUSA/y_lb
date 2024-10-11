@@ -3,6 +3,7 @@
 namespace Drupal\y_lb\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Datetime\DateFormatter;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\layout_builder\OverridesSectionStorageInterface;
@@ -28,6 +29,11 @@ class NodeTitleBlock extends BlockBase implements ContainerFactoryPluginInterfac
   protected $currentRouteMatch;
 
   /**
+   * Date formatter service.
+   */
+  protected DateFormatter $dateFormatter;
+
+  /**
    * Constructs a new NodeTitleBlock instance.
    *
    * @param array $configuration
@@ -41,10 +47,19 @@ class NodeTitleBlock extends BlockBase implements ContainerFactoryPluginInterfac
    *   The plugin implementation definition.
    * @param \Drupal\Core\Routing\RouteProviderInterface $route_provider
    *   The route provider.
+   * @param \Drupal\Core\Datetime\DateFormatter $dateFormatter
+   *   Date formatter service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $currentRouteMatch) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    CurrentRouteMatch $currentRouteMatch,
+    DateFormatter $dateFormatter
+  ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->currentRouteMatch = $currentRouteMatch;
+    $this->dateFormatter = $dateFormatter;
   }
 
   /**
@@ -55,7 +70,8 @@ class NodeTitleBlock extends BlockBase implements ContainerFactoryPluginInterfac
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('current_route_match')
+      $container->get('current_route_match'),
+      $container->get('date.formatter')
     );
   }
 
@@ -69,6 +85,9 @@ class NodeTitleBlock extends BlockBase implements ContainerFactoryPluginInterfac
     }
     $build['#title'] = $node->getTitle();
     $build['#subtitle'] = $node->hasField('field_subtitle') ? $node->field_subtitle->value : '';
+    $author = $node->getOwner();
+    $build['#author'] = $author->getDisplayName();
+    $build['#changed'] =  $this->dateFormatter->format($node->getChangedTime(), 'custom', 'F j, Y');
 
     return $build;
   }
