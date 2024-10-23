@@ -327,9 +327,9 @@ function y_lb_entity_base_field_info(EntityTypeInterface $entity_type) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for pages.
+ * Implements hook_preprocess_HOOK() for nodes.
  */
-function y_lb_preprocess_page(&$variables) {
+function y_lb_preprocess_node(&$variables) {
   /** @var \Drupal\node\NodeInterface $node */
   $node = $variables['node'] ?? NULL;
 
