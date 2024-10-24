@@ -19,6 +19,7 @@ use Drupal\layout_builder\Form\DefaultsEntityForm;
 use Drupal\layout_builder\Form\OverridesEntityForm;
 use Drupal\layout_builder\Plugin\SectionStorage\OverridesSectionStorage;
 use Drupal\node\NodeInterface;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\y_lb\Form\YLBEntityViewDisplay;
 use Drupal\y_lb\Form\YLBOverridesEntityForm;
 
@@ -327,14 +328,24 @@ function y_lb_entity_base_field_info(EntityTypeInterface $entity_type) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for nodes.
+ * Implements hook_preprocess_HOOK() for pages.
  */
-function y_lb_preprocess_node(&$variables) {
+function y_lb_preprocess_page(&$variables) {
   /** @var \Drupal\node\NodeInterface $node */
   $node = $variables['node'] ?? NULL;
 
-  // Skip page without node.
-  if (!$node instanceof NodeInterface) {
+  // Will be "true" if you are currently on a taxonomy term page.
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+
+    // Since this is a taxonomy term page, you may wish to get the term ID.
+    $term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+
+    // Load the term object.
+    $node = Term::load($term_id);
+  }
+
+  // Skip page without node or term.
+  if ((!$node instanceof NodeInterface) && (!$node instanceof Term)) {
     return;
   }
   // Skip nodes without LB usage.
@@ -355,7 +366,7 @@ function y_lb_preprocess_node(&$variables) {
   /** @var \Drupal\y_lb\WSStyleOptionManager $ws_style_options */
   $ws_style_option = \Drupal::service('plugin.manager.ws_style_option');
   // Check individual node for overridden Y Styles.
-  if ($node->override_styles->value) {
+  if ($node->override_styles && $node->override_styles->value) {
     $styles = unserialize($node->styles->value);
   }
   else {
@@ -363,7 +374,7 @@ function y_lb_preprocess_node(&$variables) {
     foreach (['full', 'default'] as $display) {
       $view_display = \Drupal::entityTypeManager()
         ->getStorage('entity_view_display')
-        ->load('node.' . $node->bundle() . '.' . $display);
+        ->load($node->getEntityTypeId() . '.' . $node->bundle() . '.' . $display);
       if (!$view_display) {
         continue;
       }
