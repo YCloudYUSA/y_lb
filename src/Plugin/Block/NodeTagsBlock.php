@@ -3,6 +3,7 @@
 namespace Drupal\y_lb\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -67,17 +68,47 @@ class NodeTagsBlock extends BlockBase implements ContainerFactoryPluginInterface
   /**
    * {@inheritdoc}
    */
+  public function blockForm($form, FormStateInterface $form_state) {
+    $form = parent::blockForm($form, $form_state);
+
+    $config = $this->getConfiguration();
+
+    $form['display_as_links'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Display as links'),
+      '#default_value' => isset($config['display_as_links']) ? $config['display_as_links'] : FALSE,
+    ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function blockSubmit($form, FormStateInterface $form_state) {
+    parent::blockSubmit($form, $form_state);
+
+    $this->setConfigurationValue('display_as_links', $form_state->getValue('display_as_links'));
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function build() {
     if (!$this->node || !$this->node->hasField('field_tags')) {
       return [];
     }
 
+    $config = $this->getConfiguration();
+    $link = !empty($config['display_as_links']);
+
     $build['tags'] = $this->node->get('field_tags')->view([
       'label' => 'hidden',
       'settings' => [
-        'link' => FALSE,
+        'link' => $link,
       ],
     ]);
+
     return $build;
   }
 
