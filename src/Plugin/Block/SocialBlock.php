@@ -3,7 +3,8 @@
 namespace Drupal\y_lb\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -19,6 +20,28 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class SocialBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
+   * The settings of the social links block from the settings form.
+   */
+  protected array|ImmutableConfig $settingsSocialLinks;
+
+  /**
+   * Constructs a SocialBlock object.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   *   The config factory.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $configFactory) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->settingsSocialLinks = $configFactory->get('y_lb.admin.settings');
+  }
+
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
@@ -26,6 +49,7 @@ class SocialBlock extends BlockBase implements ContainerFactoryPluginInterface {
       $configuration,
       $plugin_id,
       $plugin_definition,
+      $container->get('config.factory')
     );
   }
 
@@ -33,6 +57,16 @@ class SocialBlock extends BlockBase implements ContainerFactoryPluginInterface {
    * {@inheritdoc}
    */
   public function build() {
+    if (empty($this->configuration['content'])) {
+      return [
+        '#theme' => 'ws_social_links_block',
+        '#facebook' => $this->settingsSocialLinks->get('social_links.facebook'),
+        '#twitter' => $this->settingsSocialLinks->get('social_links.twitter'),
+        '#youtube' => $this->settingsSocialLinks->get('social_links.youtube'),
+        '#instagram' => $this->settingsSocialLinks->get('social_links.instagram'),
+        '#linkedin' => $this->settingsSocialLinks->get('social_links.linkedin'),
+      ];
+    }
     return [
       '#markup' => $this->configuration['content'],
       '#attributes' => ['class' => ['field-block-content', 'field-item']],
@@ -46,30 +80,7 @@ class SocialBlock extends BlockBase implements ContainerFactoryPluginInterface {
     return [
       'label' => 'Stay Connected',
       'label_display' => TRUE,
-      'content' => ' <ul class="list-inline">
-          <li><a title="Go to YMCA Facebook" href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
-          <li><a title="Go to YMCA Twitter" href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-          <li><a title="Go to YMCA Youtube channel" href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
-        </ul>',
     ];
-  }
-
-  public function blockForm($form, FormStateInterface $form_state) {
-    $form['content'] = [
-      '#type' => 'text_format',
-      '#format' => 'full_html',
-      '#title' => $this->t('Block content'),
-      '#default_value' => $this->configuration['content'],
-    ];
-
-    return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['content'] = $form_state->getValue('content')['value'];
   }
 
 }

@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * WS Social links block implementation to display a block.
+ *
+ * Available variables:
+ * - facebook: An URL to Facebook page
+ * - twitter: An URL to X/Ttwitter page
+ * - youtube: An URL to Youtube channel
+ * - instagram: An URL to Instagram profile
+ * - linkedin: An URL to LinkedIn profile
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+  <ul class="list-inline">
+    {% if facebook %}
+      <li><a title="Go to YMCA Facebook" href="{{ facebook }}" target="_blank"><i class="fab fa-facebook"></i></a></li>
+    {% endif %}
+    {% if twitter %}
+      <li><a title="Go to YMCA Twitter" href="{{ twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+    {% endif %}
+    {% if youtube %}
+      <li><a title="Go to YMCA Youtube channel" href="{{ youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+    {% endif %}
+    {% if instagram %}
+      <li><a title="Go to YMCA Instagram profile" href="{{ instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+    {% endif %}
+    {% if linkedin %}
+      <li><a title="Go to YMCA Linkedin page" href="{{ linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+    {% endif %}
+  </ul>

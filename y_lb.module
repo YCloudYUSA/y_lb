@@ -68,6 +68,16 @@ function y_lb_theme($existing, $type, $theme, $path) {
     'menu__main' => [
       'base hook' => 'menu__main',
     ],
+    'ws_social_links_block' => [
+      'variables' => [
+        'facebook' => NULL,
+        'twitter' => NULL,
+        'youtube' => NULL,
+        'instagram' => NULL,
+        'linkedin' => NULL,
+      ],
+      'template' => 'ws-social-links-block',
+    ],
   ];
 }
 
