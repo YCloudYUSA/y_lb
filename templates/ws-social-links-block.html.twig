@@ -15,20 +15,20 @@
  * @ingroup themeable
  */
 #}
-  <ul class="list-inline">
-    {% if facebook %}
-      <li><a title="Go to YMCA Facebook" href="{{ facebook }}" target="_blank"><i class="fab fa-facebook"></i></a></li>
-    {% endif %}
-    {% if twitter %}
-      <li><a title="Go to YMCA Twitter" href="{{ twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
-    {% endif %}
-    {% if youtube %}
-      <li><a title="Go to YMCA Youtube channel" href="{{ youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
-    {% endif %}
-    {% if instagram %}
-      <li><a title="Go to YMCA Instagram profile" href="{{ instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
-    {% endif %}
-    {% if linkedin %}
-      <li><a title="Go to YMCA Linkedin page" href="{{ linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-    {% endif %}
-  </ul>
+{% set social_links = {
+  'facebook': { 'url': facebook, 'icon': 'facebook', 'title': 'Facebook' },
+  'twitter': { 'url': twitter, 'icon': 'twitter', 'title': 'Twitter' },
+  'youtube': { 'url': youtube, 'icon': 'youtube', 'title': 'YouTube channel' },
+  'instagram': { 'url': instagram, 'icon': 'instagram', 'title': 'Instagram profile' },
+  'linkedin': { 'url': linkedin, 'icon': 'linkedin', 'title': 'LinkedIn page' }
+} %}
+
+<ul class="list-inline">
+  {% for network, data in social_links|filter(data => data.url is not empty) %}
+    <li>
+      <a title="Go to YMCA {{ data.title }}" href="{{ data.url }}" target="_blank">
+        <i class="fab fa-{{ data.icon }}"></i>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

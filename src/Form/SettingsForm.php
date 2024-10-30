@@ -6,7 +6,7 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Settings Form for Small Y.
+ * Provides a general configuration form for Y LB module.
  */
 class SettingsForm extends ConfigFormBase {
 
@@ -14,7 +14,7 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'ws_admin_settings';
+    return 'y_lb_settings_form';
   }
 
   /**
