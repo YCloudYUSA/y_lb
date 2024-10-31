@@ -1,0 +1,5 @@
+y_lb.admin:
+  title: 'WS settings'
+  parent: openy_system.openy_settings
+  route_name: y_lb.settings
+  weight: 0
