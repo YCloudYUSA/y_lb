@@ -43,7 +43,7 @@ class SettingsForm extends ConfigFormBase {
     $form['social_links']['facebook'] = [
       '#type' => 'url',
       '#title' => $this->t('Facebook'),
-      '#default_value' => $config->get('social_links.facebook') ?? NULL,
+      '#default_value' => $config->get('social_links_facebook') ?? NULL,
       '#pattern' => '^(https?:\/\/)?(?:www\.)?facebook\.com(.+)?',
       '#description' => $this->t('Please add a link to your Facebook page.'),
     ];
@@ -51,7 +51,7 @@ class SettingsForm extends ConfigFormBase {
     $form['social_links']['twitter'] = [
       '#type' => 'url',
       '#title' => $this->t('X(Twitter)'),
-      '#default_value' => $config->get('social_links.twitter') ?? NULL,
+      '#default_value' => $config->get('social_links_twitter') ?? NULL,
       '#pattern' => '^(https?:\/\/)?(?:www\.)?(x|twitter)\.com(.+)?',
       '#description' => $this->t('Please add a link to your X(Twitter) page.'),
     ];
@@ -59,7 +59,7 @@ class SettingsForm extends ConfigFormBase {
     $form['social_links']['youtube'] = [
       '#type' => 'url',
       '#title' => $this->t('Youtube'),
-      '#default_value' => $config->get('social_links.youtube') ?? NULL,
+      '#default_value' => $config->get('social_links_youtube') ?? NULL,
       '#pattern' => '^(https?:\/\/)?(?:www\.)?youtube\.com(.+)?',
       '#description' => $this->t('Please add a link to your Youtube page.'),
     ];
@@ -67,7 +67,7 @@ class SettingsForm extends ConfigFormBase {
     $form['social_links']['instagram'] = [
       '#type' => 'url',
       '#title' => $this->t('Instagram'),
-      '#default_value' => $config->get('social_links.instagram') ?? NULL,
+      '#default_value' => $config->get('social_links_instagram') ?? NULL,
       '#pattern' => '^(https?:\/\/)?(?:www\.)?instagram\.com(.+)?',
       '#description' => $this->t('Please add a link to your Instagram page.'),
     ];
@@ -75,7 +75,7 @@ class SettingsForm extends ConfigFormBase {
     $form['social_links']['linkedin'] = [
       '#type' => 'url',
       '#title' => $this->t('Linkedin'),
-      '#default_value' => $config->get('social_links.linkedin') ?? NULL,
+      '#default_value' => $config->get('social_links_linkedin') ?? NULL,
       '#pattern' => '^(https?:\/\/)?(?:www\.)?linkedin\.com(.+)?',
       '#description' => $this->t('Please add a link to your LinkedIn page.'),
     ];
@@ -88,11 +88,11 @@ class SettingsForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $config = $this->config('y_lb.admin.settings');
-    $config->set('social_links.facebook', $form_state->getValue('facebook'));
-    $config->set('social_links.twitter', $form_state->getValue('twitter'));
-    $config->set('social_links.youtube', $form_state->getValue('youtube'));
-    $config->set('social_links.instagram', $form_state->getValue('instagram'));
-    $config->set('social_links.linkedin', $form_state->getValue('linkedin'));
+    $config->set('social_links_facebook', $form_state->getValue('facebook'));
+    $config->set('social_links_twitter', $form_state->getValue('twitter'));
+    $config->set('social_links_youtube', $form_state->getValue('youtube'));
+    $config->set('social_links_instagram', $form_state->getValue('instagram'));
+    $config->set('social_links_linkedin', $form_state->getValue('linkedin'));
     $config->save();
     parent::submitForm($form, $form_state);
   }

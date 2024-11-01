@@ -60,11 +60,11 @@ class SocialBlock extends BlockBase implements ContainerFactoryPluginInterface {
     if (empty($this->configuration['content'])) {
       return [
         '#theme' => 'ws_social_links_block',
-        '#facebook' => $this->settingsSocialLinks->get('social_links.facebook'),
-        '#twitter' => $this->settingsSocialLinks->get('social_links.twitter'),
-        '#youtube' => $this->settingsSocialLinks->get('social_links.youtube'),
-        '#instagram' => $this->settingsSocialLinks->get('social_links.instagram'),
-        '#linkedin' => $this->settingsSocialLinks->get('social_links.linkedin'),
+        '#facebook' => $this->settingsSocialLinks->get('social_links_facebook'),
+        '#twitter' => $this->settingsSocialLinks->get('social_links_twitter'),
+        '#youtube' => $this->settingsSocialLinks->get('social_links_youtube'),
+        '#instagram' => $this->settingsSocialLinks->get('social_links_instagram'),
+        '#linkedin' => $this->settingsSocialLinks->get('social_links_linkedin'),
       ];
     }
     return [
