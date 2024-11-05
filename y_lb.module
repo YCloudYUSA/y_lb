@@ -261,6 +261,10 @@ function y_lb_preprocess_block(&$variables) {
   // Override library via override plugin.
   if ($libraries = _y_lb_get_override_component_library($variables['plugin_id'])) {
     $variables['#attached']['library'] = $libraries;
+    // In case custom block with add library in the content area.
+    if (isset($variables['content']['#attached'])) {
+      $variables['content']['#attached']['library'][] = $libraries[0];
+    }
   }
 }
 
