@@ -134,7 +134,7 @@ class WSOverrideLayoutBuilder extends DefaultPluginManager implements WSOverride
     $stored_ws_styles = $entity?->override_styles?->value
       ? unserialize($entity?->styles?->value)
       : $this->getDefaultWsStyle($entity->bundle());
-    return $stored_ws_styles['colorway'];
+    return $stored_ws_styles['colorway'] ?? '';
   }
 
   /**
