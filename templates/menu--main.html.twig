@@ -20,12 +20,22 @@
  * @ingroup themeable
  */
 #}
+{% block library %}
 {{ attach_library('y_lb/main_menu') }}
+{% endblock %}
+
+{% set chevron %}
+{% block chevron %}
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+  <path id="menu-chevron" fill-rule="evenodd" clip-rule="evenodd" d="M9.58105 0.708261C9.43262 0.569419 9.24707 0.5 9.02441 0.5C8.80176 0.5 8.61231 0.569419 8.45605 0.708261L5.31543 3.79052L2.1748 0.708261C2.01855 0.569419 1.8291 0.5 1.60645 0.5C1.38379 0.5 1.19824 0.569419 1.0498 0.708261C0.893554 0.847102 0.81543 1.01371 0.81543 1.20809C0.81543 1.40247 0.893554 1.56907 1.0498 1.70791L4.70605 5.30042C4.78418 5.36984 4.87793 5.4219 4.9873 5.45661C5.09668 5.49132 5.20605 5.50521 5.31543 5.49826C5.42481 5.50521 5.53418 5.49132 5.64355 5.45661C5.75293 5.4219 5.84668 5.36984 5.9248 5.30042L9.58105 1.70791C9.73731 1.56907 9.81543 1.40247 9.81543 1.20809C9.81543 1.01371 9.73731 0.847102 9.58105 0.708261Z"/>
+</svg>
+{% endblock %}
+{% endset %}
 
 {% import _self as menus %}
 <div class="ws-main-menu-wrapper">
-  {{ menus.menu_links(items, attributes, 0) }}
-  {% macro menu_links(items, attributes, menu_level) %}
+  {{ menus.menu_links(items, attributes, 0, chevron) }}
+  {% macro menu_links(items, attributes, menu_level, chevron) %}
     {% import _self as menus %}
     {% set nav_classes = [ 'header-nav__links', 'navbar', 'nav', 'row-level-1'] %}
     {% set nav_item_classes = [] %}
@@ -44,9 +54,7 @@
                 <li class="dropdown nav-level-2 children">
                   <a href="{{ item.url }}" class="menu-link--level-1" aria-expanded="false" data-toggle="dropdown">
                     {{ item.title }}&nbsp;
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                      <path id="menu-chevron" fill-rule="evenodd" clip-rule="evenodd" d="M9.58105 0.708261C9.43262 0.569419 9.24707 0.5 9.02441 0.5C8.80176 0.5 8.61231 0.569419 8.45605 0.708261L5.31543 3.79052L2.1748 0.708261C2.01855 0.569419 1.8291 0.5 1.60645 0.5C1.38379 0.5 1.19824 0.569419 1.0498 0.708261C0.893554 0.847102 0.81543 1.01371 0.81543 1.20809C0.81543 1.40247 0.893554 1.56907 1.0498 1.70791L4.70605 5.30042C4.78418 5.36984 4.87793 5.4219 4.9873 5.45661C5.09668 5.49132 5.20605 5.50521 5.31543 5.49826C5.42481 5.50521 5.53418 5.49132 5.64355 5.45661C5.75293 5.4219 5.84668 5.36984 5.9248 5.30042L9.58105 1.70791C9.73731 1.56907 9.81543 1.40247 9.81543 1.20809C9.81543 1.01371 9.73731 0.847102 9.58105 0.708261Z"/>
-                    </svg>
+                    {{ chevron }}
                   </a>
                   {{ menus.menu_links_level_2(item.below, attributes, menu_level + 1, item) }}
                 </li>
@@ -120,7 +128,7 @@
                 image: parent.content.field_cta_block.0.field_media,
                 description: parent.content.field_cta_block.0.field_description,
                 link_title: parent.content.field_cta_block.0.field_menu_cta_link.0['#title'],
-                link_url: parent.content.field_cta_block.0.field_menu_cta_link.0['#url_title'],
+                link_url: parent.content.field_cta_block.0.field_menu_cta_link.0['#url'],
               } %}
             {% endif %}
             {% for item in level2 %}
@@ -149,6 +157,9 @@
             </div>
           </div>
           <ul class="header-nav__submenu_links row-level-3">
+            <a href="{{ parent.url }}" class="main-menu-link--level-3">
+              {{ parent.title }}
+            </a>
             {% for item in items %}
               {% set ia = item.attributes.addClass(['nav-level-4 dropdown-submenu menu-item-' ~ item.title|clean_class]) %}
               <li{{ ia }}>
