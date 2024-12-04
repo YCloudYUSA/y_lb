@@ -70,7 +70,7 @@ header:
     assets/js/header.js: { minified: false }
 
 main_menu:
-  version: 1.16
+  version: 1.17
   css:
     component:
       assets/css/main-menu.css: { preprocess: true }

@@ -589,3 +589,7 @@
     }
   }
 }
+// On the first level, to let override this rule in a custom theme or module.
+.main-menu-link--level-3 {
+  display: none;
+}
