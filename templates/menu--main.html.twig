@@ -50,9 +50,14 @@
               {% elseif item.url.options.attributes.class %}
                 {% set nav_link_classes = nav_link_classes|merge([item.url.options.attributes.class]) %}
               {% endif %}
+              {% if item.url.isRouted and item.url.routeName is not same as '<nolink>' %}
+                {% set menu_item_href = "href=#{item.url|render}" %}
+              {% else %}
+                {% set menu_item_href = '' %}
+              {% endif %}
               {% if item.below %}
                 <li class="dropdown nav-level-2 children">
-                  <a href="{{ item.url }}" class="menu-link--level-1" aria-expanded="false" data-toggle="dropdown">
+                  <a {{ menu_item_href }} class="menu-link--level-1" aria-expanded="false" data-toggle="dropdown">
                     {{ item.title }}&nbsp;
                     {{ chevron }}
                   </a>
@@ -60,7 +65,7 @@
                 </li>
               {% else %}
                 <li class="dropdown nav-level-2">
-                  <a href="{{ item.url }}" target="_self" class="menu-link--level-1">
+                  <a {{ menu_item_href }} target="_self" class="menu-link--level-1">
                     {{ item.title }}&nbsp;
                   </a>
                 </li>
@@ -85,7 +90,12 @@
                 <a href="#" class="back">{{ navigationLinkLabel }}</a>
               </div>
               <div class="navigation-bottom">
-                <a href="{{ parent.url }}" class="main-menu-link--level-1">
+                {% if parent.url.isRouted and parent.url.routeName is not same as '<nolink>' %}
+                  {% set menu_parent_href = "href=#{parent.url|render}" %}
+                {% else %}
+                  {% set menu_parent_href = '' %}
+                {% endif %}
+                <a {{ menu_parent_href }} class="main-menu-link--level-1">
                   {{ parent.title }}
                 </a>
               </div>
