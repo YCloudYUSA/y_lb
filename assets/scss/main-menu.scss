@@ -558,6 +558,14 @@
     &.open {
       display: flex;
 
+      a.main-menu-link--level-3 {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--ylb-color-white, white);
+        padding: 10px;
+      }
+
       li {
         .menu-link-item,
         & > a {
@@ -588,8 +596,4 @@
       display: none;
     }
   }
-}
-// On the first level, to let override this rule in a custom theme or module.
-.main-menu-link--level-3 {
-  display: none;
 }
