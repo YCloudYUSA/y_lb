@@ -140,5 +140,33 @@ a {
         }
       }
     }
+
+    &.btn-sm {
+      padding: .25rem .5rem;
+      font-size: 20px;
+      line-height: 1.5;
+      }
+
+    &.btn-lg {
+      padding: .5rem 1rem;
+      font-size: 30px;
+      line-height: 1.5;
+    }
+
+    &.btn-outline {
+      &-primary {
+        color: var(--wsPartnerColor, black);
+        border-color: var(--wsPartnerColor, black);
+
+        &:hover {
+          color: var(--ylb-color-white, white);
+          background-color: var(--wsPartnerColor, black);
+        }
+      }
+    }
+
+    &.btn-link {
+      color: var(--wsPartnerColor, black);
+    }
   }
 }
