@@ -2,6 +2,6 @@ y_lb.settings:
   path: '/admin/openy/settings/y-lb'
   defaults:
     _form: '\Drupal\y_lb\Form\SettingsForm'
-    _title: 'WS settings'
+    _title: 'Y Layout Builder settings'
   requirements:
     _permission: 'administer site configuration'

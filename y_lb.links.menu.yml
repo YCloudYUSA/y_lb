@@ -1,5 +1,6 @@
 y_lb.admin:
-  title: 'WS settings'
+  title: 'Y Layout Builder settings'
+  description: 'Configure settings for Y Layout Builder pages.'
   parent: openy_system.openy_settings
   route_name: y_lb.settings
   weight: 0
