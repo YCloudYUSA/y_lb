@@ -50,7 +50,7 @@
               {% elseif item.url.options.attributes.class %}
                 {% set nav_link_classes = nav_link_classes|merge([item.url.options.attributes.class]) %}
               {% endif %}
-              {% if item.url.isRouted and item.url.routeName is not same as '<nolink>' %}
+              {% if item.url.isRouted and item.url.routeName not in ['<nolink>', '<none>'] %}
                 {% set menu_item_href = "href=#{item.url|render}" %}
               {% else %}
                 {% set menu_item_href = '' %}
@@ -90,7 +90,7 @@
                 <a href="#" class="back">{{ navigationLinkLabel }}</a>
               </div>
               <div class="navigation-bottom">
-                {% if parent.url.isRouted and parent.url.routeName is not same as '<nolink>' %}
+                {% if parent.url.isRouted and parent.url.routeName not in ['<nolink>', '<none>'] %}
                   {% set menu_parent_href = "href=#{parent.url|render}" %}
                 {% else %}
                   {% set menu_parent_href = '' %}
