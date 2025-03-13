@@ -66,25 +66,18 @@
         const header = $('.ws-header');
         // This size is can be fixed.
         const logo =  230;
-        var main_menu = document.querySelector('.ws-main-menu-wrapper');
-        var right_menu = document.querySelector('.header--bottom-right-column');
+        var main_menu = document.querySelector('.header--bottom-middle-column');
         var max_available_width = $(window).width() - logo;
-        // In case the right menu was removed.
-        if (right_menu) {
-          max_available_width -= right_menu.offsetWidth;
+        let main_menu_width = 0;
+
+        if (main_menu) {
+          main_menu_width = main_menu.offsetWidth;
         }
 
-        if (max_available_width < main_menu.offsetWidth) {
-          if (header.hasClass('desktop')) {
-           header.removeClass('desktop');
-          }
-          header.addClass('mobile');
-        }
-        else {
-          if (header.hasClass('mobile')) {
-            header.removeClass('mobile');
-          }
-          header.addClass('desktop');
+        if (max_available_width < main_menu_width) {
+            header.removeClass('desktop').addClass('mobile');
+        } else {
+            header.removeClass('mobile').addClass('desktop');
         }
       }
     }
