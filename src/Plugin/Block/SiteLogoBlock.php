@@ -193,7 +193,7 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
     $build['#logo_url'] = theme_get_setting('logo.path') ?
       $this->fileUrlGenerator->generateAbsoluteString(theme_get_setting('logo.path'))
       : '';
-    $build['#transparent_logo_url'] = $build['mobile_logo_url'] = $build['#logo_url'];
+    $build['#transparent_logo_url'] = $build['#mobile_logo_url'] = $build['#logo_url'];
 
     if ($build['#logo_url']) {
       $this->ylbPreprocessSvgLogo($build);
