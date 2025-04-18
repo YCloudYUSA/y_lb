@@ -167,9 +167,6 @@
             </div>
           </div>
           <ul class="header-nav__submenu_links row-level-3">
-            <a href="{{ parent.url }}" class="main-menu-link--level-3">
-              {{ parent.title }}
-            </a>
             {% for item in items %}
               {% set ia = item.attributes.addClass(['nav-level-4 dropdown-submenu menu-item-' ~ item.title|clean_class]) %}
               <li{{ ia }}>
