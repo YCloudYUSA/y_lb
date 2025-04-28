@@ -10,13 +10,6 @@ use Drupal\Core\Field\BaseFieldDefinition;
  * Implements hook_install().
  */
 function y_lb_install() {
-  // Import generic bootstrap styles configuration.
-  $path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/optional';
-  $config_importer = \Drupal::service('config_import.importer');
-  $config_importer->setDirectory($path);
-  $config_importer->importConfigs([
-    'bootstrap_styles.settings',
-  ]);
   // Install Node fields.
   _y_lb_install_node_additional_fields();
 }
