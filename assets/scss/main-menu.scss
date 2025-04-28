@@ -264,6 +264,10 @@
             background-image: url('../svg/menu-arrow-right-thin.svg');
             background-repeat: no-repeat;
             margin-left: 5px;
+            // Allow link area to expand over the arrow so arrow is clickable.
+            position: absolute;
+            right: 0;
+            z-index: -1;
           }
 
           .menu-link-item,
@@ -406,6 +410,13 @@
                         background-image: url('../svg/menu-arrow-right-white.svg');
                         background-repeat: no-repeat;
                         margin-left: 5px;
+                        // Allow link area to expand over the arrow so arrow is clickable.
+                        position: absolute;
+                        right: 30px;
+                      }
+
+                      a {
+                        z-index: 1;
                       }
                     }
 
