@@ -90,6 +90,12 @@
             }
           }
 
+          .level-3.open {
+            .main-menu-link--level-3 {
+              display: none;
+            }
+          }
+          
           .header-nav__submenu {
             display: flex;
             gap: 30px;
