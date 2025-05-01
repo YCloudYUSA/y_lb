@@ -14,7 +14,7 @@
         "drupal/lb_branch_social_links_blocks" : "^1.0.3",
         "drupal/lb_claro" : "^1.0 || ~2.0.0",
         "drupal/lb_accordion" : "^2.1.0 || ~2.2.0",
-        "drupal/lb_cards" : "^2.0.4 || ~2.1.0",
+        "drupal/lb_cards" : "^2.0.4 || ~2.1.0 || ~2.2.0",
         "drupal/lb_carousel" : "^2.0.3 || ~2.1.0",
         "drupal/lb_grid_cta" : "^3.0.4 || ~3.1.0",
         "drupal/lb_hero" : "^1.2.0 || ~1.3.0",
