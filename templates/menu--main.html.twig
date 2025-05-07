@@ -50,7 +50,9 @@
               {% elseif item.url.options.attributes.class %}
                 {% set nav_link_classes = nav_link_classes|merge([item.url.options.attributes.class]) %}
               {% endif %}
-              {% if item.url.isRouted and item.url.routeName not in ['<nolink>', '<none>'] %}
+              {% if item.url.toString starts with 'http' or item.url.toString starts with 'https' %}
+                {% set menu_item_href = 'href=' ~ item.url.toString %}
+              {% elseif item.url.isRouted and item.url.routeName not in ['<nolink>', '<none>'] %}
                 {% set menu_item_href = "href=#{item.url|render}" %}
               {% else %}
                 {% set menu_item_href = '' %}
