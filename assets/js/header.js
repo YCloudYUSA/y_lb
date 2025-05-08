@@ -66,10 +66,17 @@
         const header = $('.ws-header');
         // This size is can be fixed.
         const logo =  230;
+        var right_menu = document.querySelector('.header--bottom-right-column');
         var main_menu = document.querySelector('.header--bottom-middle-column');
         var max_available_width = $(window).width() - logo;
+        // In case the right menu was removed.
+        if (right_menu) {
+          max_available_width -= right_menu.offsetWidth;
+        }
         let main_menu_width = 0;
-
+        if (!right_menu) {
+          main_menu.style.maxWidth = 'none';
+        }
         if (main_menu) {
           main_menu_width = main_menu.offsetWidth;
         }
