@@ -574,3 +574,9 @@
   position: relative;
   z-index: 10;
 }
+
+// Ensure mobile header stays inside viewport.
+body.page-with-lb:has(header.mobile.open) {
+  position: fixed !important;
+  width: 100%;
+}
