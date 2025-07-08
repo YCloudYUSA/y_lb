@@ -2,7 +2,7 @@ name: Website Services Main Menu CTA block
 type: module
 description: Provide a CTA block in the second level of the main menu.
 package: YMCA Website Services
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
 dependencies:
   - y_lb
   - drupal:menu_item_extras
