@@ -10,7 +10,7 @@ layout_builder:
     - core/jquery
 
 main:
-  version: 1.36
+  version: 1.37
   css:
     theme:
       assets/css/colors.css: { minified: false }
@@ -62,7 +62,7 @@ footer:
       assets/css/footer.css: { preprocess: true }
 
 header:
-  version: 1.18
+  version: 1.20
   css:
     component:
       assets/css/header.css: { preprocess: true }
@@ -70,7 +70,7 @@ header:
     assets/js/header.js: { minified: false }
 
 main_menu:
-  version: 1.20
+  version: 1.21
   css:
     component:
       assets/css/main-menu.css: { preprocess: true }

@@ -319,7 +319,7 @@
 
   &.open {
     background-color: var(--ylb-color-white, white);
-    height: 100vh;
+    height: 100dvh;
     position: relative;
     top: 0;
     left: 0;
@@ -573,4 +573,10 @@
 #openy_alerts_app_header {
   position: relative;
   z-index: 10;
+}
+
+// Ensure mobile header stays inside viewport.
+body.page-with-lb:has(header.mobile.open) {
+  position: fixed !important;
+  width: 100%;
 }

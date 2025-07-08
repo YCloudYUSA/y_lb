@@ -303,7 +303,8 @@
               display: block;
               height: calc(100% - 95px);
               left: 0;
-              overflow: auto;
+              overflow-x: hidden;
+              overflow-y: auto;
               position: fixed;
               right: 0;
               text-align: left;
