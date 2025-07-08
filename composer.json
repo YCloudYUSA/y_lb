@@ -1,6 +1,5 @@
 {
     "name": "ycloudyusa/y_lb",
-    "version": "4.1.0",
     "description": "Adds Layout Builder to Web Services project.",
     "type": "drupal-module",
     "require": {
