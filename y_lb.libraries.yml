@@ -10,7 +10,7 @@ layout_builder:
     - core/jquery
 
 main:
-  version: 1.36
+  version: 1.37
   css:
     theme:
       assets/css/colors.css: { minified: false }

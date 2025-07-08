@@ -295,3 +295,17 @@ function y_lb_update_9016() {
 function y_lb_update_9017() {
   y_lb_update_9016();
 }
+
+/**
+ * Add light grey styles to Bootstrap Styles config.
+ */
+function y_lb_update_9018() {
+  $config_path = \Drupal::service('extension.list.module')->getPath('y_lb') . '/config/optional/';
+  $config_importer = \Drupal::service('openy_upgrade_tool.param_updater');
+  $config = 'bootstrap_styles.settings';
+  $config_importer->update(
+    $config_path . $config . '.yml',
+    $config,
+    'background_colors'
+  );
+}
