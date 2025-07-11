@@ -41,7 +41,7 @@
         "drupal/ws_event" : "^1.4.0 || ~1.5.0",
         "drupal/ws_promotion" : "^1.0.0 || ~1.1.0",
         "drupal/y_branch" : "^1.1.0",
-        "drupal/y_camp" : "^1.2 || ~1.3.0",
+        "drupal/y_camp" : "^2.0.0",
         "drupal/y_facility" : "~1.2.0  || ^2",
         "drupal/y_program" : "^1.2",
         "drupal/y_program_subcategory" : "^1",
