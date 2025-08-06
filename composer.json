@@ -49,6 +49,7 @@
         "drupal/pathauto" : "^1.11",
         "open-y-subprojects/openy_features": "*",
         "open-y-subprojects/openy_focal_point" : "^1.1 || ~1.2.0",
+        "drupal/lb_claro" : "^2 || ^2.0@alpha",
         "php": ">=8.1"
     },
     "license": "GPL-2.0+",
