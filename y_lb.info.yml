@@ -27,4 +27,5 @@ dependencies:
   - openy_menu_utility
   - drupal:openy_gtranslate
   - drupal:simple_sitemap
+  - drupal:lb_claro
 
