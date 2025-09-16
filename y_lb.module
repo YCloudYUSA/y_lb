@@ -21,6 +21,7 @@ use Drupal\layout_builder\Plugin\SectionStorage\OverridesSectionStorage;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\y_lb\Form\YLBEntityViewDisplay;
+use Drupal\y_lb\Form\YLBEntityViewDisplayForm;
 use Drupal\y_lb\Form\YLBOverridesEntityForm;
 
 /**
@@ -309,7 +310,9 @@ function y_lb_preprocess_blb_container_wrapper(&$variables) {
 function y_lb_entity_type_alter(array &$entity_types) {
   /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
   $entity_types['entity_view_display']
-    ->setFormClass('layout_builder', YLBEntityViewDisplay::class);
+    ->setFormClass('layout_builder', YLBEntityViewDisplay::class)
+    ->setFormClass('edit', YLBEntityViewDisplayForm::class);
+
   $entity_types['node']
     ->setFormClass('layout_builder', YLBOverridesEntityForm::class);
 }
