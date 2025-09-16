@@ -30,7 +30,11 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
         ->load('node.' . $node->bundle() . '.full');
       $global_settings = $view_display?->getThirdPartySettings('y_lb');
     }
-    
+
+    if (!$global_settings["allow_style"]) {
+      return parent::buildForm($form, $form_state, $section_storage);
+    }
+
     $default_settings = $global_settings['styles'] ?? [];
 
     $form['ws_settings_container'] = [
