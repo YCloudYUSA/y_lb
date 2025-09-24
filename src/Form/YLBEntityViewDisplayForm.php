@@ -25,6 +25,7 @@ class YLBEntityViewDisplayForm extends LayoutBuilderEntityViewDisplayForm {
         ]),
           '#default_value' => $this->entity->getThirdPartySetting('y_lb', 'allow_style', FALSE),
       ];
+      $form['#entity_builders']['layout_builder'] = '::entityFormEntityBuild';
     }
     return $form;
   }
