@@ -15,9 +15,9 @@ class YLBEntityViewDisplayForm extends LayoutBuilderEntityViewDisplayForm {
    * {@inheritDoc}
    */
   public function form(array $form, FormStateInterface $form_state) {
+    $form = parent::form($form, $form_state);
     if ($this->isCanonicalMode($this->entity->getMode())) {
       $entity_type = $this->entityTypeManager->getDefinition($this->entity->getTargetEntityTypeId());
-      $form = parent::form($form, $form_state);
       $form['layout']['allow_style'] = [
         '#type' => 'checkbox',
         '#title' => $this->t('Allow each @entity to have its style customized.', [
