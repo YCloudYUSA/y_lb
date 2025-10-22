@@ -53,7 +53,7 @@ class YmcaLbHeroBannerCommands extends DrushCommands {
   #[CLI\Usage(name: 'ymca_lb_hero_banner:update-lb-hero-banner landing_page_lb default', description: 'Update LB Hero settings for all Landing Page LB pages. Location content types use "full" view mode.')]
   #[CLI\Usage(name: 'ymca_lb_hero_banner:update-lb-hero-banner landing_page_lb default h2', description: 'Update LB Hero settings for all Landing Page LB pages. Location content types use "full" view mode. H tag element is H2')]
 
-  public function updateHeroBannerHElement($content_type, $view_mode = 'default', $h_element = 'h2'): void {
+  public function updateHeroBannerElement($content_type, $view_mode = 'default', $h_element = 'h2'): void {
     if (!$content_type) {
       return;
     }
@@ -94,15 +94,25 @@ class YmcaLbHeroBannerCommands extends DrushCommands {
           $total_nodes++;
           $section_storage = $this->getSectionStorageForEntity($node);
           $sections = $section_storage->getSections();
-          if ($sections) {
+          $first_lb_hero_updated = FALSE;
+          if (!empty($sections)) {
             // Check each section in node and update LB Hero settings.
             foreach ($sections as $section) {
+              if ($first_lb_hero_updated === TRUE) {
+                break;
+              }
               /** @var \Drupal\layout_builder\Section $section */
               $components = $section->getComponents();
               if (!empty($components)) {
                 foreach ($components as $inline_block) {
+                  if ($first_lb_hero_updated === TRUE) {
+                    // Handle case if we have more than
+                    // one Hero Banner block in the same section.
+                    break 2;
+                  }
                   $configuration = $inline_block->get('configuration');
-                  if (isset($configuration['id']) && ($configuration['id'] == 'inline_block:lb_hero')) {
+                  if (isset($configuration['id']) &&
+                    ($configuration['id'] == 'inline_block:lb_hero')) {
                     $hero_block =
                       $this->entityTypeManager->getStorage('block_content')->loadRevision(
                         $configuration['block_revision_id'],
@@ -112,8 +122,17 @@ class YmcaLbHeroBannerCommands extends DrushCommands {
                       $field_heading_level = $hero_block->get('field_heading_level')->value;
                       if ($field_heading_level != $h_element) {
                         $hero_block->set('field_heading_level', $h_element);
+                        $hero_block->setNewRevision();
                         $hero_block->save();
+                        $configuration['block_revision_id'] = $hero_block->getRevisionId();
                         $inline_block->setConfiguration($configuration);
+                        $first_lb_hero_updated = TRUE;
+                      }
+                      else {
+                        // If first Hero Banner has the same H element value
+                        // as the one we want to update, we simply
+                        // consider it updated.
+                        $first_lb_hero_updated = TRUE;
                       }
                     }
                   }
