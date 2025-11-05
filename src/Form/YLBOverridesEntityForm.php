@@ -31,7 +31,7 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
       $global_settings = $view_display?->getThirdPartySettings('y_lb');
     }
 
-    if (empty($global_settings["allow_style"])) {
+    if (empty($global_settings['allow_style'])) {
       return parent::buildForm($form, $form_state, $section_storage);
     }
 
