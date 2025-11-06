@@ -32,7 +32,7 @@
         "drupal/menu_item_extras" : "^2.0 || ^3.0",
         "drupal/metatag": "*",
         "drupal/node_revision_delete" : "^2.0@alpha || ^2",
-        "drupal/openy_gtranslate" : "^1.0 || ~1.1.0",
+        "drupal/openy_gtranslate" : "^1 || ^2.0.0",
         "drupal/scheduler": "^2.0@RC || ^2.0",
         "drupal/simple_sitemap": "^3.7 || ^4.1",
         "drupal/ws_colorway_canada" : "~1.2.0 || ~1.3.0",
