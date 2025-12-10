@@ -6,4 +6,4 @@ core_version_requirement: ^10 || ^11
 dependencies:
   - y_lb
   - drupal:menu_item_extras
-  - openy_focal_point
+  - drupal:media_library

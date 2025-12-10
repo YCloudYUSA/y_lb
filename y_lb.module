@@ -504,9 +504,11 @@ function y_lb_module_implements_alter(&$implementations, $hook) {
   }
 
   // Move the inline_entity_form alter form to the end.
-  $group = $implementations['inline_entity_form'];
-  unset($implementations['inline_entity_form']);
-  $implementations['inline_entity_form'] = $group;
+  if (isset($implementations['inline_entity_form'])) {
+    $group = $implementations['inline_entity_form'];
+    unset($implementations['inline_entity_form']);
+    $implementations['inline_entity_form'] = $group;
+  }
 }
 
 /**

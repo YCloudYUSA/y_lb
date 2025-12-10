@@ -1,18 +1,89 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * @file
- * Install, update and uninstall functions for the Website Services Main Menu CTA block module.
+ * Install, update and uninstall functions for the y_lb_main_menu_cta_block module.
  */
 
 /**
- * Allow CTA Block field to reference existing blocks.
+ * Update menu_cta form display: entity_browser to media_library.
  */
-function y_lb_main_menu_cta_block_update_10001(): void
-{
-  $config = \Drupal::service('extension.list.module')->getPath('y_lb_main_menu_cta_block') . '/config/optional/core.entity_form_display.menu_link_content.main.default.yml';
-  $config_importer = \Drupal::service('openy_upgrade_tool.param_updater');
-  $config_importer->update($config, 'core.entity_form_display.menu_link_content.main.default', 'content.field_cta_block.settings.allow_existing');
+function y_lb_main_menu_cta_block_update_10002() {
+  $config_factory = \Drupal::configFactory();
+  
+  // Update block_content.menu_cta form display.
+  $config = $config_factory->getEditable('core.entity_form_display.block_content.menu_cta.default');
+  
+  if (!$config->isNew()) {
+    $content = $config->get('content');
+    $updated = FALSE;
+    
+    foreach ($content as $field_name => $field_config) {
+      if (isset($field_config['type']) && in_array($field_config['type'], ['entity_browser_entity_reference', 'entity_reference_autocomplete'])) {
+        $content[$field_name] = [
+          'type' => 'media_library_widget',
+          'weight' => $field_config['weight'] ?? 0,
+          'region' => 'content',
+          'settings' => [
+            'media_types' => ['image'],
+          ],
+          'third_party_settings' => [],
+        ];
+        $updated = TRUE;
+      }
+    }
+    
+    if ($updated) {
+      $config->set('content', $content);
+    }
+    
+    $dependencies = $config->get('dependencies');
+    if (isset($dependencies['module'])) {
+      $dependencies['module'] = array_values(array_diff($dependencies['module'], ['entity_browser']));
+      if (!in_array('media_library', $dependencies['module'])) {
+        $dependencies['module'][] = 'media_library';
+      }
+      $config->set('dependencies', $dependencies);
+    }
+    
+    $config->save();
+  }
+  
+  // Update menu_link_content.main form display.
+  $config = $config_factory->getEditable('core.entity_form_display.menu_link_content.main.default');
+  
+  if (!$config->isNew()) {
+    $content = $config->get('content');
+    $updated = FALSE;
+    
+    foreach ($content as $field_name => $field_config) {
+      if (isset($field_config['type']) && in_array($field_config['type'], ['entity_browser_entity_reference', 'entity_reference_autocomplete'])) {
+        $content[$field_name] = [
+          'type' => 'media_library_widget',
+          'weight' => $field_config['weight'] ?? 0,
+          'region' => 'content',
+          'settings' => [
+            'media_types' => ['image'],
+          ],
+          'third_party_settings' => [],
+        ];
+        $updated = TRUE;
+      }
+    }
+    
+    if ($updated) {
+      $config->set('content', $content);
+    }
+    
+    $dependencies = $config->get('dependencies');
+    if (isset($dependencies['module'])) {
+      $dependencies['module'] = array_values(array_diff($dependencies['module'], ['entity_browser']));
+      if (!in_array('media_library', $dependencies['module'])) {
+        $dependencies['module'][] = 'media_library';
+      }
+      $config->set('dependencies', $dependencies);
+    }
+    
+    $config->save();
+  }
 }
