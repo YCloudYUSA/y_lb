@@ -10,80 +10,74 @@
  */
 function y_lb_main_menu_cta_block_update_10002() {
   $config_factory = \Drupal::configFactory();
-  
+
   // Update block_content.menu_cta form display.
   $config = $config_factory->getEditable('core.entity_form_display.block_content.menu_cta.default');
-  
+
   if (!$config->isNew()) {
     $content = $config->get('content');
-    $updated = FALSE;
-    
-    foreach ($content as $field_name => $field_config) {
-      if (isset($field_config['type']) && in_array($field_config['type'], ['entity_browser_entity_reference', 'entity_reference_autocomplete'])) {
-        $content[$field_name] = [
-          'type' => 'media_library_widget',
-          'weight' => $field_config['weight'] ?? 0,
-          'region' => 'content',
-          'settings' => [
-            'media_types' => ['image'],
-          ],
-          'third_party_settings' => [],
-        ];
-        $updated = TRUE;
-      }
-    }
-    
-    if ($updated) {
+
+    // Migrate field_media to media_library widget.
+    if (isset($content['field_media']) && in_array($content['field_media']['type'], ['entity_browser_entity_reference', 'openy_focal_point_entity_browser_entity_reference', 'entity_reference_autocomplete'])) {
+      $content['field_media'] = [
+        'type' => 'media_library_widget',
+        'weight' => $content['field_media']['weight'] ?? 0,
+        'region' => 'content',
+        'settings' => [
+          'media_types' => ['image'],
+        ],
+        'third_party_settings' => [],
+      ];
       $config->set('content', $content);
     }
-    
+
     $dependencies = $config->get('dependencies');
+    if (isset($dependencies['config'])) {
+      $dependencies['config'] = array_values(array_filter($dependencies['config'], function ($item) {
+        return strpos($item, 'entity_browser.browser.') !== 0;
+      }));
+    }
     if (isset($dependencies['module'])) {
-      $dependencies['module'] = array_values(array_diff($dependencies['module'], ['entity_browser']));
+      $dependencies['module'] = array_values(array_diff($dependencies['module'], ['entity_browser', 'openy_focal_point']));
       if (!in_array('media_library', $dependencies['module'])) {
         $dependencies['module'][] = 'media_library';
       }
-      $config->set('dependencies', $dependencies);
     }
-    
+    $config->set('dependencies', $dependencies);
+
     $config->save();
   }
-  
-  // Update menu_link_content.main form display.
+
+  // Update menu_link_content.main form display - remove entity_browser_entity_form.
   $config = $config_factory->getEditable('core.entity_form_display.menu_link_content.main.default');
-  
+
   if (!$config->isNew()) {
     $content = $config->get('content');
-    $updated = FALSE;
-    
-    foreach ($content as $field_name => $field_config) {
-      if (isset($field_config['type']) && in_array($field_config['type'], ['entity_browser_entity_reference', 'entity_reference_autocomplete'])) {
-        $content[$field_name] = [
-          'type' => 'media_library_widget',
-          'weight' => $field_config['weight'] ?? 0,
-          'region' => 'content',
-          'settings' => [
-            'media_types' => ['image'],
-          ],
-          'third_party_settings' => [],
-        ];
-        $updated = TRUE;
+    $changed = FALSE;
+
+    // Remove entity_browser_entity_form third_party_settings from inline_entity_form fields.
+    foreach ($content as $field_name => &$field_config) {
+      if (isset($field_config['type']) && $field_config['type'] === 'inline_entity_form_complex') {
+        if (isset($field_config['third_party_settings']['entity_browser_entity_form'])) {
+          unset($field_config['third_party_settings']['entity_browser_entity_form']);
+          if (empty($field_config['third_party_settings'])) {
+            $field_config['third_party_settings'] = new \stdClass();
+          }
+          $changed = TRUE;
+        }
       }
     }
-    
-    if ($updated) {
+
+    if ($changed) {
       $config->set('content', $content);
     }
-    
+
     $dependencies = $config->get('dependencies');
     if (isset($dependencies['module'])) {
-      $dependencies['module'] = array_values(array_diff($dependencies['module'], ['entity_browser']));
-      if (!in_array('media_library', $dependencies['module'])) {
-        $dependencies['module'][] = 'media_library';
-      }
+      $dependencies['module'] = array_values(array_diff($dependencies['module'], ['entity_browser_entity_form']));
       $config->set('dependencies', $dependencies);
     }
-    
+
     $config->save();
   }
 }
