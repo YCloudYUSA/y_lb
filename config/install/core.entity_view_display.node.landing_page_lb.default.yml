@@ -1572,6 +1572,7 @@ third_party_settings:
       allowlisted_blocks: {  }
       restricted_categories: {  }
   y_lb:
+    allow_style: true
     styles:
       colorway: ws_colorway_blue
       border_radius: ws_border_radius_none

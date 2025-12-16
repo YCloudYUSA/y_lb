@@ -309,3 +309,19 @@ function y_lb_update_9018() {
     'background_colors'
   );
 }
+
+/**
+ * Enable Y Styles on Landing Page (Layout Builder) entity view display.
+ */
+function y_lb_update_9019() {
+  $config = \Drupal::configFactory()->getEditable('core.entity_view_display.node.landing_page_lb.default');
+  $y_lb_settings = $config->get('third_party_settings.y_lb');
+
+  if ($y_lb_settings !== NULL && !isset($y_lb_settings['allow_style'])) {
+    $config->set('third_party_settings.y_lb.allow_style', TRUE);
+    $config->save();
+    return t('Enabled Y Styles on Landing Page (Layout Builder) entity view display.');
+  }
+
+  return t('Landing Page (Layout Builder) entity view display already has Y Styles enabled or not configured.');
+}
