@@ -1,9 +1,10 @@
-[class*="block-lb-"] svg.bi {
+[class*=block-lb-] svg.bi {
   height: 1.75rem;
   width: 1.75rem;
-  fill: var(--wsPartnerColor, gray); }
+  fill: var(--wsPartnerColor, gray);
+}
+[class*=block-lb-] a:hover svg.bi {
+  fill: var(--ylb-color-dark-grey-2, #231F20);
+}
 
-[class*="block-lb-"] a:hover svg.bi {
-  fill: var(--ylb-color-dark-grey-2, #231F20); }
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJzLWljb25zLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQWU7RUFDZixjQUFjO0VBQ2QsaUNBQWlDLEVBQUU7O0FBRXJDO0VBQ0UsMkNBQTJDLEVBQUUiLCJmaWxlIjoiYnMtaWNvbnMuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiW2NsYXNzKj1cImJsb2NrLWxiLVwiXSBzdmcuYmkge1xuICBoZWlnaHQ6IDEuNzVyZW07XG4gIHdpZHRoOiAxLjc1cmVtO1xuICBmaWxsOiB2YXIoLS13c1BhcnRuZXJDb2xvciwgZ3JheSk7IH1cblxuW2NsYXNzKj1cImJsb2NrLWxiLVwiXSBhOmhvdmVyIHN2Zy5iaSB7XG4gIGZpbGw6IHZhcigtLXlsYi1jb2xvci1kYXJrLWdyZXktMiwgIzIzMUYyMCk7IH1cbiJdfQ== */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Njc3MvYnMtaWNvbnMuc2NzcyIsImJzLWljb25zLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDRTtFQUNFLGVBQUE7RUFDQSxjQUFBO0VBQ0EsaUNBQUE7QUNBSjtBRElFO0VBQ0UsMkNBQUE7QUNGSiIsImZpbGUiOiJicy1pY29ucy5jc3MifQ== */

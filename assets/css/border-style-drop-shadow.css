@@ -1,5 +1,6 @@
 :root {
   --wsBorderStyle: var(--ylb-border-style-none);
-  --wsBoxShadow: var(--ylb-border-style-drop-shadow); }
+  --wsBoxShadow: var(--ylb-border-style-drop-shadow);
+}
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJvcmRlci1zdHlsZS1kcm9wLXNoYWRvdy5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSw2Q0FBNkM7RUFDN0Msa0RBQWtELEVBQUUiLCJmaWxlIjoiYm9yZGVyLXN0eWxlLWRyb3Atc2hhZG93LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIjpyb290IHtcbiAgLS13c0JvcmRlclN0eWxlOiB2YXIoLS15bGItYm9yZGVyLXN0eWxlLW5vbmUpO1xuICAtLXdzQm94U2hhZG93OiB2YXIoLS15bGItYm9yZGVyLXN0eWxlLWRyb3Atc2hhZG93KTsgfVxuIl19 */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Njc3MvYm9yZGVyLXN0eWxlLWRyb3Atc2hhZG93LnNjc3MiLCJib3JkZXItc3R5bGUtZHJvcC1zaGFkb3cuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0UsNkNBQUE7RUFDQSxrREFBQTtBQ0FGIiwiZmlsZSI6ImJvcmRlci1zdHlsZS1kcm9wLXNoYWRvdy5jc3MifQ== */

@@ -5,7 +5,6 @@ dependencies:
     - field.field.menu_link_content.main.field_cta_block
     - system.menu.main
   module:
-    - entity_browser_entity_form
     - inline_entity_form
     - link_attributes
     - menu_item_extras
@@ -31,9 +30,7 @@ content:
       collapsed: false
       revision: false
       removed_reference: optional
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: _none
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 3
