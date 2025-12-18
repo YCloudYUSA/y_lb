@@ -24,7 +24,7 @@
     "drupal/lb_related_articles_blocks": "^2.0",
     "drupal/lb_related_events_blocks": "^2.0",
     "drupal/lb_simple_menu": "^2.0",
-    "drupal/lb_staff_members_blocks": "^3.0",
+    "drupal/lb_staff_members_blocks": "^2.0",
     "drupal/lb_statistics": "^3.0",
     "drupal/lb_table": "^1.0.6 || ~1.1.0",
     "drupal/lb_testimonial_blocks": "^2.0",
