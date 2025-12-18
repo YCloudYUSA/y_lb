@@ -72,6 +72,5 @@
         "https://dgo.to/3344041 Allow textarea widgets to be used for text (formatted) fields (and check maxlength)": "https://www.drupal.org/files/issues/2023-02-23/3344041-text-formatted-field-use-textarea-widget.patch"
       }
     }
-  },
-  "version": "5.0.0"
+  }
 }
