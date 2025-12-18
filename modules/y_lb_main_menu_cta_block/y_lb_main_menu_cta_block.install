@@ -61,7 +61,7 @@ function y_lb_main_menu_cta_block_update_10002() {
         if (isset($field_config['third_party_settings']['entity_browser_entity_form'])) {
           unset($field_config['third_party_settings']['entity_browser_entity_form']);
           if (empty($field_config['third_party_settings'])) {
-            $field_config['third_party_settings'] = new \stdClass();
+            $field_config['third_party_settings'] = [];
           }
           $changed = TRUE;
         }
