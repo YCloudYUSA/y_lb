@@ -21,7 +21,7 @@ dependencies:
   - drupal:pathauto
   - drupal:field_group
   - drupal:metatag
-  - openy_focal_point
+  - drupal:media_library
   - openy_media_image
   - openy_menu_footer
   - openy_menu_utility

@@ -309,3 +309,62 @@ function y_lb_update_9018() {
     'background_colors'
   );
 }
+
+/**
+ * Enable Y Styles on Landing Page (Layout Builder) entity view display.
+ */
+function y_lb_update_9019() {
+  $config = \Drupal::configFactory()->getEditable('core.entity_view_display.node.landing_page_lb.default');
+  $y_lb_settings = $config->get('third_party_settings.y_lb');
+
+  if ($y_lb_settings !== NULL && !isset($y_lb_settings['allow_style'])) {
+    $config->set('third_party_settings.y_lb.allow_style', TRUE);
+    $config->save();
+    return t('Enabled Y Styles on Landing Page (Layout Builder) entity view display.');
+  }
+
+  return t('Landing Page (Layout Builder) entity view display already has Y Styles enabled or not configured.');
+}
+
+/**
+ * Migrate field_meta_image from entity_browser to media_library widget.
+ */
+function y_lb_update_10001() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('core.entity_form_display.node.landing_page_lb.default');
+
+  if ($config->isNew()) {
+    return;
+  }
+
+  $content = $config->get('content');
+
+  if (isset($content['field_meta_image']) && in_array($content['field_meta_image']['type'], ['entity_browser_entity_reference', 'openy_focal_point_entity_browser_entity_reference', 'entity_reference_autocomplete'])) {
+    $content['field_meta_image'] = [
+      'type' => 'media_library_widget',
+      'weight' => $content['field_meta_image']['weight'] ?? 13,
+      'region' => 'content',
+      'settings' => [
+        'media_types' => ['image'],
+      ],
+      'third_party_settings' => [],
+    ];
+    $config->set('content', $content);
+  }
+
+  $dependencies = $config->get('dependencies');
+  if (isset($dependencies['config'])) {
+    $dependencies['config'] = array_values(array_filter($dependencies['config'], function ($item) {
+      return strpos($item, 'entity_browser.browser.') !== 0;
+    }));
+  }
+  if (isset($dependencies['module'])) {
+    $dependencies['module'] = array_values(array_diff($dependencies['module'], ['entity_browser', 'openy_focal_point']));
+    if (!in_array('media_library', $dependencies['module'])) {
+      $dependencies['module'][] = 'media_library';
+    }
+  }
+  $config->set('dependencies', $dependencies);
+
+  $config->save();
+}
