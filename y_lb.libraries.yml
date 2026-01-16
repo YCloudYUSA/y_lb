@@ -10,13 +10,14 @@ layout_builder:
     - core/jquery
 
 main:
-  version: 1.37
+  version: 1.38
   css:
     theme:
       assets/css/colors.css: { minified: false }
       assets/css/typography.css: { minified: false }
       assets/css/page.css: { minified: false }
       assets/css/button.css: { minified: false }
+      assets/css/tables.css: { minified: false }
   js:
     assets/js/mobile_tables.js: { }
   dependencies:
