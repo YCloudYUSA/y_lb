@@ -1,0 +1,76 @@
+/**
+ * @file
+ * Global table styles for CKEditor content.
+ *
+ * These styles apply to all tables created via CKEditor Insert Table feature
+ * across all Layout Builder components and content types.
+ */
+
+/* Apply to all formatted text fields that may contain CKEditor tables */
+.field-item table,
+.tab-content table,
+.lb-table table,
+.text-formatted table,
+.field--type-text-with-summary table,
+.field--type-text-long table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.field-item table thead tr,
+.tab-content table thead tr,
+.lb-table table thead tr,
+.text-formatted table thead tr,
+.field--type-text-with-summary table thead tr,
+.field--type-text-long table thead tr {
+  border: none;
+  border-bottom: 5px solid var(--ylb-color-grey-2, #cccccc);
+}
+
+.field-item table thead tr th,
+.tab-content table thead tr th,
+.lb-table table thead tr th,
+.text-formatted table thead tr th,
+.field--type-text-with-summary table thead tr th,
+.field--type-text-long table thead tr th {
+  border: none;
+  font-size: 22px;
+  line-height: 32px;
+  padding: 15px 0.5em;
+  font-weight: bold;
+}
+
+@media (min-width: 992px) {
+  .field-item table thead tr th,
+  .tab-content table thead tr th,
+  .lb-table table thead tr th,
+  .text-formatted table thead tr th,
+  .field--type-text-with-summary table thead tr th,
+  .field--type-text-long table thead tr th {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.field-item table tbody tr,
+.tab-content table tbody tr,
+.lb-table table tbody tr,
+.text-formatted table tbody tr,
+.field--type-text-with-summary table tbody tr,
+.field--type-text-long table tbody tr {
+  border-bottom: 2px solid var(--ylb-color-light-grey-3, #e0e0e0);
+}
+
+.field-item table tbody tr td,
+.tab-content table tbody tr td,
+.lb-table table tbody tr td,
+.text-formatted table tbody tr td,
+.field--type-text-with-summary table tbody tr td,
+.field--type-text-long table tbody tr td {
+  border: none;
+  font-size: 18px;
+  line-height: 28px;
+  padding: 20px 0.5em;
+}
