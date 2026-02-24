@@ -14,7 +14,7 @@ class YLBEntityViewDisplay extends DefaultsEntityForm {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, SectionStorageInterface $section_storage = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, ?SectionStorageInterface $section_storage = NULL) {
     $settings = $this->entity->getThirdPartySettings('y_lb');
     $form['ws_settings_container'] = [
       '#type' => 'details',

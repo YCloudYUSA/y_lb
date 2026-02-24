@@ -88,7 +88,7 @@ class PrepareLayout implements EventSubscriberInterface {
     if ($this->layoutTempstoreRepository->has($section_storage)) {
 
       // Add warning message after loaded page or triggered submit button.
-      $triggeringElementName = $request->get('_triggering_element_name');
+      $triggeringElementName = $request->request->get('_triggering_element_name');
       if (empty($triggeringElementName) || $triggeringElementName === 'op') {
         $this->messenger->addWarning($this->t('You have unsaved changes.'));
       }
