@@ -14,7 +14,7 @@ class YLBOverridesEntityForm extends OverridesEntityForm {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, SectionStorageInterface $section_storage = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, ?SectionStorageInterface $section_storage = NULL) {
     $node = $this->entity;
     $settings = $node->styles->value ? unserialize($node->styles->value) : [];
 

@@ -79,7 +79,7 @@ class SiteLogoBlock extends BlockBase implements ContainerFactoryPluginInterface
    * @param \Drupal\Core\Extension\ModuleExtensionList $module_list
    *   The module list service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $currentRouteMatch, ConfigFactoryInterface $config_factory, FileUrlGeneratorInterface $file_url_generator = NULL, ModuleExtensionList $module_list = NULL) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $currentRouteMatch, ConfigFactoryInterface $config_factory, ?FileUrlGeneratorInterface $file_url_generator = NULL, ?ModuleExtensionList $module_list = NULL) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->currentRouteMatch = $currentRouteMatch;
     $this->node = $currentRouteMatch->getParameter('node');
