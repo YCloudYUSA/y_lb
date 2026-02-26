@@ -134,6 +134,28 @@
       const firstLevelItem = $('.header-nav__links .dropdown', context);
       const firstLevelItemLink = $(firstLevelItem, context).children('a');
       $(firstLevelItemLink, context).click(function (e) {
+        // Handle desktop dropdown for parent items with children
+        if (header.hasClass('desktop') && $(this).parent().hasClass('children')) {
+          e.preventDefault();
+          e.stopPropagation();
+          const $parent = $(this).parent();
+          const $subMenu = $(this).siblings('.header-nav__submenu');
+
+          // Close other open dropdowns
+          $('.header-nav__links .dropdown').not($parent).removeClass('show');
+          $('.header-nav__submenu').not($subMenu).removeClass('show').css('display', '');
+
+          // Toggle current dropdown
+          $parent.toggleClass('show');
+          $subMenu.toggleClass('show');
+
+          // Force display with inline style if needed
+          if ($subMenu.hasClass('show')) {
+            $subMenu.css('display', 'flex');
+          } else {
+            $subMenu.css('display', '');
+          }
+        }
         if (header.hasClass('mobile')) {
           if ($(this).parent().hasClass('children')) {
             e.preventDefault();
@@ -185,6 +207,21 @@
           headerSubMenu.removeClass('open');
           headerSubMenu.removeClass('show');
           $('.dropdown').removeClass('show');
+        }
+      });
+      // Close dropdown when clicking outside (desktop only)
+      $(document).click(function (e) {
+        if (header.hasClass('desktop')) {
+          const $target = $(e.target);
+          // This prevents immediate close when opening dropdown
+          if ($target.closest('.dropdown.children > a').length > 0) {
+            return;
+          }
+          // If click is not on menu or inside dropdown
+          if (!$target.closest('.header-nav__links').length) {
+            $('.header-nav__links .dropdown').removeClass('show');
+            $('.header-nav__submenu').removeClass('show').css('display', '');
+          }
         }
       });
       // Set top position for submenus in mobile screen.
