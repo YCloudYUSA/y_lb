@@ -9,7 +9,9 @@
   .ws-main-menu-wrapper .ws-menu-cta-block .field-media-image {
     margin-bottom: 25px; }
     .ws-main-menu-wrapper .ws-menu-cta-block .field-media-image img {
-      border-radius: var(--wsBorderRadius, 0); }
+      border-radius: var(--wsBorderRadius, 0);
+      max-width: 100%;
+      height: auto; }
   .ws-main-menu-wrapper .ws-menu-cta-block .field-description,
   .ws-main-menu-wrapper .ws-menu-cta-block .field-title {
     color: var(--ylb-color-black, black);

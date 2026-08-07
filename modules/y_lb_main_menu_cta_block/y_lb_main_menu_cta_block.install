@@ -81,3 +81,69 @@ function y_lb_main_menu_cta_block_update_10002() {
     $config->save();
   }
 }
+
+/**
+ * ITCR-1271: convert media image display(s) from blazy formatter to core image.
+ *
+ * Existing sites never re-import config, so they retain stale blazy formatter.
+ * This update mirrors the fresh-install config change for D11.4.
+ */
+function y_lb_main_menu_cta_block_update_10003() {
+  $displays = [
+    'media.image.menu_cta',
+  ];
+
+  foreach ($displays as $display_id) {
+    _y_lb_main_menu_cta_block_itcr1271_blazy_to_image($display_id);
+  }
+}
+
+/**
+ * Helper to convert blazy formatter to image formatter in view displays.
+ *
+ * Idempotent: skips displays that don't have blazy or have already been converted.
+ */
+function _y_lb_main_menu_cta_block_itcr1271_blazy_to_image(string $id): void {
+  $config = \Drupal::configFactory()->getEditable('core.entity_view_display.' . $id);
+
+  // Skip if config doesn't exist on this site.
+  if ($config->isNew()) {
+    return;
+  }
+
+  $content = $config->get('content');
+  $changed = FALSE;
+
+  // Replace blazy formatter type with image.
+  foreach ($content as &$component) {
+    if (isset($component['type']) && $component['type'] === 'blazy') {
+      $component['type'] = 'image';
+      $changed = TRUE;
+    }
+  }
+
+  // Only save if we made changes.
+  if (!$changed) {
+    return;
+  }
+
+  // Update dependencies.
+  $dependencies = $config->get('dependencies') ?? [];
+  $modules = $dependencies['module'] ?? [];
+
+  // Remove blazy from dependencies.
+  $modules = array_values(array_diff($modules, ['blazy']));
+
+  // Add image if not already present.
+  if (!in_array('image', $modules)) {
+    $modules[] = 'image';
+  }
+
+  // Sort for consistent config.
+  sort($modules);
+
+  $dependencies['module'] = $modules;
+  $config->set('dependencies', $dependencies);
+  $config->set('content', $content);
+  $config->save();
+}
