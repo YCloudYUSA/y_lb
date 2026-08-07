@@ -1,0 +1,38 @@
+core.entity_view_display.*.*.*.third_party.y_lb:
+  type: mapping
+  label: 'Open Y LB Styles'
+  mapping:
+    allow_style:
+      type: boolean
+      label: 'Allow style'
+    styles:
+      type: ignore
+      label: 'Styles'
+
+block.settings.ws_site_logo:
+  type: block_settings
+  mapping:
+    logo_type:
+      type: string
+      label: 'Logo type'
+
+layout_plugin.settings.ws_header:
+  type: layout_plugin.settings
+  mapping:
+    wrapper_classes:
+      type: string
+      label: 'Wrapper classes'
+    container:
+      type: string
+      label: 'Container type'
+
+layout_plugin.settings.ws_footer:
+  type: layout_plugin.settings
+  mapping:
+    wrapper_classes:
+      type: string
+      label: 'Wrapper classes'
+    container:
+      type: string
+      label: 'Container type'
+
