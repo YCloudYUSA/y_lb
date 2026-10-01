@@ -12,7 +12,7 @@ abstract class WSStyleGroupAlterAbstract {
   /**
    * {@inheritdoc}
    */
-  public static function getSubscribedEvents() {
+  public static function getSubscribedEvents(): array {
     return [
       WSStyleGroupAppliesToAlter::ALTER_APPLIES_TO => 'alterGroups'
     ];
