@@ -6,3 +6,6 @@ cta_block:
       assets/css/cta_block.css: { preprocess: true }
   js:
     assets/js/cta_block.js: { minified: false }
+  dependencies:
+    - core/jquery
+    - core/drupal
