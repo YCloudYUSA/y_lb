@@ -12,6 +12,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Hook\Attribute\LegacyModuleImplementsAlter;
 use Drupal\block_content\BlockContentInterface;
 use Drupal\editor\Entity\Editor;
 use Drupal\layout_builder\Entity\LayoutBuilderEntityViewDisplay;
@@ -498,6 +499,7 @@ function y_lb_form_layout_builder_configure_section_alter(&$form, \Drupal\Core\F
 /**
  * Implements hook_module_implements_alter().
  */
+#[LegacyModuleImplementsAlter]
 function y_lb_module_implements_alter(&$implementations, $hook) {
   if ($hook !== 'form_alter') {
     return;
