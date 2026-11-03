@@ -13,7 +13,8 @@
 }
 
 // Clean up Layout edit page in Carnation.
-.openy_carnation {
+.openy_carnation,
+.openy_carnation-based {
   form.node-layout-builder-form {
     > .form-actions {
       text-align: unset;
