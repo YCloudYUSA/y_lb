@@ -3,8 +3,23 @@
 @import "_variables";
 
 
+// Metric-matched fallback for Cachet (font-display: swap causes a visible
+// reflow on font load otherwise). Values computed from the real
+// Cachet Medium and Verdana font files via fontTools: size-adjust matches
+// average glyph width (490/1000 vs 1041/2048), ascent/descent/line-gap
+// overrides are Cachet's own metrics divided by the size-adjust factor so
+// they land on the same final box after the em-square scales.
+@font-face {
+  font-family: "Cachet Fallback";
+  src: local("Verdana");
+  size-adjust: 96.4%;
+  ascent-override: 94.9%;
+  descent-override: 28.3%;
+  line-gap-override: 0%;
+}
+
 :root {
-  --ylb-font-family-cachet: Cachet, Verdana, Geneva, sans-serif;
+  --ylb-font-family-cachet: Cachet, "Cachet Fallback", Verdana, Geneva, sans-serif;
   --ylb-font-family-verdana: Verdana, Geneva, sans-serif;
   --ylb-font-family: "Cachet", Verdana, Geneva, sans-serif;
   --ylb-font-family-medium: "Cachet Medium", Cachet, Verdana, sans-serif;

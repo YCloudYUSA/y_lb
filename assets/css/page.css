@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "Cachet Fallback";
+  src: local("Verdana");
+  size-adjust: 96.4%;
+  ascent-override: 94.9%;
+  descent-override: 28.3%;
+  line-gap-override: 0%;
+}
 :root {
-  --ylb-font-family-cachet: Cachet, Verdana, Geneva, sans-serif;
+  --ylb-font-family-cachet: Cachet, "Cachet Fallback", Verdana, Geneva, sans-serif;
   --ylb-font-family-verdana: Verdana, Geneva, sans-serif;
   --ylb-font-family: "Cachet", Verdana, Geneva, sans-serif;
   --ylb-font-family-medium: "Cachet Medium", Cachet, Verdana, sans-serif;
