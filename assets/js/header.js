@@ -38,7 +38,14 @@
         }
       });
 
-      switchMainMenuType();
+      // A wider fallback font can make the menu look too wide, flipping the
+      // header to mobile and back once the webfont loads.
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(switchMainMenuType);
+      }
+      else {
+        switchMainMenuType();
+      }
 
       $(window).resize(function () {
         if (header.hasClass('desktop')) {
@@ -64,33 +71,17 @@
 
       function switchMainMenuType() {
         const header = $('.ws-header');
-        // This size is can be fixed.
-        const logo =  230;
-        var right_menu = document.querySelector('.header--bottom-right-column');
-        var main_menu = document.querySelector('.header--bottom-middle-column');
 
-        // Always measure against the desktop layout. In the mobile layout every
-        // column is forced to full width, so right_menu.offsetWidth grows to
-        // ~viewport width and max_available_width stays negative forever - the
-        // header can never return to desktop when the window is enlarged without
-        // a page reload.
+        // Always measure against the desktop layout. In the mobile layout the
+        // columns are forced to full width and their nav is hidden, so widths
+        // read there say nothing about whether the menu fits.
         header.removeClass('mobile').addClass('desktop');
 
-        var max_available_width = $(window).width() - logo;
-        // In case the right menu was removed.
-        if (right_menu) {
-          max_available_width -= right_menu.offsetWidth;
-        }
-        let main_menu_width = 0;
-        if (!right_menu) {
-          main_menu.style.maxWidth = 'none';
-        }
-        if (main_menu) {
-          main_menu_width = main_menu.offsetWidth;
-        }
+        var main_menu = document.querySelector('.header--bottom-middle-column');
+        var nav_list = main_menu ? main_menu.querySelector('nav ul') : null;
 
-        if (max_available_width < main_menu_width) {
-            header.removeClass('desktop').addClass('mobile');
+        if (nav_list && nav_list.scrollWidth > main_menu.offsetWidth) {
+          header.removeClass('desktop').addClass('mobile');
         }
       }
     }

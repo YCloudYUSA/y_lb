@@ -373,20 +373,27 @@
 
   &.desktop {
     .header--bottom {
+      // Bootstrap's .row wraps by default; content-sized columns must stay on one line.
+      .row {
+        flex-wrap: nowrap;
+      }
+
       &-left-column {
         flex: 0 0 16.66666667%;
         max-width: 16.66666667%;
       }
 
       &-middle-column {
-        flex: 0 0 58.33333333%;
-        max-width: 58.33333333%;
+        flex: 1 1 auto;
+        max-width: none;
+        // Lets the column shrink below its content, so header.js can detect that the menu no longer fits.
+        min-width: 0;
         position: relative;
       }
 
       &-right-column {
-        flex: 0 0 25%;
-        max-width: 25%;
+        flex: 0 0 auto;
+        max-width: none;
 
         nav {
           height: 95px;
