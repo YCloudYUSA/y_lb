@@ -69,6 +69,9 @@ header:
       assets/css/header.css: { preprocess: true }
   js:
     assets/js/header.js: { minified: false }
+  dependencies:
+    - core/jquery
+    - core/drupal
 
 main_menu:
   version: 1.22
