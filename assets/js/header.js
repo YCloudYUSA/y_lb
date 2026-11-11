@@ -38,9 +38,25 @@
         }
       });
 
-      switchMainMenuType();
+      // A wider fallback font can make the menu look too wide, flipping the
+      // header to mobile and back once the webfont loads. fonts.ready can
+      // resolve before any webfont is requested, so measure again on loadingdone.
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(switchMainMenuType);
+        document.fonts.addEventListener('loadingdone', switchMainMenuType);
+      }
+      else {
+        switchMainMenuType();
+      }
 
+      var last_width = window.innerWidth;
       $(window).resize(function () {
+        // Mobile browsers fire resize when the address bar shows or hides;
+        // only a width change can change whether the menu fits.
+        if (window.innerWidth === last_width) {
+          return;
+        }
+        last_width = window.innerWidth;
         if (header.hasClass('desktop')) {
           header.removeClass('open');
           btn.attr('aria-expanded', false);
@@ -64,28 +80,29 @@
 
       function switchMainMenuType() {
         const header = $('.ws-header');
-        // This size is can be fixed.
-        const logo =  230;
-        var right_menu = document.querySelector('.header--bottom-right-column');
-        var main_menu = document.querySelector('.header--bottom-middle-column');
-        var max_available_width = $(window).width() - logo;
-        // In case the right menu was removed.
-        if (right_menu) {
-          max_available_width -= right_menu.offsetWidth;
-        }
-        let main_menu_width = 0;
-        if (!right_menu) {
-          main_menu.style.maxWidth = 'none';
-        }
-        if (main_menu) {
-          main_menu_width = main_menu.offsetWidth;
-        }
 
-        if (max_available_width < main_menu_width) {
-            header.removeClass('desktop').addClass('mobile');
-        } else {
-            header.removeClass('mobile').addClass('desktop');
+        // Always measure against the desktop layout. In the mobile layout the
+        // columns are forced to full width and their nav is hidden, so widths
+        // read there say nothing about whether the menu fits.
+        header.removeClass('mobile').addClass('desktop');
+
+        var main_menu = document.querySelector('.header--bottom-middle-column');
+        if (main_menu && !menuFits(main_menu)) {
+          header.removeClass('desktop').addClass('mobile');
         }
+      }
+
+      // Measures top-level items only: an open dropdown would inflate scrollWidth.
+      function menuFits(main_menu) {
+        var rects = Array.from(main_menu.querySelectorAll('nav ul.row-level-1 > li'))
+          .map(function (item) { return item.getBoundingClientRect(); })
+          .filter(function (rect) { return rect.width > 0; });
+        if (rects.length === 0) {
+          return true;
+        }
+        var one_row = rects.every(function (rect) { return rect.top < rects[0].bottom; });
+        var width = rects[rects.length - 1].right - rects[0].left;
+        return one_row && width <= main_menu.offsetWidth;
       }
     }
   };
