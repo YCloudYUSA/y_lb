@@ -39,15 +39,24 @@
       });
 
       // A wider fallback font can make the menu look too wide, flipping the
-      // header to mobile and back once the webfont loads.
+      // header to mobile and back once the webfont loads. fonts.ready can
+      // resolve before any webfont is requested, so measure again on loadingdone.
       if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(switchMainMenuType);
+        document.fonts.addEventListener('loadingdone', switchMainMenuType);
       }
       else {
         switchMainMenuType();
       }
 
+      var last_width = window.innerWidth;
       $(window).resize(function () {
+        // Mobile browsers fire resize when the address bar shows or hides;
+        // only a width change can change whether the menu fits.
+        if (window.innerWidth === last_width) {
+          return;
+        }
+        last_width = window.innerWidth;
         if (header.hasClass('desktop')) {
           header.removeClass('open');
           btn.attr('aria-expanded', false);
@@ -78,11 +87,22 @@
         header.removeClass('mobile').addClass('desktop');
 
         var main_menu = document.querySelector('.header--bottom-middle-column');
-        var nav_list = main_menu ? main_menu.querySelector('nav ul') : null;
-
-        if (nav_list && nav_list.scrollWidth > main_menu.offsetWidth) {
+        if (main_menu && !menuFits(main_menu)) {
           header.removeClass('desktop').addClass('mobile');
         }
+      }
+
+      // Measures top-level items only: an open dropdown would inflate scrollWidth.
+      function menuFits(main_menu) {
+        var rects = Array.from(main_menu.querySelectorAll('nav ul.row-level-1 > li'))
+          .map(function (item) { return item.getBoundingClientRect(); })
+          .filter(function (rect) { return rect.width > 0; });
+        if (rects.length === 0) {
+          return true;
+        }
+        var one_row = rects.every(function (rect) { return rect.top < rects[0].bottom; });
+        var width = rects[rects.length - 1].right - rects[0].left;
+        return one_row && width <= main_menu.offsetWidth;
       }
     }
   };

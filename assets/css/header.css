@@ -311,8 +311,8 @@
   position: relative;
 }
 .header:not(.layout-builder__layout).desktop .header--bottom-right-column {
-  flex: 0 0 auto;
-  max-width: none;
+  flex: 0 0 25%;
+  max-width: 25%;
 }
 .header:not(.layout-builder__layout).desktop .header--bottom-right-column nav {
   height: 95px;
