@@ -3,7 +3,7 @@
 namespace Drupal\y_lb\Element;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Render\Element\FormElement;
+use Drupal\Core\Render\Element\FormElementBase;
 use Drupal\Core\Render\Element\FormElementInterface;
 use Drupal\Core\Render\Markup;
 
@@ -12,7 +12,7 @@ use Drupal\Core\Render\Markup;
  *
  * @FormElement("ws_style_select")
  */
-class WSThemeSettings extends FormElement implements FormElementInterface {
+class WSThemeSettings extends FormElementBase implements FormElementInterface {
 
   /**
    * {@inheritdoc}
